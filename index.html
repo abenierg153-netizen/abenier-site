@@ -24,7 +24,7 @@
     html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:linear-gradient(180deg,#e3edf9, #eef3f9 30%, #eef3f9 100%);
     }
@@ -39,7 +39,6 @@
     .logo{
       width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 auto;
       background:#dbeafe;display:grid;place-items:center;border:2px solid #eef2ff;
-      box-shadow:0 2px 6px rgba(43,127,255,.18) inset;
       font-weight:800;color:#1d4ed8
     }
     .hello .txt{line-height:1.1}
@@ -48,7 +47,6 @@
       display:flex;align-items:center;gap:8px
     }
     .hello p{margin:4px 0 0;color:var(--muted);font-weight:500;font-size:14px}
-
     .actions{display:flex;gap:10px}
     .icon-btn{
       width:44px;height:44px;border-radius:50%;border:0;background:#f7fafc;cursor:pointer;
@@ -61,7 +59,7 @@
       background:#ef4444;box-shadow:0 0 0 2px #fff
     }
 
-    /* CARD like screenshot */
+    /* CARD */
     .doc-card{
       margin-top:16px;background:var(--card);border-radius:26px;box-shadow:var(--shadow);
       padding:20px;display:flex;align-items:center;gap:16px
@@ -86,170 +84,147 @@
       background:#f1f5f9;padding:8px 12px;border-radius:999px;font-weight:600;color:#334155
     }
 
-    /* HERO */
-    .hero{
-      margin-top:22px;display:grid;grid-template-columns:1.1fr 1.4fr;gap:22px;
+    /* HERO (updated) */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 30px 0;
     }
-    .hero-card{
-      background:var(--card);border-radius:26px;box-shadow:var(--shadow);padding:18px;
-      display:grid;place-items:center;min-height:340px
+    .hero-left img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-    .hero-card img{max-width:100%;max-height:100%;object-fit:contain;border-radius:16px}
-    .hero-right{
-      background:var(--card);border-radius:26px;box-shadow:var(--shadow);
-      padding:28px
+    .hero-right {
+      flex: 1;
     }
-    .headline{
-      font-size:32px;line-height:1.1;margin:0 0 6px;font-weight:800;
-      letter-spacing:.2px
+    .clinic-headline {
+      font-size: 32px;
+      font-weight: 800;
+      color: #2b7fff;
+      margin: 0 0 10px;
     }
-    .sub{margin:0 0 8px;color:#374151;font-weight:700}
-    .desc{margin:6px 0 16px;color:#4b5563}
-    .flag{font-size:18px;margin-left:6px}
-    .cta{
-      display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;
-      border:0;border-radius:999px;padding:14px 20px;font-weight:700;font-size:16px;
-      cursor:pointer;box-shadow:0 12px 20px rgba(43,127,255,.28)
+    .clinic-subheadline {
+      font-size: 22px;
+      font-weight: 600;
+      color: #444;
+      margin: 0 0 5px;
     }
-    .cta:focus{outline:none;box-shadow:0 0 0 6px var(--ring), 0 12px 20px rgba(43,127,255,.28)}
-    .benefits{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .benefit{
-      background:#f8fafc;border-radius:12px;padding:10px 12px;font-weight:600;color:#334155;
-      box-shadow:inset 0 0 0 1px #e5e7eb
+    .clinic-location {
+      font-size: 16px;
+      color: #666;
+      margin: 0 0 15px;
+    }
+    .clinic-desc {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2b7fff;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(43,127,255,0.3);
+      transition: background 0.3s;
+    }
+    .book-btn:hover {
+      background: #1f5ecf;
+    }
+    .book-btn .icon {
+      font-size: 18px;
     }
 
-    /* responsive */
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr;gap:16px}
-      .headline{font-size:28px}
+      .hero{flex-direction:column;gap:16px}
+      .clinic-headline{font-size:28px}
     }
-    @media (max-width: 520px){
-      .hello h1{font-size:18px}
-      .hello p{font-size:13px}
-      .doc-card{flex-direction:column;align-items:flex-start}
-      .doc-photo{width:100%;height:180px}
-      .actions{gap:8px}
-      .icon-btn{width:40px;height:40px}
-    }
-
-    /* tiny helpers */
-    .sr-only{
-      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
-    }
-    a.btn-reset{color:inherit;text-decoration:none}
   </style>
 </head>
 <body>
   <div class="container">
 
     <!-- HEADER -->
-    <header class="header" role="banner" aria-label="Top navigation">
+    <header class="header">
       <div class="hello">
-        <!-- Replace the content of .logo with your image if you like -->
-        <div class="logo" aria-label="Clinic logo">YS</div>
-
+        <div class="logo">YS</div>
         <div class="txt">
-          <h1>Hello, Johan <span aria-hidden="true">👋</span></h1>
+          <h1>Hello, Johan <span>👋</span></h1>
           <p>How are you today?</p>
         </div>
       </div>
-
       <div class="actions">
-        <button class="icon-btn" aria-label="Search">
-          <!-- magnifying-glass icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="icon-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M21 21l-4.2-4.2m1.2-4.8a7 7 0 11-14 0 7 7 0 0114 0z" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <button class="icon-btn dot" aria-label="Notifications">
-          <!-- bell icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <button class="icon-btn dot">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0a3 3 0 11-6 0m6 0H9" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
     </header>
 
-    <!-- Doctor card (like the screenshot) -->
-    <section class="doc-card" aria-label="Featured doctor">
+    <!-- Doctor card -->
+    <section class="doc-card">
       <div class="doc-photo">
         <img id="docPreview" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop" alt="Doctor portrait">
         <label class="upload">
-          <input id="docUpload" type="file" accept="image/*" class="sr-only" />
+          <input id="docUpload" type="file" accept="image/*" style="display:none;" />
           Upload photo
         </label>
       </div>
-
       <div class="doc-info">
         <div class="doc-top">
           <h2 class="doc-name">Dr. Johan Smit</h2>
-          <span class="fav" aria-label="saved to favorites">
-            <!-- heart icon -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff4d67" aria-hidden="true">
+          <span class="fav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff4d67">
               <path d="M12 21s-8-5.7-8-11a5 5 0 019-3 5 5 0 019 3c0 5.3-8 11-8 11z"/>
             </svg>
           </span>
         </div>
-
         <div class="meta">
           <span>5 years experience</span>
-          <span class="stars" aria-label="rating 5 out of 5">★★★★★</span>
+          <span class="stars">★★★★★</span>
           <span>5.0 (3,964)</span>
         </div>
-
-        <span class="pill">
-          <!-- tooth icon -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M8 4c2-2 6-2 8 0 2 2 2 6 0 8-1 1-2 3-2 6 0 3-2 4-2 4s-2-1-2-4c0-3-1-5-2-6-2-2-2-6 0-8z" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Dental Surgery • Specialist
-        </span>
+        <span class="pill">Dental Surgery • Specialist</span>
       </div>
     </section>
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-card">
-        <img id="clinicPreview" src="https://images.unsplash.com/photo-1588771930291-39d27c8d2a3c?q=80&w=1200&auto=format&fit=crop" alt="Clinic / Dentist working">
+    <!-- HERO updated -->
+    <section class="hero">
+      <div class="hero-left">
+        <img src="https://images.unsplash.com/photo-1588771930291-39d27c8d2a3c?q=80&w=1200&auto=format&fit=crop" alt="Doctor at Yanet Dental Clinic">
       </div>
-
       <div class="hero-right">
-        <h2 class="headline">YANET SPECIAL DENTAL CLINIC</h2>
-        <p class="sub">Your smile, our specialty</p>
-        <p class="desc">
-          Expert dental care in the heart of Addis Ababa
-          <span class="flag" role="img" aria-label="Ethiopia flag">🇪🇹</span>
+        <h1 class="clinic-headline">YANET SPECIAL DENTAL CLINIC</h1>
+        <h2 class="clinic-subheadline">Your smile our specialty</h2>
+        <p class="clinic-location">Expert dental care in the heart of Addis Ababa</p>
+        <p class="clinic-desc">
+          We provide gentle, advanced dental treatment — from cleaning to cosmetic dentistry —
+          to keep your smile healthy and confident.
         </p>
-        <p class="desc">
-          We provide gentle, advanced dental treatment—from cleaning to cosmetic dentistry—to keep your smile healthy and confident.
-        </p>
-
-        <!-- Button: put your chat link in href -->
-        <a class="btn-reset" href="https://example.com/chat" id="appointmentLink">
-          <button class="cta" type="button">
-            <!-- phone/chat icon -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 01-2 2H7l-4 3V5a2 2 0 012-2h10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15 10h6M15 6h6M15 14h4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Book Appointment
-          </button>
-        </a>
-
-        <div class="benefits" aria-label="Clinic benefits">
-          <span class="benefit">10 years experienced</span>
-          <span class="benefit">Modern equipment</span>
-          <span class="benefit">Friendly &amp; gentle care</span>
-        </div>
+        <button class="book-btn">
+          <span class="icon">😊</span>
+          Book Now
+        </button>
       </div>
     </section>
+
   </div>
 
   <script>
-    // Replace with your real chat URL when you have it
-    // document.getElementById('appointmentLink').setAttribute('href', 'YOUR_CHAT_LINK_HERE');
-
-    // Simple uploader -> preview for doctor photo
     const docUpload = document.getElementById('docUpload');
     const docPreview = document.getElementById('docPreview');
     docUpload.addEventListener('change', (e) => {
