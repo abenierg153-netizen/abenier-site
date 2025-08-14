@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
   <title>Doctor Appointment App</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            health: '#E8F5E9'
+          }
+        }
+      }
+    };
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Enables the .no-scrollbar utility used below */
@@ -12,7 +23,7 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-health font-sans">
 
   <!-- Header -->
   <header class="flex items-center justify-between p-4 bg-white shadow-sm">
