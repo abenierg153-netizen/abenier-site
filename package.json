@@ -1,0 +1,22 @@
+{
+  "name": "doctor-appointment-app",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:css": "tailwindcss -i ./input.css -o ./assets/tailwind.css --minify",
+    "build:js": "esbuild main.js --bundle --minify --outfile=dist/main.js",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --use-short-doctype --minify-css true --minify-js true index.html -o dist/index.html",
+    "build:assets": "mkdir -p dist/assets && cp -r assets/tailwind.css dist/assets/tailwind.css",
+    "build": "npm run clean && npm run build:css && npm run build:assets && npm run build:js && npm run build:html",
+    "dev": "tailwindcss -i ./input.css -o ./assets/tailwind.css --watch --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.10",
+    "postcss": "8.4.39",
+    "autoprefixer": "10.4.20",
+    "esbuild": "0.23.1",
+    "minify": "12.0.0",
+    "html-minifier-terser": "7.2.0"
+  }
+}
