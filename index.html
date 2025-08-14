@@ -1,24 +1,26 @@
-j<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#0D9488" />
   <title>Doctor Appointment App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            health: '#E8F5E9'
+            health: '#F0FDF4', /* soft mint */
+            primary: '#0D9488', /* teal */
+            secondary: '#14B8A6', /* light teal */
+            accent: '#FDE68A', /* soft yellow */
           }
         }
       }
     };
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Enables the .no-scrollbar utility used below */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -32,13 +34,13 @@ j<!DOCTYPE html>
       <h1 class="text-lg font-semibold">Hi, Alex 👋</h1>
     </div>
     <div class="flex items-center gap-2 text-gray-600">
-      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
         </svg>
       </button>
-      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Notifications">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Notifications">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.159c0 .538-.214 1.055-.595 1.436L6 17h5" />
         </svg>
       </button>
@@ -48,26 +50,24 @@ j<!DOCTYPE html>
   <!-- Featured Doctor -->
   <section class="p-4">
     <div class="bg-white rounded-2xl shadow-md p-4 relative">
-      <!-- Favorite icon -->
-      <button type="button" class="absolute top-4 right-4 text-red-500 hover:scale-110 transition-transform" aria-label="Toggle favorite" id="favorite-toggle" aria-pressed="false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+      <button type="button" class="absolute top-4 right-4 text-primary hover:scale-110 transition-transform" aria-label="Toggle favorite">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
           <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
         </svg>
       </button>
-
       <div class="flex items-center gap-4">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Doctor" class="w-20 h-20 rounded-full object-cover">
         <div>
           <h2 class="text-lg font-semibold">Dr. Maria Lopez</h2>
           <p class="text-sm text-gray-500">8 years experience</p>
-          <div class="flex items-center gap-1 text-yellow-500 text-sm" aria-label="Rating 4.9 out of 5 from 2,314 reviews">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-yellow-500" viewBox="0 0 20 20" aria-hidden="true">
+          <div class="flex items-center gap-1 text-yellow-500 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-yellow-500" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.162a1 1 0 00.95.69h3.324c.969 0 1.371 1.24.588 1.81l-2.69 1.954a1 1 0 00-.364 1.118l1.03 3.162c.3.921-.755 1.688-1.54 1.118L10 13.347l-2.99 2.014c-.785.57-1.84-.197-1.54-1.118l1.03-3.162a1 1 0 00-.364-1.118L3.446 8.59c-.783-.57-.38-1.81.588-1.81h3.324a1 1 0 00.95-.69l1.03-3.162z"/>
             </svg>
             <span class="text-gray-700 font-medium">4.9</span>
             <span class="text-gray-500">(2,314 reviews)</span>
           </div>
-          <button type="button" class="inline-block mt-2 px-3 py-1 text-sm rounded-full bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" data-dialog-target="#booking-dialog">
+          <button type="button" class="inline-block mt-2 px-3 py-1 text-sm rounded-full bg-primary text-white hover:bg-secondary">
             Book Now
           </button>
         </div>
@@ -75,342 +75,41 @@ j<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="p-4">
-    <div class="flex items-center justify-between mb-3">
-      <h3 class="text-lg font-semibold">Our Services</h3>
-      <button type="button" class="text-blue-600 text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">See All</button>
-    </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="rounded-xl p-4 text-white bg-red-500 shadow-md">
-        <h4 class="font-semibold">Heart Checkup</h4>
-        <p class="text-sm">Available 5</p>
-      </div>
-      <div class="rounded-xl p-4 text-white bg-blue-500 shadow-md">
-        <h4 class="font-semibold">Blood Test</h4>
-        <p class="text-sm">Available 8</p>
-      </div>
-      <div class="rounded-xl p-4 text-gray-900 bg-yellow-300 shadow-md">
-        <h4 class="font-semibold">X-Ray</h4>
-        <p class="text-sm">Available 2</p>
-      </div>
-      <div class="rounded-xl p-4 text-white bg-green-500 shadow-md">
-        <h4 class="font-semibold">Vaccination</h4>
-        <p class="text-sm">Available 6</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Doctors List -->
-  <section class="p-4">
-    <div class="flex items-center justify-between mb-3">
-      <h3 class="text-lg font-semibold">Doctors</h3>
-      <button type="button" class="text-blue-600 text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500">See All</button>
-    </div>
-    <div class="flex gap-4 overflow-x-auto no-scrollbar" tabindex="0" aria-label="Available doctors">
-      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
-        <h4 class="text-sm font-semibold">Dr. Emily Clark</h4>
-        <p class="text-xs text-gray-500">Cardiologist</p>
-      </div>
-      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
-        <h4 class="text-sm font-semibold">Dr. John Smith</h4>
-        <p class="text-xs text-gray-500">Radiologist</p>
-      </div>
-      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
-        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
-        <h4 class="text-sm font-semibold">Dr. Sarah Kim</h4>
-        <p class="text-xs text-gray-500">General Practitioner</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking Dialog -->
-  <div id="booking-dialog" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="booking-title">
-    <div class="absolute inset-0 bg-black/40" data-dialog-close></div>
-    <div class="relative mx-auto mt-24 w-[92%] max-w-md">
-      <div class="bg-white rounded-2xl shadow-xl p-6">
-        <div class="flex items-start justify-between">
-          <h2 id="booking-title" class="text-lg font-semibold">Book appointment with Dr. Maria Lopez</h2>
-          <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-dialog-close aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M10 8.586l4.243-4.243 1.414 1.414L11.414 10l4.243 4.243-1.414 1.414L10 11.414l-4.243 4.243-1.414-1.414L8.586 10 4.343 5.757l1.414-1.414L10 8.586z" clip-rule="evenodd"/>
-            </svg>
-          </button>
-        </div>
-
-        <form id="booking-form" class="mt-4 space-y-4">
-          <div>
-            <label for="patient-name" class="block text-sm font-medium text-gray-700">Your Name</label>
-            <input id="patient-name" name="name" type="text" class="mt-1 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" value="Alex" required />
-          </div>
-          <div class="grid grid-cols-2 gap-3">
-            <div>
-              <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
-              <input id="date" name="date" type="date" class="mt-1 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" required />
-            </div>
-            <div>
-              <label for="time" class="block text-sm font-medium text-gray-700">Time</label>
-              <select id="time" name="time" class="mt-1 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" required>
-                <option value="" disabled selected>Select</option>
-                <option>09:00</option>
-                <option>10:00</option>
-                <option>11:00</option>
-                <option>14:00</option>
-                <option>16:00</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="reason" class="block text-sm font-medium text-gray-700">Reason</label>
-            <textarea id="reason" name="reason" rows="3" class="mt-1 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Describe your symptoms…" required></textarea>
-          </div>
-
-          <div class="flex items-center justify-end gap-3 pt-2">
-            <button type="button" class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-dialog-close>Cancel</button>
-            <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Confirm</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-lg shadow hidden">
-    Appointment booked successfully
-  </div>
-
-  <!-- Navigation -->
-  <nav class="fixed bottom-0 w-full bg-white shadow-inner p-3 flex justify-around text-gray-600" role="navigation" aria-label="Primary">
-    <button type="button" class="text-blue-600" aria-current="page" aria-label="Home">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <path d="M10 3.172l5 5V17a1 1 0 01-1 1h-3v-4H9v4H6a1 1 0 01-1-1V8.172l5-5z" />
-      </svg>
-    </button>
-    <button type="button" aria-label="Search">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387zM10 14a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd" />
-      </svg>
-    </button>
-    <button type="button" aria-label="Favorites">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-      </svg>
-    </button>
-    <button type="button" aria-label="Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10 12a5 5 0 100-10 5 5 0 000 10zm-7 7a7 7 0 0114 0H3z" clip-rule="evenodd" />
-      </svg>
-    </button>
-  </nav>
-
-  <script>
-    // Favorite toggle
-    const favoriteToggle = document.getElementById('favorite-toggle');
-    if (favoriteToggle) {
-      favoriteToggle.addEventListener('click', () => {
-        const pressed = favoriteToggle.getAttribute('aria-pressed') === 'true';
-        favoriteToggle.setAttribute('aria-pressed', String(!pressed));
-        favoriteToggle.classList.toggle('text-red-500', !pressed);
-        favoriteToggle.classList.toggle('text-gray-300', pressed);
-      });
-    }
-
-    // Dialog helpers
-    function openDialog(selector) {
-      const dialog = document.querySelector(selector);
-      if (!dialog) return;
-      dialog.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-      const firstFocusable = dialog.querySelector('input, select, textarea, button, [data-dialog-close]');
-      if (firstFocusable) firstFocusable.focus();
-    }
-    function closeDialog(dialog) {
-      dialog.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    // Open dialog
-    document.querySelectorAll('[data-dialog-target]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        openDialog(btn.getAttribute('data-dialog-target'));
-      });
-    });
-
-    // Close dialog via overlay/close buttons
-    document.querySelectorAll('#booking-dialog [data-dialog-close]').forEach(el => {
-      el.addEventListener('click', () => {
-        const dialog = document.getElementById('booking-dialog');
-        closeDialog(dialog);
-      });
-    });
-
-    // Submit booking
-    const bookingForm = document.getElementById('booking-form');
-    const toast = document.getElementById('toast');
-    if (bookingForm) {
-      bookingForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const dialog = document.getElementById('booking-dialog');
-        closeDialog(dialog);
-        if (toast) {
-          toast.classList.remove('hidden');
-          setTimeout(() => toast.classList.add('hidden'), 2500);
-        }
-        bookingForm.reset();
-      });
-    }
-
-    // Close dialog on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const dialog = document.getElementById('booking-dialog');
-        if (dialog && !dialog.classList.contains('hidden')) closeDialog(dialog);
-      }
-    });
-  </script>
-</body>
-</html>
-<!-- Services -->
-  <section class="p-4">
-    ...
-  </section>
-
-  <!-- VIP Room Features -->
+  <!-- VIP Room Features (kept only once) -->
   <section class="p-4">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-lg font-bold">VIP Room Features</h2>
-      <a href="#" class="text-sm text-gray-500">Explore</a>
+      <h2 class="text-lg font-bold text-primary">VIP Room Features</h2>
+      <a href="#" class="text-sm text-primary hover:underline">Explore</a>
     </div>
-
     <div class="flex space-x-4 overflow-x-auto no-scrollbar">
       <!-- Card 1 -->
       <div class="relative bg-white rounded-2xl shadow-md overflow-hidden w-56 flex-shrink-0">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Skyline Lounge Dubai" class="h-36 w-full object-cover">
         <div class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
           </svg>
         </div>
         <div class="p-3">
           <h3 class="font-semibold text-gray-800 text-sm">Skyline Lounge, Dubai</h3>
           <p class="text-xs text-gray-500">Dubai, UAE</p>
-          <div class="flex items-center mt-1 text-yellow-400">
-            <span class="mr-1">⭐⭐⭐⭐⭐</span>
-            <span class="text-gray-600 text-xs">4.9</span>
-          </div>
         </div>
       </div>
-
       <!-- Card 2 -->
       <div class="relative bg-white rounded-2xl shadow-md overflow-hidden w-56 flex-shrink-0">
         <img src="https://images.unsplash.com/photo-1604014237744-df2b4c03d86b?auto=format&fit=crop&w=800&q=80" alt="Oceanview Suite Maldives" class="h-36 w-full object-cover">
         <div class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
           </svg>
         </div>
         <div class="p-3">
           <h3 class="font-semibold text-gray-800 text-sm">Oceanview Suite, Maldives</h3>
           <p class="text-xs text-gray-500">Malé, Maldives</p>
-          <div class="flex items-center mt-1 text-yellow-400">
-            <span class="mr-1">⭐⭐⭐⭐⭐</span>
-            <span class="text-gray-600 text-xs">5.0</span>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Doctors List -->
-  <section class="p-4">
-    ...
-  </section>
-<!-- VIP Room Features -->
-<section class="p-6">
-  <div class="flex items-center justify-between mb-6">
-    <h2 class="text-xl font-bold">VIP Room Features</h2>
-    <a href="#" class="text-base text-gray-500">Explore</a>
-  </div>
-
-  <div class="flex space-x-6 overflow-x-auto no-scrollbar">
-    <!-- Card 1 -->
-    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden w-64 flex-shrink-0">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Skyline Lounge Dubai" class="h-44 w-full object-cover">
-      <div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
-        </svg>
-      </div>
-      <div class="p-4">
-        <h3 class="font-semibold text-gray-800 text-base">Skyline Lounge, Dubai</h3>
-        <p class="text-sm text-gray-500">Dubai, UAE</p>
-        <div class="flex items-center mt-2 text-yellow-400">
-          <span class="mr-1">⭐⭐⭐⭐⭐</span>
-          <span class="text-gray-600 text-sm">4.9</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden w-64 flex-shrink-0">
-      <img src="https://images.unsplash.com/photo-1604014237744-df2b4c03d86b?auto=format&fit=crop&w=800&q=80" alt="Oceanview Suite Maldives" class="h-44 w-full object-cover">
-      <div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
-        </svg>
-      </div>
-      <div class="p-4">
-        <h3 class="font-semibold text-gray-800 text-base">Oceanview Suite, Maldives</h3>
-        <p class="text-sm text-gray-500">Malé, Maldives</p>
-        <div class="flex items-center mt-2 text-yellow-400">
-          <span class="mr-1">⭐⭐⭐⭐⭐</span>
-          <span class="text-gray-600 text-sm">5.0</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 - Feature 1 -->
-    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden w-64 flex-shrink-0">
-      <img src="https://images.unsplash.com/photo-1628744440870-1aa3a2b3c4f3?auto=format&fit=crop&w=800&q=80" alt="Feature 1" class="h-44 w-full object-cover">
-      <div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
-        </svg>
-      </div>
-      <div class="p-4">
-        <h3 class="font-semibold text-gray-800 text-base">Feature 1</h3>
-        <p class="text-sm text-gray-500">Luxury Upgrade</p>
-        <div class="flex items-center mt-2 text-yellow-400">
-          <span class="mr-1">⭐⭐⭐⭐⭐</span>
-          <span class="text-gray-600 text-sm">5.0</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 - Feature 2 -->
-    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden w-64 flex-shrink-0">
-      <img src="https://images.unsplash.com/photo-1626040556424-c1e4a4af99c7?auto=format&fit=crop&w=800&q=80" alt="Feature 2" class="h-44 w-full object-cover">
-      <div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5S12 5.765 12 8.25 14.015 12.75 16.5 12.75 21 10.735 21 8.25z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25c0-2.485-2.015-4.5-4.5-4.5S3 5.765 3 8.25 5.015 12.75 7.5 12.75 12 10.735 12 8.25z" />
-        </svg>
-      </div>
-      <div class="p-4">
-        <h3 class="font-semibold text-gray-800 text-base">Feature 2</h3>
-        <p class="text-sm text-gray-500">Premium Comfort</p>
-        <div class="flex items-center mt-2 text-yellow-400">
-          <span class="mr-1">⭐⭐⭐⭐⭐</span>
-          <span class="text-gray-600 text-sm">4.8</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</body>
+</html>
