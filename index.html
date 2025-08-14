@@ -5,17 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
   <title>Doctor Appointment App</title>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            health: '#E8F5E9'
-          }
-        }
-      }
-    };
-  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Enables the .no-scrollbar utility used below */
@@ -23,7 +12,7 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-health font-sans">
+<body class="bg-gray-50 font-sans">
 
   <!-- Header -->
   <header class="flex items-center justify-between p-4 bg-white shadow-sm">
@@ -49,7 +38,7 @@
   <section class="p-4">
     <div class="bg-white rounded-2xl shadow-md p-4 relative">
       <!-- Favorite icon -->
-      <button type="button" class="absolute top-4 right-4 text-red-500 hover:scale-110 transition-transform" aria-label="Toggle favorite" id="favorite-toggle" aria-pressed="false">
+      <button type="button" class="absolute top-4 right-4 text-gray-300 hover:scale-110 transition-transform" aria-label="Add to favorites" id="favorite-toggle" aria-pressed="false">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
         </svg>
@@ -61,7 +50,7 @@
           <h2 class="text-lg font-semibold">Dr. Maria Lopez</h2>
           <p class="text-sm text-gray-500">8 years experience</p>
           <div class="flex items-center gap-1 text-yellow-500 text-sm" aria-label="Rating 4.9 out of 5 from 2,314 reviews">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-yellow-500" viewBox="0 0 20 20" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.162a1 1 0 00.95.69h3.324c.969 0 1.371 1.24.588 1.81l-2.69 1.954a1 1 0 00-.364 1.118l1.03 3.162c.3.921-.755 1.688-1.54 1.118L10 13.347l-2.99 2.014c-.785.57-1.84-.197-1.54-1.118l1.03-3.162a1 1 0 00-.364-1.118L3.446 8.59c-.783-.57-.38-1.81.588-1.81h3.324a1 1 0 00.95-.69l1.03-3.162z"/>
             </svg>
             <span class="text-gray-700 font-medium">4.9</span>
@@ -177,7 +166,7 @@
   </div>
 
   <!-- Toast -->
-  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-lg shadow hidden">
+  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-lg shadow hidden" role="status" aria-live="polite" aria-atomic="true">
     Appointment booked successfully
   </div>
 
@@ -209,32 +198,101 @@
     // Favorite toggle
     const favoriteToggle = document.getElementById('favorite-toggle');
     if (favoriteToggle) {
+      const initPressed = favoriteToggle.getAttribute('aria-pressed') === 'true';
+      favoriteToggle.classList.toggle('text-red-500', initPressed);
+      favoriteToggle.classList.toggle('text-gray-300', !initPressed);
       favoriteToggle.addEventListener('click', () => {
         const pressed = favoriteToggle.getAttribute('aria-pressed') === 'true';
-        favoriteToggle.setAttribute('aria-pressed', String(!pressed));
-        favoriteToggle.classList.toggle('text-red-500', !pressed);
-        favoriteToggle.classList.toggle('text-gray-300', pressed);
+        const nextPressed = !pressed;
+        favoriteToggle.setAttribute('aria-pressed', String(nextPressed));
+        favoriteToggle.classList.toggle('text-red-500', nextPressed);
+        favoriteToggle.classList.toggle('text-gray-300', !nextPressed);
+        favoriteToggle.setAttribute('aria-label', nextPressed ? 'Remove from favorites' : 'Add to favorites');
       });
     }
 
+    // Focus helpers
+    let lastActiveTrigger = null;
+    function getFocusableElements(container) {
+      const selectors = [
+        'a[href]',
+        'button:not([disabled])',
+        'textarea:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])',
+        '[data-dialog-close]'
+      ];
+      return Array.from(container.querySelectorAll(selectors.join(',')))
+        .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+    }
+    function setBackgroundInert(isInert, exclude = []) {
+      const exclusions = new Set(exclude);
+      const children = Array.from(document.body.children);
+      for (const el of children) {
+        if (exclusions.has(el)) continue;
+        if (isInert) {
+          el.setAttribute('aria-hidden', 'true');
+          el.setAttribute('inert', '');
+        } else {
+          el.removeAttribute('aria-hidden');
+          el.removeAttribute('inert');
+        }
+      }
+    }
+
     // Dialog helpers
-    function openDialog(selector) {
+    function openDialog(selector, triggerEl) {
       const dialog = document.querySelector(selector);
       if (!dialog) return;
+      lastActiveTrigger = triggerEl || document.activeElement;
       dialog.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
-      const firstFocusable = dialog.querySelector('input, select, textarea, button, [data-dialog-close]');
+      setBackgroundInert(true, [dialog]);
+      const firstFocusable = getFocusableElements(dialog)[0];
       if (firstFocusable) firstFocusable.focus();
+
+      function handleKeydown(e) {
+        if (e.key === 'Tab') {
+          const focusables = getFocusableElements(dialog);
+          if (focusables.length === 0) return;
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first || !dialog.contains(document.activeElement)) {
+              last.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === last) {
+              first.focus();
+              e.preventDefault();
+            }
+          }
+        } else if (e.key === 'Escape') {
+          closeDialog(dialog);
+        }
+      }
+      dialog.addEventListener('keydown', handleKeydown);
+      dialog._handleKeydown = handleKeydown;
     }
     function closeDialog(dialog) {
       dialog.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
+      setBackgroundInert(false, [dialog]);
+      if (dialog._handleKeydown) {
+        dialog.removeEventListener('keydown', dialog._handleKeydown);
+        delete dialog._handleKeydown;
+      }
+      if (lastActiveTrigger && typeof lastActiveTrigger.focus === 'function') {
+        lastActiveTrigger.focus();
+      }
     }
 
     // Open dialog
     document.querySelectorAll('[data-dialog-target]').forEach(btn => {
       btn.addEventListener('click', () => {
-        openDialog(btn.getAttribute('data-dialog-target'));
+        openDialog(btn.getAttribute('data-dialog-target'), btn);
       });
     });
 
@@ -252,23 +310,37 @@
     if (bookingForm) {
       bookingForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const formData = new FormData(bookingForm);
+        const date = formData.get('date');
+        const time = formData.get('time');
         const dialog = document.getElementById('booking-dialog');
         closeDialog(dialog);
         if (toast) {
+          toast.textContent = date && time ? `Appointment booked for ${date} at ${time}` : 'Appointment booked successfully';
           toast.classList.remove('hidden');
-          setTimeout(() => toast.classList.add('hidden'), 2500);
+          setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.textContent = 'Appointment booked successfully';
+          }, 2500);
         }
         bookingForm.reset();
       });
     }
 
-    // Close dialog on Escape
+    // Close dialog on Escape when not focused inside dialog
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         const dialog = document.getElementById('booking-dialog');
         if (dialog && !dialog.classList.contains('hidden')) closeDialog(dialog);
       }
     });
+
+    // Set min date to today
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+      const today = new Date().toISOString().slice(0, 10);
+      dateInput.min = today;
+    }
   </script>
 </body>
 </html>
