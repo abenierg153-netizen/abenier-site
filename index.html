@@ -7,10 +7,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+    .fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+    .fade-up-delay-4 { animation-delay: 0.4s; }
   </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -31,6 +43,71 @@
       </svg>
     </button>
   </header>
+
+  <!-- HERO -->
+  <section class="px-4 py-4 bg-white">
+    <div class="flex items-center justify-between bg-white rounded-2xl shadow-sm p-4">
+      <div class="flex-1">
+        <h2 class="text-lg font-semibold text-gray-900">Dr. Johan Smit</h2>
+        <p class="text-sm text-gray-500">10 years experienced</p>
+        <p class="text-xs text-gray-400">Your smile our specialty</p>
+        <div class="flex items-center mt-1">
+          <div class="flex text-yellow-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+          </div>
+          <span class="ml-1 text-xs text-gray-500">5.0 (3,964)</span>
+        </div>
+        <button class="mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">
+          Book Now
+        </button>
+      </div>
+      <div class="ml-3 flex-shrink-0">
+        <img src="doctor.jpg" alt="Doctor" class="w-20 h-20 object-cover rounded-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES -->
+  <section class="px-4 py-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-900 uppercase">OUR SERVICES</h3>
+      <a href="#" class="text-sm text-blue-500">See All →</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-blue-500 text-white p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 7</span>
+          <span class="bg-blue-700 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold">Orthodontics</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Retainers</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 3</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Cleanings</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Oral Hygiene</h4>
+      </div>
+    </div>
+  </section>
 
   <!-- VIP ROOM -->
   <section class="px-4 py-4">
@@ -56,48 +133,26 @@
       </h3>
       <p class="text-sm text-gray-500 mt-1">YOUR SMILE IS OUR BEST REVIEW</p>
     </div>
-    <div id="casesGrid" class="grid grid-cols-2 gap-4">
-      <!-- Case 1 to 8 -->
+    <div class="grid grid-cols-2 gap-5">
+      <!-- Generate Case 1 to Case 14 -->
       <script>
-        const allCases = ["Before", "After"];
-        for (let i = 3; i <= 14; i++) allCases.push("Case " + i);
-
-        // First 8 visible
-        allCases.slice(0, 8).forEach(c => {
-          document.write(`
-            <div class="bg-white rounded-3xl shadow p-3">
-              <img src="https://via.placeholder.com/300x200?text=${encodeURIComponent(c)}" class="w-full h-36 object-cover rounded-2xl mb-2">
-              <h4 class="text-base font-semibold text-gray-900">${c}</h4>
-            </div>
-          `);
-        });
-
-        // Remaining hidden
-        allCases.slice(8).forEach(c => {
-          document.write(`
-            <div class="bg-white rounded-3xl shadow p-3 hidden extra-case">
-              <img src="https://via.placeholder.com/300x200?text=${encodeURIComponent(c)}" class="w-full h-36 object-cover rounded-2xl mb-2">
-              <h4 class="text-base font-semibold text-gray-900">${c}</h4>
-            </div>
-          `);
-        });
+        const cases = ["Before","After"];
+        for(let i=3;i<=14;i++){ cases.push("Case "+i); }
+        document.write(cases.map(c => `
+          <div class="bg-white rounded-3xl shadow p-4">
+            <img src="https://via.placeholder.com/400x250?text=${encodeURIComponent(c)}" class="w-full h-44 object-cover rounded-2xl mb-3">
+            <h4 class="text-lg font-semibold text-gray-900">${c}</h4>
+          </div>
+        `).join(''));
       </script>
     </div>
-
     <!-- Load More Button -->
-    <div class="text-center mt-4">
-      <button id="loadMoreBtn" class="px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">
+    <div class="mt-6 text-center">
+      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
         Load More
       </button>
     </div>
   </section>
-
-  <script>
-    document.getElementById("loadMoreBtn").addEventListener("click", function() {
-      document.querySelectorAll(".extra-case").forEach(el => el.classList.remove("hidden"));
-      this.style.display = "none"; // Hide button after loading
-    });
-  </script>
 
 </body>
 </html>
