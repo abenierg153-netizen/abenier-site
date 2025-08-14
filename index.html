@@ -1,434 +1,164 @@
 <!DOCTYPE html>
-
-<html lang=”en”>
-
+<html lang="en">
 <head>
-
-  <meta charset=”UTF-8” />
-
-  <meta name=”viewport” content=”width=device-width, initial-scale=1.0” />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yanet Special Dental Clinic</title>
-
-  <script src=https://cdn.tailwindcss.com></script>
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-
     @keyframes fadeUp {
-
-      0% { opacity: 0; transform: translateY(20px); }
-
-      100% { opacity: 1; transform: translateY(0); }
-
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-
-    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
-
+    .fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
     .fade-up-delay-1 { animation-delay: 0.1s; }
-
     .fade-up-delay-2 { animation-delay: 0.2s; }
-
     .fade-up-delay-3 { animation-delay: 0.3s; }
-
     .fade-up-delay-4 { animation-delay: 0.4s; }
-
   </style>
-
 </head>
+<body class="bg-gray-100 font-sans">
 
-<body class=”bg-gray-100 font-sans”>
-
-
-
-  <!—HEADER 
-
-  <header class=”bg-yellow-400 flex items-center justify-between px-4 py-3”>
-
+  <!-- HEADER -->
+  <header class="bg-yellow-400 flex items-center justify-between px-4 py-3">
     <button>
-
-      <svg xmlns=http://www.w3.org/2000/svg class=”w-6 h-6 text-gray-900” fill=”none” viewBox=”0 0 24 24” stroke=”currentColor”>
-
-        <path stroke-linecap=”round” stroke-linejoin=”round” stroke-width=”2” d=”M4 6h16M4 12h16M4 18h16” />
-
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-
     </button>
-
-    <h1 class=”text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center”>
-
+    <h1 class="text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center">
       Yanet Special Dental Clinic
-
     </h1>
-
     <button>
-
-      <svg xmlns=http://www.w3.org/2000/svg class=”w-6 h-6 text-gray-900” fill=”none” viewBox=”0 0 24 24” stroke=”currentColor”>
-
-        <path stroke-linecap=”round” stroke-linejoin=”round” stroke-width=”2” d=”M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.496M15 7a3 3 0 11-6 0 3 3 0 016 0z” />
-
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.496M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
-
     </button>
-
   </header>
 
-
-
-  <!—HERO 
-
-  <section class=”px-4 py-4 bg-white”>
-
-    <div class=”flex items-center justify-between bg-white rounded-2xl shadow-sm p-4”>
-
-      <div class=”flex-1”>
-
-        <h2 class=”text-lg font-semibold text-gray-900”>Dr. Johan Smit</h2>
-
-        <p class=”text-sm text-gray-500”>10 years experienced</p>
-
-        <p class=”text-xs text-gray-400”>Your smile our specialty</p>
-
-        <div class=”flex items-center mt-1”>
-
-          <div class=”flex text-yellow-400”>
-
-            <svg xmlns=http://www.w3.org/2000/svg class=”w-4 h-4 fill-current” viewBox=”0 0 20 20”><path d=”M9.049 2.927c…”/></svg>
-
-            <svg xmlns=http://www.w3.org/2000/svg class=”w-4 h-4 fill-current” viewBox=”0 0 20 20”><path d=”M9.049 2.927c…”/></svg>
-
-            <svg xmlns=http://www.w3.org/2000/svg class=”w-4 h-4 fill-current” viewBox=”0 0 20 20”><path d=”M9.049 2.927c…”/></svg>
-
-            <svg xmlns=http://www.w3.org/2000/svg class=”w-4 h-4 fill-current” viewBox=”0 0 20 20”><path d=”M9.049 2.927c…”/></svg>
-
-            <svg xmlns=http://www.w3.org/2000/svg class=”w-4 h-4 fill-current” viewBox=”0 0 20 20”><path d=”M9.049 2.927c…”/></svg>
-
+  <!-- HERO -->
+  <section class="px-4 py-4 bg-white">
+    <div class="flex items-center justify-between bg-white rounded-2xl shadow-sm p-4">
+      <div class="flex-1">
+        <h2 class="text-lg font-semibold text-gray-900">Dr. Johan Smit</h2>
+        <p class="text-sm text-gray-500">10 years experienced</p>
+        <p class="text-xs text-gray-400">Your smile our specialty</p>
+        <div class="flex items-center mt-1">
+          <div class="flex text-yellow-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
           </div>
-
-          <span class=”ml-1 text-xs text-gray-500”>5.0 (3,964)</span>
-
+          <span class="ml-1 text-xs text-gray-500">5.0 (3,964)</span>
         </div>
-
-        <button class=”mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg”>
-
+        <button class="mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">
           Book Now
-
         </button>
-
       </div>
-
-      <div class=”ml-3 flex-shrink-0”>
-
-        <img src=”doctor.jpg” alt=”Doctor” class=”w-20 h-20 object-cover rounded-xl”>
-
+      <div class="ml-3 flex-shrink-0">
+        <img src="doctor.jpg" alt="Doctor" class="w-20 h-20 object-cover rounded-xl">
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!—OUR SERVICES 
-
-  <section class=”px-4 py-4”>
-
-    <div class=”flex items-center justify-between mb-3”>
-
-      <h3 class=”text-lg font-semibold text-gray-900 uppercase”>OUR SERVICES</h3>
-
-      <a href=”#” class=”text-sm text-blue-500”>See All →</a>
-
+  <!-- OUR SERVICES -->
+  <section class="px-4 py-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-900 uppercase">OUR SERVICES</h3>
+      <a href="#" class="text-sm text-blue-500">See All →</a>
     </div>
-
-    <div class=”grid grid-cols-2 gap-4”>
-
-      <div class=”bg-blue-500 text-white p-4 rounded-2xl”>
-
-        <div class=”flex justify-between items-center mb-2”>
-
-          <span class=”text-sm”>Available 7</span>
-
-          <span class=”bg-blue-700 text-xs px-2 py-0.5 rounded-full”>This week</span>
-
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-blue-500 text-white p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 7</span>
+          <span class="bg-blue-700 text-xs px-2 py-0.5 rounded-full">This week</span>
         </div>
-
-        <h4 class=”text-lg font-semibold”>Orthodontics</h4>
-
+        <h4 class="text-lg font-semibold">Orthodontics</h4>
       </div>
-
-      <div class=”bg-white shadow p-4 rounded-2xl”>
-
-        <div class=”flex justify-between items-center mb-2”>
-
-          <span class=”text-sm”>Available 4</span>
-
-          <span class=”bg-gray-100 text-xs px-2 py-0.5 rounded-full”>This week</span>
-
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
         </div>
-
-        <h4 class=”text-lg font-semibold text-gray-900”>Retainers</h4>
-
+        <h4 class="text-lg font-semibold text-gray-900">Retainers</h4>
       </div>
-
-      <div class=”bg-white shadow p-4 rounded-2xl”>
-
-        <div class=”flex justify-between items-center mb-2”>
-
-          <span class=”text-sm”>Available 3</span>
-
-          <span class=”bg-gray-100 text-xs px-2 py-0.5 rounded-full”>This week</span>
-
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 3</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
         </div>
-
-        <h4 class=”text-lg font-semibold text-gray-900”>Cleanings</h4>
-
+        <h4 class="text-lg font-semibold text-gray-900">Cleanings</h4>
       </div>
-
-      <div class=”bg-white shadow p-4 rounded-2xl”>
-
-        <div class=”flex justify-between items-center mb-2”>
-
-          <span class=”text-sm”>Available 4</span>
-
-          <span class=”bg-gray-100 text-xs px-2 py-0.5 rounded-full”>This week</span>
-
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
         </div>
-
-        <h4 class=”text-lg font-semibold text-gray-900”>Oral Hygiene</h4>
-
+        <h4 class="text-lg font-semibold text-gray-900">Oral Hygiene</h4>
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!—VIP ROOM 
-
-  <section class=”px-4 py-4”>
-
-    <div class=”flex items-center justify-between mb-3”>
-
-      <h3 class=”text-lg font-semibold text-gray-900”>VIP ROOM</h3>
-
-      <a href=”#” class=”text-sm text-blue-500”>See All →</a>
-
+  <!-- VIP ROOM -->
+  <section class="px-4 py-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-900">VIP ROOM</h3>
+      <a href="#" class="text-sm text-blue-500">See All →</a>
     </div>
-
-    <div class=”flex space-x-4 overflow-x-auto”>
-
-      <img src=https://via.placeholder.com/250x160?text=VIP+Room+1 class=”w-64 h-40 rounded-2xl object-cover flex-shrink-0”>
-
-      <img src=https://via.placeholder.com/250x160?text=VIP+Room+2 class=”w-64 h-40 rounded-2xl object-cover flex-shrink-0”>
-
-      <img src=https://via.placeholder.com/250x160?text=VIP+Room+3 class=”w-64 h-40 rounded-2xl object-cover flex-shrink-0”>
-
+    <div class="flex space-x-4 overflow-x-auto">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+1" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+2" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+3" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
     </div>
-
-    <div class=”mt-3”>
-
-      <h4 class=”text-base font-semibold text-gray-900”>Where advanced care meets exclusive comfort</h4>
-
+    <div class="mt-3">
+      <h4 class="text-base font-semibold text-gray-900">89 amenities</h4>
+      <p class="text-sm text-gray-500">Enjoy exclusive stays at luxurious hotels</p>
     </div>
-
   </section>
 
-
-
-  <!—SOCIAL PROOF 
-
-  <section class=”px-4 py-6 bg-[#fdf6ec]”>
-
-    <div class=”text-center mb-6”>
-
-      <h3 class=”text-lg font-bold text-gray-900 uppercase border-b-4 border-yellow-400 inline-block pb-1”>
-
+  <!-- SOCIAL PROOF -->
+  <section class="px-4 py-6 bg-[#fdf6ec]">
+    <div class="text-center mb-6">
+      <h3 class="text-lg font-bold text-gray-900 uppercase border-b-4 border-yellow-400 inline-block pb-1">
         SOCIAL PROOF
-
       </h3>
-
-      <p class=”text-sm text-gray-500 mt-1”>YOUR SMILE IS OUR BEST REVIEW</p>
-
+      <p class="text-sm text-gray-500 mt-1">YOUR SMILE IS OUR BEST REVIEW</p>
     </div>
-
-    <div id=”casesGrid” class=”grid grid-cols-2 gap-4”>
-
-      <!—First 8 cases visible 
-
-      <div class=”bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-1”>
-
-        <img src=https://via.placeholder.com/350x240?text=Before+Image class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Before</h4>
-
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-1">
+        <img src="https://via.placeholder.com/300x200?text=Before+Image" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Before</h4>
       </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-2”>
-
-        <img src=https://via.placeholder.com/350x240?text=After+Image class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>After</h4>
-
+      <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-2">
+        <img src="https://via.placeholder.com/300x200?text=After+Image" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">After</h4>
       </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+3 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 3</h4>
-
+      <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-3">
+        <img src="https://via.placeholder.com/300x200?text=Case+3" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 3</h4>
       </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-4”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+4 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 4</h4>
-
+      <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-4">
+        <img src="https://via.placeholder.com/300x200?text=Case+4" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 4</h4>
       </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+5 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 5</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+6 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 6</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+7 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 7</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+8 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 8</h4>
-
-      </div>
-
     </div>
-
-
-
-    <!—Hidden extra cases 
-
-    <div id=”extraCases” class=”grid grid-cols-2 gap-4 mt-4 hidden”>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+9 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 9</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+10 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 10</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+11 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 11</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+12 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 12</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+13 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 13</h4>
-
-      </div>
-
-      <div class=”bg-white rounded-3xl shadow p-3”>
-
-        <img src=https://via.placeholder.com/350x240?text=Case+14 class=”w-full h-36 object-cover rounded-2xl mb-2”>
-
-        <h4 class=”text-base font-semibold text-gray-900”>Case 14</h4>
-
-      </div>
-
-    </div>
-
-
-
-    <!—Load More Button 
-
-    <div class=”mt-6 text-center”>
-
-      <button id=”loadMoreBtn” class=”px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition”>
-
+    <!-- Load More Button -->
+    <div class="mt-6 text-center fade-up fade-up-delay-4">
+      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
         Load More
-
       </button>
-
     </div>
-
   </section>
-
-
-
-  <script>
-
-    Document.getElementById(‘loadMoreBtn’).addEventListener(‘click’, function() {
-
-      Document.getElementById(‘extraCases’).classList.remove(‘hidden’);
-
-      This.style.display = ‘none’;
-
-    });
-
-  </script>
-
-
 
 </body>
-
 </html>
-
-<div style=”background-color: #ff2c55; color: white; display: flex; align-items: center; justify-content: space-between; padding: 12px; border-radius: 6px; font-family: Arial, sans-serif; font-weight: bold; font-size: 18px; width: 100%; max-width: 600px;”>
-
-  <span>
-
-    4 DAYS LEFT – <span style=”font-weight: normal;”>Healthy Living Sale</span>
-
-  </span>
-
-  <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Heart_icon_red_hollow.svg/1200px-Heart_icon_red_hollow.svg.png 
-
-       Alt=”Health Icon” 
-
-       Style=”height: 40px; width: auto;”>
-
-</div>
-
-
-
