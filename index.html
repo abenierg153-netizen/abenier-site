@@ -410,3 +410,123 @@
     }
   }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us Animated Section</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f9fc;
+    margin: 0;
+    padding: 0;
+  }
+
+  .info-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .section-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #f0f8ff;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  .section-block.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #0077b6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title span {
+    font-size: 1.5em;
+  }
+
+  .section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section-list li {
+    margin: 10px 0;
+    font-size: 1em;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section-list li span {
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+<div class="info-section">
+  
+  <div class="section-block">
+    <div class="section-title"><span>ℹ️</span> ABOUT US</div>
+    <ul class="section-list">
+      <li><span>✅</span> From the heart of Ethiopia, Yanet Specialty Dental Clinic is redefining the future of dentistry.</li>
+      <li><span>✅</span> Started by four passionate professionals, now a state-of-the-art center with the latest digital technology.</li>
+      <li><span>✅</span> Proud home to Ethiopia’s first robotic tooth-preparation machine.</li>
+    </ul>
+  </div>
+
+  <div class="section-block" style="background:#fff5e6;">
+    <div class="section-title"><span>🚀</span> OUR VISION</div>
+    <ul class="section-list">
+      <li><span>📈</span> Rising to join the 🏅 World’s Top 10 Dental Clinics.</li>
+      <li><span>✈️</span> Dental Tourism — Bringing the world to Ethiopia for top-tier smiles and rich cultural experiences.</li>
+      <li><span>🌍</span> Growth Ahead — Expanding to Dubai & East Africa as Yanet International, driven by innovation, compassion, and world-class standards.</li>
+    </ul>
+  </div>
+
+  <div class="section-block" style="background:#e8f9f3;">
+    <div class="section-title"><span>🏢</span> OUR FACILITIES</div>
+    <ul class="section-list">
+      <li><span>💼</span> Three VIP Rooms — Privacy and fast-track treatment at no extra cost, perfect for busy patients.</li>
+      <li><span>🔬</span> In-House Dental Laboratory — Precision, speed, and unmatched quality in every treatment.</li>
+      <li><span>👨‍👩‍👧</span> Family & Children’s Classes — Fun, engaging education because prevention starts early.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  // Scroll animation
+  const blocks = document.querySelectorAll('.section-block');
+  window.addEventListener('scroll', () => {
+    blocks.forEach(block => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        block.classList.add('visible');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
