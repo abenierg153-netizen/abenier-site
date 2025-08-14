@@ -1,115 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0D9488" />
-  <title>Doctor Appointment App</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            health: '#F0FDF4', /* soft mint */
-            primary: '#0D9488', /* teal */
-            secondary: '#14B8A6', /* light teal */
-            accent: '#FDE68A', /* soft yellow */
-          }
-        }
-      }
-    };
-  </script>
-  <style>
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  </style>
-</head>
-<body class="bg-health font-sans">
-
-  <!-- Header -->
-  <header class="flex items-center justify-between p-4 bg-white shadow-sm">
-    <div class="flex items-center gap-3">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="w-10 h-10 rounded-full">
-      <h1 class="text-lg font-semibold">Hi, Alex 👋</h1>
+<!-- Header Section -->
+<header class="flex items-center justify-between px-4 py-3 bg-white">
+  <!-- Left: Profile + Greeting -->
+  <div class="flex items-center space-x-3">
+    <img src="profile.jpg" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+    <div class="flex flex-col leading-tight">
+      <span class="font-semibold text-lg flex items-center">
+        Hello Alex <span class="ml-1">👋</span>
+      </span>
+      <span class="text-gray-500 text-sm">How are you today?</span>
     </div>
-    <div class="flex items-center gap-2 text-gray-600">
-      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+  </div>
+
+  <!-- Right: Icons -->
+  <div class="flex items-center space-x-4">
+    <!-- Search Icon -->
+    <button class="p-2 rounded-full bg-gray-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+    </button>
+
+    <!-- Notification Icon with Badge -->
+    <div class="relative">
+      <button class="p-2 rounded-full bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
         </svg>
       </button>
-      <button type="button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Notifications">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.159c0 .538-.214 1.055-.595 1.436L6 17h5" />
-        </svg>
-      </button>
+      <!-- Red Notification Badge -->
+      <span class="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+        1
+      </span>
     </div>
-  </header>
-
-  <!-- Featured Doctor -->
-  <section class="p-4">
-    <div class="bg-white rounded-2xl shadow-md p-4 relative">
-      <button type="button" class="absolute top-4 right-4 text-primary hover:scale-110 transition-transform" aria-label="Toggle favorite">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <div class="flex items-center gap-4">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Doctor" class="w-20 h-20 rounded-full object-cover">
-        <div>
-          <h2 class="text-lg font-semibold">Dr. Maria Lopez</h2>
-          <p class="text-sm text-gray-500">8 years experience</p>
-          <div class="flex items-center gap-1 text-yellow-500 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-yellow-500" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.162a1 1 0 00.95.69h3.324c.969 0 1.371 1.24.588 1.81l-2.69 1.954a1 1 0 00-.364 1.118l1.03 3.162c.3.921-.755 1.688-1.54 1.118L10 13.347l-2.99 2.014c-.785.57-1.84-.197-1.54-1.118l1.03-3.162a1 1 0 00-.364-1.118L3.446 8.59c-.783-.57-.38-1.81.588-1.81h3.324a1 1 0 00.95-.69l1.03-3.162z"/>
-            </svg>
-            <span class="text-gray-700 font-medium">4.9</span>
-            <span class="text-gray-500">(2,314 reviews)</span>
-          </div>
-          <button type="button" class="inline-block mt-2 px-3 py-1 text-sm rounded-full bg-primary text-white hover:bg-secondary">
-            Book Now
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIP Room Features (kept only once) -->
-  <section class="p-4">
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="text-lg font-bold text-primary">VIP Room Features</h2>
-      <a href="#" class="text-sm text-primary hover:underline">Explore</a>
-    </div>
-    <div class="flex space-x-4 overflow-x-auto no-scrollbar">
-      <!-- Card 1 -->
-      <div class="relative bg-white rounded-2xl shadow-md overflow-hidden w-56 flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Skyline Lounge Dubai" class="h-36 w-full object-cover">
-        <div class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-          </svg>
-        </div>
-        <div class="p-3">
-          <h3 class="font-semibold text-gray-800 text-sm">Skyline Lounge, Dubai</h3>
-          <p class="text-xs text-gray-500">Dubai, UAE</p>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="relative bg-white rounded-2xl shadow-md overflow-hidden w-56 flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1604014237744-df2b4c03d86b?auto=format&fit=crop&w=800&q=80" alt="Oceanview Suite Maldives" class="h-36 w-full object-cover">
-        <div class="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-          </svg>
-        </div>
-        <div class="p-3">
-          <h3 class="font-semibold text-gray-800 text-sm">Oceanview Suite, Maldives</h3>
-          <p class="text-xs text-gray-500">Malé, Maldives</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</body>
-</html>
+  </div>
+</header>
