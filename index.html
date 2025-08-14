@@ -1,238 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YANET Special Dental Clinic</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#eef3f9;
-      --card:#fff;
-      --text:#111827;
-      --muted:#6b7280;
-      --brand:#2b7fff;
-      --accent:#ff4d67;
-      --ring: rgba(43,127,255,.25);
-      --radius: 18px;
-      --shadow: 0 10px 22px rgba(16,24,40,.08), 0 4px 8px rgba(16,24,40,.06);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background:linear-gradient(180deg,#e3edf9, #eef3f9 30%, #eef3f9 100%);
-    }
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-
-    /* HEADER */
-    .header{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 16px;border-radius:28px;background:var(--card);box-shadow:var(--shadow)
-    }
-    .hello{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 auto;
-      background:#dbeafe;display:grid;place-items:center;border:2px solid #eef2ff;
-      font-weight:800;color:#1d4ed8
-    }
-    .hello .txt{line-height:1.1}
-    .hello h1{
-      margin:0;font-size:20px;font-weight:700;
-      display:flex;align-items:center;gap:8px
-    }
-    .hello p{margin:4px 0 0;color:var(--muted);font-weight:500;font-size:14px}
-    .actions{display:flex;gap:10px}
-    .icon-btn{
-      width:44px;height:44px;border-radius:50%;border:0;background:#f7fafc;cursor:pointer;
-      display:grid;place-items:center;box-shadow:inset 0 0 0 1px #edf2f7, var(--shadow)
-    }
-    .icon-btn:focus{outline:none;box-shadow:0 0 0 4px var(--ring), inset 0 0 0 1px #dbeafe}
-    .dot{position:relative}
-    .dot::after{
-      content:"";position:absolute;right:10px;top:10px;width:9px;height:9px;border-radius:50%;
-      background:#ef4444;box-shadow:0 0 0 2px #fff
-    }
-
-    /* CARD */
-    .doc-card{
-      margin-top:16px;background:var(--card);border-radius:26px;box-shadow:var(--shadow);
-      padding:20px;display:flex;align-items:center;gap:16px
-    }
-    .doc-photo{
-      width:120px;height:120px;border-radius:18px;overflow:hidden;flex:0 0 auto;
-      display:grid;place-items:center;background:#f3f4f6;position:relative
-    }
-    .doc-photo img{width:100%;height:100%;object-fit:cover}
-    .upload{
-      position:absolute;inset:auto 8px 8px auto;background:#fff;border-radius:999px;
-      padding:6px 10px;font-size:12px;box-shadow:var(--shadow);cursor:pointer
-    }
-    .doc-info{flex:1}
-    .doc-top{display:flex;justify-content:space-between;align-items:start}
-    .doc-name{margin:0;font-weight:700;font-size:20px}
-    .fav{color:#ff5a76}
-    .meta{display:flex;gap:12px;align-items:center;color:var(--muted);margin-top:6px;font-weight:600}
-    .stars{color:#f59e0b}
-    .pill{
-      margin-top:12px;display:inline-flex;align-items:center;gap:8px;
-      background:#f1f5f9;padding:8px 12px;border-radius:999px;font-weight:600;color:#334155
-    }
-
-    /* HERO (updated) */
-    .hero {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      padding: 30px 0;
-    }
-    .hero-left img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .hero-right {
-      flex: 1;
-    }
-    .clinic-headline {
-      font-size: 32px;
-      font-weight: 800;
-      color: #2b7fff;
-      margin: 0 0 10px;
-    }
-    .clinic-subheadline {
-      font-size: 22px;
-      font-weight: 600;
-      color: #444;
-      margin: 0 0 5px;
-    }
-    .clinic-location {
-      font-size: 16px;
-      color: #666;
-      margin: 0 0 15px;
-    }
-    .clinic-desc {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .book-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #2b7fff;
-      color: #fff;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(43,127,255,0.3);
-      transition: background 0.3s;
-    }
-    .book-btn:hover {
-      background: #1f5ecf;
-    }
-    .book-btn .icon {
-      font-size: 18px;
-    }
-
-    @media (max-width: 900px){
-      .hero{flex-direction:column;gap:16px}
-      .clinic-headline{font-size:28px}
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Appointment App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
+<body class="bg-gray-50 font-sans">
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="hello">
-        <div class="logo">YS</div>
-        <div class="txt">
-          <h1>Hello, Johan <span>👋</span></h1>
-          <p>How are you today?</p>
+  <!-- Header -->
+  <header class="flex items-center justify-between p-4 bg-white shadow-sm">
+    <div class="flex items-center gap-3">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+      <h1 class="text-lg font-semibold">Hi, Alex 👋</h1>
+    </div>
+    <div class="flex items-center gap-4 text-gray-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 9v5.159c0 .538-.214 1.055-.595 1.436L6 17h5" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- Featured Doctor -->
+  <section class="p-4">
+    <div class="bg-white rounded-2xl shadow-md p-4 relative">
+      <!-- Favorite icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 absolute top-4 right-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+      </svg>
+
+      <div class="flex items-center gap-4">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Doctor" class="w-20 h-20 rounded-full object-cover">
+        <div>
+          <h2 class="text-lg font-semibold">Dr. Maria Lopez</h2>
+          <p class="text-sm text-gray-500">8 years experience</p>
+          <div class="flex items-center gap-1 text-yellow-500 text-sm">
+            ⭐ <span class="text-gray-700 font-medium">4.9</span> <span class="text-gray-500">(2,314 reviews)</span>
+          </div>
+          <span class="inline-block mt-2 px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-600">Book Now</span>
         </div>
       </div>
-      <div class="actions">
-        <button class="icon-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M21 21l-4.2-4.2m1.2-4.8a7 7 0 11-14 0 7 7 0 0114 0z" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="icon-btn dot">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0a3 3 0 11-6 0m6 0H9" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- Doctor card -->
-    <section class="doc-card">
-      <div class="doc-photo">
-        <img id="docPreview" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop" alt="Doctor portrait">
-        <label class="upload">
-          <input id="docUpload" type="file" accept="image/*" style="display:none;" />
-          Upload photo
-        </label>
+  <!-- Services -->
+  <section class="p-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold">Our Services</h3>
+      <button class="text-blue-500 text-sm">See All</button>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="rounded-xl p-4 text-white bg-red-500 shadow-md">
+        <h4 class="font-semibold">Heart Checkup</h4>
+        <p class="text-sm">Available 5</p>
       </div>
-      <div class="doc-info">
-        <div class="doc-top">
-          <h2 class="doc-name">Dr. Johan Smit</h2>
-          <span class="fav">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff4d67">
-              <path d="M12 21s-8-5.7-8-11a5 5 0 019-3 5 5 0 019 3c0 5.3-8 11-8 11z"/>
-            </svg>
-          </span>
-        </div>
-        <div class="meta">
-          <span>5 years experience</span>
-          <span class="stars">★★★★★</span>
-          <span>5.0 (3,964)</span>
-        </div>
-        <span class="pill">Dental Surgery • Specialist</span>
+      <div class="rounded-xl p-4 text-white bg-blue-400 shadow-md">
+        <h4 class="font-semibold">Blood Test</h4>
+        <p class="text-sm">Available 8</p>
       </div>
-    </section>
+      <div class="rounded-xl p-4 text-gray-800 bg-yellow-300 shadow-md">
+        <h4 class="font-semibold">X-Ray</h4>
+        <p class="text-sm">Available 2</p>
+      </div>
+      <div class="rounded-xl p-4 text-white bg-green-500 shadow-md">
+        <h4 class="font-semibold">Vaccination</h4>
+        <p class="text-sm">Available 6</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- HERO updated -->
-    <section class="hero">
-      <div class="hero-left">
-        <img src="https://images.unsplash.com/photo-1588771930291-39d27c8d2a3c?q=80&w=1200&auto=format&fit=crop" alt="Doctor at Yanet Dental Clinic">
+  <!-- Doctors List -->
+  <section class="p-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold">Doctors</h3>
+      <button class="text-blue-500 text-sm">See All</button>
+    </div>
+    <div class="flex gap-4 overflow-x-auto no-scrollbar">
+      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
+        <h4 class="text-sm font-semibold">Dr. Emily Clark</h4>
+        <p class="text-xs text-gray-500">Cardiologist</p>
       </div>
-      <div class="hero-right">
-        <h1 class="clinic-headline">YANET SPECIAL DENTAL CLINIC</h1>
-        <h2 class="clinic-subheadline">Your smile our specialty</h2>
-        <p class="clinic-location">Expert dental care in the heart of Addis Ababa</p>
-        <p class="clinic-desc">
-          We provide gentle, advanced dental treatment — from cleaning to cosmetic dentistry —
-          to keep your smile healthy and confident.
-        </p>
-        <button class="book-btn">
-          <span class="icon">😊</span>
-          Book Now
-        </button>
+      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
+        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
+        <h4 class="text-sm font-semibold">Dr. John Smith</h4>
+        <p class="text-xs text-gray-500">Radiologist</p>
       </div>
-    </section>
+      <div class="flex-shrink-0 w-36 bg-white rounded-xl shadow-md p-3 text-center">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Doctor" class="w-16 h-16 rounded-full mx-auto mb-2">
+        <h4 class="text-sm font-semibold">Dr. Sarah Kim</h4>
+        <p class="text-xs text-gray-500">General Practitioner</p>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- Navigation -->
+  <nav class="fixed bottom-0 w-full bg-white shadow-inner p-3 flex justify-around text-gray-500">
+    <button class="text-blue-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 3.172l5 5V17a1 1 0 01-1 1h-3v-4H9v4H6a1 1 0 01-1-1V8.172l5-5z" />
+      </svg>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387zM10 14a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+      </svg>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 12a5 5 0 100-10 5 5 0 000 10zm-7 7a7 7 0 0114 0H3z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </nav>
 
-  <script>
-    const docUpload = document.getElementById('docUpload');
-    const docPreview = document.getElementById('docPreview');
-    docUpload.addEventListener('change', (e) => {
-      const file = e.target.files?.[0];
-      if(!file) return;
-      const url = URL.createObjectURL(file);
-      docPreview.src = url;
-    });
-  </script>
 </body>
 </html>
