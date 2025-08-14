@@ -162,22 +162,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  body {
+    margin: 0;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Container to hold the banner with left/right spacing */
+  .banner-container {
+    padding: 0 12px; /* Matches the inset from the screenshot */
+    box-sizing: border-box;
+  }
+
   .banner {
     background-color: #ff2d55; /* Vibrant pink/red like original */
     border-radius: 8px;
     padding: 10px 0;
     text-align: center;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
     color: white;
     position: relative;
   }
 
   .banner-top-text {
     font-size: 14px;
-    font-weight: normal;
     margin-bottom: 4px;
     display: block;
   }
@@ -205,11 +214,13 @@
 </head>
 <body>
 
-<div class="banner">
-  <span class="banner-top-text">Special Dental Care Offer: Aug 18, 00:00 PT</span>
-  <span class="banner-main-text">4 DAYS LEFT</span>
-  <span class="banner-arrow">➤</span>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Tooth_icon_white.svg/512px-Tooth_icon_white.svg.png" alt="Tooth Icon" class="banner-icon">
+<div class="banner-container">
+  <div class="banner">
+    <span class="banner-top-text">Special Dental Care Offer: Aug 18, 00:00 PT</span>
+    <span class="banner-main-text">4 DAYS LEFT</span>
+    <span class="banner-arrow">➤</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Tooth_icon_white.svg/512px-Tooth_icon_white.svg.png" alt="Tooth Icon" class="banner-icon">
+  </div>
 </div>
 
 </body>
