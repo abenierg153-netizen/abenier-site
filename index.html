@@ -7,18 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    .fade-up {
-      animation: fadeUp 0.6s ease-out forwards;
-    }
+    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
     .fade-up-delay-1 { animation-delay: 0.1s; }
     .fade-up-delay-2 { animation-delay: 0.2s; }
     .fade-up-delay-3 { animation-delay: 0.3s; }
@@ -121,8 +113,7 @@
       <img src="https://via.placeholder.com/250x160?text=VIP+Room+3" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
     </div>
     <div class="mt-3">
-      <h4 class="text-base font-semibold text-gray-900">89 amenities</h4>
-      <p class="text-sm text-gray-500">Enjoy exclusive stays at luxurious hotels</p>
+      <h4 class="text-base font-semibold text-gray-900">Where advanced care meets exclusive comfort</h4>
     </div>
   </section>
 
@@ -134,31 +125,84 @@
       </h3>
       <p class="text-sm text-gray-500 mt-1">YOUR SMILE IS OUR BEST REVIEW</p>
     </div>
-    <div class="grid grid-cols-2 gap-4">
+    <div id="casesGrid" class="grid grid-cols-2 gap-4">
+      <!-- First 8 cases visible -->
       <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-1">
-        <img src="https://via.placeholder.com/300x200?text=Before+Image" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <img src="https://via.placeholder.com/350x240?text=Before+Image" class="w-full h-36 object-cover rounded-2xl mb-2">
         <h4 class="text-base font-semibold text-gray-900">Before</h4>
       </div>
       <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-2">
-        <img src="https://via.placeholder.com/300x200?text=After+Image" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <img src="https://via.placeholder.com/350x240?text=After+Image" class="w-full h-36 object-cover rounded-2xl mb-2">
         <h4 class="text-base font-semibold text-gray-900">After</h4>
       </div>
       <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-3">
-        <img src="https://via.placeholder.com/300x200?text=Case+3" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <img src="https://via.placeholder.com/350x240?text=Case+3" class="w-full h-36 object-cover rounded-2xl mb-2">
         <h4 class="text-base font-semibold text-gray-900">Case 3</h4>
       </div>
       <div class="bg-white rounded-3xl shadow p-3 fade-up fade-up-delay-4">
-        <img src="https://via.placeholder.com/300x200?text=Case+4" class="w-full h-32 object-cover rounded-2xl mb-2">
+        <img src="https://via.placeholder.com/350x240?text=Case+4" class="w-full h-36 object-cover rounded-2xl mb-2">
         <h4 class="text-base font-semibold text-gray-900">Case 4</h4>
       </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+5" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 5</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+6" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 6</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+7" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 7</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+8" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 8</h4>
+      </div>
     </div>
+
+    <!-- Hidden extra cases -->
+    <div id="extraCases" class="grid grid-cols-2 gap-4 mt-4 hidden">
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+9" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 9</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+10" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 10</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+11" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 11</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+12" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 12</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+13" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 13</h4>
+      </div>
+      <div class="bg-white rounded-3xl shadow p-3">
+        <img src="https://via.placeholder.com/350x240?text=Case+14" class="w-full h-36 object-cover rounded-2xl mb-2">
+        <h4 class="text-base font-semibold text-gray-900">Case 14</h4>
+      </div>
+    </div>
+
     <!-- Load More Button -->
-    <div class="mt-6 text-center fade-up fade-up-delay-4">
-      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
+    <div class="mt-6 text-center">
+      <button id="loadMoreBtn" class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
         Load More
       </button>
     </div>
   </section>
+
+  <script>
+    document.getElementById('loadMoreBtn').addEventListener('click', function() {
+      document.getElementById('extraCases').classList.remove('hidden');
+      this.style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>
