@@ -225,118 +225,32 @@
 
 </body>
 </html>
-import 'package:flutter/material.dart';
+<!-- OUR DOCTOR Section -->
+<section style="padding: 0 20px; font-family: sans-serif; margin-top: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2 style="font-size: 16px; font-weight: bold; margin: 0; color: #1a1a1a;">
+      OUR DOCTOR
+    </h2>
+    <div style="display: flex; align-items: center; gap: 4px; font-size: 14px; color: #777;">
+      <span>(55)</span>
+      <i class="fas fa-cog"></i>
+    </div>
+  </div>
 
-class DoctorSection extends StatelessWidget {
-  const DoctorSection({Key? key}) : super(key: key);
+  <div style="margin-top: 8px; background: white; border-radius: 12px; display: flex; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden;">
+    <img src="doctor_jenny.png" alt="Dr. Jenny Wilson" style="width: 80px; height: 80px; object-fit: cover;">
+    <div style="padding: 10px; flex: 1;">
+      <h3 style="margin: 0; font-size: 16px; font-weight: bold;">Dr. Jenny Wilson</h3>
+      <div style="display: flex; align-items: center; margin-top: 4px; font-size: 12px; color: #777;">
+        <i class="fas fa-star" style="color: #3b82f6; font-size: 12px; margin-right: 4px;"></i>
+        4.9 (3821 reviews)
+      </div>
+      <p style="margin: 4px 0 0; font-size: 12px; color: #555;">
+        Cardio Specialist - Nanyang Hospital
+      </p>
+    </div>
+  </div>
+</section>
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Title Row
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "OUR DOCTOR", // changed from "Doctors Near You"
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    "(55)",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  const SizedBox(width: 4),
-                  Icon(Icons.settings, size: 18, color: Colors.grey[600]),
-                ],
-              )
-            ],
-          ),
-        ),
-        const SizedBox(height: 8),
-
-        // Doctor Card
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  blurRadius: 8,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      bottomLeft: Radius.circular(12)),
-                  child: Image.asset(
-                    'assets/doctor_jenny.png', // same style photo
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Dr. Jenny Wilson",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          Icon(Icons.star, size: 14, color: Colors.blue),
-                          const SizedBox(width: 4),
-                          Text(
-                            "4.9 (3821 reviews)",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        "Cardio Specialist - Nanyang Hospital",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[700],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
