@@ -564,21 +564,26 @@
     margin-bottom: 50px;
   }
 
+  /* Horizontal scroll container */
   .testimonial-container {
     display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: auto;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .testimonial-container::-webkit-scrollbar {
+    display: none;
   }
 
   .testimonial-card {
     background: #f9fafb;
     border-radius: 12px;
-    padding: 32px 20px;
-    width: 250px;
+    padding: 24px 16px;
+    width: 220px;
     text-align: center;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     box-shadow: 0 0 0 1px transparent;
     transition: all 0.3s ease;
   }
@@ -591,54 +596,38 @@
   }
 
   .testimonial-card img {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .testimonial-card h4 {
     margin: 0 0 4px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #111827;
   }
 
   .testimonial-card p.job {
-    font-size: 14px;
+    font-size: 13px;
     color: #6b7280;
-    margin: 0 0 12px;
+    margin: 0 0 10px;
   }
 
   .stars {
-    font-size: 16px;
+    font-size: 15px;
     color: #fbbf24;
-    margin-bottom: 16px;
-    letter-spacing: 2px;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
   }
 
   .testimonial-card p.text {
-    font-size: 14px;
+    font-size: 13px;
     color: #4b5563;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
-  }
-
-  @media (max-width: 1024px) {
-    .testimonial-container {
-      gap: 20px;
-    }
-    .testimonial-card {
-      width: 45%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .testimonial-card {
-      width: 100%;
-      max-width: 350px;
-    }
   }
 </style>
 </head>
@@ -649,28 +638,28 @@
   <h2>We care about our customers experience too</h2>
   <div class="testimonial-container">
     <div class="testimonial-card highlight">
-      <img src="https://via.placeholder.com/72" alt="Ethan Kline">
+      <img src="https://via.placeholder.com/64" alt="Ethan Kline">
       <h4>Ethan Kline</h4>
       <p class="job">Product Designer</p>
       <div class="stars">★★★★★</div>
       <p class="text">I had the pleasure of working with this team and I must say they exceeded my expectations.</p>
     </div>
     <div class="testimonial-card">
-      <img src="https://via.placeholder.com/72" alt="Emily Morrison">
+      <img src="https://via.placeholder.com/64" alt="Emily Morrison">
       <h4>Emily Morrison</h4>
       <p class="job">Policy Advisor</p>
       <div class="stars">★★★★★</div>
       <p class="text">This team delivers top-notch service and outstanding results. Highly recommended!</p>
     </div>
     <div class="testimonial-card">
-      <img src="https://via.placeholder.com/72" alt="Olivia Carter">
+      <img src="https://via.placeholder.com/64" alt="Olivia Carter">
       <h4>Olivia Carter</h4>
       <p class="job">Service Manager</p>
       <div class="stars">★★★★★</div>
       <p class="text">My experience was nothing short of amazing. The quality is unmatched!</p>
     </div>
     <div class="testimonial-card">
-      <img src="https://via.placeholder.com/72" alt="Wyatt Thomas">
+      <img src="https://via.placeholder.com/64" alt="Wyatt Thomas">
       <h4>Wyatt Thomas</h4>
       <p class="job">CEO</p>
       <div class="stars">★★★★★</div>
