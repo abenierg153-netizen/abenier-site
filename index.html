@@ -5,60 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yanet Special Dental Clinic</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* --- Animations --- */
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+    .fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
     .fade-up-delay-1 { animation-delay: 0.1s; }
     .fade-up-delay-2 { animation-delay: 0.2s; }
     .fade-up-delay-3 { animation-delay: 0.3s; }
     .fade-up-delay-4 { animation-delay: 0.4s; }
-
-    /* --- Banner --- */
-    .banner-container { padding: 0 12px; box-sizing: border-box; }
-    .banner {
-      background-color: #ff2d55;
-      border-radius: 8px;
-      padding: 6px 0;
-      text-align: center;
-      width: 100%;
-      color: white;
-      position: relative;
-    }
-    .banner-top-text { font-size: 13px; margin-bottom: 3px; display: block; }
-    .banner-main-text { font-size: 24px; font-weight: bold; display: inline-block; vertical-align: middle; }
-    .banner-arrow { font-size: 24px; vertical-align: middle; margin-left: 6px; }
-    .banner-icon { width: 26px; height: auto; vertical-align: middle; margin-left: 8px; }
-
-    /* --- Doctors Section --- */
-    .doctors-section { padding: 0 20px; font-family: sans-serif; margin-top: 20px; }
-    .doctors-header { display: flex; justify-content: space-between; align-items: center; }
-    .doctors-header h2 { font-size: 16px; font-weight: bold; margin: 0; color: #1a1a1a; }
-    .doctors-count { display: flex; align-items: center; gap: 4px; font-size: 14px; color: #777; }
-    .doctors-grid { margin-top: 8px; display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .doctor-card { background: white; border-radius: 12px; display: flex; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; }
-    .doctor-card img { width: 80px; height: 80px; object-fit: cover; }
-    .doctor-info { padding: 10px; flex: 1; }
-    .doctor-info h3 { margin: 0; font-size: 16px; font-weight: bold; }
-    .experience { margin: 2px 0; font-size: 12px; color: #777; }
-    .rating { display: flex; align-items: center; margin-top: 2px; font-size: 12px; color: #777; }
-    .rating i { color: #3b82f6; font-size: 12px; margin-right: 4px; }
-    .specialty { margin: 4px 0 0; font-size: 12px; color: #555; }
-    @media (min-width: 768px) { .doctors-grid { grid-template-columns: 1fr 1fr; } }
-
-    /* --- About Us --- */
-    .info-section { max-width: 900px; margin: 50px auto; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
-    .section-block { margin-bottom: 30px; padding: 20px; border-radius: 15px; background: #f0f8ff; transform: translateY(40px); opacity: 0; transition: all 0.6s ease; }
-    .section-block.visible { transform: translateY(0); opacity: 1; }
-    .section-title { font-size: 1.5em; font-weight: bold; margin-bottom: 15px; color: #0077b6; display: flex; align-items: center; gap: 10px; }
-    .section-title span { font-size: 1.5em; }
-    .section-list { list-style: none; padding: 0; margin: 0; }
-    .section-list li { margin: 10px 0; font-size: 1em; display: flex; align-items: flex-start; gap: 8px; }
-    .section-list li span { font-size: 1.2em; }
   </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -70,23 +34,15 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-    <h1 class="text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center">Yanet Special Dental Clinic</h1>
+    <h1 class="text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center">
+      Yanet Special Dental Clinic
+    </h1>
     <button>
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.496M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     </button>
   </header>
-
-  <!-- PROMO BANNER -->
-  <div class="banner-container my-4">
-    <div class="banner">
-      <span class="banner-top-text">Special Dental Care Offer: Aug 18, 00:00 PT</span>
-      <span class="banner-main-text">4 DAYS LEFT</span>
-      <span class="banner-arrow">➤</span>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Tooth_icon_white.svg/512px-Tooth_icon_white.svg.png" alt="Tooth Icon" class="banner-icon">
-    </div>
-  </div>
 
   <!-- HERO -->
   <section class="px-4 py-4 bg-white">
@@ -105,7 +61,9 @@
           </div>
           <span class="ml-1 text-xs text-gray-500">5.0 (3,964)</span>
         </div>
-        <button class="mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">Book Now</button>
+        <button class="mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">
+          Book Now
+        </button>
       </div>
       <div class="ml-3 flex-shrink-0">
         <img src="doctor.jpg" alt="Doctor" class="w-20 h-20 object-cover rounded-xl">
@@ -170,45 +128,28 @@
   <!-- SOCIAL PROOF -->
   <section class="px-4 py-6 bg-[#fdf6ec]">
     <div class="text-center mb-6">
-      <h3 class="text-lg font-bold text-gray-900 uppercase border-b-4 border-yellow-400 inline-block pb-1">SOCIAL PROOF</h3>
+      <h3 class="text-lg font-bold text-gray-900 uppercase border-b-4 border-yellow-400 inline-block pb-1">
+        SOCIAL PROOF
+      </h3>
       <p class="text-sm text-gray-500 mt-1">YOUR SMILE IS OUR BEST REVIEW</p>
     </div>
-    <div class="grid grid-cols-2 gap-5" id="cases-container"></div>
+    <div class="grid grid-cols-2 gap-5">
+      <!-- Generate Case 1 to Case 14 -->
+      <script>
+        const cases = ["Before","After"];
+        for(let i=3;i<=14;i++){ cases.push("Case "+i); }
+        document.write(cases.map(c => `
+          <div class="bg-white rounded-3xl shadow p-4">
+            <img src="https://via.placeholder.com/400x250?text=${encodeURIComponent(c)}" class="w-full h-44 object-cover rounded-2xl mb-3">
+            <h4 class="text-lg font-semibold text-gray-900">${c}</h4>
+          </div>
+        `).join(''));
+      </script>
+    </div>
+    <!-- Load More Button -->
     <div class="mt-6 text-center">
-      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">Load More</button>
+      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
+        Load More
+      </button>
     </div>
   </section>
-
-  <!-- OUR DOCTORS -->
-  <section class="doctors-section">
-    <div class="doctors-header">
-      <h2>OUR DOCTORS</h2>
-      <div class="doctors-count"><span>(100)</span><i class="fas fa-cog"></i></div>
-    </div>
-    <div class="doctors-grid">
-      <!-- Doctor cards here (same as uploaded file) -->
-      <div class="doctor-card"><img src="doctor_jenny.png"><div class="doctor-info"><h3>Dr. Jenny Wilson</h3><p class="experience">12 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.9 (3821 reviews)</div><p class="specialty">Cardio Specialist - Nanyang Hospital</p></div></div>
-      <div class="doctor-card"><img src="doctor_rahul.png"><div class="doctor-info"><h3>Dr. Rahul Mehta</h3><p class="experience">15 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.8 (2980 reviews)</div><p class="specialty">Orthopedic Specialist - City Care Hospital</p></div></div>
-      <div class="doctor-card"><img src="doctor_sophia.png"><div class="doctor-info"><h3>Dr. Sophia Lee</h3><p class="experience">10 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.7 (1850 reviews)</div><p class="specialty">Pediatrician - Sunrise Children's Hospital</p></div></div>
-      <div class="doctor-card"><img src="doctor_khalid.png"><div class="doctor-info"><h3>Dr. Khalid Omar</h3><p class="experience">18 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.9 (4120 reviews)</div><p class="specialty">Neurologist - Global Brain Center</p></div></div>
-      <div class="doctor-card"><img src="doctor_emily.png"><div class="doctor-info"><h3>Dr. Emily Carter</h3><p class="experience">9 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.6 (1505 reviews)</div><p class="specialty">Dermatologist - Skin Health Clinic</p></div></div>
-      <div class="doctor-card"><img src="doctor_alex.png"><div class="doctor-info"><h3>Dr. Alex Brown</h3><p class="experience">14 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.8 (2750 reviews)</div><p class="specialty">ENT Specialist - Harmony Medical Center</p></div></div>
-    </div>
-  </section>
-
-  <!-- ABOUT US -->
-  <div class="info-section">
-    <div class="section-block">
-      <div class="section-title"><span>ℹ️</span> ABOUT US</div>
-      <ul class="section-list">
-        <li><span>✅</span> From the heart of Ethiopia, Yanet Specialty Dental Clinic is redefining the future of dentistry.</li>
-        <li><span>✅</span> Started by four passionate professionals, now a state-of-the-art center with the latest digital technology.</li>
-        <li><span>✅</span> Proud home to Ethiopia’s first robotic tooth-preparation machine.</li>
-      </ul>
-    </div>
-    <div class="section-block" style="background:#fff5e6;">
-      <div class="section-title"><span>🚀</span> OUR VISION</div>
-      <ul class="section-list">
-        <li><span>📈</span> Rising to join the 🏅 World’s Top 10 Dental Clinics.</li>
-        <li><span>✈️</span> Dental Tourism — Bringing the world to Ethiopia for top-tier smiles and rich cultural experiences.</li>
-        <li><span>🌍</
