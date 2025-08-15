@@ -530,3 +530,154 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials</title>
+<style>
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #111827;
+  }
+
+  .testimonial-section {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .testimonial-section h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 50px;
+  }
+
+  .testimonial-container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .testimonial-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 32px 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 0 1px transparent;
+    transition: all 0.3s ease;
+  }
+
+  /* Highlighted first card */
+  .testimonial-card.highlight {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  .testimonial-card img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card h4 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .testimonial-card p.job {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 12px;
+  }
+
+  .stars {
+    font-size: 16px;
+    color: #fbbf24;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-card p.text {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonial-container {
+      gap: 20px;
+    }
+    .testimonial-card {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="testimonial-section">
+  <h3>Testimonial</h3>
+  <h2>We care about our customers experience too</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card highlight">
+      <img src="https://via.placeholder.com/72" alt="Ethan Kline">
+      <h4>Ethan Kline</h4>
+      <p class="job">Product Designer</p>
+      <div class="stars">★★★★★</div>
+      <p class="text">I had the pleasure of working with this team and I must say they exceeded my expectations.</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/72" alt="Emily Morrison">
+      <h4>Emily Morrison</h4>
+      <p class="job">Policy Advisor</p>
+      <div class="stars">★★★★★</div>
+      <p class="text">This team delivers top-notch service and outstanding results. Highly recommended!</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/72" alt="Olivia Carter">
+      <h4>Olivia Carter</h4>
+      <p class="job">Service Manager</p>
+      <div class="stars">★★★★★</div>
+      <p class="text">My experience was nothing short of amazing. The quality is unmatched!</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/72" alt="Wyatt Thomas">
+      <h4>Wyatt Thomas</h4>
+      <p class="job">CEO</p>
+      <div class="stars">★★★★★</div>
+      <p class="text">From start to finish, the team was professional, responsive, and exceeded expectations.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
