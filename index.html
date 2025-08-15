@@ -3,185 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yanet Specialty Dental Clinic</title>
+  <title>Yanet Special Dental Clinic</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    @keyframes fadeInUp {
+    /* --- Animations --- */
+    @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .fade-up {
-      animation: fadeInUp 0.8s ease-out forwards;
+    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+    .fade-up-delay-4 { animation-delay: 0.4s; }
+
+    /* --- Banner --- */
+    .banner-container { padding: 0 12px; box-sizing: border-box; }
+    .banner {
+      background-color: #ff2d55;
+      border-radius: 8px;
+      padding: 6px 0;
+      text-align: center;
+      width: 100%;
+      color: white;
+      position: relative;
     }
+    .banner-top-text { font-size: 13px; margin-bottom: 3px; display: block; }
+    .banner-main-text { font-size: 24px; font-weight: bold; display: inline-block; vertical-align: middle; }
+    .banner-arrow { font-size: 24px; vertical-align: middle; margin-left: 6px; }
+    .banner-icon { width: 26px; height: auto; vertical-align: middle; margin-left: 8px; }
+
+    /* --- Doctors Section --- */
+    .doctors-section { padding: 0 20px; font-family: sans-serif; margin-top: 20px; }
+    .doctors-header { display: flex; justify-content: space-between; align-items: center; }
+    .doctors-header h2 { font-size: 16px; font-weight: bold; margin: 0; color: #1a1a1a; }
+    .doctors-count { display: flex; align-items: center; gap: 4px; font-size: 14px; color: #777; }
+    .doctors-grid { margin-top: 8px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .doctor-card { background: white; border-radius: 12px; display: flex; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; }
+    .doctor-card img { width: 80px; height: 80px; object-fit: cover; }
+    .doctor-info { padding: 10px; flex: 1; }
+    .doctor-info h3 { margin: 0; font-size: 16px; font-weight: bold; }
+    .experience { margin: 2px 0; font-size: 12px; color: #777; }
+    .rating { display: flex; align-items: center; margin-top: 2px; font-size: 12px; color: #777; }
+    .rating i { color: #3b82f6; font-size: 12px; margin-right: 4px; }
+    .specialty { margin: 4px 0 0; font-size: 12px; color: #555; }
+    @media (min-width: 768px) { .doctors-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* --- About Us --- */
+    .info-section { max-width: 900px; margin: 50px auto; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
+    .section-block { margin-bottom: 30px; padding: 20px; border-radius: 15px; background: #f0f8ff; transform: translateY(40px); opacity: 0; transition: all 0.6s ease; }
+    .section-block.visible { transform: translateY(0); opacity: 1; }
+    .section-title { font-size: 1.5em; font-weight: bold; margin-bottom: 15px; color: #0077b6; display: flex; align-items: center; gap: 10px; }
+    .section-title span { font-size: 1.5em; }
+    .section-list { list-style: none; padding: 0; margin: 0; }
+    .section-list li { margin: 10px 0; font-size: 1em; display: flex; align-items: flex-start; gap: 8px; }
+    .section-list li span { font-size: 1.2em; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 font-sans">
 
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 class="text-xl font-bold text-blue-600">Yanet Dental</h1>
-      <nav class="space-x-4">
-        <a href="#services" class="hover:text-blue-600">Services</a>
-        <a href="#vip" class="hover:text-blue-600">VIP Room</a>
-        <a href="#doctors" class="hover:text-blue-600">Our Doctors</a>
-        <a href="#about" class="hover:text-blue-600">About Us</a>
-        <a href="#testimonials" class="hover:text-blue-600">Testimonials</a>
-      </nav>
-    </div>
+  <!-- HEADER -->
+  <header class="bg-yellow-400 flex items-center justify-between px-4 py-3">
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <h1 class="text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center">Yanet Special Dental Clinic</h1>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.496M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    </button>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-blue-50 py-12 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Redefining the Future of Dentistry</h2>
-    <p class="max-w-2xl mx-auto text-lg">From the heart of Ethiopia, Yanet Specialty Dental Clinic combines passion and cutting-edge technology to deliver world-class dental care.</p>
-  </section>
-
-  <!-- Promotional Banner -->
-  <section class="bg-yellow-400 py-6 fade-up">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
-      <div>
-        <h3 class="text-2xl font-bold">4 Days Left!</h3>
-        <p class="text-lg">Book now and enjoy our special offer for healthy smiles.</p>
-      </div>
-      <button class="mt-4 md:mt-0 bg-white text-yellow-500 px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-100">Book Now</button>
+  <!-- PROMO BANNER -->
+  <div class="banner-container my-4">
+    <div class="banner">
+      <span class="banner-top-text">Special Dental Care Offer: Aug 18, 00:00 PT</span>
+      <span class="banner-main-text">4 DAYS LEFT</span>
+      <span class="banner-arrow">➤</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Tooth_icon_white.svg/512px-Tooth_icon_white.svg.png" alt="Tooth Icon" class="banner-icon">
     </div>
-  </section>
+  </div>
 
-  <!-- Services -->
-  <section id="services" class="py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-2xl font-bold mb-6 text-center">Our Services</h3>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h4 class="text-lg font-bold">General Dentistry</h4>
-          <p>Comprehensive oral care for the whole family.</p>
+  <!-- HERO -->
+  <section class="px-4 py-4 bg-white">
+    <div class="flex items-center justify-between bg-white rounded-2xl shadow-sm p-4">
+      <div class="flex-1">
+        <h2 class="text-lg font-semibold text-gray-900">Dr. Johan Smit</h2>
+        <p class="text-sm text-gray-500">10 years experienced</p>
+        <p class="text-xs text-gray-400">Your smile our specialty</p>
+        <div class="flex items-center mt-1">
+          <div class="flex text-yellow-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c..."/></svg>
+          </div>
+          <span class="ml-1 text-xs text-gray-500">5.0 (3,964)</span>
         </div>
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h4 class="text-lg font-bold">Cosmetic Dentistry</h4>
-          <p>Smile transformations with precision and artistry.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <img src="https://via.placeholder.com/300x200" alt="" class="rounded-lg mb-4">
-          <h4 class="text-lg font-bold">Orthodontics</h4>
-          <p>Braces and aligners for a perfect smile.</p>
-        </div>
+        <button class="mt-3 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg">Book Now</button>
+      </div>
+      <div class="ml-3 flex-shrink-0">
+        <img src="doctor.jpg" alt="Doctor" class="w-20 h-20 object-cover rounded-xl">
       </div>
     </div>
   </section>
 
-  <!-- VIP Room -->
-  <section id="vip" class="bg-blue-100 py-12">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-      <img src="https://via.placeholder.com/400x300" alt="" class="rounded-lg shadow-lg fade-up">
-      <div>
-        <h3 class="text-2xl font-bold mb-4">VIP Room</h3>
-        <p class="text-lg">Where advanced care meets exclusive comfort.</p>
+  <!-- OUR SERVICES -->
+  <section class="px-4 py-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-900 uppercase">OUR SERVICES</h3>
+      <a href="#" class="text-sm text-blue-500">See All →</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-blue-500 text-white p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 7</span>
+          <span class="bg-blue-700 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold">Orthodontics</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Retainers</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 3</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Cleanings</h4>
+      </div>
+      <div class="bg-white shadow p-4 rounded-2xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm">Available 4</span>
+          <span class="bg-gray-100 text-xs px-2 py-0.5 rounded-full">This week</span>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900">Oral Hygiene</h4>
       </div>
     </div>
   </section>
 
-  <!-- Social Proof -->
-  <section class="py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-2xl font-bold text-center mb-6">Our Cases</h3>
-      <div class="grid gap-6 md:grid-cols-4">
-        <div class="bg-white rounded-xl shadow p-4 fade-up">
-          <img src="https://via.placeholder.com/250x150" alt="" class="rounded-lg">
-        </div>
-        <div class="bg-white rounded-xl shadow p-4 fade-up">
-          <img src="https://via.placeholder.com/250x150" alt="" class="rounded-lg">
-        </div>
-        <div class="bg-white rounded-xl shadow p-4 fade-up">
-          <img src="https://via.placeholder.com/250x150" alt="" class="rounded-lg">
-        </div>
-        <div class="bg-white rounded-xl shadow p-4 fade-up">
-          <img src="https://via.placeholder.com/250x150" alt="" class="rounded-lg">
-        </div>
-      </div>
-      <div class="text-center mt-6">
-        <button class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600">Load More</button>
-      </div>
+  <!-- VIP ROOM -->
+  <section class="px-4 py-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-900">VIP ROOM</h3>
+      <a href="#" class="text-sm text-blue-500">See All →</a>
+    </div>
+    <div class="flex space-x-4 overflow-x-auto">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+1" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+2" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
+      <img src="https://via.placeholder.com/250x160?text=VIP+Room+3" class="w-64 h-40 rounded-2xl object-cover flex-shrink-0">
+    </div>
+    <div class="mt-3">
+      <h4 class="text-base font-semibold text-gray-900">Where Advanced Care meets Exclusive Comfort</h4>
     </div>
   </section>
 
-  <!-- Our Doctors -->
-  <section id="doctors" class="bg-gray-100 py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-2xl font-bold text-center mb-6">Our Doctors</h3>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="bg-white rounded-xl shadow p-6 text-center fade-up">
-          <img src="https://via.placeholder.com/200x200" alt="" class="rounded-full mx-auto mb-4">
-          <h4 class="text-lg font-bold">Dr. Jane Doe</h4>
-          <p>Specialist in Cosmetic Dentistry</p>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 text-center fade-up">
-          <img src="https://via.placeholder.com/200x200" alt="" class="rounded-full mx-auto mb-4">
-          <h4 class="text-lg font-bold">Dr. John Smith</h4>
-          <p>Orthodontics Expert</p>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 text-center fade-up">
-          <img src="https://via.placeholder.com/200x200" alt="" class="rounded-full mx-auto mb-4">
-          <h4 class="text-lg font-bold">Dr. Sarah Lee</h4>
-          <p>General Dentist</p>
-        </div>
-      </div>
+  <!-- SOCIAL PROOF -->
+  <section class="px-4 py-6 bg-[#fdf6ec]">
+    <div class="text-center mb-6">
+      <h3 class="text-lg font-bold text-gray-900 uppercase border-b-4 border-yellow-400 inline-block pb-1">SOCIAL PROOF</h3>
+      <p class="text-sm text-gray-500 mt-1">YOUR SMILE IS OUR BEST REVIEW</p>
+    </div>
+    <div class="grid grid-cols-2 gap-5" id="cases-container"></div>
+    <div class="mt-6 text-center">
+      <button class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">Load More</button>
     </div>
   </section>
 
-  <!-- About Us -->
-  <section id="about" class="py-12">
-    <div class="max-w-4xl mx-auto px-4 text-center fade-up">
-      <h3 class="text-2xl font-bold mb-4">About Us</h3>
-      <p>✅ From the heart of Ethiopia, Yanet Specialty Dental Clinic is redefining the future of dentistry.<br>
-      ✅ Started by four passionate professionals, now a state-of-the-art center with the latest digital technology.<br>
-      ✅ Proud home to Ethiopia’s first robotic tooth-preparation machine.</p>
-      <h4 class="mt-6 font-bold">Our Vision 🚀</h4>
-      <p>📈 Rising to join the 🏅 World’s Top 10 Dental Clinics.</p>
+  <!-- OUR DOCTORS -->
+  <section class="doctors-section">
+    <div class="doctors-header">
+      <h2>OUR DOCTORS</h2>
+      <div class="doctors-count"><span>(100)</span><i class="fas fa-cog"></i></div>
+    </div>
+    <div class="doctors-grid">
+      <!-- Doctor cards here (same as uploaded file) -->
+      <div class="doctor-card"><img src="doctor_jenny.png"><div class="doctor-info"><h3>Dr. Jenny Wilson</h3><p class="experience">12 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.9 (3821 reviews)</div><p class="specialty">Cardio Specialist - Nanyang Hospital</p></div></div>
+      <div class="doctor-card"><img src="doctor_rahul.png"><div class="doctor-info"><h3>Dr. Rahul Mehta</h3><p class="experience">15 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.8 (2980 reviews)</div><p class="specialty">Orthopedic Specialist - City Care Hospital</p></div></div>
+      <div class="doctor-card"><img src="doctor_sophia.png"><div class="doctor-info"><h3>Dr. Sophia Lee</h3><p class="experience">10 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.7 (1850 reviews)</div><p class="specialty">Pediatrician - Sunrise Children's Hospital</p></div></div>
+      <div class="doctor-card"><img src="doctor_khalid.png"><div class="doctor-info"><h3>Dr. Khalid Omar</h3><p class="experience">18 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.9 (4120 reviews)</div><p class="specialty">Neurologist - Global Brain Center</p></div></div>
+      <div class="doctor-card"><img src="doctor_emily.png"><div class="doctor-info"><h3>Dr. Emily Carter</h3><p class="experience">9 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.6 (1505 reviews)</div><p class="specialty">Dermatologist - Skin Health Clinic</p></div></div>
+      <div class="doctor-card"><img src="doctor_alex.png"><div class="doctor-info"><h3>Dr. Alex Brown</h3><p class="experience">14 Years Experience</p><div class="rating"><i class="fas fa-star"></i>4.8 (2750 reviews)</div><p class="specialty">ENT Specialist - Harmony Medical Center</p></div></div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="bg-blue-50 py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-2xl font-bold text-center mb-6">What Our Patients Say</h3>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <p>"Excellent service and very friendly staff!"</p>
-          <span class="block mt-4 font-bold">– Patient A</span>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <p>"I love my new smile. Highly recommend!"</p>
-          <span class="block mt-4 font-bold">– Patient B</span>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 fade-up">
-          <p>"State-of-the-art facilities and professional care."</p>
-          <span class="block mt-4 font-bold">– Patient C</span>
-        </div>
-      </div>
+  <!-- ABOUT US -->
+  <div class="info-section">
+    <div class="section-block">
+      <div class="section-title"><span>ℹ️</span> ABOUT US</div>
+      <ul class="section-list">
+        <li><span>✅</span> From the heart of Ethiopia, Yanet Specialty Dental Clinic is redefining the future of dentistry.</li>
+        <li><span>✅</span> Started by four passionate professionals, now a state-of-the-art center with the latest digital technology.</li>
+        <li><span>✅</span> Proud home to Ethiopia’s first robotic tooth-preparation machine.</li>
+      </ul>
     </div>
-  </section>
-
-  <script>
-    // Fade-up animation trigger
-    document.addEventListener("DOMContentLoaded", () => {
-      const fadeEls = document.querySelectorAll('.fade-up');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      fadeEls.forEach(el => {
-        el.classList.add('opacity-0', 'translate-y-5', 'transition', 'duration-700');
-        observer.observe(el);
-      });
-    });
-  </script>
-
-</body>
-</html>
+    <div class="section-block" style="background:#fff5e6;">
+      <div class="section-title"><span>🚀</span> OUR VISION</div>
+      <ul class="section-list">
+        <li><span>📈</span> Rising to join the 🏅 World’s Top 10 Dental Clinics.</li>
+        <li><span>✈️</span> Dental Tourism — Bringing the world to Ethiopia for top-tier smiles and rich cultural experiences.</li>
+        <li><span>🌍</
