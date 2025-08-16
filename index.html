@@ -18,64 +18,46 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dental Clinic Header Menu</title>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <script src="https://kit.fontawesome.com/a2e0e6ad59.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white shadow px-4 py-3 flex justify-between items-center">
-    
-    <!-- Left: Logo + Title -->
-    <div class="flex items-center space-x-2">
-      <i class="fas fa-tooth text-indigo-600 text-2xl"></i>
-      <h1 class="text-base md:text-lg font-bold text-gray-800">
-        YANETA SPECIALITY DENTAL CLINIC
+    <!-- Left: Dental Icon -->
+    <div class="flex-shrink-0">
+      <i class="fas fa-tooth text-indigo-600 text-2xl md:text-3xl"></i>
+    </div>
+
+    <!-- Center: Clinic Name -->
+    <div class="text-center">
+      <h1 class="text-base md:text-lg font-extrabold text-gray-800 uppercase leading-tight">
+        YANET SPECIALITY
+        <span class="block text-base md:text-lg">DENTAL CLINIC</span>
       </h1>
     </div>
 
-    <!-- Right: Notification + Menu -->
-    <div class="flex items-center space-x-4">
+    <!-- Right: Notification + 3-dot Menu -->
+    <div class="flex items-center space-x-3">
 
-      <!-- Notification Dropdown -->
-      <div class="relative" 
-           x-data="notificationSystem()"
-           x-init="startAutoNotifications()">
-        
-        <!-- Notification Bell -->
-        <button 
-          @click="toggleDropdown" 
-          class="relative text-gray-700 hover:text-indigo-600 focus:outline-none"
-        >
-          <i class="fas fa-bell text-xl"></i>
-          <!-- Counter -->
+      <!-- Notification Bell -->
+      <div class="relative" x-data="notificationSystem()" x-init="startAutoNotifications()">
+        <button @click="toggleDropdown" class="relative text-gray-700 hover:text-indigo-600 focus:outline-none">
+          <i class="fas fa-bell text-xl md:text-2xl"></i>
           <template x-if="unread > 0">
-            <span 
-              x-text="unread" 
+            <span x-text="unread"
               class="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
             </span>
           </template>
         </button>
 
-        <!-- Dropdown -->
-        <div 
-          x-show="notifyOpen"
-          @click.away="notifyOpen = false"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 transform -translate-y-2"
-          x-transition:enter-end="opacity-100 transform translate-y-0"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 transform translate-y-0"
-          x-transition:leave-end="opacity-0 transform -translate-y-2"
-          class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50"
-        >
+        <!-- Notification Dropdown -->
+        <div x-show="notifyOpen" @click.away="notifyOpen = false"
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 transform -translate-y-2"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-2"
+             class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50">
           <div class="p-4 border-b font-semibold text-gray-700">Notifications</div>
           <ul class="divide-y divide-gray-200 max-h-60 overflow-y-auto">
             <template x-for="(note, index) in notifications" :key="index">
@@ -88,19 +70,15 @@
         </div>
       </div>
 
-      <!-- 3 Dot Menu -->
+      <!-- 3-dot Menu -->
       <div class="relative" x-data="{ menuOpen: false }">
-        <button @click="menuOpen = !menuOpen" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
-          <i class="fas fa-ellipsis-v text-xl"></i>
+        <button @click="menuOpen = !menuOpen" class="text-gray-700 hover:text-indigo-600 focus:outline-none relative">
+          <i class="fas fa-ellipsis-h text-xl md:text-2xl"></i>
         </button>
 
         <!-- Dropdown Menu -->
-        <div 
-          x-show="menuOpen"
-          @click.away="menuOpen = false"
-          x-transition
-          class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50"
-        >
+        <div x-show="menuOpen" @click.away="menuOpen = false" x-transition
+             class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50">
           <ul class="py-2">
             <li>
               <a href="#home" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
@@ -129,7 +107,7 @@
             </li>
           </ul>
 
-          <!-- SOCIAL MEDIA -->
+          <!-- Social Media -->
           <div class="border-t px-4 py-3 text-center">
             <p class="text-gray-500 text-sm mb-2">Follow Our Social Media!</p>
             <div class="flex justify-center space-x-4">
@@ -148,58 +126,15 @@
       </div>
 
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- DUMMY CONTENT -->
-  <section id="home" class="p-6">
-    <h2 class="text-xl font-bold">Welcome Home Section</h2>
-    <p>This is just placeholder content for scrolling.</p>
-  </section>
-  <section id="services" class="p-6">
-    <h2 class="text-xl font-bold">Services</h2>
-    <p>Details about services.</p>
-  </section>
-  <section id="giveaway" class="p-6">
-    <h2 class="text-xl font-bold">Giveaway</h2>
-    <p>Giveaway details here.</p>
-  </section>
-
-  <script>
-    function notificationSystem() {
-      return {
-        notifyOpen: false,
-        unread: 3,
-        notifications: [
-          "🦷 Appointment confirmed for Aug 20, 3:00 PM",
-          "🎉 Giveaway ends in 3 days — don’t miss it!",
-          "📢 New service: Robotic Tooth Preparation"
-        ],
-        toggleDropdown() {
-          this.notifyOpen = !this.notifyOpen;
-          if (this.notifyOpen) this.unread = 0;
-        },
-        startAutoNotifications() {
-          const messages = [
-            "🦷 Free dental check-up available this week!",
-            "💡 Tip: Brush twice daily for healthy gums.",
-            "🎁 New Giveaway announced! Join now.",
-            "📢 VIP Room bookings now open!",
-            "⏰ Don’t forget your appointment tomorrow!"
-          ];
-          setInterval(() => {
-            const newMessage = messages[Math.floor(Math.random() * messages.length)];
-            this.notifications.unshift(newMessage); // Add to top
-            this.unread++;
-          }, 10000); // every 10 seconds
-        }
-      }
-    }
-  </script>
-
-</body>
-</html>
+<!-- Add padding to prevent content hidden behind fixed header -->
+<div class="pt-20">
+  <!-- Your page content here -->
+</div>
   
-  
+
 <!-- Add top padding to main content to prevent overlap -->
 <main class="pt-16">
   <!-- Hero section starts here -->
