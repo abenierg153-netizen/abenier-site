@@ -18,108 +18,187 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!-- Dropdown Menu -->
-<div x-show="open" @click.away="open = false"
-     class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Clinic Header Menu</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/a2e0e6ad59.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
 
-  <!-- Home -->
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-     class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100 space-x-2">
-    <!-- Home Icon -->
-    <svg class="h-5 w-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 2L2 9h3v9h4V13h2v5h4V9h3L10 2z"/>
-    </svg>
-    <span>Home</span>
-  </a>
-
-  <!-- Appointment -->
-  <a href="https://wa.me/251900000000" target="_blank"
-     class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100 space-x-2">
-    <!-- Calendar Icon -->
-    <svg class="h-5 w-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H3a1 1 0 00-1 
-      1v2h16V5a1 1 0 00-1-1h-2V3a1 1 0 10-2 
-      0v1H7V3a1 1 0 00-1-1zM18 9H2v7a1 1 0 
-      001 1h14a1 1 0 001-1V9z" clip-rule="evenodd"/>
-    </svg>
-    <span>Appointment</span>
-  </a>
-
-  <!-- Services -->
-  <a href="#services"
-     class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100 space-x-2">
-    <!-- Tooth Icon -->
-    <svg class="h-5 w-5 text-indigo-500" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2c-2.5 0-5 1.5-5 5 0 3 2 4 2 6s-1 6 3 6 3-4 3-6 2-3 2-6c0-3.5-2.5-5-5-5z"/>
-    </svg>
-    <span>Services</span>
-  </a>
-
-  <!-- Visit Us -->
-  <a href="https://maps.google.com/?q=Yanet+Specialty+Dental+Clinic" target="_blank"
-     class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100 space-x-2">
-    <!-- Map Pin Icon -->
-    <svg class="h-5 w-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 
-      16zm0-11a3 3 0 110 6 3 3 0 010-6z" clip-rule="evenodd"/>
-    </svg>
-    <span>Visit Us</span>
-  </a>
-
-  <!-- Giveaway -->
-  <a href="#giveaway"
-     class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100 space-x-2">
-    <!-- Gift Icon -->
-    <svg class="h-5 w-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 2a2 2 0 00-2 2v2H6a2 2 0 
-      00-2 2v2h12V8a2 2 0 00-2-2h-2V4a2 2 0 
-      00-2-2zm8 9H2v5a2 2 0 002 2h12a2 2 0 
-      002-2v-5z"/>
-    </svg>
-    <span>Giveaway</span>
-  </a>
-
-  <!-- Social Media Section -->
-  <div class="px-4 py-3 border-t border-gray-200 text-center">
-    <p class="text-sm font-bold text-green-600 mb-2">Follow Our Social Media!</p>
-    <div class="flex justify-center space-x-5 text-2xl">
-      <!-- Instagram -->
-      <a href="https://instagram.com" target="_blank" class="hover:scale-110 transition-transform">
-        <svg class="h-6 w-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 
-          2.8 2.2 5 5 5h10c2.8 0 5-2.2 
-          5-5V7c0-2.8-2.2-5-5-5H7zm10 
-          2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 
-          3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 
-          1.3-3 3-3h10zm-5 3a5 5 0 100 
-          10 5 5 0 000-10zm0 2a3 3 0 110 
-          6 3 3 0 010-6zm4.5-2a1.5 1.5 
-          0 100 3 1.5 1.5 0 000-3z"/>
-        </svg>
-      </a>
-      <!-- Facebook -->
-      <a href="https://facebook.com" target="_blank" class="hover:scale-110 transition-transform">
-        <svg class="h-6 w-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 10-11.5 9.9V15.5h-2v-3h2v-2.3c0-2 
-          1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 
-          1.2v2.1h2.6l-.4 3h-2.2v6.4A10 10 0 0022 12z"/>
-        </svg>
-      </a>
-      <!-- Telegram -->
-      <a href="https://t.me" target="_blank" class="hover:scale-110 transition-transform">
-        <svg class="h-6 w-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.5 2 2 6.5 2 
-          12s4.5 10 10 10 10-4.5 
-          10-10S17.5 2 12 2zm4.2 7.3l-1.7 
-          8c-.1.5-.5.6-.9.3l-2.5-1.9-1.2 
-          1.1c-.1.1-.2.2-.4.2l.1-2.6 
-          4.8-4.3c.2-.2 0-.3-.3-.2l-5.9 
-          3.7-2.6-.8c-.6-.2-.6-.6.1-.9l10-3.9c.5-.2.9.1.8.7z"/>
-        </svg>
-      </a>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white shadow px-4 py-3 flex justify-between items-center">
+    
+    <!-- Left: Logo + Title -->
+    <div class="flex items-center space-x-2">
+      <i class="fas fa-tooth text-indigo-600 text-2xl"></i>
+      <h1 class="text-base md:text-lg font-bold text-gray-800">
+        YANETA SPECIALITY DENTAL CLINIC
+      </h1>
     </div>
-  </div>
-</div>
+
+    <!-- Right: Notification + Menu -->
+    <div class="flex items-center space-x-4">
+
+      <!-- Notification Dropdown -->
+      <div class="relative" 
+           x-data="notificationSystem()"
+           x-init="startAutoNotifications()">
+        
+        <!-- Notification Bell -->
+        <button 
+          @click="toggleDropdown" 
+          class="relative text-gray-700 hover:text-indigo-600 focus:outline-none"
+        >
+          <i class="fas fa-bell text-xl"></i>
+          <!-- Counter -->
+          <template x-if="unread > 0">
+            <span 
+              x-text="unread" 
+              class="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
+            </span>
+          </template>
+        </button>
+
+        <!-- Dropdown -->
+        <div 
+          x-show="notifyOpen"
+          @click.away="notifyOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-2"
+          class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50"
+        >
+          <div class="p-4 border-b font-semibold text-gray-700">Notifications</div>
+          <ul class="divide-y divide-gray-200 max-h-60 overflow-y-auto">
+            <template x-for="(note, index) in notifications" :key="index">
+              <li class="px-4 py-3 hover:bg-indigo-50 cursor-pointer" x-text="note"></li>
+            </template>
+          </ul>
+          <div class="p-3 text-center border-t">
+            <a href="#notifications" class="text-indigo-600 hover:underline text-sm">View All</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Dot Menu -->
+      <div class="relative" x-data="{ menuOpen: false }">
+        <button @click="menuOpen = !menuOpen" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
+          <i class="fas fa-ellipsis-v text-xl"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div 
+          x-show="menuOpen"
+          @click.away="menuOpen = false"
+          x-transition
+          class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50"
+        >
+          <ul class="py-2">
+            <li>
+              <a href="#home" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
+                <i class="fas fa-home text-indigo-500 mr-3"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/251912345678" target="_blank" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
+                <i class="fas fa-calendar-check text-indigo-500 mr-3"></i> Appointments
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
+                <i class="fas fa-tooth text-indigo-500 mr-3"></i> Services
+              </a>
+            </li>
+            <li>
+              <a href="https://goo.gl/maps/example" target="_blank" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
+                <i class="fas fa-map-marker-alt text-indigo-500 mr-3"></i> Visit Us
+              </a>
+            </li>
+            <li>
+              <a href="#giveaway" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100">
+                <i class="fas fa-gift text-indigo-500 mr-3"></i> Giveaway
+              </a>
+            </li>
+          </ul>
+
+          <!-- SOCIAL MEDIA -->
+          <div class="border-t px-4 py-3 text-center">
+            <p class="text-gray-500 text-sm mb-2">Follow Our Social Media!</p>
+            <div class="flex justify-center space-x-4">
+              <a href="https://instagram.com" target="_blank" class="text-gray-500 hover:text-pink-500 transform hover:scale-110">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" class="text-gray-500 hover:text-blue-600 transform hover:scale-110">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a href="https://t.me" target="_blank" class="text-gray-500 hover:text-blue-400 transform hover:scale-110">
+                <i class="fab fa-telegram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- DUMMY CONTENT -->
+  <section id="home" class="p-6">
+    <h2 class="text-xl font-bold">Welcome Home Section</h2>
+    <p>This is just placeholder content for scrolling.</p>
+  </section>
+  <section id="services" class="p-6">
+    <h2 class="text-xl font-bold">Services</h2>
+    <p>Details about services.</p>
+  </section>
+  <section id="giveaway" class="p-6">
+    <h2 class="text-xl font-bold">Giveaway</h2>
+    <p>Giveaway details here.</p>
+  </section>
+
+  <script>
+    function notificationSystem() {
+      return {
+        notifyOpen: false,
+        unread: 3,
+        notifications: [
+          "🦷 Appointment confirmed for Aug 20, 3:00 PM",
+          "🎉 Giveaway ends in 3 days — don’t miss it!",
+          "📢 New service: Robotic Tooth Preparation"
+        ],
+        toggleDropdown() {
+          this.notifyOpen = !this.notifyOpen;
+          if (this.notifyOpen) this.unread = 0;
+        },
+        startAutoNotifications() {
+          const messages = [
+            "🦷 Free dental check-up available this week!",
+            "💡 Tip: Brush twice daily for healthy gums.",
+            "🎁 New Giveaway announced! Join now.",
+            "📢 VIP Room bookings now open!",
+            "⏰ Don’t forget your appointment tomorrow!"
+          ];
+          setInterval(() => {
+            const newMessage = messages[Math.floor(Math.random() * messages.length)];
+            this.notifications.unshift(newMessage); // Add to top
+            this.unread++;
+          }, 10000); // every 10 seconds
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
+  
   
 <!-- Add top padding to main content to prevent overlap -->
 <main class="pt-16">
