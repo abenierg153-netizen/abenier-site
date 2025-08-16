@@ -18,20 +18,37 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-  <!-- HEADER -->
-  <header class="bg-yellow-400 flex items-center justify-between px-4 py-3">
-    <button>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-    <h1 class="text-lg font-extrabold text-gray-900 uppercase tracking-wide text-center">Yanet Special Dental Clinic</h1>
-    <button>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.496M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    </button>
-  </header>
+  <!-- PREMIUM HEADER WITH NOTIFICATION BADGE -->
+<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-indigo-500 to-blue-400 shadow-md z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+
+    <!-- Left Icon: Dental -->
+    <div class="flex-shrink-0">
+      <img src="dental-icon.png" alt="Dental Icon" class="h-8 w-8 md:h-10 md:w-10 hover:scale-110 transition-transform">
+    </div>
+
+    <!-- Center: Clinic Name -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl font-extrabold leading-tight text-white relative">
+        Yanet Speciality
+        <span class="block w-20 h-1 bg-white mt-1 mx-auto rounded-full"></span>
+      </h1>
+      <h2 class="text-base md:text-xl font-extrabold leading-tight text-white mt-1">Dental Clinic</h2>
+    </div>
+
+    <!-- Right Icon: Notification with Badge -->
+    <div class="flex-shrink-0 relative">
+      <button class="hover:scale-110 transition-transform relative">
+        <img src="notification-icon.png" alt="Notification Icon" class="h-6 w-6 md:h-8 md:w-8">
+        <!-- Badge -->
+        <span class="absolute -top-1 -right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full animate-pulse">
+          1
+        </span>
+      </button>
+    </div>
+
+  </div>
+</header>
 
   <!-- HERO -->
   <section class="px-4 py-4 bg-white">
