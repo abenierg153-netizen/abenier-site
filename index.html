@@ -18,31 +18,36 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!-- REFINED HEADER -->
+<!-- COMPACT HEADER WITH MENU BEHIND NOTIFICATION -->
 <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-indigo-500 to-blue-400 shadow-md z-50">
-  <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+  <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-1.5">
 
     <!-- Left Icon: Dental -->
     <div class="flex-shrink-0">
-      <img src="dental-icon.png" alt="Dental Icon" class="h-8 w-8 md:h-10 md:w-10 hover:scale-110 transition-transform">
+      <img src="dental-icon.png" alt="Dental Icon" class="h-7 w-7 md:h-9 md:w-9 hover:scale-110 transition-transform">
     </div>
 
     <!-- Center: Clinic Name -->
     <div class="text-center">
-      <h1 class="text-lg md:text-2xl font-extrabold leading-tight text-white uppercase">
+      <h1 class="text-base md:text-xl font-extrabold leading-tight text-white uppercase">
         YANET SPECIALITY
-        <span class="block w-20 h-1 bg-white mt-1 mx-auto rounded-full"></span>
+        <span class="block w-16 h-1 bg-white mt-1 mx-auto rounded-full"></span>
       </h1>
-      <h2 class="text-base md:text-xl font-extrabold leading-tight text-white uppercase mt-1">
+      <h2 class="text-xs md:text-lg font-extrabold leading-tight text-white uppercase mt-1">
         DENTAL CLINIC
       </h2>
     </div>
 
-    <!-- Right Icon: Notification with Badge -->
+    <!-- Right Icons: Notification + Menu Behind -->
     <div class="flex-shrink-0 relative">
+      <!-- Menu Icon Behind -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute h-6 w-6 text-white top-0 left-0 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+      <!-- Notification Icon -->
       <button class="hover:scale-110 transition-transform relative">
-        <img src="notification-icon.png" alt="Notification Icon" class="h-6 w-6 md:h-8 md:w-8">
-        <span class="absolute -top-1 -right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full animate-pulse">
+        <img src="notification-icon.png" alt="Notification Icon" class="h-6 w-6 md:h-7 md:w-7 relative z-10">
+        <span class="absolute -top-1 -right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full animate-pulse z-20">
           1
         </span>
       </button>
@@ -50,6 +55,11 @@
 
   </div>
 </header>
+
+<!-- Add top padding to main content to prevent overlap -->
+<main class="pt-16">
+  <!-- Hero section starts here -->
+</main>
 
 <!-- Add top padding to main content to prevent overlap -->
 <main class="pt-20">
