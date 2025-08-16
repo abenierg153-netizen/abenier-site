@@ -19,88 +19,55 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header x-data="{ openMenu: false }" class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-200 to-blue-100 shadow-md z-50">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-
-    <!-- Left: Tooth Icon + Clinic Name -->
-    <div class="flex items-center space-x-3">
-      <i class="fas fa-tooth text-indigo-600 text-2xl md:text-3xl"></i>
-      <h1 class="text-base md:text-lg font-extrabold text-gray-800 uppercase leading-tight">
-        YANET SPECIALITY
-        <span class="block text-base md:text-lg">DENTAL CLINIC</span>
-      </h1>
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Left side: Logo -->
+    <div class="flex items-center space-x-2">
+      <!-- Teeth Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c2.5 0 4.5 2 4.5 4.5S14.5 11 12 11s-4.5-2-4.5-4.5S9.5 2 12 2zM7 22s1-4 5-4 5 4 5 4"/>
+      </svg>
+      <span class="font-bold text-lg">YANET SPECIAL DENTAL CLINIC</span>
     </div>
 
-    <!-- Right: Notification + Hamburger -->
-    <div class="flex items-center space-x-4">
-      <!-- Notification Bell -->
-      <div class="relative" x-data="{ notifyOpen: false, unread: 3, notifications: ['🦷 Appointment confirmed', '🎉 Giveaway ends in 3 days', '📢 New service available'] }">
-        <button @click="notifyOpen = !notifyOpen" class="relative text-gray-700 hover:text-indigo-600 focus:outline-none">
-          <i class="fas fa-bell text-xl md:text-2xl"></i>
-          <template x-if="unread > 0">
-            <span x-text="unread" class="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full"></span>
-          </template>
-        </button>
+    <!-- Right side: Hamburger -->
+    <button id="menu-btn" class="block md:hidden focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
 
-        <!-- Notifications dropdown -->
-        <div x-show="notifyOpen" @click.away="notifyOpen = false"
-             x-transition
-             class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50 hidden"
-             x-bind:class="notifyOpen ? 'block' : 'hidden'">
-          <div class="p-4 border-b font-semibold text-gray-700">Notifications</div>
-          <ul class="divide-y divide-gray-200 max-h-60 overflow-y-auto">
-            <template x-for="(note, index) in notifications" :key="index">
-              <li class="px-4 py-3 hover:bg-indigo-50 cursor-pointer" x-text="note"></li>
-            </template>
-          </ul>
-          <div class="p-3 text-center border-t">
-            <a href="#notifications" class="text-indigo-600 hover:underline text-sm">View All</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hamburger (always visible) -->
-      <button @click="openMenu = true" class="text-gray-800 focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
+    <!-- Desktop menu -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-yellow-500">Home</a>
+      <a href="#" class="hover:text-yellow-500">Appointments</a>
+      <a href="#" class="hover:text-yellow-500">Services</a>
+      <a href="#" class="hover:text-yellow-500">Visit Us</a>
+      <a href="#" class="hover:text-yellow-500">Giveaway</a>
+    </nav>
   </div>
 
-  <!-- Slide-in Menu (works desktop & mobile) -->
-  <div x-show="openMenu" class="fixed inset-0 z-50" x-cloak>
-    <!-- Overlay -->
-    <div @click="openMenu = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-    <!-- Menu Panel -->
-    <div class="absolute top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300"
-         x-show="openMenu"
-         x-transition:enter="translate-x-[-100%]"
-         x-transition:enter-end="translate-x-0"
-         x-transition:leave="translate-x-0"
-         x-transition:leave-end="translate-x-[-100%]">
-
-      <!-- Close Button -->
-      <div class="flex items-center justify-between px-4 py-3 border-b">
-        <h2 class="font-bold text-gray-700">Menu</h2>
-        <button @click="openMenu = false" class="text-gray-600 hover:text-red-500">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-      </div>
-
-      <!-- Links -->
-      <nav class="mt-4">
-        <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-home mr-2 text-indigo-500"></i> Home</a>
-        <a href="https://wa.me/251912345678" target="_blank" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-calendar-check mr-2 text-indigo-500"></i> Appointments</a>
-        <a href="#services" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-tooth mr-2 text-indigo-500"></i> Services</a>
-        <a href="https://goo.gl/maps/example" target="_blank" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Visit Us</a>
-        <a href="#giveaway" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-gift mr-2 text-indigo-500"></i> Giveaway</a>
-      </nav>
-    </div>
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Appointments</a>
+    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Visit Us</a>
+    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Giveaway</a>
   </div>
 </header>
+
+<!-- Script for toggle -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
   
-  
-  
+    
 
 <!-- Add top padding to main content to prevent overlap -->
 <main class="pt-16">
