@@ -20,22 +20,22 @@
 
 <!-- HEADER -->
 <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-  <div class="container mx-auto flex items-center justify-between px-3 py-2">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2">
     
     <!-- Left side: Logo + Title -->
     <div class="flex items-center space-x-2">
       <!-- Tooth Image Logo -->
-      <img src="teeth_logo_circle.png" alt="Tooth Logo" class="w-9 h-9 rounded-full object-cover">
+      <img src="teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
 
       <!-- Clinic Title -->
-      <div class="leading-tight text-left">
-        <h1 class="font-bold text-sm sm:text-base">YANET SPECIALITY</h1>
-        <h2 class="font-bold text-xs sm:text-sm text-gray-700">DENTAL CLINIC</h2>
+      <div class="flex flex-col leading-tight">
+        <h1 class="font-bold text-base">YANET SPECIALITY</h1>
+        <h2 class="text-sm text-gray-600">DENTAL CLINIC</h2>
       </div>
     </div>
 
     <!-- Right side: Hamburger -->
-    <button id="menu-btn" class="block md:hidden focus:outline-none ml-1">
+    <button id="menu-btn" class="block md:hidden focus:outline-none ml-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
               d="M4 6h16M4 12h16M4 18h16"/>
@@ -43,7 +43,7 @@
     </button>
 
     <!-- Desktop menu -->
-    <nav class="hidden md:flex space-x-5 text-sm font-medium">
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
       <a href="#" class="hover:text-yellow-500">Home</a>
       <a href="#" class="hover:text-yellow-500">Appointments</a>
       <a href="#" class="hover:text-yellow-500">Services</a>
@@ -71,8 +71,7 @@
     mobileMenu.classList.toggle("hidden");
   });
 </script>
-  
-
+    
 <!-- Add top padding to main content to prevent overlap -->
 <main class="pt-20">
   <!-- Your hero section starts here -->
