@@ -190,7 +190,7 @@
   <!-- CARD CONTAINER -->
   <div id="social-proof-grid" class="grid md:grid-cols-2 gap-6">
     
-    <!-- CARD 1 -->
+    <!-- Example CARD 1–10 (VISIBLE by default) -->
     <div class="bg-white rounded-3xl shadow p-4">
       <div class="flex gap-3">
         <div class="flex-1">
@@ -208,28 +208,10 @@
       <p class="text-xs text-gray-500 text-center mt-1">— Selam ⭐⭐⭐⭐⭐</p>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="bg-white rounded-3xl shadow p-4">
-      <div class="flex gap-3">
-        <div class="flex-1">
-          <img src="images/before2.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
-        </div>
-        <div class="flex-1">
-          <img src="images/after2.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
-        </div>
-      </div>
-      <p class="mt-3 text-sm text-gray-600 italic text-center">
-        "Amazing transformation!"
-      </p>
-      <p class="text-xs text-gray-500 text-center mt-1">— Yohannes ⭐⭐⭐⭐⭐</p>
-    </div>
+    <!-- ... Cards 2–10 (same structure, all visible) -->
 
-    <!-- Continue cards 3–10 (same structure, all visible) -->
-
-    <!-- CARD 11 (HIDDEN by default) -->
-    <div class="bg-white rounded-3xl shadow p-4 hidden">
+    <!-- Cards 11–20 (HIDDEN by default) -->
+    <div class="bg-white rounded-3xl shadow p-4 hidden extra-card">
       <div class="flex gap-3">
         <div class="flex-1">
           <img src="images/before11.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
@@ -246,7 +228,7 @@
       <p class="text-xs text-gray-500 text-center mt-1">— Example ⭐⭐⭐⭐⭐</p>
     </div>
 
-    <!-- Continue cards 12–20 (same structure, hidden) -->
+    <!-- ... Cards 12–20 (same structure, add class "extra-card hidden") -->
 
   </div>
 
@@ -260,16 +242,16 @@
 
 <script>
   const toggleBtn = document.getElementById("toggleBtn");
-  const hiddenCards = document.querySelectorAll("#social-proof-grid .hidden");
+  const extraCards = document.querySelectorAll("#social-proof-grid .extra-card");
   let expanded = false;
 
   toggleBtn.addEventListener("click", () => {
     if (!expanded) {
-      hiddenCards.forEach(card => card.classList.remove("hidden"));
+      extraCards.forEach(card => card.classList.remove("hidden"));
       toggleBtn.textContent = "Show Less";
       expanded = true;
     } else {
-      hiddenCards.forEach(card => card.classList.add("hidden"));
+      extraCards.forEach(card => card.classList.add("hidden"));
       toggleBtn.textContent = "Load More";
       expanded = false;
       window.scrollTo({ top: document.querySelector("#social-proof-grid").offsetTop, behavior: "smooth" });
