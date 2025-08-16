@@ -187,93 +187,56 @@
     <p class="text-sm text-gray-500 mt-1">Your Smile Is Our Best Review</p>
   </div>
 
-  <div class="grid gap-6">
-    <!-- CARD 1 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+  <div id="social-proof-grid" class="grid gap-6">
+    <!-- CARD 1–10 (VISIBLE) -->
+
+    <!-- CARD 11–20 (HIDDEN INITIALLY) -->
+    <div class="bg-white rounded-3xl shadow p-4 hidden">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img src="images/before1.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
+          <img src="images/before11.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
           <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img src="images/after1.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
+          <img src="images/after11.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
           <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
       <p class="mt-3 text-sm text-gray-600 italic text-center">
-        "I feel more confident smiling every day!"
+        "Incredible transformation!"
       </p>
-      <p class="text-xs text-gray-500 text-center mt-1">— Selam T. ⭐⭐⭐⭐⭐</p>
+      <p class="text-xs text-gray-500 text-center mt-1">— Example ⭐⭐⭐⭐⭐</p>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="bg-white rounded-3xl shadow p-4">
-      <div class="flex gap-3">
-        <div class="flex-1">
-          <img src="images/before2.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
-        </div>
-        <div class="flex-1">
-          <img src="images/after2.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
-        </div>
-      </div>
-      <p class="mt-3 text-sm text-gray-600 italic text-center">
-        "A life-changing smile makeover!"
-      </p>
-      <p class="text-xs text-gray-500 text-center mt-1">— Dawit M. ⭐⭐⭐⭐⭐</p>
-    </div>
+    <!-- Continue cards 12–20 also with class="hidden" -->
+  </div>
 
-    <!-- CARD 3 -->
-    <div class="bg-white rounded-3xl shadow p-4">
-      <div class="flex gap-3">
-        <div class="flex-1">
-          <img src="images/before3.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
-        </div>
-        <div class="flex-1">
-          <img src="images/after3.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
-        </div>
-      </div>
-      <p class="mt-3 text-sm text-gray-600 italic text-center">
-        "Now I can smile without hesitation."
-      </p>
-      <p class="text-xs text-gray-500 text-center mt-1">— Meron K. ⭐⭐⭐⭐☆</p>
-    </div>
+  <div class="mt-6 text-center">
+    <button id="toggleBtn" class="px-6 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold shadow hover:bg-yellow-500 transition">
+      Load More
+    </button>
+  </div>
+</section>
 
-    <!-- CARD 4 -->
-    <div class="bg-white rounded-3xl shadow p-4">
-      <div class="flex gap-3">
-        <div class="flex-1">
-          <img src="images/before4.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
-        </div>
-        <div class="flex-1">
-          <img src="images/after4.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
-        </div>
-      </div>
-      <p class="mt-3 text-sm text-gray-600 italic text-center">
-        "Best dental care I’ve ever had."
-      </p>
-      <p class="text-xs text-gray-500 text-center mt-1">— Hana S. ⭐⭐⭐⭐⭐</p>
-    </div>
+<script>
+  const toggleBtn = document.getElementById("toggleBtn");
+  const hiddenCards = document.querySelectorAll("#social-proof-grid .hidden");
+  let expanded = false;
 
-    <!-- CARD 5 -->
-    <div class="bg-white rounded-3xl shadow p-4">
-      <div class="flex gap-3">
-        <div class="flex-1">
-          <img src="images/before5.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
-        </div>
-        <div class="flex-1">
-          <img src="images/after5.jpg" class="w-full h-44 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
-        </div>
-      </div>
-      <p class="mt-3 text-sm text-gray-600 italic text-cen
-        
+  toggleBtn.addEventListener("click", () => {
+    if (!expanded) {
+      hiddenCards.forEach(card => card.classList.remove("hidden"));
+      toggleBtn.textContent = "Show Less";
+      expanded = true;
+    } else {
+      hiddenCards.forEach(card => card.classList.add("hidden"));
+      toggleBtn.textContent = "Load More";
+      expanded = false;
+      window.scrollTo({ top: document.querySelector("#social-proof-grid").offsetTop, behavior: "smooth" });
+    }
+  });
+</script>
+  
 <!-- OUR DOCTORS -->
 <section class="px-4 py-6 bg-white">
   <div class="text-center mb-6">
