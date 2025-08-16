@@ -20,25 +20,30 @@
 
 <!-- HEADER -->
 <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-  <div class="container mx-auto flex items-center justify-between p-4">
-    <!-- Left side: Logo -->
-    <div class="flex items-center space-x-2">
-      <!-- Teeth Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c2.5 0 4.5 2 4.5 4.5S14.5 11 12 11s-4.5-2-4.5-4.5S9.5 2 12 2zM7 22s1-4 5-4 5 4 5 4"/>
-      </svg>
-      <span class="font-bold text-lg">YANET SPECIAL DENTAL CLINIC</span>
+  <div class="container mx-auto flex items-center justify-between px-4 py-2">
+    
+    <!-- Left side: Logo + Title -->
+    <div class="flex items-center space-x-3">
+      <!-- Tooth Image Logo -->
+      <img src="teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+
+      <!-- Clinic Title -->
+      <div class="leading-tight text-center">
+        <h1 class="font-bold text-base">YANET SPECIALITY</h1>
+        <h2 class="text-sm text-gray-600">DENTAL CLINIC</h2>
+      </div>
     </div>
 
     <!-- Right side: Hamburger -->
     <button id="menu-btn" class="block md:hidden focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
 
     <!-- Desktop menu -->
-    <nav class="hidden md:flex space-x-6">
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
       <a href="#" class="hover:text-yellow-500">Home</a>
       <a href="#" class="hover:text-yellow-500">Appointments</a>
       <a href="#" class="hover:text-yellow-500">Services</a>
@@ -66,6 +71,7 @@
     mobileMenu.classList.toggle("hidden");
   });
 </script>
+  
   
     
 
