@@ -18,8 +18,20 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yanet Dental Clinic</title>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://kit.fontawesome.com/a2e0e6ad59.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-200 to-blue-100 shadow-md z-50">
   <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
 
     <!-- Left: Dental Icon -->
@@ -72,7 +84,7 @@
       <!-- 3-dot Menu -->
       <div class="relative" x-data="{ menuOpen: false }">
         <button @click="menuOpen = !menuOpen" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
-          <i class="fas fa-ellipsis-h text-xl md:text-2xl"></i>
+          <i class="fas fa-ellipsis-v text-xl md:text-2xl"></i>
         </button>
 
         <!-- Dropdown Menu -->
@@ -94,9 +106,12 @@
 </header>
 
 <!-- Add padding to prevent content hidden behind fixed header -->
-<div class="pt-20">
+<div class="pt-24">
   <!-- Page content here -->
 </div>
+
+</body>
+</html>
   
 
 <!-- Add top padding to main content to prevent overlap -->
