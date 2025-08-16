@@ -18,39 +18,30 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yanet Dental Clinic</title>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<script src="https://kit.fontawesome.com/a2e0e6ad59.js" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
-
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-200 to-blue-100 shadow-md z-50">
-  <div class="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+<header x-data="{ openMenu: false }" class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-200 to-blue-100 shadow-md z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
 
-    <!-- Left: Dental Icon -->
-    <div class="flex-shrink-0">
+    <!-- Left: Hamburger + Tooth Icon -->
+    <div class="flex items-center space-x-3">
+      <!-- Hamburger -->
+      <button @click="openMenu = true" class="text-gray-800 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <!-- Tooth Icon -->
       <i class="fas fa-tooth text-indigo-600 text-2xl md:text-3xl"></i>
     </div>
 
     <!-- Center: Clinic Name -->
-    <div class="text-center">
+    <div class="text-center flex-1">
       <h1 class="text-base md:text-lg font-extrabold text-gray-800 uppercase leading-tight">
         YANET SPECIALITY
         <span class="block text-base md:text-lg">DENTAL CLINIC</span>
       </h1>
     </div>
 
-    <!-- Right: Notification + 3-dot Menu -->
+    <!-- Right: Notification -->
     <div class="flex items-center space-x-3">
-
-      <!-- Notification Bell -->
       <div class="relative" x-data="{ notifyOpen: false, unread: 3, notifications: ['🦷 Appointment confirmed', '🎉 Giveaway ends in 3 days', '📢 New service available'] }">
         <button @click="notifyOpen = !notifyOpen" class="relative text-gray-700 hover:text-indigo-600 focus:outline-none">
           <i class="fas fa-bell text-xl md:text-2xl"></i>
@@ -59,14 +50,9 @@
           </template>
         </button>
 
-        <!-- Dropdown -->
+        <!-- Notifications dropdown -->
         <div x-show="notifyOpen" @click.away="notifyOpen = false"
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 transform -translate-y-2"
-             x-transition:enter-end="opacity-100 transform translate-y-0"
-             x-transition:leave="transition ease-in duration-150"
-             x-transition:leave-start="opacity-100 transform translate-y-0"
-             x-transition:leave-end="opacity-0 transform -translate-y-2"
+             x-transition
              class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50 hidden"
              x-bind:class="notifyOpen ? 'block' : 'hidden'">
           <div class="p-4 border-b font-semibold text-gray-700">Notifications</div>
@@ -80,38 +66,43 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- 3-dot Menu -->
-      <div class="relative" x-data="{ menuOpen: false }">
-        <button @click="menuOpen = !menuOpen" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
-          <i class="fas fa-ellipsis-v text-xl md:text-2xl"></i>
+  </div>
+
+  <!-- Slide-in Menu (works on desktop & mobile) -->
+  <div x-show="openMenu" class="fixed inset-0 z-50" x-cloak>
+    <!-- Overlay -->
+    <div @click="openMenu = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Menu Panel -->
+    <div class="absolute top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300"
+         x-show="openMenu"
+         x-transition:enter="translate-x-[-100%]"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="translate-x-0"
+         x-transition:leave-end="translate-x-[-100%]">
+
+      <!-- Close Button -->
+      <div class="flex items-center justify-between px-4 py-3 border-b">
+        <h2 class="font-bold text-gray-700">Menu</h2>
+        <button @click="openMenu = false" class="text-gray-600 hover:text-red-500">
+          <i class="fas fa-times text-xl"></i>
         </button>
-
-        <!-- Dropdown Menu -->
-        <div x-show="menuOpen" @click.away="menuOpen = false" x-transition
-             class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50 hidden"
-             x-bind:class="menuOpen ? 'block' : 'hidden'">
-          <ul class="py-2">
-            <li><a href="#home" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100"><i class="fas fa-home text-indigo-500 mr-3"></i> Home</a></li>
-            <li><a href="https://wa.me/251912345678" target="_blank" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100"><i class="fas fa-calendar-check text-indigo-500 mr-3"></i> Appointments</a></li>
-            <li><a href="#services" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100"><i class="fas fa-tooth text-indigo-500 mr-3"></i> Services</a></li>
-            <li><a href="https://goo.gl/maps/example" target="_blank" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100"><i class="fas fa-map-marker-alt text-indigo-500 mr-3"></i> Visit Us</a></li>
-            <li><a href="#giveaway" class="flex items-center px-4 py-2 text-gray-700 hover:bg-indigo-100"><i class="fas fa-gift text-indigo-500 mr-3"></i> Giveaway</a></li>
-          </ul>
-        </div>
       </div>
 
+      <!-- Links -->
+      <nav class="mt-4">
+        <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-home mr-2 text-indigo-500"></i> Home</a>
+        <a href="https://wa.me/251912345678" target="_blank" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-calendar-check mr-2 text-indigo-500"></i> Appointments</a>
+        <a href="#services" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-tooth mr-2 text-indigo-500"></i> Services</a>
+        <a href="https://goo.gl/maps/example" target="_blank" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Visit Us</a>
+        <a href="#giveaway" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100"><i class="fas fa-gift mr-2 text-indigo-500"></i> Giveaway</a>
+      </nav>
     </div>
   </div>
 </header>
-
-<!-- Add padding to prevent content hidden behind fixed header -->
-<div class="pt-24">
-  <!-- Page content here -->
-</div>
-
-</body>
-</html>
+  
   
 
 <!-- Add top padding to main content to prevent overlap -->
