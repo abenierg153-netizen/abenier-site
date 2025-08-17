@@ -469,79 +469,87 @@
 </section>
   
 <!-- TESTIMONIALS -->
-<section class="py-16 bg-gray-50">
+<section class="py-12 bg-gray-50">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-10">What Our Happy Users Say</h2>
+    <h2 class="text-2xl font-bold mb-6">Hear from Our Customers</h2>
 
-    <div class="overflow-hidden relative">
-      <!-- Slider Track -->
-      <div id="testimonial-track" class="flex gap-6 transition-transform duration-500 ease-linear">
+    <!-- Scrollable container -->
+    <div id="testimonial-wrapper" class="overflow-x-auto no-scrollbar scroll-smooth">
+      <div id="testimonial-track" class="flex gap-4 w-max px-2">
         
         <!-- Card -->
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“Amazing service and very friendly staff. Highly recommended!”</p>
-          <h4 class="font-semibold">Sarah M.</h4>
-          <p class="text-sm text-gray-500">Addis Ababa</p>
+        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
+          <p class="text-gray-600 text-sm mb-2">“Amazing service and very friendly staff. Highly recommended!”</p>
+          <h4 class="font-semibold text-sm">Sarah M.</h4>
+          <p class="text-xs text-gray-500">Addis Ababa</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“The clinic is modern and well-equipped. I love my new smile!”</p>
-          <h4 class="font-semibold">Daniel K.</h4>
-          <p class="text-sm text-gray-500">Bole</p>
+        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
+          <p class="text-gray-600 text-sm mb-2">“The clinic is modern and well-equipped. I love my new smile!”</p>
+          <h4 class="font-semibold text-sm">Daniel K.</h4>
+          <p class="text-xs text-gray-500">Bole</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“Professional doctors who really care about their patients.”</p>
-          <h4 class="font-semibold">Marta A.</h4>
-          <p class="text-sm text-gray-500">Kazanchis</p>
+        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
+          <p class="text-gray-600 text-sm mb-2">“Professional doctors who really care about their patients.”</p>
+          <h4 class="font-semibold text-sm">Marta A.</h4>
+          <p class="text-xs text-gray-500">Kazanchis</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“Best dental experience I’ve ever had. Thank you Yanet Clinic!”</p>
-          <h4 class="font-semibold">Abel T.</h4>
-          <p class="text-sm text-gray-500">Piassa</p>
+        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
+          <p class="text-gray-600 text-sm mb-2">“Best dental experience I’ve ever had. Thank you Yanet Clinic!”</p>
+          <h4 class="font-semibold text-sm">Abel T.</h4>
+          <p class="text-xs text-gray-500">Piassa</p>
         </div>
-
-        <!-- Duplicate cards for smooth infinite scroll -->
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“Amazing service and very friendly staff. Highly recommended!”</p>
-          <h4 class="font-semibold">Sarah M.</h4>
-          <p class="text-sm text-gray-500">Addis Ababa</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <div class="text-yellow-500 mb-2">★★★★★</div>
-          <p class="text-gray-600 mb-4">“The clinic is modern and well-equipped. I love my new smile!”</p>
-          <h4 class="font-semibold">Daniel K.</h4>
-          <p class="text-sm text-gray-500">Bole</p>
-        </div>
-
       </div>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div id="dots" class="flex justify-center gap-2 mt-4">
+      <span class="dot w-2 h-2 bg-gray-400 rounded-full inline-block"></span>
+      <span class="dot w-2 h-2 bg-gray-300 rounded-full inline-block"></span>
+      <span class="dot w-2 h-2 bg-gray-300 rounded-full inline-block"></span>
     </div>
   </div>
 </section>
 
-<script>
-  const track = document.getElementById("testimonial-track");
-  let position = 0;
-
-  function autoScroll() {
-    position -= 1; // move left
-    if (Math.abs(position) >= track.scrollWidth / 2) {
-      position = 0; // reset for infinite effect
-    }
-    track.style.transform = `translateX(${position}px)`;
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
 
-  setInterval(autoScroll, 40); // adjust speed (lower = slower)
+<script>
+  const wrapper = document.getElementById("testimonial-wrapper");
+  const dots = document.querySelectorAll("#dots .dot");
+
+  wrapper.addEventListener("scroll", () => {
+    const scrollLeft = wrapper.scrollLeft;
+    const cardWidth = wrapper.querySelector("div").offsetWidth + 16; // card + gap
+    const index = Math.round(scrollLeft / cardWidth);
+    
+    dots.forEach((dot, i) => {
+      dot.classList.remove("bg-gray-400");
+      dot.classList.add("bg-gray-300");
+      if (i === index) {
+        dot.classList.remove("bg-gray-300");
+        dot.classList.add("bg-gray-400");
+      }
+    });
+  });
 </script>
+  
   
 
 <!-- FOOTER -->
