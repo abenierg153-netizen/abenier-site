@@ -478,35 +478,51 @@
       <div id="testimonial-track" class="flex gap-4 w-max px-2">
         
         <!-- Card -->
-        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
-          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
-          <p class="text-gray-600 text-sm mb-2">“Amazing service and very friendly staff. Highly recommended!”</p>
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“Amazing service and very friendly staff. Highly recommended!”</p>
           <h4 class="font-semibold text-sm">Sarah M.</h4>
           <p class="text-xs text-gray-500">Addis Ababa</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
-          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
-          <p class="text-gray-600 text-sm mb-2">“The clinic is modern and well-equipped. I love my new smile!”</p>
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“The clinic is modern and well-equipped. I love my new smile!”</p>
           <h4 class="font-semibold text-sm">Daniel K.</h4>
           <p class="text-xs text-gray-500">Bole</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
-          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
-          <p class="text-gray-600 text-sm mb-2">“Professional doctors who really care about their patients.”</p>
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“Professional doctors who really care about their patients.”</p>
           <h4 class="font-semibold text-sm">Marta A.</h4>
           <p class="text-xs text-gray-500">Kazanchis</p>
         </div>
 
         <!-- Card -->
-        <div class="bg-white rounded-lg shadow p-4 w-64 flex-shrink-0">
-          <div class="text-yellow-500 mb-1 text-sm">★★★★★</div>
-          <p class="text-gray-600 text-sm mb-2">“Best dental experience I’ve ever had. Thank you Yanet Clinic!”</p>
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“Best dental experience I’ve ever had. Thank you Yanet Clinic!”</p>
           <h4 class="font-semibold text-sm">Abel T.</h4>
           <p class="text-xs text-gray-500">Piassa</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“Fast, efficient, and very caring team. Highly satisfied.”</p>
+          <h4 class="font-semibold text-sm">Helen B.</h4>
+          <p class="text-xs text-gray-500">CMC</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow p-3 w-56 flex-shrink-0">
+          <div class="text-yellow-500 mb-1 text-xs">★★★★★</div>
+          <p class="text-gray-600 text-xs mb-2">“They truly make you feel at home. Excellent dental care!”</p>
+          <h4 class="font-semibold text-sm">Yonas G.</h4>
+          <p class="text-xs text-gray-500">Megenagna</p>
         </div>
       </div>
     </div>
@@ -537,7 +553,7 @@
   wrapper.addEventListener("scroll", () => {
     const scrollLeft = wrapper.scrollLeft;
     const cardWidth = wrapper.querySelector("div").offsetWidth + 16; // card + gap
-    const index = Math.round(scrollLeft / cardWidth);
+    const index = Math.round(scrollLeft / cardWidth / 2); // Adjust sensitivity
     
     dots.forEach((dot, i) => {
       dot.classList.remove("bg-gray-400");
@@ -549,6 +565,8 @@
     });
   });
 </script>
+  
+
   
   
 
