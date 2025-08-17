@@ -469,36 +469,80 @@
 </section>
   
 <!-- TESTIMONIALS -->
-<section class="px-4 py-6 bg-white">
-  <div class="text-center mb-6">
-    <h3 class="text-lg font-bold text-gray-900 uppercase">Testimonials</h3>
-    <p class="text-sm text-gray-500 mt-1">What our patients say</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="bg-gray-50 rounded-2xl shadow p-4 flex items-start gap-4">
-      <img src="images/patient1.jpg" alt="Patient 1" class="rounded-full w-12 h-12">
-      <div>
-        <h4 class="text-base font-semibold text-gray-900">Patient Name</h4>
-        <div class="flex text-yellow-400 mb-1">
-          <!-- Star Icons -->
-          <span>⭐️⭐️⭐️⭐️⭐️</span>
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-10">What Our Happy Users Say</h2>
+
+    <div class="overflow-hidden relative">
+      <!-- Slider Track -->
+      <div id="testimonial-track" class="flex gap-6 transition-transform duration-500 ease-linear">
+        
+        <!-- Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“Amazing service and very friendly staff. Highly recommended!”</p>
+          <h4 class="font-semibold">Sarah M.</h4>
+          <p class="text-sm text-gray-500">Addis Ababa</p>
         </div>
-        <p class="text-sm text-gray-500">Excellent service and very professional staff!</p>
-      </div>
-    </div>
-    <div class="bg-gray-50 rounded-2xl shadow p-4 flex items-start gap-4">
-      <img src="images/patient2.jpg" alt="Patient 2" class="rounded-full w-12 h-12">
-      <div>
-        <h4 class="text-base font-semibold text-gray-900">Patient Name</h4>
-        <div class="flex text-yellow-400 mb-1">
-          <!-- Star Icons -->
-          <span>⭐️⭐️⭐️⭐️⭐️</span>
+
+        <!-- Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“The clinic is modern and well-equipped. I love my new smile!”</p>
+          <h4 class="font-semibold">Daniel K.</h4>
+          <p class="text-sm text-gray-500">Bole</p>
         </div>
-        <p class="text-sm text-gray-500">Friendly staff and clean environment. Highly recommended!</p>
+
+        <!-- Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“Professional doctors who really care about their patients.”</p>
+          <h4 class="font-semibold">Marta A.</h4>
+          <p class="text-sm text-gray-500">Kazanchis</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“Best dental experience I’ve ever had. Thank you Yanet Clinic!”</p>
+          <h4 class="font-semibold">Abel T.</h4>
+          <p class="text-sm text-gray-500">Piassa</p>
+        </div>
+
+        <!-- Duplicate cards for smooth infinite scroll -->
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“Amazing service and very friendly staff. Highly recommended!”</p>
+          <h4 class="font-semibold">Sarah M.</h4>
+          <p class="text-sm text-gray-500">Addis Ababa</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <div class="text-yellow-500 mb-2">★★★★★</div>
+          <p class="text-gray-600 mb-4">“The clinic is modern and well-equipped. I love my new smile!”</p>
+          <h4 class="font-semibold">Daniel K.</h4>
+          <p class="text-sm text-gray-500">Bole</p>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const track = document.getElementById("testimonial-track");
+  let position = 0;
+
+  function autoScroll() {
+    position -= 1; // move left
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+      position = 0; // reset for infinite effect
+    }
+    track.style.transform = `translateX(${position}px)`;
+  }
+
+  setInterval(autoScroll, 40); // adjust speed (lower = slower)
+</script>
+  
 
 <!-- FOOTER -->
 <footer class="px-4 py-6 bg-gray-900 text-white">
