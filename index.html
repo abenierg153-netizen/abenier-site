@@ -424,31 +424,103 @@
   </div>
 </section>
   
+<!-- Why Choose Us Section -->
+<section class="mx-auto max-w-screen-md px-4 py-10 bg-white rounded-2xl shadow-md">
+  <h2 class="text-3xl font-extrabold text-center mb-8 text-emerald-600 bg-gradient-to-r from-emerald-500 to-emerald-700 bg-clip-text text-transparent" data-aos="fade-down">
+    ✨ Why Choose Us?
+  </h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <!-- Specialized Care -->
+    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="100">
+      <div class="bg-emerald-600 text-white p-3 rounded-full text-lg shadow-md">🦷</div>
+      <div>
+        <h3 class="font-semibold text-lg text-neutral-900">Specialized Care</h3>
+        <p class="text-sm text-neutral-700">
+          Certified experts in braces, implants, and cosmetic dentistry provide advanced treatment for every smile.
+        </p>
+      </div>
+    </div>
 
-<!-- WHY CHOOSE US -->
-<section class="px-4 py-6 bg-gray-50">
-  <div class="text-center mb-6">
-    <h3 class="text-lg font-bold text-gray-900 uppercase">Why Choose Us</h3>
-    <p class="text-sm text-gray-500 mt-1">Why patients trust us</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/advanced_care.png" alt="Advanced Care" class="mx-auto mb-2 w-12 h-12">
-      <h4 class="text-base font-semibold text-gray-900">Advanced Care</h4>
-      <p class="text-sm text-gray-500">State-of-the-art dental equipment for precise treatments</p>
+    <!-- Modern Technology -->
+    <div class="flex items-start gap-4" data-aos="fade-left" data-aos-delay="200">
+      <div class="bg-emerald-600 text-white p-3 rounded-full text-lg shadow-md">💡</div>
+      <div>
+        <h3 class="font-semibold text-lg text-neutral-900">Modern Technology</h3>
+        <p class="text-sm text-neutral-700">
+          Digital X-rays and laser dentistry make your care safer, faster, and virtually painless.
+        </p>
+      </div>
     </div>
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/gentle_treatment.png" alt="Gentle Treatment" class="mx-auto mb-2 w-12 h-12">
-      <h4 class="text-base font-semibold text-gray-900">Gentle Treatment</h4>
-      <p class="text-sm text-gray-500">We provide pain-free and comfortable care</p>
+
+    <!-- Personalized Approach -->
+    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300">
+      <div class="bg-emerald-600 text-white p-3 rounded-full text-lg shadow-md">🤝</div>
+      <div>
+        <h3 class="font-semibold text-lg text-neutral-900">Personalized Approach</h3>
+        <p class="text-sm text-neutral-700">
+          Every smile is unique. We listen, plan, and create treatments tailored just for you.
+        </p>
+      </div>
     </div>
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/experienced_staff.png" alt="Experienced Staff" class="mx-auto mb-2 w-12 h-12">
-      <h4 class="text-base font-semibold text-gray-900">Experienced Staff</h4>
-      <p class="text-sm text-gray-500">Certified dental experts with years of experience</p>
+
+    <!-- Trusted by Families -->
+    <div class="flex items-start gap-4" data-aos="fade-left" data-aos-delay="400">
+      <div class="bg-emerald-600 text-white p-3 rounded-full text-lg shadow-md">🏆</div>
+      <div>
+        <h3 class="font-semibold text-lg text-neutral-900">Trusted by Families</h3>
+        <p class="text-sm text-neutral-700">
+          Years of experience and hundreds of happy patients make us a name you can trust.
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Sticky CTA Section -->
+<div class="fixed bottom-4 left-0 w-full px-4 z-50">
+  <div class="max-w-screen-md mx-auto flex flex-col sm:flex-row justify-between gap-4 bg-emerald-600 rounded-2xl p-4 shadow-xl items-center animate-[slideUp_0.5s_ease]">
+    
+    <!-- Text -->
+    <div class="text-white font-bold text-base text-center sm:text-left">
+      Book Your Appointment Today!
+    </div>
+    
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+      <!-- Chat Button -->
+      <a href="https://t.me/YOUR_TELEGRAM_BOT" target="_blank" class="flex-1 sm:flex-none text-center bg-white text-emerald-600 font-semibold px-4 py-2 rounded-2xl shadow hover:bg-gray-100 transition border-2 border-transparent hover:border-emerald-400">
+        ⚡ Start Chat Instantly
+      </a>
+      
+      <!-- Call / Appointment Button -->
+      <a href="tel:+251XXXXXXXXX" class="flex-1 sm:flex-none text-center bg-white text-emerald-600 font-semibold px-4 py-2 rounded-2xl shadow hover:bg-gray-100 transition">
+        📞 Call / Book
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Animations -->
+<style>
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<!-- Include AOS CSS in <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Include AOS JS before </body> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+  
 
 <!-- TESTIMONIALS -->
 <section class="px-4 py-6 bg-white">
