@@ -478,48 +478,31 @@
 </section>
 
 <!-- Sticky CTA Section -->
-<div class="fixed bottom-4 left-0 w-full px-4 z-50">
-  <div class="max-w-screen-md mx-auto flex flex-col sm:flex-row justify-between gap-4 bg-emerald-600 rounded-2xl p-4 shadow-xl items-center animate-[slideUp_0.5s_ease]">
+<div class="fixed bottom-4 left-0 right-0 px-4 z-50">
+  <div class="max-w-sm mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 bg-emerald-600 rounded-xl p-3 shadow-md">
     
     <!-- Text -->
-    <div class="text-white font-bold text-base text-center sm:text-left">
+    <div class="text-white font-semibold text-sm text-center sm:text-left">
       Book Your Appointment Today!
     </div>
     
     <!-- Buttons -->
-    <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+    <div class="flex gap-2">
       <!-- Chat Button -->
-      <a href="https://t.me/YOUR_TELEGRAM_BOT" target="_blank" class="flex-1 sm:flex-none text-center bg-white text-emerald-600 font-semibold px-4 py-2 rounded-2xl shadow hover:bg-gray-100 transition border-2 border-transparent hover:border-emerald-400">
-        ⚡ Start Chat Instantly
+      <a href="https://t.me/YOUR_TELEGRAM_BOT" target="_blank" 
+         class="bg-white text-emerald-600 font-semibold text-sm px-3 py-1.5 rounded-lg hover:bg-gray-100 transition">
+        ⚡ Chat
       </a>
       
       <!-- Call / Appointment Button -->
-      <a href="tel:+251XXXXXXXXX" class="flex-1 sm:flex-none text-center bg-white text-emerald-600 font-semibold px-4 py-2 rounded-2xl shadow hover:bg-gray-100 transition">
-        📞 Call / Book
+      <a href="tel:+251XXXXXXXXX" 
+         class="bg-white text-emerald-600 font-semibold text-sm px-3 py-1.5 rounded-lg hover:bg-gray-100 transition">
+        📞 Call
       </a>
     </div>
   </div>
 </div>
-
-<!-- Animations -->
-<style>
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-</style>
-
-<!-- Include AOS CSS in <head> -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-<!-- Include AOS JS before </body> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true
-  });
-</script>
+  
   
 
 <!-- TESTIMONIALS -->
