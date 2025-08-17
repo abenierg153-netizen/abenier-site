@@ -178,40 +178,83 @@
   </div>
 </section>
 
-<h2 class="text-lg font-semibold mb-4 text-center">Before & After Results</h2>
+<section class="px-4 mt-4">
+  <h2 class="text-lg font-semibold mb-4 text-center">Before & After Results</h2>
 
-<!-- Grid Container -->
-<div id="reviews-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <!-- Grid Container -->
+  <div id="reviews-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-  <!-- CARD 1 to CARD 10 (visible) -->
-  <div class="bg-white rounded-3xl shadow p-4"> ... Card 1 ... </div>
-  <div class="bg-white rounded-3xl shadow p-4"> ... Card 2 ... </div>
-  <div class="bg-white rounded-3xl shadow p-4"> ... Card 3 ... </div>
-  <!-- continue same up to CARD 10 (no hidden class) -->
+    <!-- CARD 1 -->
+    <div class="bg-white rounded-3xl shadow p-4">
+      <div class="flex gap-3">
+        <div class="flex-1">
+          <img src="images/before1.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+        </div>
+        <div class="flex-1">
+          <img src="images/after1.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-gray-600 italic text-center">"Amazing difference!"</p>
+      <p class="text-xs text-gray-500 text-center mt-1">— Customer 1 ⭐⭐⭐⭐⭐</p>
+    </div>
 
-  <!-- CARD 11 to CARD 20 (hidden initially) -->
-  <div class="hidden bg-white rounded-3xl shadow p-4"> ... Card 11 ... </div>
-  <div class="hidden bg-white rounded-3xl shadow p-4"> ... Card 12 ... </div>
-  <!-- continue same up to CARD 20 (all hidden) -->
+    <!-- CARD 2 -->
+    <div class="bg-white rounded-3xl shadow p-4">
+      <div class="flex gap-3">
+        <div class="flex-1">
+          <img src="images/before2.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+        </div>
+        <div class="flex-1">
+          <img src="images/after2.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-gray-600 italic text-center">"Loved the results!"</p>
+      <p class="text-xs text-gray-500 text-center mt-1">— Customer 2 ⭐⭐⭐⭐⭐</p>
+    </div>
 
-</div>
+    <!-- CARD 3 to CARD 8 (same structure, visible by default) -->
 
-<!-- Load More Button -->
-<div class="text-center mt-4">
-  <button id="loadMore" class="bg-green-600 text-white px-6 py-2 rounded-full shadow hover:bg-green-700">
-    Load More
-  </button>
-</div>
+    <!-- CARD 9–20: initially hidden -->
+    <div class="hidden bg-white rounded-3xl shadow p-4">
+      <div class="flex gap-3">
+        <div class="flex-1">
+          <img src="images/before9.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+        </div>
+        <div class="flex-1">
+          <img src="images/after9.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-gray-600 italic text-center">"So happy with this!"</p>
+      <p class="text-xs text-gray-500 text-center mt-1">— Customer 9 ⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <!-- Continue same for cards 10–20 (all with class="hidden") -->
+  </div>
+
+  <!-- Load More Button -->
+  <div class="text-center mt-4">
+    <button id="loadMore" class="bg-green-600 text-white px-6 py-2 rounded-full shadow hover:bg-green-700">
+      Load More
+    </button>
+  </div>
+</section>
 
 <script>
   const loadMoreBtn = document.getElementById("loadMore");
-  const hiddenCards = document.querySelectorAll("#reviews-grid .hidden");
-
   loadMoreBtn.addEventListener("click", () => {
-    hiddenCards.forEach(card => card.classList.remove("hidden"));
+    document.querySelectorAll("#reviews-grid .hidden").forEach(card => {
+      card.classList.remove("hidden");
+    });
     loadMoreBtn.style.display = "none"; // Hide button after showing all
   });
 </script>
+  
 <!-- OUR DOCTORS -->
 <section class="px-4 py-6 bg-white">
   <div class="text-center mb-6">
