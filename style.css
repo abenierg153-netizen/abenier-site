@@ -1,16 +1,15 @@
-/* === HEADER BACKGROUND (light clinic blue) === */
+/* HEADER background */
 header {
-  background-color: #f0f9ff;  /* light aqua-blue background */
-  border-bottom: 1px solid #dbeafe; /* subtle blue border */
+  background-color: #f0f9ff !important; /* light aqua clinic blue */
+  border-bottom: 1px solid #dbeafe !important;
 }
 
-/* === CLINIC NAME COLORS === */
+/* Clinic Name Colors */
 header h1 {
-  color: #1d4ed8;   /* blue-700 for "YANET SPECIALITY" */
-  font-size: 1.25rem;
+  color: #1d4ed8 !important;  /* dental strong blue */
+  font-size: 1.25rem !important;
 }
-
 header h2 {
-  color: #2563eb;   /* blue-600 for "DENTAL CLINIC" */
-  font-size: 1.25rem;
+  color: #2563eb !important;  /* dental light blue */
+  font-size: 1.25rem !important;
 }
