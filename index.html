@@ -1,108 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanet Speciality Dental Clinic</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
-    .fade-up-delay-1 { animation-delay: 0.1s; }
-    .fade-up-delay-2 { animation-delay: 0.2s; }
-    .fade-up-delay-3 { animation-delay: 0.3s; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yanet Special Dental Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease-out forwards; }
+    .fade-up-delay-1 { animation-delay: 0.1s; }
+    .fade-up-delay-2 { animation-delay: 0.2s; }
+    .fade-up-delay-3 { animation-delay: 0.3s; }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
 <header class="relative bg-blue-50/80 shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-md">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-    <!-- Left: Logo -->
-    <div class="flex items-center space-x-2">
-      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
-    </div>
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+    <!-- Left: Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+    </div>
 
-    <!-- Center: Clinic Title -->
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
-        YANET SPECIALITY
-      </h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
-        DENTAL CLINIC
-      </h2>
-    </div>
+    <!-- Center: Clinic Title -->
+    <div class="flex flex-col items-center leading-tight flex-grow text-center">
+      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
+        YANET SPECIALITY
+      </h1>
+      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
+        DENTAL CLINIC
+      </h2>
+    </div>
 
-    <!-- Right: Call + Hamburger -->
-    <div class="flex items-center space-x-2">
-      <a href="tel:+251900000000"
-         class="flex items-center space-x-1 bg-teal-600 text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-teal-700 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
-        </svg>
-        <span>Call Us</span>
-      </a>
+    <!-- Right: Call + Hamburger -->
+    <div class="flex items-center space-x-2">
+      <a href="tel:+251900000000"
+         class="flex items-center space-x-1 bg-teal-600 text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-teal-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+        </svg>
+        <span>Call Us</span>
+      </a>
 
-      <!-- Hamburger -->
-      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Open menu" aria-expanded="false">
-        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </div>
+      <!-- Hamburger (X removed) -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Open menu" aria-expanded="false">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-  <!-- Mobile Menu -->
-  <nav id="mobile-menu"
-       class="hidden absolute top-full left-0 w-full flex-col bg-blue-50/80 backdrop-blur-md shadow-md md:hidden border-t border-gray-200">
-    <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
-    <a href="#testimonials" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Testimonials</a>
-    <a href="#contact" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Contact</a>
-    <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank"
-       class="px-4 py-3 text-gray-800 hover:text-[#2563EB]">Visit Us</a>
-  </nav>
+  <!-- Mobile Menu (hidden by default) -->
+  <nav id="mobile-menu"
+       class="hidden absolute top-full left-0 w-full flex-col bg-blue-50/80 backdrop-blur-md shadow-md md:hidden border-t border-gray-200">
+    <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
+    <a href="#testimonials" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Testimonials</a>
+    <a href="#contact" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Contact</a>
+    <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank"
+       class="px-4 py-3 text-gray-800 hover:text-[#2563EB]">Visit Us</a>
+  </nav>
 </header>
 
-<!-- HERO SECTION -->
-<section id="hero" class="pt-24 sm:pt-20 px-4 text-center">
-  <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 fade-up">
-    Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
-  </h1>
-  <p class="mt-4 text-gray-600 fade-up fade-up-delay-1">
-    Your comfort and healthy smile are our top priority.
-  </p>
-</section>
-
 <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
+  menuBtn.addEventListener('click', () => {
+    // Toggle visibility and layout
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
 
-    // Update ARIA for accessibility
-    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', String(!expanded));
-  });
+    // Update ARIA for accessibility
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!expanded));
+  });
 
-  // Close menu when clicking a link
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
-  });
+  // Close menu when clicking a link
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
-
-</body>
-</html>
 
 <!-- HERO SECTION -->
 <section class="pt-20 sm:pt-24 bg-gray-50">
