@@ -64,7 +64,8 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden flex-col bg-blue-50 shadow-md md:hidden">
+  <div id="mobile-menu" 
+       class="max-h-0 overflow-hidden flex-col bg-blue-50 shadow-md md:hidden transition-all duration-500 ease-in-out">
     <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
     <a href="#testimonials" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Testimonials</a>
     <a href="#contact" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Contact</a>
@@ -80,7 +81,13 @@
   const closeIcon = document.getElementById('close-icon');
 
   menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden'); // show/hide menu
+    if (mobileMenu.classList.contains('max-h-0')) {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-screen'); // expand
+    } else {
+      mobileMenu.classList.remove('max-h-screen');
+      mobileMenu.classList.add('max-h-0'); // collapse
+    }
     hamburgerIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
   });
@@ -88,14 +95,13 @@
   // Close menu when clicking a link
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('max-h-screen');
+      mobileMenu.classList.add('max-h-0');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     });
   });
 </script>
-  
-  
   
   
     
