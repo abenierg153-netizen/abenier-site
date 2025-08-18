@@ -1,33 +1,16 @@
-/* === HEADER CLINIC NAME COLORS === */
+/* === HEADER BACKGROUND (light clinic blue) === */
+header {
+  background-color: #f0f9ff;  /* light aqua-blue background */
+  border-bottom: 1px solid #dbeafe; /* subtle blue border */
+}
+
+/* === CLINIC NAME COLORS === */
 header h1 {
-  color: #1d4ed8;   /* strong dental blue for "YANET SPECIALITY" */
-  font-size: 1.25rem; /* balanced size */
+  color: #1d4ed8;   /* blue-700 for "YANET SPECIALITY" */
+  font-size: 1.25rem;
 }
 
 header h2 {
-  color: #3b82f6;   /* lighter dental blue for "DENTAL CLINIC" */
-  font-size: 1.25rem; /* same size as h1 */
-}
-
-/* === EXCLUSIVE OFFER BOX COLOR === */
-section .bg-green-600 {
-  background-color: #06b6d4; /* aqua/teal dental tone */
-  transition: background-color 0.3s ease;
-}
-
-/* Hover effect → slightly darker aqua */
-section .bg-green-600:hover {
-  background-color: #0891b2; /* Tailwind cyan-600 */
-}
-
-/* === BUTTON INSIDE EXCLUSIVE OFFER === */
-section .bg-green-600 button {
-  background-color: #ffffff;   /* keep white */
-  color: #0e7490;              /* cyan-700 for dental tone text */
-  transition: all 0.3s ease;
-}
-
-section .bg-green-600 button:hover {
-  background-color: #f1f5f9;   /* light gray hover */
-  color: #0369a1;              /* darker aqua on hover */
+  color: #2563eb;   /* blue-600 for "DENTAL CLINIC" */
+  font-size: 1.25rem;
 }
