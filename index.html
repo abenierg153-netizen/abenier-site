@@ -22,7 +22,7 @@
 <header class="bg-gray-50 shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
   <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
-    <!-- Left side: Logo -->
+    <!-- Left: Logo -->
     <div class="flex items-center space-x-2">
       <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
     </div>
@@ -37,9 +37,9 @@
       </h2>
     </div>
 
-    <!-- Right side: Call Us + Hamburger -->
+    <!-- Right: Call + Hamburger -->
     <div class="flex items-center space-x-2">
-      <!-- Call Us Button -->
+      <!-- Call Us -->
       <a href="tel:+251900000000" 
          class="flex items-center space-x-1 bg-teal-600 text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-teal-700 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,14 +49,12 @@
         <span>Call Us</span>
       </a>
 
-      <!-- Hamburger Menu -->
+      <!-- Hamburger -->
       <button id="menu-btn" class="block md:hidden focus:outline-none">
-        <!-- Hamburger icon -->
         <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-        <!-- X icon (hidden by default) -->
         <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M6 18L18 6M6 6l12 12"/>
@@ -66,16 +64,15 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 shadow-md md:hidden">
-    <a href="#services" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Services</a>
-    <a href="#testimonials" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Testimonials</a>
-    <a href="#contact" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Contact</a>
+  <div id="mobile-menu" class="hidden flex-col bg-gray-50 shadow-md md:hidden transform transition-transform duration-300 ease-in-out">
+    <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
+    <a href="#testimonials" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Testimonials</a>
+    <a href="#contact" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Contact</a>
     <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank" 
-       class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Visit Us</a>
+       class="px-4 py-3 text-gray-800 hover:text-[#2563EB]">Visit Us</a>
   </div>
 </header>
 
-<!-- Script for toggle -->
 <script>
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -83,29 +80,21 @@
   const closeIcon = document.getElementById('close-icon');
 
   menuBtn.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('max-h-0')) {
-      mobileMenu.classList.remove('max-h-0');
-      mobileMenu.classList.add('max-h-96'); // expand smoothly
-      hamburgerIcon.classList.add('hidden');
-      closeIcon.classList.remove('hidden');
-    } else {
-      mobileMenu.classList.remove('max-h-96');
-      mobileMenu.classList.add('max-h-0'); // collapse smoothly
-      hamburgerIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-    }
+    mobileMenu.classList.toggle('hidden'); // show/hide menu
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
   });
 
-  // Close when clicking a link
+  // Close menu when clicking a link
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.remove('max-h-96');
-      mobileMenu.classList.add('max-h-0');
+      mobileMenu.classList.add('hidden');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     });
   });
 </script>
+  
   
   
     
