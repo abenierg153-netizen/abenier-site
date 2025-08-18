@@ -19,7 +19,7 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-blue-50 shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+<header class="bg-blue-50/80 shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-md">
   <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
     <!-- Left: Logo -->
@@ -65,7 +65,7 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" 
-       class="max-h-0 overflow-hidden flex-col bg-blue-50 shadow-md md:hidden transition-all duration-500 ease-in-out">
+       class="hidden flex-col bg-blue-50/80 backdrop-blur-md shadow-md md:hidden">
     <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
     <a href="#testimonials" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Testimonials</a>
     <a href="#contact" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Contact</a>
@@ -81,13 +81,8 @@
   const closeIcon = document.getElementById('close-icon');
 
   menuBtn.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('max-h-0')) {
-      mobileMenu.classList.remove('max-h-0');
-      mobileMenu.classList.add('max-h-screen'); // expand
-    } else {
-      mobileMenu.classList.remove('max-h-screen');
-      mobileMenu.classList.add('max-h-0'); // collapse
-    }
+    mobileMenu.classList.toggle('hidden'); // ✅ toggles visibility
+    mobileMenu.classList.toggle('flex');   // ✅ ensures it's flex when visible
     hamburgerIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
   });
@@ -95,8 +90,8 @@
   // Close menu when clicking a link
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.remove('max-h-screen');
-      mobileMenu.classList.add('max-h-0');
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     });
