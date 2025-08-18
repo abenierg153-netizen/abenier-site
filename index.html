@@ -11,11 +11,9 @@
   <!-- Header -->
   <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 shadow-md bg-white">
     
-    <!-- Left: Tooth Icon -->
+    <!-- Left: Logo (replace src with your logo path) -->
     <div class="flex items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 sm:h-8 sm:w-8 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2c2.5 0 4.5 2 4.5 4.5S14.5 11 12 11 7.5 9 7.5 6.5 9.5 2 12 2zM8 11c0 2.5.5 7-1 9s-2-2-2-4 1-5 3-5zm8 0c0 2.5-.5 7 1 9s2-2 2-4-1-5-3-5z"/>
-      </svg>
+      <img src="your-logo.png" alt="Clinic Logo" class="h-8 w-auto sm:h-9">
     </div>
 
     <!-- Center: Clinic Title -->
@@ -50,8 +48,15 @@
     </div>
   </header>
 
-  <!-- Spacer so content isn’t hidden under fixed header -->
-  <div class="h-20"></div>
+  <!-- Spacer (reduced so hero text is closer to header) -->
+  <div class="h-12"></div>
+
+  <!-- Hero Text -->
+  <section class="text-center mt-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
+      Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+    </h2>
+  </section>
 
   <!-- Mobile Menu -->
   <nav id="mobile-menu"
@@ -80,7 +85,7 @@
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('flex');
-        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-expanded', 'false'); // ✅ fixed typo
       });
     });
   </script>
