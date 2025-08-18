@@ -63,20 +63,20 @@
   <div id="mobile-menu" 
        class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:hidden bg-white shadow-md">
     <!-- Services -->
-    <a href="#services" class="flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
+    <a href="#services" class="menu-link flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
       🦷 <span>Services</span>
     </a>
     <!-- Testimonials -->
-    <a href="#testimonials" class="flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
+    <a href="#testimonials" class="menu-link flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
       ⭐ <span>Testimonials</span>
     </a>
     <!-- Contact -->
-    <a href="#contact" class="flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
+    <a href="#contact" class="menu-link flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
       📞 <span>Contact</span>
     </a>
     <!-- Visit Us -->
     <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank" 
-       class="flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
+       class="menu-link flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">
       📍 <span>Visit Us</span>
     </a>
   </div>
@@ -86,7 +86,9 @@
 <script>
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
+  const menuLinks = document.querySelectorAll(".menu-link");
 
+  // Toggle menu open/close
   menuBtn.addEventListener("click", () => {
     if (mobileMenu.classList.contains("max-h-0")) {
       mobileMenu.classList.remove("max-h-0");
@@ -96,9 +98,16 @@
       mobileMenu.classList.remove("max-h-screen");
     }
   });
+
+  // Close menu when clicking any link
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("max-h-0");
+      mobileMenu.classList.remove("max-h-screen");
+    });
+  });
 </script>
-  
-  
+    
   
 <!-- HERO SECTION -->
 <section class="pt-20 sm:pt-24 bg-gray-50">
