@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanet Special Dental Clinic</title>
+  <title>Yanet Speciality Dental Clinic</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeUp {
@@ -47,7 +47,7 @@
         <span>Call Us</span>
       </a>
 
-      <!-- Hamburger (X removed) -->
+      <!-- Hamburger -->
       <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Open menu" aria-expanded="false">
         <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <!-- Mobile Menu (hidden by default) -->
+  <!-- Mobile Menu -->
   <nav id="mobile-menu"
        class="hidden absolute top-full left-0 w-full flex-col bg-blue-50/80 backdrop-blur-md shadow-md md:hidden border-t border-gray-200">
     <a href="#services" class="px-4 py-3 border-b text-gray-800 hover:text-[#2563EB]">Services</a>
@@ -68,13 +68,21 @@
   </nav>
 </header>
 
+<!-- HERO SECTION -->
+<section id="hero" class="pt-24 sm:pt-20 px-4 text-center">
+  <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 fade-up">
+    Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+  </h1>
+  <p class="mt-4 text-gray-600 fade-up fade-up-delay-1">
+    Your comfort and healthy smile are our top priority.
+  </p>
+</section>
+
 <script>
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
 
   menuBtn.addEventListener('click', () => {
-    // Toggle visibility and layout
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('flex');
 
@@ -92,6 +100,9 @@
     });
   });
 </script>
+
+</body>
+</html>
     
 <!-- HERO SECTION -->
 <section class="pt-20 sm:pt-24 bg-gray-50">
