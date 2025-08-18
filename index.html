@@ -19,60 +19,62 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2">
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
     <!-- Left side: Logo + Title -->
-    <div class="flex items-center space-x-1">
-      <!-- Tooth Image Logo -->
-      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
-
-      <!-- Clinic Title -->
-      <div class="flex flex-col items-center leading-tight">
-        <h1 class="font-bold text-lg">YANET SPECIALITY</h1>
-        <h2 class="font-bold text-lg">DENTAL CLINIC</h2>
+    <div class="flex items-center space-x-2">
+      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-9 h-9 rounded-full object-cover">
+      <div class="flex flex-col leading-tight">
+        <h1 class="font-bold text-sm sm:text-base">YANET SPECIALITY</h1>
+        <h2 class="font-bold text-sm sm:text-base">DENTAL CLINIC</h2>
       </div>
     </div>
 
-    <!-- Right side: Hamburger -->
-    <button id="menu-btn" class="block md:hidden focus:outline-none ml-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+    <!-- Right side: Call Us + Hamburger -->
+    <div class="flex items-center space-x-2">
+      <!-- Call Us Button -->
+      <a href="tel:+251900000000" 
+         class="flex items-center space-x-1 bg-blue-600 text-white text-sm sm:text-base font-semibold px-3 py-1.5 rounded-lg hover:bg-blue-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+        </svg>
+        <span>Call Us</span>
+      </a>
 
-    <!-- Desktop menu -->
-    <nav class="hidden md:flex space-x-6 text-sm font-medium">
-      <a href="#" class="hover:text-yellow-500">Home</a>
-      <a href="#" class="hover:text-yellow-500">Appointments</a>
-      <a href="#" class="hover:text-yellow-500">Services</a>
-      <a href="#" class="hover:text-yellow-500">Visit Us</a>
-      <a href="#" class="hover:text-yellow-500">Giveaway</a>
-    </nav>
+      <!-- Hamburger Menu -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
-  <!-- Mobile menu (hidden by default) -->
+  <!-- Mobile Menu (hidden by default) -->
   <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
-    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Appointments</a>
-    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Services</a>
-    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Visit Us</a>
-    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Giveaway</a>
+    <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+    <a href="#testimonials" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Testimonials</a>
+    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
   </div>
 </header>
 
-<!-- Script for toggle -->
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+<!-- Floating Chat Button -->
+<a href="https://wa.me/251900000000" target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center z-50 transition">
+  💬 Chat Us
+</a>
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+<!-- Toggle Mobile Menu Script -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
   });
 </script>
-
-<main class="pt-20">
   
 <!-- ✅ NEW EXCLUSIVE OFFER -->
 <section class="px-4 mt-4">
