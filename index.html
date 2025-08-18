@@ -19,7 +19,7 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+<header class="bg-gray-50 shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
   <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
     <!-- Left side: Logo -->
@@ -65,15 +65,11 @@
     </div>
   </div>
 
-  <!-- Mobile Menu (hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md transform transition-transform duration-300 ease-in-out">
-    <!-- Services -->
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 shadow-md md:hidden">
     <a href="#services" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Services</a>
-    <!-- Testimonials -->
     <a href="#testimonials" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Testimonials</a>
-    <!-- Contact -->
     <a href="#contact" class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Contact</a>
-    <!-- Visit Us -->
     <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank" 
        class="block px-4 py-2 text-gray-800 hover:text-[#2563EB] hover:bg-gray-100">Visit Us</a>
   </div>
@@ -87,20 +83,30 @@
   const closeIcon = document.getElementById('close-icon');
 
   menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    hamburgerIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
+    if (mobileMenu.classList.contains('max-h-0')) {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-96'); // expand smoothly
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-96');
+      mobileMenu.classList.add('max-h-0'); // collapse smoothly
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
   });
 
-  // Close menu when clicking a link
+  // Close when clicking a link
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('max-h-96');
+      mobileMenu.classList.add('max-h-0');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     });
   });
 </script>
+  
   
     
   
