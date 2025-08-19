@@ -3,118 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanet Dental Clinic - Blogs</title>
+  <title>Blogs - Yanet Dental Clinic</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gray-50">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Logo + Title -->
-      <div class="flex items-center space-x-3">
-        <img src="/images/logo.png" alt="Yanet Dental Clinic" class="h-12 w-12 object-contain">
-        <div>
-          <h1 class="text-xl font-bold text-[#2563EB]">YANET SPECIALITY</h1>
-          <p class="text-sm font-medium">DENTAL CLINIC</p>
-        </div>
-      </div>
+<!-- HEADER -->
+<header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+    
+    <!-- Left side: Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+    </div>
 
-      <!-- Call Button -->
-      <a href="tel:+251911234567" class="hidden md:flex items-center bg-[#2563EB] text-white px-4 py-2 rounded-full shadow">
-        📞 Call Us
+    <!-- Center: Clinic Title -->
+    <div class="flex flex-col items-center leading-tight flex-grow text-center">
+      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-gray-900">
+        YANET SPECIALITY
+      </h1>
+      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-blue-600">
+        DENTAL CLINIC
+      </h2>
+    </div>
+
+    <!-- Right side: Call Us + Hamburger -->
+    <div class="flex items-center space-x-2">
+      <a href="tel:+251900000000" 
+         class="flex items-center space-x-1 bg-blue-600 text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+        <span class="material-icons text-white text-sm">call</span>
+        <span>Call Us</span>
       </a>
 
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-2xl">☰</button>
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <nav id="mobile-menu" class="hidden md:hidden bg-gray-100 p-4 space-y-2">
-      <a href="/index.html" class="block">Home</a>
-      <a href="/services.html" class="block">Services</a>
-      <a href="/testimonials.html" class="block">Testimonials</a>
-      <a href="/contact.html" class="block">Contact</a>
-      <a href="/blogs.html" class="block">Blogs</a>
-    </nav>
-  </header>
-
-  <!-- BLOG TABS -->
-  <div class="max-w-6xl mx-auto px-4 mt-4">
-    <div class="flex space-x-4 border-b overflow-x-auto">
-      <button class="tab-btn py-2 px-4 text-sm font-medium border-b-2 border-[#2563EB]" data-tab="tips">Dental Health Tips</button>
-      <button class="tab-btn py-2 px-4 text-sm font-medium text-gray-600" data-tab="news">Clinic News</button>
-      <button class="tab-btn py-2 px-4 text-sm font-medium text-gray-600" data-tab="stories">Patient Stories</button>
+      <!-- Hamburger Menu -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <span class="material-icons text-gray-800 text-3xl">menu</span>
+      </button>
     </div>
   </div>
 
-  <!-- TAB CONTENT -->
-  <div class="max-w-6xl mx-auto px-4 py-6">
-    <!-- Tips -->
-    <div id="tips" class="tab-content">
-      <h2 class="text-lg font-semibold">Brushing Twice Daily</h2>
-      <p>Learn why brushing morning and night keeps your smile healthy.</p>
-      <h2 class="text-lg font-semibold mt-4">Flossing Daily</h2>
-      <p>Flossing removes plaque between teeth where brushes can’t reach.</p>
-    </div>
-
-    <!-- News -->
-    <div id="news" class="tab-content hidden">
-      <h2 class="text-lg font-semibold">We’ve Expanded!</h2>
-      <p>Yanet Dental Clinic has added 3 new treatment rooms to serve you better.</p>
-    </div>
-
-    <!-- Stories -->
-    <div id="stories" class="tab-content hidden">
-      <h2 class="text-lg font-semibold">Patient Success Story</h2>
-      <p>“Thanks to Yanet Dental, I can smile with confidence again!” – Sara M.</p>
-    </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+    <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+    <a href="#testimonials" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Testimonials</a>
+    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+    <a href="https://www.google.com/maps?q=Yanet+Speciality+Dental+Clinic,+Addis+Ababa" target="_blank" 
+       class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Visit Us</a>
   </div>
+</header>
 
-  <!-- STICKY NAVIGATION -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md flex justify-around py-2">
-    <a href="/index.html" class="text-[#2563EB] font-medium">Home</a>
-    <a href="/blogs.html" class="text-gray-600">Blogs</a>
-    <a href="/card.html" class="text-gray-600">Card</a>
-    <a href="/giftcard.html" class="text-gray-600">Giftcard</a>
-    <a href="/chat.html" class="text-gray-600">Chat</a>
-  </nav>
 
-  <!-- SCRIPT -->
-  <script>
-    // Mobile Menu Toggle
-    const toggleBtn = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    toggleBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+<!-- BLOG TABS -->
+<div class="max-w-6xl mx-auto px-4 mt-2 pt-28"> <!-- reduced mt and added pt for spacing -->
+  <div class="flex justify-center space-x-6 border-b pb-2">
+    <button class="tab-button font-medium text-gray-600 hover:text-blue-600" data-tab="tips">Dental Healthy Tips</button>
+    <button class="tab-button font-medium text-gray-600 hover:text-blue-600" data-tab="news">Clinic News</button>
+    <button class="tab-button font-medium text-gray-600 hover:text-blue-600" data-tab="stories">Patient Stories</button>
+  </div>
+</div>
 
-    // Tabs Functionality
-    const tabs = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        // Reset all tabs
-        tabs.forEach(t => {
-          t.classList.remove("border-[#2563EB]");
-          t.classList.add("text-gray-600");
-          t.classList.remove("text-black");
-        });
+<!-- Example Blog Content -->
+<div id="tips" class="tab-content max-w-6xl mx-auto px-4 mt-4">
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">Brushing Twice Daily</h3>
+    <p class="text-gray-600 text-sm">Learn why brushing morning and night keeps your smile healthy.</p>
+  </div>
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">Flossing Daily</h3>
+    <p class="text-gray-600 text-sm">Flossing removes plaque between teeth where brushes can't reach.</p>
+  </div>
+</div>
 
-        // Hide all content
-        contents.forEach(c => c.classList.add("hidden"));
 
-        // Activate clicked tab
-        tab.classList.add("border-[#2563EB]");
-        tab.classList.remove("text-gray-600");
-        tab.classList.add("text-black");
+<!-- BOTTOM NAVIGATION -->
+<div class="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-around py-2 z-50">
+  <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+    <span class="material-icons">home</span>
+    <span class="text-xs">Home</span>
+  </a>
+  <a href="blogs.html" class="flex flex-col items-center text-blue-600">
+    <span class="material-icons">description</span>
+    <span class="text-xs">Blogs</span>
+  </a>
+  <a href="giveaway.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+    <span class="material-icons">card_giftcard</span>
+    <span class="text-xs">Giveaway</span>
+  </a>
+  <a href="chat.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+    <span class="material-icons">chat</span>
+    <span class="text-xs">Chat</span>
+  </a>
+</div>
 
-        document.getElementById(tab.dataset.tab).classList.remove("hidden");
-      });
-    });
-  </script>
 </body>
 </html>
