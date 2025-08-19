@@ -1,48 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanet Dental Clinic - Giveaway</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- MAIN CONTENT -->
-  <main class="flex-1 px-4 py-6">
-    <h2 class="text-2xl font-semibold mb-4">Giveaways & Promotions</h2>
-    <p>Check out our latest giveaways and special promotions!</p>
-    
-    <!-- Example giveaway items -->
-    <div class="mb-4 fade">
-      <h3 class="text-xl font-semibold">Free Dental Checkup</h3>
-      <p>Enter now to win a free dental checkup for you and your family.</p>
-    </div>
-    <div class="mb-4 fade">
-      <h3 class="text-xl font-semibold">Teeth Whitening Kit Giveaway</h3>
-      <p>Participate in our giveaway to get a premium teeth whitening kit.</p>
-    </div>
-  </main>
+<!-- STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
+  <!-- Home Button -->
+  <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </button>
 
-  <!-- STICKY BOTTOM NAVIGATION -->
-  <nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
-    <a href="index.html" class="flex flex-col items-center text-gray-700">
-      <span>🏠</span>
-      <span class="text-xs">Home</span>
-    </a>
-    <a href="blogs.html" class="flex flex-col items-center text-gray-700">
-      <span>📝</span>
-      <span class="text-xs">Blogs</span>
-    </a>
-    <a href="giveaway.html" class="flex flex-col items-center text-gray-700">
-      <span>🎁</span>
-      <span class="text-xs">Giveaway</span>
-    </a>
-    <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
-      <span>💬</span>
-      <span class="text-xs">Chat With Us</span>
-    </button>
-  </nav>
+  <!-- Blogs Button -->
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700">
+    <span>📝</span>
+    <span class="text-xs">Blogs</span>
+  </a>
 
-  <script src="main.js"></script>
-</body>
-</html>
+  <!-- Giveaway Button -->
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
+    <span>🎁</span>
+    <span class="text-xs">Giveaway</span>
+  </a>
+
+  <!-- Chat Button -->
+  <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
+    <span>💬</span>
+    <span class="text-xs">Chat With Us</span>
+  </button>
+</nav>
+
+<!-- ACTIVE STYLE -->
+<style>
+  .active {
+    color: #16a34a; /* green */
+    font-weight: bold;
+  }
+</style>
+
+<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT + CHAT -->
+<script>
+  // Scroll to top when Home is clicked
+  document.getElementById("homeBtn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Highlight active nav button based on current page
+  const path = window.location.pathname;
+  if (path.includes("blogs")) {
+    document.getElementById("blogsBtn").classList.add("active");
+  } else if (path.includes("giveaway")) {
+    document.getElementById("giveawayBtn").classList.add("active");
+  } else {
+    // Default to home highlight when on index or other pages
+    document.getElementById("homeBtn").classList.add("active");
+  }
+
+  // Open chatbot link in new tab
+  document.getElementById("chatBtn").addEventListener("click", () => {
+    // 👇 Replace with your real chatbot link
+    window.open("https://your-chatbot-link.com", "_blank");
+  });
+</script>
