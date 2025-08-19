@@ -114,8 +114,8 @@
     <span class="text-xs">Home</span>
   </a>
   <a href="blogs.html" class="flex flex-col items-center text-blue-600">
-    <span class="material-icons">description</span>
-    <span class="text-xs">Blogs</span>
+    <span class="material-icons text-blue-600">description</span>
+    <span class="text-xs text-blue-600">Blogs</span>
   </a>
   <a href="giveaway.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
     <span class="material-icons">card_giftcard</span>
@@ -141,13 +141,30 @@
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
 
+  function activateTab(targetId) {
+    tabContents.forEach(c => c.classList.add('hidden'));
+    document.getElementById(targetId).classList.remove('hidden');
+
+    tabButtons.forEach(b => {
+      if (b.getAttribute('data-tab') === targetId) {
+        b.classList.add('text-blue-600');
+        b.classList.remove('text-gray-600');
+      } else {
+        b.classList.add('text-gray-600');
+        b.classList.remove('text-blue-600');
+      }
+    });
+  }
+
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-tab');
-      tabContents.forEach(c => c.classList.add('hidden'));
-      document.getElementById(target).classList.remove('hidden');
+      activateTab(target);
     });
   });
+
+  // Set default active tab
+  activateTab("tips");
 </script>
 
 </body>
