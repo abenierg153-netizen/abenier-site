@@ -9,30 +9,25 @@
 <body class="bg-gray-50 pt-16 pb-20">
 
   <!-- Invisible anchor so "Home" button scrolls top -->
-  <div id="top"></div>
+  <div id="top"></div
+<!-- HEADER -->
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <!-- Logo + Title -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <span class="text-xl font-bold text-blue-600">Yanet Dental Clinic</span>
+    </a>
 
-  <!-- HEADER -->
-<header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-    
-    <!-- Left side: Logo -->
-    <div class="flex items-center space-x-2">
-      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
-    </div>
-
-    <!-- Center: Clinic Title -->
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-gray-900">
-        YANET SPECIALITY
-      </h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-blue-600">
-        DENTAL CLINIC
-      </h2>
-    </div>
+    <!-- Right side: Blogs link -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="blogs.html" class="text-blue-600 font-semibold">Blogs</a>
+    </nav>
+  </div>
+</header>
 
 <!-- BLOG TABS -->
-<div class="max-w-6xl mx-auto px-4 mt-32">
-  <div class="flex justify-center space-x-8 border-b border-blue-200">
+<div class="max-w-6xl mx-auto px-4 mt-28"> 
+  <div class="flex justify-center space-x-6 sm:space-x-12 border-b border-blue-200">
     <button id="tipsTab" class="tab-btn py-2 px-4 text-blue-600 border-b-2 border-blue-600 font-semibold">
       Dental Healthy Tips
     </button>
@@ -44,7 +39,7 @@
     </button>
   </div>
 </div>
-
+  
 <!-- BLOG CONTENT -->
 <div class="max-w-6xl mx-auto px-4 mt-8">
   <!-- Tips -->
