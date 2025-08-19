@@ -800,23 +800,89 @@
   }
 </script>
 
+<!-- MAIN CONTENT -->
+<main id="content" class="flex-1 px-4 py-6">
+  <section id="home" class="fade">
+    <h2 class="text-2xl font-semibold mb-4">Welcome to Yanet Dental Clinic</h2>
+    <p>This is the home section. Scroll or use the bottom nav to navigate.</p>
+  </section>
+</main>
+
 <!-- STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2">
-  <button class="flex flex-col items-center text-gray-700">
+<nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
+  <button id="homeBtn" class="flex flex-col items-center text-gray-700">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </button>
-  <button class="flex flex-col items-center text-gray-700">
+  <button id="blogsBtn" class="flex flex-col items-center text-gray-700">
     <span>📝</span>
     <span class="text-xs">Blogs</span>
   </button>
-  <button class="flex flex-col items-center text-gray-700">
+  <button id="giveawayBtn" class="flex flex-col items-center text-gray-700">
     <span>🎁</span>
     <span class="text-xs">Giveaway</span>
   </button>
-  <button class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
+  <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
     <span>💬</span>
     <span class="text-xs">Chat With Us</span>
   </button>
 </nav>
-  
+
+<!-- FADE-IN STYLES -->
+<style>
+  .fade {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- SCRIPT FOR DYNAMIC NAVIGATION -->
+<script>
+  const content = document.getElementById("content");
+
+  // Content for each section
+  const homeContent = `
+    <section id="home" class="fade">
+      <h2 class="text-2xl font-semibold mb-4">Welcome to Yanet Dental Clinic</h2>
+      <p>This is the home section. Scroll or use the bottom nav to navigate.</p>
+    </section>
+  `;
+  const blogsContent = `
+    <section id="blogs" class="fade">
+      <h2 class="text-2xl font-semibold mb-4">Blogs</h2>
+      <p>Here are our latest blog posts.</p>
+    </section>
+  `;
+  const giveawayContent = `
+    <section id="giveaway" class="fade">
+      <h2 class="text-2xl font-semibold mb-4">Giveaway</h2>
+      <p>Check out our latest giveaways and promotions!</p>
+    </section>
+  `;
+
+  // Function to load content with fade
+  function loadContent(html) {
+    content.innerHTML = html;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Home button
+  document.getElementById("homeBtn").addEventListener("click", () => loadContent(homeContent));
+
+  // Blogs button
+  document.getElementById("blogsBtn").addEventListener("click", () => loadContent(blogsContent));
+
+  // Giveaway button
+  document.getElementById("giveawayBtn").addEventListener("click", () => loadContent(giveawayContent));
+
+  // Chat button
+  document.getElementById("chatBtn").addEventListener("click", () => {
+    window.open("https://your-chatbot-link.com", "_blank");
+  });
+</script>
