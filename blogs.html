@@ -32,9 +32,9 @@
     </div>
   </header>
 
-  <!-- BLOG TABS -->
-<div class="max-w-6xl mx-auto px-4 mt-32 sm:mt-36">
-  <div class="flex justify-center flex-wrap gap-4 border-b border-blue-200 pb-2">
+<!-- BLOG TABS -->
+<div class="max-w-6xl mx-auto px-4 mt-32">
+  <div class="flex justify-center space-x-8 border-b border-blue-200">
     <button id="tipsTab" class="tab-btn py-2 px-4 text-blue-600 border-b-2 border-blue-600 font-semibold">
       Dental Healthy Tips
     </button>
@@ -56,6 +56,11 @@
       <h3 class="font-semibold text-blue-700">Brushing Twice Daily</h3>
       <p class="text-gray-600 text-sm mt-2">Learn why brushing morning and night keeps your smile healthy.</p>
     </div>
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="images/tip2.jpg" class="rounded-lg mb-3" alt="Tip 2">
+      <h3 class="font-semibold text-blue-700">Flossing Daily</h3>
+      <p class="text-gray-600 text-sm mt-2">Flossing removes plaque between teeth where brushes can't reach.</p>
+    </div>
   </div>
 
   <!-- News -->
@@ -64,6 +69,11 @@
       <img src="images/news1.jpg" class="rounded-lg mb-3" alt="News 1">
       <h3 class="font-semibold text-blue-700">New Equipment Arrived</h3>
       <p class="text-gray-600 text-sm mt-2">We now offer advanced digital X-rays for safer diagnostics.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="images/news2.jpg" class="rounded-lg mb-3" alt="News 2">
+      <h3 class="font-semibold text-blue-700">Extended Hours</h3>
+      <p class="text-gray-600 text-sm mt-2">Our clinic is now open on weekends for your convenience.</p>
     </div>
   </div>
 
@@ -74,6 +84,11 @@
       <h3 class="font-semibold text-blue-700">Patient Success Story</h3>
       <p class="text-gray-600 text-sm mt-2">Hear from our patient who regained confidence with dental implants.</p>
     </div>
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="images/story2.jpg" class="rounded-lg mb-3" alt="Story 2">
+      <h3 class="font-semibold text-blue-700">Smile Transformation</h3>
+      <p class="text-gray-600 text-sm mt-2">A young patient shares how braces transformed their smile.</p>
+    </div>
   </div>
 </div>
 
@@ -82,22 +97,22 @@
   const tabs = document.querySelectorAll(".tab-btn");
   const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach((tab, i) => {
+  tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
-      // reset
-      tabs.forEach(t => t.classList.remove("text-blue-600", "border-blue-600", "font-semibold"));
-      tabs.forEach(t => t.classList.add("text-gray-600"));
-
+      // reset all
+      tabs.forEach(t => {
+        t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+        t.classList.add("text-gray-600");
+      });
       contents.forEach(c => c.classList.add("hidden"));
 
-      // activate
+      // activate clicked
       tab.classList.remove("text-gray-600");
       tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
-      contents[i].classList.remove("hidden");
+      contents[index].classList.remove("hidden");
     });
   });
 </script>
-
   
 
   <!-- STICKY BOTTOM NAVIGATION -->
