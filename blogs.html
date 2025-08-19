@@ -67,143 +67,144 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full bg-blue-100 shadow-md z-50">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs - Yanet Dental Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 pt-16 pb-20">
+
+  <!-- Invisible anchor so "Home" button scrolls top -->
+  <div id="top"></div>
+
+  <!-- HEADER (same style as index.html) -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-blue-700">Yanet Dental Clinic</h1>
-      <span class="text-sm text-blue-600">Blogs</span>
+      <!-- Clickable Logo/Title -->
+      <a href="index.html#top" class="text-xl font-bold text-blue-700 hover:text-blue-900 transition">
+        Yanet Dental Clinic
+      </a>
+      <span class="text-sm text-blue-600 font-semibold">Blogs</span>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="pt-20 pb-20 max-w-6xl mx-auto px-4">
-
-    <!-- BLOG TABS -->
-    <div class="flex justify-around border-b border-blue-200 mb-6">
-      <button class="tab-btn py-2 px-3 text-blue-600 font-semibold border-b-2 border-blue-600" data-tab="tips">Dental Healthy Tips</button>
-      <button class="tab-btn py-2 px-3 text-gray-600 hover:text-blue-600" data-tab="news">Clinic News</button>
-      <button class="tab-btn py-2 px-3 text-gray-600 hover:text-blue-600" data-tab="stories">Patient Stories</button>
+  <!-- BLOG TABS -->
+  <div class="max-w-6xl mx-auto px-4 mt-4">
+    <div class="flex justify-around border-b border-blue-200">
+      <button id="tipsTab" class="tab-btn py-2 px-4 text-blue-600 border-b-2 border-blue-600 font-semibold">Dental Healthy Tips</button>
+      <button id="newsTab" class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Clinic News</button>
+      <button id="storiesTab" class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Patient Stories</button>
     </div>
+  </div>
 
-    <!-- TAB CONTENTS -->
+  <!-- BLOG CONTENT -->
+  <main class="max-w-6xl mx-auto px-4 mt-6 space-y-6">
 
-    <!-- Dental Tips -->
-    <div id="tips" class="tab-content grid md:grid-cols-2 gap-6">
-      <!-- Example Card -->
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <img src="https://via.placeholder.com/600x300/93c5fd/ffffff?text=Dental+Tips" class="w-full h-40 object-cover" alt="Dental Tips">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">5 Tips for Healthy Teeth</h3>
-          <p class="text-sm text-gray-600">Simple daily habits to keep your teeth strong and your smile bright.</p>
+    <!-- Tips Section -->
+    <section id="tipsSection" class="tab-section">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Example Tip Card -->
+        <div class="bg-white shadow rounded-xl p-4">
+          <img src="https://via.placeholder.com/400x200" alt="Healthy Teeth" class="rounded-lg mb-3">
+          <h3 class="text-lg font-semibold text-blue-700">5 Tips for Healthy Teeth</h3>
+          <p class="text-gray-600 text-sm">Simple daily habits to keep your teeth strong and your smile bright.</p>
+        </div>
+        <div class="bg-white shadow rounded-xl p-4">
+          <video controls class="w-full rounded-lg mb-3">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          </video>
+          <h3 class="text-lg font-semibold text-blue-700">Proper Brushing Technique</h3>
+          <p class="text-gray-600 text-sm">Watch this video to learn how to brush effectively.</p>
         </div>
       </div>
+    </section>
 
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <video controls class="w-full h-40 object-cover">
-          <source src="sample-video.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">Brushing Techniques</h3>
-          <p class="text-sm text-gray-600">Learn how to brush your teeth properly for maximum protection.</p>
+    <!-- News Section -->
+    <section id="newsSection" class="tab-section hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white shadow rounded-xl p-4">
+          <img src="https://via.placeholder.com/400x200" alt="New Equipment" class="rounded-lg mb-3">
+          <h3 class="text-lg font-semibold text-blue-700">New Dental Equipment</h3>
+          <p class="text-gray-600 text-sm">We’ve upgraded our clinic with the latest dental technology.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Clinic News -->
-    <div id="news" class="tab-content hidden grid md:grid-cols-2 gap-6">
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <img src="https://via.placeholder.com/600x300/bcd4ff/ffffff?text=Clinic+News" class="w-full h-40 object-cover" alt="Clinic News">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">New Dental Equipment</h3>
-          <p class="text-sm text-gray-600">We’ve upgraded our clinic with the latest CAD/CAM technology.</p>
+    <!-- Stories Section -->
+    <section id="storiesSection" class="tab-section hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white shadow rounded-xl p-4">
+          <img src="https://via.placeholder.com/400x200" alt="Patient Story" class="rounded-lg mb-3">
+          <h3 class="text-lg font-semibold text-blue-700">Patient Success Story</h3>
+          <p class="text-gray-600 text-sm">Read how one of our patients regained their confident smile.</p>
         </div>
       </div>
+    </section>
 
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <img src="https://via.placeholder.com/600x300/a5b4fc/ffffff?text=Clinic+Update" class="w-full h-40 object-cover" alt="Clinic Update">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">Holiday Schedule</h3>
-          <p class="text-sm text-gray-600">Check out our holiday opening times and availability.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Patient Stories -->
-    <div id="stories" class="tab-content hidden grid md:grid-cols-2 gap-6">
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <img src="https://via.placeholder.com/600x300/93c5fd/ffffff?text=Patient+Story" class="w-full h-40 object-cover" alt="Patient Story">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">A Smile Transformation</h3>
-          <p class="text-sm text-gray-600">See how Dr. Smit restored confidence with a full dental makeover.</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow rounded-xl overflow-hidden">
-        <video controls class="w-full h-40 object-cover">
-          <source src="patient-video.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-blue-700">Patient Testimonial</h3>
-          <p class="text-sm text-gray-600">Hear from our patients about their positive dental experiences.</p>
-        </div>
-      </div>
-    </div>
   </main>
 
   <!-- STICKY BOTTOM NAVIGATION -->
   <nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
-    <!-- Home Button -->
     <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700">
       <span>🏠</span>
       <span class="text-xs">Home</span>
     </button>
-
-    <!-- Blogs Button -->
-    <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-blue-600 font-bold">
+    <button id="blogsBtn" class="nav-btn flex flex-col items-center text-blue-600 font-bold">
       <span>📝</span>
       <span class="text-xs">Blogs</span>
-    </a>
-
-    <!-- Giveaway Button -->
-    <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
+    </button>
+    <button id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
       <span>🎁</span>
       <span class="text-xs">Giveaway</span>
-    </a>
-
-    <!-- Chat Button -->
-    <button id="chatBtn" class="flex flex-col items-center bg-blue-600 text-white rounded-xl px-4 py-1">
+    </button>
+    <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
       <span>💬</span>
-      <span class="text-xs">Chat With Us</span>
+      <span class="text-xs">Chat</span>
     </button>
   </nav>
 
   <!-- SCRIPT -->
   <script>
-    // Tabs logic
-    const tabs = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold"));
-        contents.forEach(c => c.classList.add("hidden"));
-        
-        tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
-        document.getElementById(tab.dataset.tab).classList.remove("hidden");
-      });
+    // Home button -> back to index.html top
+    document.getElementById("homeBtn").addEventListener("click", () => {
+      window.location.href = "index.html#top";
     });
 
-    // Scroll to top for Home button
-    document.getElementById("homeBtn").addEventListener("click", () => {
-      window.location.href = "index.html"; // go back home
+    // Giveaway button
+    document.getElementById("giveawayBtn").addEventListener("click", () => {
+      window.location.href = "giveaway.html";
     });
 
     // Chat button
     document.getElementById("chatBtn").addEventListener("click", () => {
       window.open("https://your-chatbot-link.com", "_blank");
     });
+
+    // Tabs
+    const tabs = {
+      tipsTab: "tipsSection",
+      newsTab: "newsSection",
+      storiesTab: "storiesSection"
+    };
+
+    Object.keys(tabs).forEach(tabId => {
+      document.getElementById(tabId).addEventListener("click", () => {
+        // Hide all sections
+        document.querySelectorAll(".tab-section").forEach(sec => sec.classList.add("hidden"));
+        // Remove active style from tabs
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+          btn.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+          btn.classList.add("text-gray-600");
+        });
+        // Show selected
+        document.getElementById(tabs[tabId]).classList.remove("hidden");
+        document.getElementById(tabId).classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+      });
+    });
   </script>
+
 </body>
 </html>
