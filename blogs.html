@@ -57,3 +57,153 @@
     window.open("https://your-chatbot-link.com", "_blank");
   });
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs - Yanet Dental Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-blue-100 shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-700">Yanet Dental Clinic</h1>
+      <span class="text-sm text-blue-600">Blogs</span>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-20 pb-20 max-w-6xl mx-auto px-4">
+
+    <!-- BLOG TABS -->
+    <div class="flex justify-around border-b border-blue-200 mb-6">
+      <button class="tab-btn py-2 px-3 text-blue-600 font-semibold border-b-2 border-blue-600" data-tab="tips">Dental Healthy Tips</button>
+      <button class="tab-btn py-2 px-3 text-gray-600 hover:text-blue-600" data-tab="news">Clinic News</button>
+      <button class="tab-btn py-2 px-3 text-gray-600 hover:text-blue-600" data-tab="stories">Patient Stories</button>
+    </div>
+
+    <!-- TAB CONTENTS -->
+
+    <!-- Dental Tips -->
+    <div id="tips" class="tab-content grid md:grid-cols-2 gap-6">
+      <!-- Example Card -->
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <img src="https://via.placeholder.com/600x300/93c5fd/ffffff?text=Dental+Tips" class="w-full h-40 object-cover" alt="Dental Tips">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">5 Tips for Healthy Teeth</h3>
+          <p class="text-sm text-gray-600">Simple daily habits to keep your teeth strong and your smile bright.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <video controls class="w-full h-40 object-cover">
+          <source src="sample-video.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">Brushing Techniques</h3>
+          <p class="text-sm text-gray-600">Learn how to brush your teeth properly for maximum protection.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clinic News -->
+    <div id="news" class="tab-content hidden grid md:grid-cols-2 gap-6">
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <img src="https://via.placeholder.com/600x300/bcd4ff/ffffff?text=Clinic+News" class="w-full h-40 object-cover" alt="Clinic News">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">New Dental Equipment</h3>
+          <p class="text-sm text-gray-600">We’ve upgraded our clinic with the latest CAD/CAM technology.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <img src="https://via.placeholder.com/600x300/a5b4fc/ffffff?text=Clinic+Update" class="w-full h-40 object-cover" alt="Clinic Update">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">Holiday Schedule</h3>
+          <p class="text-sm text-gray-600">Check out our holiday opening times and availability.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Stories -->
+    <div id="stories" class="tab-content hidden grid md:grid-cols-2 gap-6">
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <img src="https://via.placeholder.com/600x300/93c5fd/ffffff?text=Patient+Story" class="w-full h-40 object-cover" alt="Patient Story">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">A Smile Transformation</h3>
+          <p class="text-sm text-gray-600">See how Dr. Smit restored confidence with a full dental makeover.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded-xl overflow-hidden">
+        <video controls class="w-full h-40 object-cover">
+          <source src="patient-video.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-blue-700">Patient Testimonial</h3>
+          <p class="text-sm text-gray-600">Hear from our patients about their positive dental experiences.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- STICKY BOTTOM NAVIGATION -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
+    <!-- Home Button -->
+    <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700">
+      <span>🏠</span>
+      <span class="text-xs">Home</span>
+    </button>
+
+    <!-- Blogs Button -->
+    <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-blue-600 font-bold">
+      <span>📝</span>
+      <span class="text-xs">Blogs</span>
+    </a>
+
+    <!-- Giveaway Button -->
+    <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
+      <span>🎁</span>
+      <span class="text-xs">Giveaway</span>
+    </a>
+
+    <!-- Chat Button -->
+    <button id="chatBtn" class="flex flex-col items-center bg-blue-600 text-white rounded-xl px-4 py-1">
+      <span>💬</span>
+      <span class="text-xs">Chat With Us</span>
+    </button>
+  </nav>
+
+  <!-- SCRIPT -->
+  <script>
+    // Tabs logic
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold"));
+        contents.forEach(c => c.classList.add("hidden"));
+        
+        tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+        document.getElementById(tab.dataset.tab).classList.remove("hidden");
+      });
+    });
+
+    // Scroll to top for Home button
+    document.getElementById("homeBtn").addEventListener("click", () => {
+      window.location.href = "index.html"; // go back home
+    });
+
+    // Chat button
+    document.getElementById("chatBtn").addEventListener("click", () => {
+      window.open("https://your-chatbot-link.com", "_blank");
+    });
+  </script>
+</body>
+</html>
