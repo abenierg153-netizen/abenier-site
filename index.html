@@ -800,89 +800,115 @@
   }
 </script>
 
-<!-- MAIN CONTENT -->
-<main id="content" class="flex-1 px-4 py-6">
-  <section id="home" class="fade">
-    <h2 class="text-2xl font-semibold mb-4">Welcome to Yanet Dental Clinic</h2>
-    <p>This is the home section. Scroll or use the bottom nav to navigate.</p>
-  </section>
-</main>
-
-<!-- STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
-  <button id="homeBtn" class="flex flex-col items-center text-gray-700">
-    <span>🏠</span>
-    <span class="text-xs">Home</span>
-  </button>
-  <button id="blogsBtn" class="flex flex-col items-center text-gray-700">
-    <span>📝</span>
-    <span class="text-xs">Blogs</span>
-  </button>
-  <button id="giveawayBtn" class="flex flex-col items-center text-gray-700">
-    <span>🎁</span>
-    <span class="text-xs">Giveaway</span>
-  </button>
-  <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
-    <span>💬</span>
-    <span class="text-xs">Chat With Us</span>
-  </button>
-</nav>
-
-<!-- FADE-IN STYLES -->
-<style>
-  .fade {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-
-<!-- SCRIPT FOR DYNAMIC NAVIGATION -->
-<script>
-  const content = document.getElementById("content");
-
-  // Content for each section
-  const homeContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yanet Dental Clinic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- MAIN CONTENT -->
+  <main id="content" class="flex-1 px-4 py-6">
+    <!-- Home is loaded by default -->
     <section id="home" class="fade">
       <h2 class="text-2xl font-semibold mb-4">Welcome to Yanet Dental Clinic</h2>
       <p>This is the home section. Scroll or use the bottom nav to navigate.</p>
     </section>
-  `;
-  const blogsContent = `
-    <section id="blogs" class="fade">
-      <h2 class="text-2xl font-semibold mb-4">Blogs</h2>
-      <p>Here are our latest blog posts.</p>
-    </section>
-  `;
-  const giveawayContent = `
-    <section id="giveaway" class="fade">
-      <h2 class="text-2xl font-semibold mb-4">Giveaway</h2>
-      <p>Check out our latest giveaways and promotions!</p>
-    </section>
-  `;
+  </main>
 
-  // Function to load content with fade
-  function loadContent(html) {
-    content.innerHTML = html;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  <!-- STICKY BOTTOM NAVIGATION -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
+    <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700">
+      <span>🏠</span>
+      <span class="text-xs">Home</span>
+    </button>
+    <button id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700">
+      <span>📝</span>
+      <span class="text-xs">Blogs</span>
+    </button>
+    <button id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
+      <span>🎁</span>
+      <span class="text-xs">Giveaway</span>
+    </button>
+    <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
+      <span>💬</span>
+      <span class="text-xs">Chat With Us</span>
+    </button>
+  </nav>
 
-  // Home button
-  document.getElementById("homeBtn").addEventListener("click", () => loadContent(homeContent));
+  <!-- FADE-IN STYLES -->
+  <style>
+    .fade { opacity: 0; animation: fadeIn 0.5s forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .active { color: #16a34a; font-weight: bold; }
+  </style>
 
-  // Blogs button
-  document.getElementById("blogsBtn").addEventListener("click", () => loadContent(blogsContent));
+  <!-- SCRIPT FOR DYNAMIC NAVIGATION -->
+  <script>
+    const content = document.getElementById("content");
 
-  // Giveaway button
-  document.getElementById("giveawayBtn").addEventListener("click", () => loadContent(giveawayContent));
+    // Dynamic content for each section
+    const sections = {
+      home: `
+        <section id="home" class="fade">
+          <h2 class="text-2xl font-semibold mb-4">Welcome to Yanet Dental Clinic</h2>
+          <p>This is the home section. Scroll or use the bottom nav to navigate.</p>
+        </section>
+      `,
+      blogs: `
+        <section id="blogs" class="fade">
+          <h2 class="text-2xl font-semibold mb-4">Blogs</h2>
+          <p>Here are our latest blog posts.</p>
+          <article class="mb-4 fade">
+            <h3 class="text-xl font-semibold">5 Tips for Healthy Teeth</h3>
+            <p>Learn simple daily habits to keep your teeth strong and your smile bright.</p>
+          </article>
+          <article class="mb-4 fade">
+            <h3 class="text-xl font-semibold">Why Regular Checkups Matter</h3>
+            <p>Discover the benefits of visiting your dentist regularly for preventive care.</p>
+          </article>
+        </section>
+      `,
+      giveaway: `
+        <section id="giveaway" class="fade">
+          <h2 class="text-2xl font-semibold mb-4">Giveaway</h2>
+          <p>Check out our latest giveaways and promotions!</p>
+          <div class="mb-4 fade">
+            <h3 class="text-xl font-semibold">Free Dental Checkup</h3>
+            <p>Enter now to win a free dental checkup for you and your family.</p>
+          </div>
+          <div class="mb-4 fade">
+            <h3 class="text-xl font-semibold">Teeth Whitening Kit Giveaway</h3>
+            <p>Participate in our giveaway to get a premium teeth whitening kit.</p>
+          </div>
+        </section>
+      `
+    };
 
-  // Chat button
-  document.getElementById("chatBtn").addEventListener("click", () => {
-    window.open("https://your-chatbot-link.com", "_blank");
-  });
-</script>
+    // Load content dynamically and highlight active button
+    function loadSection(section) {
+      content.innerHTML = sections[section];
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Highlight active nav button
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(section + "Btn").classList.add('active');
+    }
+
+    // Event listeners for nav buttons
+    document.getElementById("homeBtn").addEventListener("click", () => loadSection("home"));
+    document.getElementById("blogsBtn").addEventListener("click", () => loadSection("blogs"));
+    document.getElementById("giveawayBtn").addEventListener("click", () => loadSection("giveaway"));
+
+    // Chat button
+    document.getElementById("chatBtn").addEventListener("click", () => {
+      window.open("https://your-chatbot-link.com", "_blank");
+    });
+
+    // Set home as active by default
+    loadSection("home");
+  </script>
+</body>
+</html>
