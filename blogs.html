@@ -59,7 +59,7 @@
 
 
 <!-- BLOG TABS -->
-<div class="max-w-6xl mx-auto px-4 mt-2 pt-28"> <!-- reduced mt and added pt for spacing -->
+<div class="max-w-6xl mx-auto px-4 mt-2 pt-28">
   <div class="flex justify-center space-x-6 border-b pb-2">
     <button class="tab-button font-medium text-gray-600 hover:text-blue-600" data-tab="tips">Dental Healthy Tips</button>
     <button class="tab-button font-medium text-gray-600 hover:text-blue-600" data-tab="news">Clinic News</button>
@@ -68,7 +68,9 @@
 </div>
 
 
-<!-- Example Blog Content -->
+<!-- TAB CONTENTS -->
+
+<!-- Tips -->
 <div id="tips" class="tab-content max-w-6xl mx-auto px-4 mt-4">
   <div class="bg-white rounded-xl shadow p-4 mb-4">
     <h3 class="font-semibold text-blue-600">Brushing Twice Daily</h3>
@@ -77,6 +79,30 @@
   <div class="bg-white rounded-xl shadow p-4 mb-4">
     <h3 class="font-semibold text-blue-600">Flossing Daily</h3>
     <p class="text-gray-600 text-sm">Flossing removes plaque between teeth where brushes can't reach.</p>
+  </div>
+</div>
+
+<!-- News -->
+<div id="news" class="tab-content max-w-6xl mx-auto px-4 mt-4 hidden">
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">New Branch Opening</h3>
+    <p class="text-gray-600 text-sm">We’re excited to announce our new branch in Bole, Addis Ababa, opening soon!</p>
+  </div>
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">Free Dental Checkup Week</h3>
+    <p class="text-gray-600 text-sm">Join us for a free dental checkup week starting September 1st.</p>
+  </div>
+</div>
+
+<!-- Stories -->
+<div id="stories" class="tab-content max-w-6xl mx-auto px-4 mt-4 hidden">
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">A Brighter Smile for Sara</h3>
+    <p class="text-gray-600 text-sm">Sara shares how our whitening treatment boosted her confidence.</p>
+  </div>
+  <div class="bg-white rounded-xl shadow p-4 mb-4">
+    <h3 class="font-semibold text-blue-600">John’s Journey with Braces</h3>
+    <p class="text-gray-600 text-sm">Follow John’s orthodontic treatment and his amazing results.</p>
   </div>
 </div>
 
@@ -100,6 +126,29 @@
     <span class="text-xs">Chat</span>
   </a>
 </div>
+
+
+<!-- SCRIPT: Tabs + Hamburger -->
+<script>
+  // Hamburger menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Tabs toggle
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      tabContents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(target).classList.remove('hidden');
+    });
+  });
+</script>
 
 </body>
 </html>
