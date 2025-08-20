@@ -44,7 +44,94 @@
       </a>
     </div>
   </div>
-</header>
+</header> 
+  <!-- GIVEAWAY SECTION WITH COUNTDOWN -->
+<section class="max-w-6xl mx-auto px-4 py-8 bg-[#E6F7F9] rounded-xl shadow-md mt-8">
+  <!-- Section Title -->
+  <h2 class="text-2xl sm:text-3xl font-extrabold text-center text-[#2563EB] mb-2">
+    🎉 Join Our Giveaway!
+  </h2>
+
+  <!-- Countdown Timer -->
+  <p class="text-center text-gray-700 mb-6 text-lg">
+    Hurry! Ends in <span id="countdown" class="font-bold">00d 00h 00m 00s</span>
+  </p>
+
+  <!-- Giveaway Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <!-- Prize 1 -->
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center text-center">
+      <img src="images/prize1.jpg" alt="Prize 1" class="w-32 h-32 object-cover mb-3 rounded-lg">
+      <h3 class="font-bold text-lg text-black mb-1">iPhone 14 Pro</h3>
+      <p class="text-gray-700 text-sm">Experience the latest technology in your hands!</p>
+    </div>
+    <!-- Prize 2 -->
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center text-center">
+      <img src="images/prize2.jpg" alt="Prize 2" class="w-32 h-32 object-cover mb-3 rounded-lg">
+      <h3 class="font-bold text-lg text-black mb-1">Gift Voucher</h3>
+      <p class="text-gray-700 text-sm">Get a 500 ETB voucher for your next purchase.</p>
+    </div>
+  </div>
+
+  <!-- Entry Form -->
+  <form id="giveawayForm" class="flex flex-col sm:flex-row justify-center items-center gap-3 mb-4">
+    <input type="email" id="emailInput" placeholder="Enter your email" required
+           class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2563EB] w-full sm:w-auto">
+    <button type="submit" 
+            class="px-6 py-2 bg-[#2563EB] text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+      🎁 Enter Now
+    </button>
+  </form>
+
+  <!-- Trust / Rules -->
+  <p class="text-center text-gray-500 text-xs">
+    Winner will be announced on our TikTok & contacted via email. No purchase necessary. By entering, you agree to our terms.
+  </p>
+</section>
+
+<!-- JS: Form + Countdown -->
+<script>
+  // Form submission
+  const form = document.getElementById('giveawayForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    if(!email) return alert('Please enter your email');
+
+    // Example: send to Google Sheet / database
+    console.log("Email submitted:", email);
+
+    alert('Thank you! You are now entered into the giveaway.');
+    form.reset();
+  });
+
+  // Countdown Timer
+  const countdownEl = document.getElementById('countdown');
+  // Set your giveaway deadline
+  const deadline = new Date("August 31, 2025 23:59:59").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = deadline - now;
+
+    if(distance < 0) {
+      countdownEl.innerHTML = "EXPIRED";
+      clearInterval(countdownInterval);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  // Update every second
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script> 
 <!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
