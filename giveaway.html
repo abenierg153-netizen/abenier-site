@@ -45,28 +45,28 @@
     </div>
   </div>
 </header>
-<!-- STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-white shadow flex justify-around py-2 z-50">
+<!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
-  <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🏠</span>
     <span class="text-xs">Home</span>
-  </button>
+  </a>
 
   <!-- Blogs Button -->
-  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700">
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>📝</span>
     <span class="text-xs">Blogs</span>
   </a>
 
   <!-- Giveaway Button -->
-  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700">
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🎁</span>
     <span class="text-xs">Giveaway</span>
   </a>
 
   <!-- Chat Button -->
-  <button id="chatBtn" class="flex flex-col items-center bg-green-600 text-white rounded-xl px-4 py-1">
+  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>💬</span>
     <span class="text-xs">Chat With Us</span>
   </button>
@@ -75,18 +75,13 @@
 <!-- ACTIVE STYLE -->
 <style>
   .active {
-    color: #16a34a; /* green */
+    color: #2563EB; /* theme blue for both icon + text */
     font-weight: bold;
   }
 </style>
 
-<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT + CHAT -->
+<!-- SCRIPT FOR ACTIVE HIGHLIGHT + CHAT -->
 <script>
-  // Scroll to top when Home is clicked
-  document.getElementById("homeBtn").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
   // Highlight active nav button based on current page
   const path = window.location.pathname;
   if (path.includes("blogs")) {
