@@ -93,25 +93,60 @@
 </div>
 
 
-<!-- BOTTOM NAVIGATION -->
-<div class="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-around py-2 z-50">
-  <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-    <span class="material-icons">home</span>
+<!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
-  <a href="blogs.html" class="flex flex-col items-center text-blue-600">
-    <span class="material-icons text-blue-600">description</span>
-    <span class="text-xs text-blue-600">Blogs</span>
+
+  <!-- Blogs Button -->
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>📝</span>
+    <span class="text-xs">Blogs</span>
   </a>
-  <a href="giveaway.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-    <span class="material-icons">card_giftcard</span>
+
+  <!-- Giveaway Button -->
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🎁</span>
     <span class="text-xs">Giveaway</span>
   </a>
-  <a href="chat.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-    <span class="material-icons">chat</span>
-    <span class="text-xs">Chat</span>
-  </a>
-</div>
+
+  <!-- Chat Button -->
+  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>💬</span>
+    <span class="text-xs">Chat With Us</span>
+  </button>
+</nav>
+
+<!-- ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue for both icon + text */
+    font-weight: bold;
+  }
+</style>
+
+<!-- SCRIPT FOR ACTIVE HIGHLIGHT + CHAT -->
+<script>
+  // Highlight active nav button based on current page
+  const path = window.location.pathname;
+  if (path.includes("blogs")) {
+    document.getElementById("blogsBtn").classList.add("active");
+  } else if (path.includes("giveaway")) {
+    document.getElementById("giveawayBtn").classList.add("active");
+  } else {
+    // Default to home highlight when on index or other pages
+    document.getElementById("homeBtn").classList.add("active");
+  }
+
+  // Open chatbot link in new tab
+  document.getElementById("chatBtn").addEventListener("click", () => {
+    // 👇 Replace with your real chatbot link
+    window.open("https://your-chatbot-link.com", "_blank");
+  });
+</script>
 
 
 <!-- SCRIPT: Tabs + Hamburger -->
