@@ -149,34 +149,30 @@
 </script>
 
 
-<!-- SCRIPT: Tabs + Hamburger -->
+<!-- SCRIPT: Tabs Only -->
 <script>
-  // Hamburger menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
   // Tabs toggle
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
 
   function activateTab(targetId) {
+    // Hide all content
     tabContents.forEach(c => c.classList.add('hidden'));
     document.getElementById(targetId).classList.remove('hidden');
 
+    // Update button styles
     tabButtons.forEach(b => {
       if (b.getAttribute('data-tab') === targetId) {
-        b.classList.add('text-blue-600');
+        b.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
         b.classList.remove('text-gray-600');
       } else {
         b.classList.add('text-gray-600');
-        b.classList.remove('text-blue-600');
+        b.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-semibold');
       }
     });
   }
 
+  // Add click event
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-tab');
@@ -187,6 +183,3 @@
   // Set default active tab
   activateTab("tips");
 </script>
-
-</body>
-</html>
