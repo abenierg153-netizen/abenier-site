@@ -779,11 +779,11 @@
     <span class="text-xs">Giveaway</span>
   </a>
 
-  <!-- Chat Button -->
-  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>💬</span>
-    <span class="text-xs">Chat With Us</span>
-  </button>
+  <!-- Appointments Button -->
+  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>📅</span>
+    <span class="text-xs">Appointments</span>
+  </a>
 </nav>
 
 <!-- ACTIVE STYLE -->
@@ -794,7 +794,7 @@
   }
 </style>
 
-<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT + CHAT -->
+<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT -->
 <script>
   // Scroll to top when Home is clicked
   document.getElementById("homeBtn").addEventListener("click", () => {
@@ -807,14 +807,10 @@
     document.getElementById("blogsBtn").classList.add("active");
   } else if (path.includes("giveaway")) {
     document.getElementById("giveawayBtn").classList.add("active");
+  } else if (path.includes("appointments")) {
+    document.getElementById("appointmentsBtn").classList.add("active");
   } else {
     // Default to home highlight when on index or other pages
     document.getElementById("homeBtn").classList.add("active");
   }
-
-  // Open chatbot link in new tab
-  document.getElementById("chatBtn").addEventListener("click", () => {
-    // 👇 Replace with your real chatbot link
-    window.open("https://your-chatbot-link.com", "_blank");
-  });
 </script>
