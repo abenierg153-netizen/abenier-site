@@ -1,145 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs - Yanet Dental Clinic</title>
-
-  <!-- Tailwind CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointments - Yanet Dental Clinic</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
-<!-- HEADER -->
-<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-    
-    <!-- Left side: Logo -->
+  <!-- HEADER -->
+  <header class="bg-[#E6F7F9] flex justify-between items-center px-4 py-3">
     <div class="flex items-center space-x-2">
-      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+      <img src="images/logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+      <h1 class="text-lg font-bold text-blue-700">YANET SPECIALITY <br> <span class="text-sm">DENTAL CLINIC</span></h1>
     </div>
+    <a href="tel:+251900000000" class="bg-blue-600 text-white px-3 py-1 rounded-lg">Call Us</a>
+  </header>
 
-    <!-- Center: Clinic Title -->
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
-        YANET SPECIALITY
-      </h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
-        DENTAL CLINIC
-      </h2>
-    </div>
+  <!-- PAGE CONTENT -->
+  <main class="flex-1 px-4 py-6">
+    <h2 class="text-2xl font-bold text-center text-gray-800">Book Your Appointment</h2>
+    <p class="text-center text-gray-600 mt-2">Schedule your visit with our dental specialists below.</p>
 
-    <!-- Right side: Call Us -->
-    <div class="flex items-center space-x-2">
-      <a href="tel:0116662828" 
-         class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
-        </svg>
-        <span>Call Us</span>
-      </a>
-    </div>
-  </div>
-</header>
-  <!-- ✅ Tabs Section -->
-  <section class="max-w-6xl mx-auto px-4 mt-6">
-    <div class="flex space-x-4 border-b">
-      <button class="tab-btn py-2 px-4 text-blue-600 border-b-2 border-blue-600 font-medium" onclick="showTab('scheduled')">Scheduled</button>
-      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('completed')">Completed</button>
-      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('canceled')">Canceled</button>
-      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('history')">History</button>
-    </div>
+    <!-- Appointment Form -->
+    <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+      <div>
+        <label class="block text-gray-700">Full Name</label>
+        <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+      </div>
 
-    <!-- ✅ Tab Contents -->
-    <div id="scheduled" class="tab-content p-4">
-      <h2 class="text-lg font-semibold mb-2">Scheduled Appointments</h2>
-      <p>All upcoming appointments will appear here.</p>
-    </div>
+      <div>
+        <label class="block text-gray-700">Phone Number</label>
+        <input type="tel" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="+251...">
+      </div>
 
-    <div id="completed" class="tab-content p-4 hidden">
-      <h2 class="text-lg font-semibold mb-2">Completed Appointments</h2>
-      <p>All finished appointments will appear here.</p>
-    </div>
+      <div>
+        <label class="block text-gray-700">Preferred Date</label>
+        <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+      </div>
 
-    <div id="canceled" class="tab-content p-4 hidden">
-      <h2 class="text-lg font-semibold mb-2">Canceled Appointments</h2>
-      <p>All canceled appointments will appear here.</p>
-    </div>
+      <div>
+        <label class="block text-gray-700">Message</label>
+        <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any details..."></textarea>
+      </div>
 
-    <div id="history" class="tab-content p-4 hidden">
-      <h2 class="text-lg font-semibold mb-2">Appointment History</h2>
-      <p>Complete log of all appointments.</p>
-    </div>
-  </section>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold">Book Appointment</button>
+    </form>
+  </main>
 
-  <!-- ✅ Script for Tabs -->
+  <!-- STICKY NAVIGATION (same as index.html) -->
+  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+    <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🏠</span>
+      <span class="text-xs">Home</span>
+    </button>
+
+    <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>📝</span>
+      <span class="text-xs">Blogs</span>
+    </a>
+
+    <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🎁</span>
+      <span class="text-xs">Giveaway</span>
+    </a>
+
+    <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🗓</span>
+      <span class="text-xs">Appointments</span>
+    </a>
+  </nav>
+
+  <!-- ACTIVE STYLE -->
+  <style>
+    .active { color: #2563EB; font-weight: bold; }
+  </style>
+
+  <!-- SCRIPT -->
   <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
-      document.getElementById(tabId).classList.remove('hidden');
+    document.getElementById("homeBtn").addEventListener("click", () => {
+      window.location.href = "index.html"; 
+    });
 
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-medium');
-      });
-      event.target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600', 'font-medium');
+    const path = window.location.pathname;
+    if (path.includes("blogs")) {
+      document.getElementById("blogsBtn").classList.add("active");
+    } else if (path.includes("giveaway")) {
+      document.getElementById("giveawayBtn").classList.add("active");
+    } else if (path.includes("appointments")) {
+      document.getElementById("appointmentsBtn").classList.add("active");
+    } else {
+      document.getElementById("homeBtn").classList.add("active");
     }
   </script>
-<!-- STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-  <!-- Home Button -->
-  <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>🏠</span>
-    <span class="text-xs">Home</span>
-  </button>
-
-  <!-- Blogs Button -->
-  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>📝</span>
-    <span class="text-xs">Blogs</span>
-  </a>
-
-  <!-- Giveaway Button -->
-  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>🎁</span>
-    <span class="text-xs">Giveaway</span>
-  </a>
-
-  <!-- Appointments Button -->
-  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>🗓</span>
-    <span class="text-xs">Appointments</span>
-  </a>
-</nav>
-
-<!-- ACTIVE STYLE -->
-<style>
-  .active {
-    color: #2563EB; /* theme blue for both icon + text */
-    font-weight: bold;
-  }
-</style>
-
-<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT -->
-<script>
-  // Scroll to top when Home is clicked
-  document.getElementById("homeBtn").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  // Highlight active nav button based on current page
-  const path = window.location.pathname;
-  if (path.includes("blogs")) {
-    document.getElementById("blogsBtn").classList.add("active");
-  } else if (path.includes("giveaway")) {
-    document.getElementById("giveawayBtn").classList.add("active");
-  } else if (path.includes("appointments")) {
-    document.getElementById("appointmentsBtn").classList.add("active");
-  } else {
-    // Default to home highlight when on index or other pages
-    document.getElementById("homeBtn").classList.add("active");
-  }
-</script>
+</body>
+</html>
