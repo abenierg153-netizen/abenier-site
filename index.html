@@ -759,9 +759,10 @@
     setTimeout(() => toast.classList.add("hidden"), 3000);
   }
 </script>
-  <!-- ✅ Sticky Bottom Navigation -->
+<!-- ✅ Sticky Bottom Navigation -->
 <nav id="stickyNav"
-     class="fixed bottom-0 w-full bg-[#E6F7F9] z-50 border-t border-gray-200 shadow-sm flex justify-around py-2 backdrop-blur-sm">
+     class="fixed bottom-0 w-full bg-[#E6F7F9] z-50 border-t border-gray-200 shadow-sm flex justify-around py-2 backdrop-blur-sm"
+     style="display:flex;">
   
   <!-- Home -->
   <a href="index.html" id="homeBtn"
@@ -794,17 +795,16 @@
 
 <!-- ✅ Script for active nav -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname;
+  // Run as soon as script loads, no waiting for DOMContentLoaded
+  const path = window.location.pathname;
 
-    if (path.includes("blogs")) {
-      document.getElementById("blogsBtn").classList.add("active");
-    } else if (path.includes("giveaway")) {
-      document.getElementById("giveawayBtn").classList.add("active");
-    } else if (path.includes("appointments")) {
-      document.getElementById("appointmentsBtn").classList.add("active");
-    } else {
-      document.getElementById("homeBtn").classList.add("active");
-    }
-  });
+  if (path.includes("blogs")) {
+    document.getElementById("blogsBtn").classList.add("active");
+  } else if (path.includes("giveaway")) {
+    document.getElementById("giveawayBtn").classList.add("active");
+  } else if (path.includes("appointments")) {
+    document.getElementById("appointmentsBtn").classList.add("active");
+  } else {
+    document.getElementById("homeBtn").classList.add("active");
+  }
 </script>
