@@ -759,43 +759,8 @@
     setTimeout(() => toast.classList.add("hidden"), 3000);
   }
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sticky Bottom Navigation</title>
-  
-  <!-- ✅ Load Tailwind -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
-  <!-- ✅ Load Heroicons (for nav icons) -->
-  <script src="https://unpkg.com/feather-icons"></script>
-
-  <style>
-    /* Prevent flicker */
-    .bottom-nav {
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-  </style>
-</head>
-<body class="bg-gray-100">
-
-  <!-- ✅ Header -->
-  <header class="bg-white shadow-md p-4">
-    <h1 class="text-xl font-bold">My Website</h1>
-  </header>
-
-  <!-- ✅ Page Content -->
-  <main class="p-6 mb-20">
-    <p class="mb-40">Scroll down to see the bottom navigation bar...</p>
-    <p class="mb-40">More content here...</p>
-    <p class="mb-40">Keep scrolling...</p>
-    <p class="mb-40">Even more content...</p>
-  </main>
-
-  <!-- ✅ Sticky Bottom Navigation -->
+ <!-- ✅ Sticky Bottom Navigation -->
   <nav class="bottom-nav fixed bottom-0 left-0 right-0 bg-white shadow-md border-t">
     <div class="flex justify-around items-center py-2">
       
