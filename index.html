@@ -796,21 +796,23 @@
 
 <!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT -->
 <script>
-  // Scroll to top when Home is clicked
-  document.getElementById("homeBtn").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    // Scroll to top when Home is clicked
+    document.getElementById("homeBtn").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-  // Highlight active nav button based on current page
-  const path = window.location.pathname;
-  if (path.includes("blogs")) {
-    document.getElementById("blogsBtn").classList.add("active");
-  } else if (path.includes("giveaway")) {
-    document.getElementById("giveawayBtn").classList.add("active");
-  } else if (path.includes("appointments")) {
-    document.getElementById("appointmentsBtn").classList.add("active");
-  } else {
-    // Default to home highlight when on index or other pages
-    document.getElementById("homeBtn").classList.add("active");
-  }
+    // Highlight active nav button based on current page
+    const path = window.location.pathname;
+    if (path.includes("blogs")) {
+      document.getElementById("blogsBtn").classList.add("active");
+    } else if (path.includes("giveaway")) {
+      document.getElementById("giveawayBtn").classList.add("active");
+    } else if (path.includes("appointments")) {
+      document.getElementById("appointmentsBtn").classList.add("active");
+    } else {
+      // Default to home highlight when on index or other pages
+      document.getElementById("homeBtn").classList.add("active");
+    }
+  });
 </script>
