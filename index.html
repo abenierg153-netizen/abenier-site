@@ -760,41 +760,93 @@
   }
 </script>
 
- <!-- ✅ Sticky Bottom Navigation -->
-  <nav class="bottom-nav fixed bottom-0 left-0 right-0 bg-white shadow-md border-t">
-    <div class="flex justify-around items-center py-2">
-      
-      <!-- Home -->
-      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-        <i data-feather="home"></i>
-        <span class="text-xs">Home</span>
-      </a>
+<!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </a>
 
-      <!-- Offers -->
-      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-        <i data-feather="tag"></i>
-        <span class="text-xs">Offers</span>
-      </a>
+  <!-- Blogs Button -->
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>📝</span>
+    <span class="text-xs">Blogs</span>
+  </a>
 
-      <!-- Chat -->
-      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-        <i data-feather="message-circle"></i>
-        <span class="text-xs">Chat</span>
-      </a>
+  <!-- Giveaway Button -->
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🎁</span>
+    <span class="text-xs">Giveaway</span>
+  </a>
 
-      <!-- Affiliate -->
-      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-        <i data-feather="users"></i>
-        <span class="text-xs">Affiliate</span>
-      </a>
+  <!-- Chat Button -->
+  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Appointmens</span>
+  </button>
+</nav>
 
-    </div>
-  </nav>
+<!-- ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue for both icon + text */
+    font-weight: bold;
+  }
+</style>
 
-  <!-- ✅ Activate Feather Icons -->
-  <script>
-    feather.replace()
-  </script>
+<!-- SCRIPT FOR ACTIVE HIGHLIGHT + CHAT -->
+<script>
+  // Highlight active nav button based on current page
+  const path = window.location.pathname;
+  if (path.includes("blogs")) {
+    document.getElementById("blogsBtn").classList.add("active");
+  } else if (path.includes("giveaway")) {
+    document.getElementById("giveawayBtn").classList.add("active");
+  } else {
+    // Default to home highlight when on index or other pages
+    document.getElementById("homeBtn").classList.add("active");
+  }
 
-</body>
-</html>
+  // Open appointments link in new tab
+  document.getElementById("chatBtn").addEventListener("click", () => {
+    // 👇 Replace with your real chatbot link
+    window.open("https://your-chatbot-link.com", "_blank");
+  });
+</script>
+
+
+<!-- SCRIPT: Tabs Only -->
+<script>
+  // Tabs toggle
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  function activateTab(targetId) {
+    // Hide all content
+    tabContents.forEach(c => c.classList.add('hidden'));
+    document.getElementById(targetId).classList.remove('hidden');
+
+    // Update button styles
+    tabButtons.forEach(b => {
+      if (b.getAttribute('data-tab') === targetId) {
+        b.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
+        b.classList.remove('text-gray-600');
+      } else {
+        b.classList.add('text-gray-600');
+        b.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-semibold');
+      }
+    });
+  }
+
+  // Add click event
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      activateTab(target);
+    });
+  });
+
+  // Set default active tab
+  activateTab("tips");
+</script>
