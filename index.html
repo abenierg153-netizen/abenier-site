@@ -764,14 +764,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sticky Navigation Button</title>
+  <title>Sticky Bottom Navigation</title>
   
-  <!-- ✅ Load Tailwind FIRST so nothing delays -->
+  <!-- ✅ Load Tailwind -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
+  <!-- ✅ Load Heroicons (for nav icons) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
   <style>
-    /* ✅ Prevent flicker/delay */
-    .sticky-nav {
+    /* Prevent flicker */
+    .bottom-nav {
       visibility: visible !important;
       opacity: 1 !important;
     }
@@ -785,19 +788,48 @@
   </header>
 
   <!-- ✅ Page Content -->
-  <main class="p-6">
-    <p class="mb-40">Scroll down to see the sticky button load instantly...</p>
+  <main class="p-6 mb-20">
+    <p class="mb-40">Scroll down to see the bottom navigation bar...</p>
     <p class="mb-40">More content here...</p>
     <p class="mb-40">Keep scrolling...</p>
     <p class="mb-40">Even more content...</p>
   </main>
 
-  <!-- ✅ Sticky Navigation Button (loads instantly with header) -->
-  <nav class="sticky-nav fixed bottom-4 right-4">
-    <button class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg">
-      Chat
-    </button>
+  <!-- ✅ Sticky Bottom Navigation -->
+  <nav class="bottom-nav fixed bottom-0 left-0 right-0 bg-white shadow-md border-t">
+    <div class="flex justify-around items-center py-2">
+      
+      <!-- Home -->
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+        <i data-feather="home"></i>
+        <span class="text-xs">Home</span>
+      </a>
+
+      <!-- Offers -->
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+        <i data-feather="tag"></i>
+        <span class="text-xs">Offers</span>
+      </a>
+
+      <!-- Chat -->
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+        <i data-feather="message-circle"></i>
+        <span class="text-xs">Chat</span>
+      </a>
+
+      <!-- Affiliate -->
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+        <i data-feather="users"></i>
+        <span class="text-xs">Affiliate</span>
+      </a>
+
+    </div>
   </nav>
+
+  <!-- ✅ Activate Feather Icons -->
+  <script>
+    feather.replace()
+  </script>
 
 </body>
 </html>
