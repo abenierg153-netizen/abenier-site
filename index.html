@@ -759,52 +759,44 @@
     setTimeout(() => toast.classList.add("hidden"), 3000);
   }
 </script>
-<!-- PRELOAD TAILWIND IN HEAD -->
-<link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- STICKY BOTTOM NAVIGATION -->
-<nav id="stickyNav" style="display: flex; position: fixed; bottom: 0; width: 100%; background: #E6F7F9; z-index: 50;" 
-     class="border-t border-gray-200 shadow-sm flex justify-around py-2 backdrop-blur-sm">
-  <!-- Home Button -->
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <!-- ✅ Sticky Bottom Navigation -->
+<nav id="stickyNav"
+     class="fixed bottom-0 w-full bg-[#E6F7F9] z-50 border-t border-gray-200 shadow-sm flex justify-around py-2 backdrop-blur-sm">
+  
+  <!-- Home -->
+  <a href="index.html" id="homeBtn"
+     class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
 
-  <!-- Blogs Button -->
-  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <!-- Blogs -->
+  <a href="blogs.html" id="blogsBtn"
+     class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>📝</span>
     <span class="text-xs">Blogs</span>
   </a>
 
-  <!-- Giveaway Button -->
-  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <!-- Giveaway -->
+  <a href="giveaway.html" id="giveawayBtn"
+     class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🎁</span>
     <span class="text-xs">Giveaway</span>
   </a>
 
-  <!-- Appointments Button -->
-  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <!-- Appointments -->
+  <a href="appointments.html" id="appointmentsBtn"
+     class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🗓</span>
     <span class="text-xs">Appointments</span>
   </a>
 </nav>
 
-<!-- ACTIVE STYLE -->
-<style>
-  .active {
-    color: #2563EB; /* theme blue for both icon + text */
-    font-weight: bold;
-  }
-</style>
-
-<!-- SCRIPT FOR ACTIVE HIGHLIGHT -->
+<!-- ✅ Script for active nav -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const path = window.location.pathname;
 
-    // Highlight active nav button
     if (path.includes("blogs")) {
       document.getElementById("blogsBtn").classList.add("active");
     } else if (path.includes("giveaway")) {
@@ -814,8 +806,5 @@
     } else {
       document.getElementById("homeBtn").classList.add("active");
     }
-    
-    // Optional: Remove inline style after Tailwind loads
-    document.getElementById("stickyNav").style.display = "flex";
   });
 </script>
