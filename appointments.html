@@ -88,13 +88,13 @@
       event.target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600', 'font-medium');
     }
   </script>
-<!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
+<!-- STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🏠</span>
     <span class="text-xs">Home</span>
-  </a>
+  </button>
 
   <!-- Blogs Button -->
   <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
@@ -108,11 +108,11 @@
     <span class="text-xs">Giveaway</span>
   </a>
 
-  <!-- Chat Button -->
-  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>💬</span>
-    <span class="text-xs">Chat With Us</span>
-  </button>
+  <!-- Appointments Button -->
+  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓</span>
+    <span class="text-xs">Appointments</span>
+  </a>
 </nav>
 
 <!-- ACTIVE STYLE -->
@@ -123,58 +123,23 @@
   }
 </style>
 
-<!-- SCRIPT FOR ACTIVE HIGHLIGHT + CHAT -->
+<!-- SCRIPT FOR HOME + ACTIVE HIGHLIGHT -->
 <script>
+  // Scroll to top when Home is clicked
+  document.getElementById("homeBtn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   // Highlight active nav button based on current page
   const path = window.location.pathname;
   if (path.includes("blogs")) {
     document.getElementById("blogsBtn").classList.add("active");
   } else if (path.includes("giveaway")) {
     document.getElementById("giveawayBtn").classList.add("active");
+  } else if (path.includes("appointments")) {
+    document.getElementById("appointmentsBtn").classList.add("active");
   } else {
     // Default to home highlight when on index or other pages
     document.getElementById("homeBtn").classList.add("active");
   }
-
-  // Open chatbot link in new tab
-  document.getElementById("chatBtn").addEventListener("click", () => {
-    // 👇 Replace with your real chatbot link
-    window.open("https://your-chatbot-link.com", "_blank");
-  });
 </script>
-
-
-<!-- SCRIPT: Tabs Only -->
-<script>
-  // Tabs toggle
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  function activateTab(targetId) {
-    // Hide all content
-    tabContents.forEach(c => c.classList.add('hidden'));
-    document.getElementById(targetId).classList.remove('hidden');
-
-    // Update button styles
-    tabButtons.forEach(b => {
-      if (b.getAttribute('data-tab') === targetId) {
-        b.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
-        b.classList.remove('text-gray-600');
-      } else {
-        b.classList.add('text-gray-600');
-        b.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-semibold');
-      }
-    });
-  }
-
-  // Add click event
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-tab');
-      activateTab(target);
-    });
-  });
-
-  // Set default active tab
-  activateTab("tips");
-          </script>
