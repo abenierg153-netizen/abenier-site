@@ -110,11 +110,11 @@
     <span class="text-xs">Giveaway</span>
   </a>
 
-  <!-- Chat Button -->
-  <button id="chatBtn" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>💬</span>
-    <span class="text-xs">Chat With Us</span>
-  </button>
+  <!-- Appointments Button (fixed) -->
+  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Appointments</span>
+  </a>
 </nav>
 
 <!-- ACTIVE STYLE -->
@@ -125,7 +125,7 @@
   }
 </style>
 
-<!-- SCRIPT FOR ACTIVE HIGHLIGHT + CHAT -->
+<!-- SCRIPT FOR ACTIVE HIGHLIGHT -->
 <script>
   // Highlight active nav button based on current page
   const path = window.location.pathname;
@@ -133,14 +133,40 @@
     document.getElementById("blogsBtn").classList.add("active");
   } else if (path.includes("giveaway")) {
     document.getElementById("giveawayBtn").classList.add("active");
+  } else if (path.includes("appointments")) {
+    document.getElementById("appointmentsBtn").classList.add("active");
   } else {
     // Default to home highlight when on index or other pages
     document.getElementById("homeBtn").classList.add("active");
   }
+</script>
 
-  // Open chatbot link in new tab
-  document.getElementById("chatBtn").addEventListener("click", () => {
-    // 👇 Replace with your real chatbot link
-    window.open("https://your-chatbot-link.com", "_blank");
+<!-- SCRIPT: Tabs Only -->
+<script>
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  function activateTab(targetId) {
+    tabContents.forEach(c => c.classList.add('hidden'));
+    document.getElementById(targetId).classList.remove('hidden');
+
+    tabButtons.forEach(b => {
+      if (b.getAttribute('data-tab') === targetId) {
+        b.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
+        b.classList.remove('text-gray-600');
+      } else {
+        b.classList.add('text-gray-600');
+        b.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-semibold');
+      }
+    });
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      activateTab(target);
+    });
   });
+
+  activateTab("tips");
 </script>
