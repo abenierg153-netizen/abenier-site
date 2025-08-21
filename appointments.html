@@ -30,112 +30,121 @@
       </nav>
     </div>
 
-    <!-- TAB CONTENTS -->
+<!-- TAB NAVIGATION -->
+<div class="mt-10 border-b border-gray-200">
+  <nav class="flex justify-center space-x-6 px-4 overflow-x-auto">
+    <button class="tab-btn py-2 px-3 text-gray-600 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 active" data-tab="book">Book Appointment Today</button>
+    <button class="tab-btn py-2 px-3 text-gray-600 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600" data-tab="reschedule">Reschedule Book</button>
+    <button class="tab-btn py-2 px-3 text-gray-600 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600" data-tab="recovery">Recovery Journey</button>
+    <button class="tab-btn py-2 px-3 text-gray-600 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600" data-tab="before">Before Treatment</button>
+  </nav>
+</div>
 
-    <!-- Book Appointment Today -->
-    <div id="book" class="tab-content">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Book Appointment Today</h2>
-      <p class="text-center text-gray-600 mt-2">Schedule your visit with our dental specialists below.</p>
+<!-- TAB CONTENTS -->
 
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-        <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
-        </div>
-        <div>
-          <label class="block text-gray-700">Phone Number</label>
-          <input type="tel" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="+251...">
-        </div>
-        <div>
-          <label class="block text-gray-700">Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
-        </div>
-        <div>
-          <label class="block text-gray-700">Message</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any details..."></textarea>
-        </div>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold">Book Now</button>
-      </form>
+<!-- Book Appointment Today -->
+<div id="book" class="tab-content">
+  <h2 class="text-2xl font-bold text-center text-gray-800">Book Appointment Today</h2>
+  <p class="text-center text-gray-600 mt-2">Schedule your visit with our dental specialists below.</p>
+
+  <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+    <div>
+      <label class="block text-gray-700">Full Name</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
     </div>
-
-    <!-- Reschedule Book -->
-    <div id="reschedule" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Reschedule Book</h2>
-      <p class="text-center text-gray-600 mt-2">Update your appointment details below.</p>
-
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-        <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
-        </div>
-        <div>
-          <label class="block text-gray-700">Old Appointment Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
-        </div>
-        <div>
-          <label class="block text-gray-700">New Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
-        </div>
-        <div>
-          <label class="block text-gray-700">Reason for Reschedule</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Explain briefly..."></textarea>
-        </div>
-        <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded-lg font-semibold">Reschedule</button>
-      </form>
+    <div>
+      <label class="block text-gray-700">Phone Number</label>
+      <input type="tel" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="+251...">
     </div>
-
-    <!-- Recovery Journey -->
-    <div id="recovery" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Recovery Journey</h2>
-      <p class="text-center text-gray-600 mt-2">Track your healing progress here.</p>
-
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-        <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
-        </div>
-        <div>
-          <label class="block text-gray-700">Treatment Type</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Root Canal, Cleaning...">
-        </div>
-        <div>
-          <label class="block text-gray-700">Date of Treatment</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
-        </div>
-        <div>
-          <label class="block text-gray-700">Recovery Notes</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="How are you feeling? Any discomfort?"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold">Submit Recovery</button>
-      </form>
+    <div>
+      <label class="block text-gray-700">Preferred Date</label>
+      <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
     </div>
-
-    <!-- Before Treatment -->
-    <div id="before" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Before Treatment</h2>
-      <p class="text-center text-gray-600 mt-2">Help us prepare for your upcoming treatment.</p>
-
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-        <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
-        </div>
-        <div>
-          <label class="block text-gray-700">Planned Treatment</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Tooth Extraction, Filling...">
-        </div>
-        <div>
-          <label class="block text-gray-700">Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
-        </div>
-        <div>
-          <label class="block text-gray-700">Medical Notes</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any allergies, conditions, or notes?"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold">Submit Info</button>
-      </form>
+    <div>
+      <label class="block text-gray-700">Message</label>
+      <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any details..."></textarea>
     </div>
-  </main>
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold">Book Now</button>
+  </form>
+</div>
+
+<!-- Reschedule Book -->
+<div id="reschedule" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-center text-gray-800">Reschedule Book</h2>
+  <p class="text-center text-gray-600 mt-2">Update your appointment details below.</p>
+
+  <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+    <div>
+      <label class="block text-gray-700">Full Name</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+    </div>
+    <div>
+      <label class="block text-gray-700">Old Appointment Date</label>
+      <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+    </div>
+    <div>
+      <label class="block text-gray-700">New Preferred Date</label>
+      <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+    </div>
+    <div>
+      <label class="block text-gray-700">Reason for Reschedule</label>
+      <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Explain briefly..."></textarea>
+    </div>
+    <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded-lg font-semibold">Reschedule</button>
+  </form>
+</div>
+
+<!-- Recovery Journey -->
+<div id="recovery" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-center text-gray-800">Recovery Journey</h2>
+  <p class="text-center text-gray-600 mt-2">Track your healing progress here.</p>
+
+  <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+    <div>
+      <label class="block text-gray-700">Full Name</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+    </div>
+    <div>
+      <label class="block text-gray-700">Treatment Type</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Root Canal, Cleaning...">
+    </div>
+    <div>
+      <label class="block text-gray-700">Date of Treatment</label>
+      <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+    </div>
+    <div>
+      <label class="block text-gray-700">Recovery Notes</label>
+      <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="How are you feeling? Any discomfort?"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold">Submit Recovery</button>
+  </form>
+</div>
+
+<!-- Before Treatment -->
+<div id="before" class="tab-content hidden">
+  <h2 class="text-2xl font-bold text-center text-gray-800">Before Treatment</h2>
+  <p class="text-center text-gray-600 mt-2">Help us prepare for your upcoming treatment.</p>
+
+  <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+    <div>
+      <label class="block text-gray-700">Full Name</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+    </div>
+    <div>
+      <label class="block text-gray-700">Planned Treatment</label>
+      <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Tooth Extraction, Filling...">
+    </div>
+    <div>
+      <label class="block text-gray-700">Preferred Date</label>
+      <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+    </div>
+    <div>
+      <label class="block text-gray-700">Medical Notes</label>
+      <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any allergies, conditions, or notes?"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold">Submit Info</button>
+  </form>
+</div>
 
   <!-- STICKY NAVIGATION -->
   <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
