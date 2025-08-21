@@ -45,6 +45,49 @@
     </div>
   </div>
 </header>
+  <!-- ✅ Tabs Section -->
+  <section class="max-w-6xl mx-auto px-4 mt-6">
+    <div class="flex space-x-4 border-b">
+      <button class="tab-btn py-2 px-4 text-blue-600 border-b-2 border-blue-600 font-medium" onclick="showTab('scheduled')">Scheduled</button>
+      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('completed')">Completed</button>
+      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('canceled')">Canceled</button>
+      <button class="tab-btn py-2 px-4 hover:text-blue-600" onclick="showTab('history')">History</button>
+    </div>
+
+    <!-- ✅ Tab Contents -->
+    <div id="scheduled" class="tab-content p-4">
+      <h2 class="text-lg font-semibold mb-2">Scheduled Appointments</h2>
+      <p>All upcoming appointments will appear here.</p>
+    </div>
+
+    <div id="completed" class="tab-content p-4 hidden">
+      <h2 class="text-lg font-semibold mb-2">Completed Appointments</h2>
+      <p>All finished appointments will appear here.</p>
+    </div>
+
+    <div id="canceled" class="tab-content p-4 hidden">
+      <h2 class="text-lg font-semibold mb-2">Canceled Appointments</h2>
+      <p>All canceled appointments will appear here.</p>
+    </div>
+
+    <div id="history" class="tab-content p-4 hidden">
+      <h2 class="text-lg font-semibold mb-2">Appointment History</h2>
+      <p>Complete log of all appointments.</p>
+    </div>
+  </section>
+
+  <!-- ✅ Script for Tabs -->
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-medium');
+      });
+      event.target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600', 'font-medium');
+    }
+  </script>
 <!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
