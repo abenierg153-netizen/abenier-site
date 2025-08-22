@@ -161,78 +161,64 @@
     </div>
   </main>
 
-  <!-- STICKY NAVIGATION -->
-  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-    <button id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🏠</span>
-      <span class="text-xs">Home</span>
-    </button>
+  <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </a>
 
-    <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>📝</span>
-      <span class="text-xs">Blogs</span>
-    </a>
+  <!-- Blogs Button -->
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>📝</span>
+    <span class="text-xs">Blogs</span>
+  </a>
 
-    <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🎁</span>
-      <span class="text-xs">Giveaway</span>
-    </a>
+  <!-- Giveaway Button -->
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🎁</span>
+    <span class="text-xs">Giveaway</span>
+  </a>
 
-    <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🗓</span>
-      <span class="text-xs">Appointments</span>
-    </a>
-  </nav>
+  <!-- Appointments Button -->
+  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Appointments</span>
+  </a>
 
-  <!-- ACTIVE STYLE -->
-  <style>
-    .active { color: #2563EB; font-weight: bold; }
-    .tab-active { color: #2563EB; border-color: #2563EB; font-weight: 600; }
-  </style>
+  <!-- Let's Talk Button -->
+  <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>💬</span>
+    <span class="text-xs">Let’s Talk</span>
+  </a>
+</nav>
 
-  <!-- SCRIPT -->
-  <script>
-    // Highlight active nav button
-    document.getElementById("homeBtn").addEventListener("click", () => {
-      window.location.href = "index.html"; 
-    });
+<!-- ✅ ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue */
+    font-weight: bold;
+  }
+</style>
 
+<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
     const path = window.location.pathname;
+
     if (path.includes("blogs")) {
       document.getElementById("blogsBtn").classList.add("active");
     } else if (path.includes("giveaway")) {
       document.getElementById("giveawayBtn").classList.add("active");
     } else if (path.includes("appointments")) {
       document.getElementById("appointmentsBtn").classList.add("active");
+    } else if (path.includes("chat")) {
+      document.getElementById("chatBtn").classList.add("active");
     } else {
       document.getElementById("homeBtn").classList.add("active");
     }
-
-    // Tab switching logic
-    const tabButtons = document.querySelectorAll(".tab-button");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    function activateTab(targetId) {
-      tabContents.forEach(c => c.classList.add("hidden"));
-      document.getElementById(targetId).classList.remove("hidden");
-
-      tabButtons.forEach(b => {
-        if (b.getAttribute("data-tab") === targetId) {
-          b.classList.add("tab-active");
-        } else {
-          b.classList.remove("tab-active");
-        }
-      });
-    }
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        activateTab(btn.getAttribute("data-tab"));
-      });
-    });
-
-    // Default tab
-    activateTab("book");
-  </script>
+  });
+</script>
 </body>
 </html>
