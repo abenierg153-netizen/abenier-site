@@ -759,7 +759,6 @@
     setTimeout(() => toast.classList.add("hidden"), 3000);
   }
 </script>
-
 <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
@@ -785,6 +784,12 @@
     <span>🗓️</span>
     <span class="text-xs">Appointments</span>
   </a>
+
+  <!-- Let's Talk Button -->
+  <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>💬</span>
+    <span class="text-xs">Let’s Talk</span>
+  </a>
 </nav>
 
 <!-- ✅ ACTIVE STYLE -->
@@ -806,6 +811,8 @@
       document.getElementById("giveawayBtn").classList.add("active");
     } else if (path.includes("appointments")) {
       document.getElementById("appointmentsBtn").classList.add("active");
+    } else if (path.includes("chat")) {
+      document.getElementById("chatBtn").classList.add("active");
     } else {
       document.getElementById("homeBtn").classList.add("active");
     }
