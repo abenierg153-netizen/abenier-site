@@ -202,11 +202,35 @@
   }
 </style>
 
-<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
+<!-- ✅ TAB SWITCHING SCRIPT -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname;
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
 
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Reset all
+        tabButtons.forEach(b => b.classList.remove("border-blue-600", "text-blue-600"));
+        tabContents.forEach(c => c.classList.add("hidden"));
+
+        // Activate clicked
+        btn.classList.add("border-blue-600", "text-blue-600");
+        const target = btn.getAttribute("data-tab");
+        document.getElementById(target).classList.remove("hidden");
+      });
+    });
+
+    // Default: first tab active
+    if (tabButtons.length > 0) {
+      tabButtons[0].classList.add("border-blue-600", "text-blue-600");
+      tabContents.forEach((c, i) => {
+        if (i !== 0) c.classList.add("hidden");
+      });
+    }
+
+    // ✅ Bottom Nav Highlight
+    const path = window.location.pathname;
     if (path.includes("blogs")) {
       document.getElementById("blogsBtn").classList.add("active");
     } else if (path.includes("giveaway")) {
