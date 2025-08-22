@@ -90,7 +90,7 @@
     Winner will be announced on our TikTok & contacted via email. No purchase necessary. By entering, you agree to our terms.
   </p>
 </section>
-<!-- STICKY BOTTOM NAVIGATION (Blogs Page) -->
+<!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
   <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
@@ -110,63 +110,42 @@
     <span class="text-xs">Giveaway</span>
   </a>
 
-  <!-- Appointments Button (fixed) -->
+  <!-- Appointments Button -->
   <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🗓️</span>
     <span class="text-xs">Appointments</span>
   </a>
+
+  <!-- Let's Talk Button -->
+  <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>💬</span>
+    <span class="text-xs">Let’s Talk</span>
+  </a>
 </nav>
 
-<!-- ACTIVE STYLE -->
+<!-- ✅ ACTIVE STYLE -->
 <style>
   .active {
-    color: #2563EB; /* theme blue for both icon + text */
+    color: #2563EB; /* theme blue */
     font-weight: bold;
   }
 </style>
 
-<!-- SCRIPT FOR ACTIVE HIGHLIGHT -->
+<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
 <script>
-  // Highlight active nav button based on current page
-  const path = window.location.pathname;
-  if (path.includes("blogs")) {
-    document.getElementById("blogsBtn").classList.add("active");
-  } else if (path.includes("giveaway")) {
-    document.getElementById("giveawayBtn").classList.add("active");
-  } else if (path.includes("appointments")) {
-    document.getElementById("appointmentsBtn").classList.add("active");
-  } else {
-    // Default to home highlight when on index or other pages
-    document.getElementById("homeBtn").classList.add("active");
-  }
-</script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname;
 
-<!-- SCRIPT: Tabs Only -->
-<script>
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  function activateTab(targetId) {
-    tabContents.forEach(c => c.classList.add('hidden'));
-    document.getElementById(targetId).classList.remove('hidden');
-
-    tabButtons.forEach(b => {
-      if (b.getAttribute('data-tab') === targetId) {
-        b.classList.add('text-blue-600', 'font-semibold', 'border-b-2', 'border-blue-600');
-        b.classList.remove('text-gray-600');
-      } else {
-        b.classList.add('text-gray-600');
-        b.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'font-semibold');
-      }
-    });
-  }
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-tab');
-      activateTab(target);
-    });
+    if (path.includes("blogs")) {
+      document.getElementById("blogsBtn").classList.add("active");
+    } else if (path.includes("giveaway")) {
+      document.getElementById("giveawayBtn").classList.add("active");
+    } else if (path.includes("appointments")) {
+      document.getElementById("appointmentsBtn").classList.add("active");
+    } else if (path.includes("chat")) {
+      document.getElementById("chatBtn").classList.add("active");
+    } else {
+      document.getElementById("homeBtn").classList.add("active");
+    }
   });
-
-  activateTab("tips");
 </script>
