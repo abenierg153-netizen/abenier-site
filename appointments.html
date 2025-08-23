@@ -1,180 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Appointments - Yanet Dental Clinic</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Yanet Dental Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7fe 100%);
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tab-button.active {
+            color: #2563EB;
+            border-bottom-color: #2563EB;
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background-color: #2563EB;
+            border-radius: 3px;
+        }
+        
+        .form-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2563EB;
+        }
+        
+        input, select, textarea {
+            padding-left: 40px !important;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+        }
+        
+        .btn-purple {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+        }
+        
+        .btn-purple:hover {
+            background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body class="min-h-screen flex flex-col">
+    <!-- HEADER -->
+    <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+        <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-tooth text-blue-600"></i>
+                </div>
+            </div>
+            <div class="flex flex-col items-center leading-tight flex-grow text-center">
+                <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">YANET SPECIALITY</h1>
+                <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">DENTAL CLINIC</h2>
+            </div>
+            <div class="flex items-center space-x-2">
+                <a href="tel:0116662828" class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+                    <i class="fas fa-phone"></i> <span>Call Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-<!-- HEADER -->
-<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-    <div class="flex items-center space-x-2">
-      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
-    </div>
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">YANET SPECIALITY</h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">DENTAL CLINIC</h2>
-    </div>
-    <div class="flex items-center space-x-2">
-      <a href="tel:0116662828" class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
-        <i class="fas fa-phone"></i> <span>Call Us</span>
-      </a>
-    </div>
-  </div>
-</header>
+    <main class="flex-1 px-4 pt-28 pb-36">
+        <!-- Tabs -->
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-sm p-1 mb-6">
+            <nav class="flex justify-between">
+                <button class="tab-button active py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="book">
+                    <i class="fas fa-calendar-plus mr-2"></i> Book
+                </button>
+                <button class="tab-button py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="reschedule">
+                    <i class="fas fa-calendar-alt mr-2"></i> Reschedule
+                </button>
+                <button class="tab-button py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="before">
+                    <i class="fas fa-file-medical mr-2"></i> Pre-Treatment
+                </button>
+            </nav>
+        </div>
 
-<main class="flex-1 px-4 pt-28 pb-36"> <!-- increased pb to ensure sticky footer visible -->
+        <!-- Book Appointment -->
+        <div id="book" class="tab-content">
+            <form class="form-card max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold text-center text-blue-600 mb-6">
+                    <i class="fas fa-calendar-check mr-2"></i> New Appointment
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="input-group">
+                        <i class="input-icon fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="input-icon fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="input-icon fas fa-phone"></i>
+                        <input type="tel" placeholder="Phone Number" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="input-icon fas fa-teeth"></i>
+                        <select class="w-full border rounded-lg px-3 py-3 appearance-none" required>
+                            <option value="">Select Service</option>
+                            <option value="Cleaning">Dental Cleaning</option>
+                            <option value="Tooth Extraction">Tooth Extraction</option>
+                            <option value="Root Canal">Root Canal</option>
+                            <option value="Filling">Tooth Filling</option>
+                            <option value="Braces Consultation">Braces Consultation</option>
+                            <option value="Whitening">Teeth Whitening</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="input-group">
+                            <i class="input-icon fas fa-calendar"></i>
+                            <input type="date" class="w-full border rounded-lg px-3 py-3" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="input-icon fas fa-clock"></i>
+                            <select class="w-full border rounded-lg px-3 py-3 appearance-none" required>
+                                <option value="">Select Time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <textarea placeholder="Additional Notes (Optional)" class="w-full border rounded-lg px-4 py-3 mt-1" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-semibold mt-6">
+                    <i class="fas fa-paper-plane mr-2"></i> Book Appointment
+                </button>
+            </form>
+        </div>
 
-  <!-- Tabs -->
-  <div class="border-b border-gray-200 mb-6">
-    <nav class="flex justify-around">
-      <button class="tab-button py-3 px-2 text-sm font-medium text-gray-600 hover:text-blue-600 border-b-2 border-transparent flex items-center" data-tab="book">
-        <i class="fas fa-calendar-plus mr-1"></i> Book
-      </button>
-      <button class="tab-button py-3 px-2 text-sm font-medium text-gray-600 hover:text-blue-600 border-b-2 border-transparent flex items-center" data-tab="reschedule">
-        <i class="fas fa-calendar-alt mr-1"></i> Reschedule
-      </button>
-      <button class="tab-button py-3 px-2 text-sm font-medium text-gray-600 hover:text-blue-600 border-b-2 border-transparent flex items-center" data-tab="before">
-        <i class="fas fa-file-medical mr-1"></i> Pre-Treatment
-      </button>
+        <!-- Reschedule -->
+        <div id="reschedule" class="tab-content hidden">
+            <form class="form-card max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold text-center text-amber-600 mb-6">
+                    <i class="fas fa-calendar-exchange mr-2"></i> Reschedule Appointment
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="input-group">
+                        <i class="input-icon fas fa-id-card"></i>
+                        <input type="text" placeholder="Appointment ID or Phone Number" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="input-group">
+                            <i class="input-icon fas fa-calendar"></i>
+                            <input type="date" placeholder="Old Appointment Date" class="w-full border rounded-lg px-3 py-3" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="input-icon fas fa-clock"></i>
+                            <select class="w-full border rounded-lg px-3 py-3 appearance-none" required>
+                                <option value="">Old Time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="input-group">
+                            <i class="input-icon fas fa-calendar-plus"></i>
+                            <input type="date" placeholder="New Appointment Date" class="w-full border rounded-lg px-3 py-3" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="input-icon fas fa-clock"></i>
+                            <select class="w-full border rounded-lg px-3 py-3 appearance-none" required>
+                                <option value="">New Time</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <textarea placeholder="Reason for Rescheduling" class="w-full border rounded-lg px-4 py-3 mt-1" rows="3" required></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-warning w-full text-white py-3 rounded-lg font-semibold mt-6">
+                    <i class="fas fa-sync-alt mr-2"></i> Request Reschedule
+                </button>
+            </form>
+        </div>
+
+        <!-- Before Treatment -->
+        <div id="before" class="tab-content hidden">
+            <form class="form-card max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold text-center text-purple-600 mb-6">
+                    <i class="fas fa-file-medical mr-2"></i> Pre-Treatment Information
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="input-group">
+                        <i class="input-icon fas fa-id-card"></i>
+                        <input type="text" placeholder="Appointment ID or Phone Number" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="input-icon fas fa-stethoscope"></i>
+                        <input type="text" placeholder="Planned Treatment" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="input-icon fas fa-calendar"></i>
+                        <input type="date" class="w-full border rounded-lg px-3 py-3" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block font-medium text-gray-700 mb-2">Medical Conditions</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> Diabetes
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> High Blood Pressure
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> Heart Conditions
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> Bleeding Disorders
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> Allergies
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600"> Asthma
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <textarea placeholder="Current Medications" class="w-full border rounded-lg px-4 py-3 mt-1" rows="2"></textarea>
+                    </div>
+                    
+                    <div>
+                        <textarea placeholder="Additional Medical Notes" class="w-full border rounded-lg px-4 py-3 mt-1" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-purple w-full text-white py-3 rounded-lg font-semibold mt-6">
+                    <i class="fas fa-check-circle mr-2"></i> Submit Information
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Sticky Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-3 z-50 backdrop-blur-sm">
+        <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+            <i class="fas fa-home"></i>
+            <span class="text-xs mt-1">Home</span>
+        </a>
+        <a href="blogs.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+            <i class="fas fa-blog"></i>
+            <span class="text-xs mt-1">Blogs</span>
+        </a>
+        <a href="giveaway.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+            <i class="fas fa-gift"></i>
+            <span class="text-xs mt-1">Giveaway</span>
+        </a>
+        <a href="appointments.html" class="flex flex-col items-center text-[#2563EB] transition">
+            <i class="fas fa-calendar-day"></i>
+            <span class="text-xs mt-1">Appointments</span>
+        </a>
+        <a href="chat.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+            <i class="fas fa-comment"></i>
+            <span class="text-xs mt-1">Let's Talk</span>
+        </a>
     </nav>
-  </div>
 
-  <!-- Book Appointment -->
-  <div id="book" class="tab-content">
-    <form id="bookForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-      <h2 class="text-xl font-bold text-center text-blue-600 mb-4">New Appointment</h2>
-      <!-- Full Name, Email, Phone fields remain the same -->
-      <div class="md:col-span-2">
-        <label class="block font-medium text-gray-700 mb-1">Select Service</label>
-        <div class="relative">
-          <i class="fas fa-teeth-open absolute left-3 top-3 text-gray-400 z-10"></i>
-          <select class="w-full border rounded-lg pl-10 pr-3 py-2 appearance-none" required>
-            <option value="">-- Choose a Service --</option>
-            <option value="Cleaning">Dental Cleaning</option>
-            <option value="Whitening">Teeth Whitening</option>
-            <option value="Filling">Tooth Filling</option>
-          </select>
-          <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
-        </div>
-      </div>
-      <!-- Preferred Date & Time, Additional Notes, Submit Button remain the same -->
-      <p id="bookMsg" class="text-center mt-2"></p>
-    </form>
-  </div>
-
-  <!-- Reschedule -->
-  <div id="reschedule" class="tab-content hidden">
-    <form id="rescheduleForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-      <h2 class="text-xl font-bold text-center text-yellow-600 mb-4">Reschedule Appointment</h2>
-      <!-- Patient ID/Phone, Current Appointment fields remain the same -->
-      <div class="md:col-span-2">
-        <label class="block font-medium text-gray-700 mb-1">Select Service to Reschedule</label>
-        <div class="relative">
-          <i class="fas fa-teeth-open absolute left-3 top-3 text-gray-400 z-10"></i>
-          <select class="w-full border rounded-lg pl-10 pr-3 py-2 appearance-none" required>
-            <option value="">-- Choose a Service to Reschedule --</option>
-            <option value="Root Canal">Root Canal</option>
-            <option value="Braces Consultation">Braces Consultation</option>
-            <option value="Tooth Extraction">Tooth Extraction</option>
-          </select>
-          <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
-        </div>
-      </div>
-      <!-- New Preferred Date & Time, Reason, Submit Button remain the same -->
-      <p id="rescheduleMsg" class="text-center mt-2"></p>
-    </form>
-  </div>
-
-  <!-- Before Treatment -->
-  <div id="before" class="tab-content hidden">
-    <form id="beforeForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-      <h2 class="text-xl font-bold text-center text-purple-600 mb-4">Pre-Treatment Information</h2>
-      <!-- Patient ID/Phone, Appointment Date fields remain the same -->
-      <div class="md:col-span-2">
-        <label class="block font-medium text-gray-700 mb-1">Planned Treatment</label>
-        <div class="relative">
-          <i class="fas fa-stethoscope absolute left-3 top-3 text-gray-400"></i>
-          <select class="w-full border rounded-lg pl-10 pr-3 py-2 appearance-none" required>
-            <option value="">-- Select Planned Treatment --</option>
-            <option value="Cleaning">Dental Cleaning</option>
-            <option value="Root Canal">Root Canal</option>
-            <option value="Filling">Tooth Filling</option>
-            <option value="Whitening">Teeth Whitening</option>
-            <option value="Braces Consultation">Braces Consultation</option>
-          </select>
-          <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
-        </div>
-      </div>
-      <!-- Medical Conditions, Medications, Additional Notes, Submit Button remain the same -->
-      <p id="beforeMsg" class="text-center mt-2"></p>
-    </form>
-  </div>
-
-</main>
-
-<!-- Sticky Bottom Navigation -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-  <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition"><i class="fas fa-home"></i><span class="text-xs mt-1">Home</span></a>
-  <a href="blogs.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition"><i class="fas fa-blog"></i><span class="text-xs mt-1">Blogs</span></a>
-  <a href="giveaway.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition"><i class="fas fa-gift"></i><span class="text-xs mt-1">Giveaway</span></a>
-  <a href="appointments.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition"><i class="fas fa-calendar-day text-[#2563EB]"></i><span class="text-xs mt-1 text-[#2563EB]">Appointments</span></a>
-  <a href="chat.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition"><i class="fas fa-comment"></i><span class="text-xs mt-1">Let's Talk</span></a>
-</nav>
-
-<!-- Supabase & Tab Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-function showMessage(elementId, message, isError=false){
-  const el = document.getElementById(elementId);
-  el.innerText = message;
-  el.classList.remove("text-green-600","text-red-600");
-  el.classList.add(isError ? "text-red-600" : "text-green-600");
-  setTimeout(() => { el.innerText = ""; }, 3000);
-}
-
-// Book
-document.getElementById("bookForm").addEventListener("submit", async (e)=>{
-  e.preventDefault();
-  showMessage("bookMsg", "✅ Appointment request submitted successfully!");
-  setTimeout(() => { e.target.reset(); }, 2000);
-});
-
-// Reschedule
-document.getElementById("rescheduleForm").addEventListener("submit", async (e)=>{
-  e.preventDefault();
-  showMessage("rescheduleMsg", "✅ Reschedule request submitted successfully!");
-  setTimeout(() => { e.target.reset(); }, 2000);
-});
-
-// Before Treatment
-document.getElementById("beforeForm").addEventListener("submit", async (e)=>{
-  e.preventDefault();
-  showMessage("beforeMsg", "✅ Medical information submitted successfully!");
-  setTimeout(() => { e.target.reset(); }, 2000);
-});
-
-// Tabs switching
-document.addEventListener("DOMContentLoaded", ()=>{
-  const buttons = document.querySelectorAll(".tab-button");
-  const contents = document.querySelectorAll(".tab-content");
-  buttons.forEach(btn=>btn.addEventListener("click",()=>{
-    buttons.forEach(b=>b.classList.remove("border-blue-600","text-blue-600"));
-    contents.forEach(c=>c.classList.add("hidden"));
-    btn.classList.add("border-blue-600","text-blue-600");
-    document.getElementById(btn.dataset.tab).classList.remove("hidden");
-  }));
-  buttons[0].classList.add("border-blue-600","text-blue-600");
-});
-</script>
-
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show active tab content
+                    tabContents.forEach(content => content.classList.add('hidden'));
+                    document.getElementById(tabId).classList.remove('hidden');
+                });
+            });
+            
+            // Initialize with first tab active
+            tabButtons[0].classList.add('active');
+            tabContents[0].classList.remove('hidden');
+        });
+        
+        // Form submission handlers
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Submitted!';
+                button.classList.add('bg-green-600');
+                
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600');
+                    this.reset();
+                }, 2000);
+            });
+        });
+    </script>
 </body>
-</html>
+  </html>
