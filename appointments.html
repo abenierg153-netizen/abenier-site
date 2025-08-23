@@ -87,110 +87,188 @@
     }
   });
 </script>
-    <!-- Book Appointment Today -->
+    <!-- Book Appointment -->
     <div id="book" class="tab-content">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Book Appointment Today</h2>
-      <p class="text-center text-gray-600 mt-2">Schedule your visit with our dental specialists below.</p>
+      <h2 class="text-2xl font-bold text-center">Book Appointment Today</h2>
+      <p class="text-center text-gray-600 mt-2">Schedule your visit with our dental specialists.</p>
 
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+      <form id="appointmentForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
         <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+          <label class="block font-medium">Full Name</label>
+          <input id="name" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Phone Number</label>
-          <input type="tel" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="+251...">
+          <label class="block font-medium">Phone Number</label>
+          <input id="phone" type="tel" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="+251..." required>
         </div>
         <div>
-          <label class="block text-gray-700">Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+          <label class="block font-medium">Select Service</label>
+          <select id="service" class="w-full border rounded-lg px-3 py-2 mt-1" required>
+            <option value="">-- Choose a Service --</option>
+            <option value="Cleaning">Dental Cleaning</option>
+            <option value="Tooth Extraction">Tooth Extraction</option>
+            <option value="Root Canal">Root Canal</option>
+            <option value="Filling">Tooth Filling</option>
+            <option value="Braces Consultation">Braces Consultation</option>
+            <option value="Whitening">Teeth Whitening</option>
+          </select>
         </div>
         <div>
-          <label class="block text-gray-700">Message</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any details..."></textarea>
+          <label class="block font-medium">Preferred Date</label>
+          <input id="date" type="date" class="w-full border rounded-lg px-3 py-2 mt-1" required>
+        </div>
+        <div>
+          <label class="block font-medium">Additional Notes</label>
+          <textarea id="message" class="w-full border rounded-lg px-3 py-2 mt-1" rows="3"></textarea>
         </div>
         <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold">Book Now</button>
+        <p id="responseMsg" class="text-center mt-2"></p>
       </form>
     </div>
 
-    <!-- Reschedule Book -->
-    <div id="reschedule" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Reschedule Book</h2>
-      <p class="text-center text-gray-600 mt-2">Update your appointment details below.</p>
+    <!-- Reschedule -->
+    <div id="reschedule" class="tab-content">
+      <h2 class="text-2xl font-bold text-center">Reschedule Appointment</h2>
+      <p class="text-center text-gray-600 mt-2">Update your appointment details.</p>
 
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+      <form id="rescheduleForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
         <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+          <label class="block font-medium">Full Name</label>
+          <input id="r_name" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Old Appointment Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+          <label class="block font-medium">Old Appointment Date</label>
+          <input id="r_oldDate" type="date" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">New Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+          <label class="block font-medium">New Preferred Date</label>
+          <input id="r_newDate" type="date" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Reason for Reschedule</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Explain briefly..."></textarea>
+          <label class="block font-medium">Reason for Reschedule</label>
+          <textarea id="r_reason" class="w-full border rounded-lg px-3 py-2 mt-1" rows="3"></textarea>
         </div>
         <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded-lg font-semibold">Reschedule</button>
+        <p id="rescheduleMsg" class="text-center mt-2"></p>
       </form>
     </div>
 
     <!-- Recovery Journey -->
-    <div id="recovery" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Recovery Journey</h2>
-      <p class="text-center text-gray-600 mt-2">Track your healing progress here.</p>
+    <div id="recovery" class="tab-content">
+      <h2 class="text-2xl font-bold text-center">Recovery Journey</h2>
+      <p class="text-center text-gray-600 mt-2">Track your healing progress.</p>
 
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+      <form id="recoveryForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
         <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+          <label class="block font-medium">Full Name</label>
+          <input id="rec_name" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Treatment Type</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Root Canal, Cleaning...">
+          <label class="block font-medium">Treatment Type</label>
+          <input id="rec_treatment" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Date of Treatment</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+          <label class="block font-medium">Date of Treatment</label>
+          <input id="rec_date" type="date" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Recovery Notes</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="How are you feeling? Any discomfort?"></textarea>
+          <label class="block font-medium">Recovery Notes</label>
+          <textarea id="rec_notes" class="w-full border rounded-lg px-3 py-2 mt-1" rows="3"></textarea>
         </div>
         <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold">Submit Recovery</button>
+        <p id="recoveryMsg" class="text-center mt-2"></p>
       </form>
     </div>
 
     <!-- Before Treatment -->
-    <div id="before" class="tab-content hidden">
-      <h2 class="text-2xl font-bold text-center text-gray-800">Before Treatment</h2>
-      <p class="text-center text-gray-600 mt-2">Help us prepare for your upcoming treatment.</p>
+    <div id="before" class="tab-content">
+      <h2 class="text-2xl font-bold text-center">Before Treatment</h2>
+      <p class="text-center text-gray-600 mt-2">Help us prepare for your treatment.</p>
 
-      <form class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
+      <form id="beforeForm" class="mt-6 space-y-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
         <div>
-          <label class="block text-gray-700">Full Name</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="Enter your name">
+          <label class="block font-medium">Full Name</label>
+          <input id="b_name" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Planned Treatment</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2 mt-1" placeholder="E.g. Tooth Extraction, Filling...">
+          <label class="block font-medium">Planned Treatment</label>
+          <input id="b_treatment" type="text" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Preferred Date</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2 mt-1">
+          <label class="block font-medium">Preferred Date</label>
+          <input id="b_date" type="date" class="w-full border rounded-lg px-3 py-2 mt-1" required>
         </div>
         <div>
-          <label class="block text-gray-700">Medical Notes</label>
-          <textarea class="w-full border rounded-lg px-3 py-2 mt-1" rows="3" placeholder="Any allergies, conditions, or notes?"></textarea>
+          <label class="block font-medium">Medical Notes</label>
+          <textarea id="b_notes" class="w-full border rounded-lg px-3 py-2 mt-1" rows="3"></textarea>
         </div>
         <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold">Submit Info</button>
+        <p id="beforeMsg" class="text-center mt-2"></p>
       </form>
     </div>
+
   </main>
+
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://YOUR_PROJECT_ID.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_PUBLIC_ANON_KEY";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Book Appointment
+    document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { data, error } = await supabase.from("appointments").insert([{
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        service: document.getElementById("service").value,
+        date: document.getElementById("date").value,
+        message: document.getElementById("message").value
+      }]);
+      document.getElementById("responseMsg").innerText = error ? "❌ " + error.message : "✅ Appointment saved!";
+      if (!error) e.target.reset();
+    });
+
+    // Reschedule
+    document.getElementById("rescheduleForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { data, error } = await supabase.from("reschedules").insert([{
+        name: document.getElementById("r_name").value,
+        old_date: document.getElementById("r_oldDate").value,
+        new_date: document.getElementById("r_newDate").value,
+        reason: document.getElementById("r_reason").value
+      }]);
+      document.getElementById("rescheduleMsg").innerText = error ? "❌ " + error.message : "✅ Reschedule saved!";
+      if (!error) e.target.reset();
+    });
+
+    // Recovery Journey
+    document.getElementById("recoveryForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { data, error } = await supabase.from("recoveries").insert([{
+        name: document.getElementById("rec_name").value,
+        treatment: document.getElementById("rec_treatment").value,
+        date: document.getElementById("rec_date").value,
+        notes: document.getElementById("rec_notes").value
+      }]);
+      document.getElementById("recoveryMsg").innerText = error ? "❌ " + error.message : "✅ Recovery saved!";
+      if (!error) e.target.reset();
+    });
+
+    // Before Treatment
+    document.getElementById("beforeForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { data, error } = await supabase.from("pretreatments").insert([{
+        name: document.getElementById("b_name").value,
+        treatment: document.getElementById("b_treatment").value,
+        date: document.getElementById("b_date").value,
+        notes: document.getElementById("b_notes").value
+      }]);
+      document.getElementById("beforeMsg").innerText = error ? "❌ " + error.message : "✅ Info saved!";
+      if (!error) e.target.reset();
+    });
+  </script>
 
   <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
