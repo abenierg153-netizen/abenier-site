@@ -95,25 +95,38 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <!-- HEADER -->
-    <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-        <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <i class="fas fa-tooth text-blue-600"></i>
-                </div>
-            </div>
-            <div class="flex flex-col items-center leading-tight flex-grow text-center">
-                <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">YANET SPECIALITY</h1>
-                <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">DENTAL CLINIC</h2>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="tel:0116662828" class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
-                    <i class="fas fa-phone"></i> <span>Call Us</span>
-                </a>
-            </div>
-        </div>
-    </header>
+<!-- HEADER -->
+<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+    
+    <!-- Left side: Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+    </div>
+
+    <!-- Center: Clinic Title -->
+    <div class="flex flex-col items-center leading-tight flex-grow text-center">
+      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
+        YANET SPECIALITY
+      </h1>
+      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
+        DENTAL CLINIC
+      </h2>
+    </div>
+
+    <!-- Right side: Call Us -->
+    <div class="flex items-center space-x-2">
+      <a href="tel:0116662828" 
+         class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+        </svg>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+</header>
 
     <main class="flex-1 px-4 pt-28 pb-36">
         <!-- Tabs -->
@@ -317,31 +330,65 @@
         </div>
     </main>
 
-    <!-- Sticky Bottom Navigation -->
-    <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-3 z-50 backdrop-blur-sm">
-        <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-            <i class="fas fa-home"></i>
-            <span class="text-xs mt-1">Home</span>
-        </a>
-        <a href="blogs.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-            <i class="fas fa-blog"></i>
-            <span class="text-xs mt-1">Blogs</span>
-        </a>
-        <a href="giveaway.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-            <i class="fas fa-gift"></i>
-            <span class="text-xs mt-1">Giveaway</span>
-        </a>
-        <a href="appointments.html" class="flex flex-col items-center text-[#2563EB] transition">
-            <i class="fas fa-calendar-day"></i>
-            <span class="text-xs mt-1">Appointments</span>
-        </a>
-        <a href="chat.html" class="flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-            <i class="fas fa-comment"></i>
-            <span class="text-xs mt-1">Let's Talk</span>
-        </a>
-    </nav>
+<!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </a>
 
-    <script>
+  <!-- Blogs Button -->
+  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>📝</span>
+    <span class="text-xs">Blogs</span>
+  </a>
+
+  <!-- Giveaway Button -->
+  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🎁</span>
+    <span class="text-xs">Giveaway</span>
+  </a>
+
+  <!-- Appointments Button -->
+  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Appointments</span>
+  </a>
+
+  <!-- Let's Talk Button -->
+  <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>💬</span>
+    <span class="text-xs">Let’s Talk</span>
+  </a>
+</nav>
+
+<!-- ✅ ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue */
+    font-weight: bold;
+  }
+</style>
+
+<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname;
+
+    if (path.includes("blogs")) {
+      document.getElementById("blogsBtn").classList.add("active");
+    } else if (path.includes("giveaway")) {
+      document.getElementById("giveawayBtn").classList.add("active");
+    } else if (path.includes("appointments")) {
+      document.getElementById("appointmentsBtn").classList.add("active");
+    } else if (path.includes("chat")) {
+      document.getElementById("chatBtn").classList.add("active");
+    } else {
+      document.getElementById("homeBtn").classList.add("active");
+    }
+  });
+</script>
         // Tab switching functionality
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
