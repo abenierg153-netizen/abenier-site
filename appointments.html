@@ -1,240 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointments - Yanet Dental Clinic</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7fe 100%);
-        }
-        
-        .tab-button {
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .tab-button.active {
-            color: #2563EB;
-            border-bottom-color: #2563EB;
-        }
-        
-        .tab-button.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-            background-color: #2563EB;
-            border-radius: 3px;
-        }
-        
-        .form-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .form-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
-        }
-        
-        .input-group {
-            position: relative;
-        }
-        
-        .input-icon {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #2563EB;
-        }
-        
-        input, select, textarea {
-            padding-left: 40px !important;
-            transition: all 0.3s ease;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            border-color: #2563EB;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-        }
-        
-        .btn-warning {
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-        }
-        
-        .btn-warning:hover {
-            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
-        }
-        
-        .btn-purple {
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-        }
-        
-        .btn-purple:hover {
-            background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
-        }
-
-        .active {
-            color: #2563EB;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments - Yanet Speciality Dental Clinic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="min-h-screen flex flex-col">
-    <!-- HEADER -->
-    <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-      <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-        <!-- Left side: Logo -->
-        <div class="flex items-center space-x-2">
-          <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
-        </div>
-        <!-- Center: Clinic Title -->
-        <div class="flex flex-col items-center leading-tight flex-grow text-center">
-          <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">YANET SPECIALITY</h1>
-          <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">DENTAL CLINIC</h2>
-        </div>
-        <!-- Right side: Call Us -->
-        <div class="flex items-center space-x-2">
-          <a href="tel:0116662828" class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
-            </svg>
-            <span>Call Us</span>
-          </a>
-        </div>
+<body class="min-h-screen flex flex-col bg-white">
+
+  <!-- HEADER (unchanged) -->
+  <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+    <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
       </div>
-    </header>
+      <!-- Clinic Title -->
+      <div class="flex flex-col items-center leading-tight flex-grow text-center">
+        <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
+          YANET SPECIALITY
+        </h1>
+        <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
+          DENTAL CLINIC
+        </h2>
+      </div>
+      <!-- Call Us -->
+      <div class="flex items-center space-x-2">
+        <a href="tel:0116662828"
+           class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+          </svg>
+          <span>Call Us</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <main class="flex-1 px-4 pt-28 pb-36">
-        <!-- Tabs -->
-        <div class="max-w-md mx-auto bg-white rounded-lg shadow-sm p-1 mb-6">
-            <nav class="flex justify-between">
-                <button class="tab-button active py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="book">
-                    <i class="fas fa-calendar-plus mr-2"></i> Book
-                </button>
-                <button class="tab-button py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="reschedule">
-                    <i class="fas fa-calendar-alt mr-2"></i> Reschedule
-                </button>
-                <button class="tab-button py-3 px-4 text-sm font-medium text-gray-600 flex-1 text-center" data-tab="before">
-                    <i class="fas fa-file-medical mr-2"></i> Pre-Treatment
-                </button>
-            </nav>
-        </div>
+  <!-- MAIN CONTENT (fixed with padding to avoid hiding under header/nav) -->
+  <main class="flex-1 px-4 pt-28 pb-28">
+    <!-- Tabs Section -->
+    <div class="max-w-2xl mx-auto">
+      <div class="flex justify-around border-b mb-6">
+        <button class="tab-btn py-2 px-4 text-blue-600 font-semibold border-b-2 border-blue-600">Book</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Reschedule</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Pre-Treatment</button>
+      </div>
 
-        <!-- Book Appointment -->
-        <div id="book" class="tab-content">
-            <!-- (original form content preserved here — as in your first code) -->
-            <!-- ... full booking form ... -->
-        </div>
+      <!-- Book Tab -->
+      <section class="tab-content block">
+        <h2 class="text-xl font-bold mb-4">Book an Appointment</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Full Name" class="w-full border rounded-lg p-3">
+          <input type="email" placeholder="Email Address" class="w-full border rounded-lg p-3">
+          <input type="date" class="w-full border rounded-lg p-3">
+          <button class="w-full bg-blue-600 text-white py-3 rounded-lg">Book Now</button>
+        </form>
+      </section>
 
-        <!-- Reschedule -->
-        <div id="reschedule" class="tab-content hidden">
-            <!-- (original reschedule form preserved here) -->
-        </div>
+      <!-- Reschedule Tab -->
+      <section class="tab-content hidden">
+        <h2 class="text-xl font-bold mb-4">Reschedule Appointment</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Appointment ID" class="w-full border rounded-lg p-3">
+          <input type="date" class="w-full border rounded-lg p-3">
+          <button class="w-full bg-blue-600 text-white py-3 rounded-lg">Reschedule</button>
+        </form>
+      </section>
 
-        <!-- Before Treatment -->
-        <div id="before" class="tab-content hidden">
-            <!-- (original pre-treatment form preserved here) -->
-        </div>
-    </main>
+      <!-- Pre-Treatment Tab -->
+      <section class="tab-content hidden">
+        <h2 class="text-xl font-bold mb-4">Pre-Treatment Instructions</h2>
+        <p class="text-gray-700">Please arrive 10 minutes early and avoid eating 2 hours before your procedure.</p>
+      </section>
+    </div>
+  </main>
 
-    <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
-    <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-      <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-        <span>🏠</span>
-        <span class="text-xs">Home</span>
-      </a>
-      <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-        <span>📝</span>
-        <span class="text-xs">Blogs</span>
-      </a>
-      <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-        <span>🎁</span>
-        <span class="text-xs">Giveaway</span>
-      </a>
-      <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-        <span>🗓️</span>
-        <span class="text-xs">Appointments</span>
-      </a>
-      <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-        <span>💬</span>
-        <span class="text-xs">Let’s Talk</span>
-      </a>
-    </nav>
+  <!-- STICKY BOTTOM NAVIGATION (unchanged) -->
+  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+    <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🏠</span>
+      <span class="text-xs">Home</span>
+    </a>
+    <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>📝</span>
+      <span class="text-xs">Blogs</span>
+    </a>
+    <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🎁</span>
+      <span class="text-xs">Giveaway</span>
+    </a>
+    <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>🗓️</span>
+      <span class="text-xs">Appointments</span>
+    </a>
+    <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+      <span>💬</span>
+      <span class="text-xs">Let’s Talk</span>
+    </a>
+  </nav>
 
-    <script>
-        // Tabs
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-                    
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    tabContents.forEach(content => content.classList.add('hidden'));
-                    document.getElementById(tabId).classList.remove('hidden');
-                });
-            });
+  <!-- ACTIVE PAGE SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const path = window.location.pathname;
+      if (path.includes("blogs")) {
+        document.getElementById("blogsBtn").classList.add("active");
+      } else if (path.includes("giveaway")) {
+        document.getElementById("giveawayBtn").classList.add("active");
+      } else if (path.includes("appointments")) {
+        document.getElementById("appointmentsBtn").classList.add("active");
+      } else if (path.includes("chat")) {
+        document.getElementById("chatBtn").classList.add("active");
+      } else {
+        document.getElementById("homeBtn").classList.add("active");
+      }
 
-            tabButtons[0].classList.add('active');
-            tabContents[0].classList.remove('hidden');
+      // Tab functionality
+      const tabs = document.querySelectorAll(".tab-btn");
+      const contents = document.querySelectorAll(".tab-content");
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold"));
+          tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+          contents.forEach(c => c.classList.add("hidden"));
+          contents[i].classList.remove("hidden");
         });
+      });
+    });
+  </script>
 
-        // Forms
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const button = this.querySelector('button[type="submit"]');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Submitted!';
-                button.classList.add('bg-green-600');
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.classList.remove('bg-green-600');
-                    this.reset();
-                }, 2000);
-            });
-        });
+  <style>
+    .active {
+      color: #2563EB;
+      font-weight: bold;
+    }
+  </style>
 
-        // Active Nav
-        document.addEventListener("DOMContentLoaded", () => {
-          const path = window.location.pathname;
-          if (path.includes("blogs")) {
-            document.getElementById("blogsBtn").classList.add("active");
-          } else if (path.includes("giveaway")) {
-            document.getElementById("giveawayBtn").classList.add("active");
-          } else if (path.includes("appointments")) {
-            document.getElementById("appointmentsBtn").classList.add("active");
-          } else if (path.includes("chat")) {
-            document.getElementById("chatBtn").classList.add("active");
-          } else {
-            document.getElementById("homeBtn").classList.add("active");
-          }
-        });
-    </script>
 </body>
 </html>
