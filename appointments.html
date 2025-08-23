@@ -6,10 +6,32 @@
   <title>Appointments - Yanet Speciality Dental Clinic</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .active {
+      color: #2563EB;
+    }
+    .nav-btn.active span {
+      color: #2563EB;
+    }
+    .tab-btn {
+      transition: all 0.2s ease;
+    }
+    .accordion-btn {
+      transition: all 0.2s ease;
+    }
+    .accordion-btn:hover {
+      color: #2563EB;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: #2563EB;
+    }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col bg-white">
 
-  <!-- HEADER (copied from index.html) -->
+  <!-- HEADER (identical to index.html) -->
   <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
       <!-- Logo -->
@@ -25,7 +47,7 @@
           DENTAL CLINIC
         </h2>
       </div>
-      <!-- Call Us -->
+      <!-- Call Us Button (identical to index.html) -->
       <div class="flex items-center space-x-2">
         <a href="tel:0116662828"
            class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
@@ -75,33 +97,32 @@
       <div class="flex border-b mb-6 overflow-x-auto">
         <button class="tab-btn py-2 px-4 font-medium text-[#2563EB] border-b-2 border-[#2563EB] whitespace-nowrap">Book Appointment</button>
         <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">Reschedule</button>
-        <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">My Appointments</button>
         <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">Pre-Treatment</button>
       </div>
 
       <!-- Book Tab -->
-      <section class="tab-content block">
+      <section id="bookTab" class="tab-content block">
         <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Book an Appointment</h2>
         <form class="space-y-4" id="bookingForm">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
             <input type="text" placeholder="Enter your full name" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
             <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
             <input type="tel" placeholder="Enter your phone number" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date *</label>
               <input type="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Time *</label>
               <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
                 <option value="">Select a time</option>
                 <option value="09:00">9:00 AM</option>
@@ -114,7 +135,7 @@
             </div>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Service Required</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Service Required *</label>
             <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
               <option value="">Select a service</option>
               <option value="cleaning">Teeth Cleaning</option>
@@ -133,24 +154,24 @@
       </section>
 
       <!-- Reschedule Tab -->
-      <section class="tab-content hidden">
+      <section id="rescheduleTab" class="tab-content hidden">
         <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Reschedule Appointment</h2>
         <form class="space-y-4" id="rescheduleForm">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Appointment ID</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Appointment ID *</label>
             <input type="text" placeholder="Enter your appointment ID" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
             <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">New Date</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">New Date *</label>
               <input type="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">New Time</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">New Time *</label>
               <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
                 <option value="">Select a time</option>
                 <option value="09:00">9:00 AM</option>
@@ -166,44 +187,8 @@
         </form>
       </section>
 
-      <!-- My Appointments Tab -->
-      <section class="tab-content hidden">
-        <h2 class="text-xl font-bold mb-4 text-[#2563EB]">My Appointments</h2>
-        <div class="space-y-4">
-          <div class="p-4 border border-gray-200 rounded-lg">
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="font-semibold">Teeth Cleaning</h3>
-                <p class="text-sm text-gray-600">October 15, 2023 at 10:00 AM</p>
-                <p class="text-sm">Appointment ID: <span class="font-mono">APT-789456</span></p>
-              </div>
-              <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Confirmed</span>
-            </div>
-            <div class="mt-3 flex space-x-2">
-              <button class="text-xs text-[#2563EB] hover:underline">Reschedule</button>
-              <button class="text-xs text-red-600 hover:underline">Cancel</button>
-            </div>
-          </div>
-          
-          <div class="p-4 border border-gray-200 rounded-lg">
-            <div class="flex justify-between items-start">
-              <div>
-                <h3 class="font-semibold">Consultation</h3>
-                <p class="text-sm text-gray-600">October 22, 2023 at 2:30 PM</p>
-                <p class="text-sm">Appointment ID: <span class="font-mono">APT-123789</span></p>
-              </div>
-              <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Pending</span>
-            </div>
-            <div class="mt-3 flex space-x-2">
-              <button class="text-xs text-[#2563EB] hover:underline">Reschedule</button>
-              <button class="text-xs text-red-600 hover:underline">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Pre-Treatment Tab -->
-      <section class="tab-content hidden">
+      <section id="preTreatmentTab" class="tab-content hidden">
         <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Pre-Treatment Instructions</h2>
         <div class="bg-blue-50 p-4 rounded-lg mb-4">
           <p class="text-blue-800">Please follow these instructions before your appointment to ensure the best experience.</p>
@@ -217,6 +202,7 @@
               <li>Brush your teeth before coming to the clinic</li>
               <li>Avoid eating a heavy meal 2 hours before your procedure</li>
               <li>Inform us of any medications you're currently taking</li>
+              <li>Bring your ID and insurance information if applicable</li>
             </ul>
           </div>
           
@@ -232,6 +218,7 @@
                   <li>Take prescribed antibiotics if provided</li>
                   <li>Eat a light meal before your appointment</li>
                   <li>Avoid alcohol 24 hours before the procedure</li>
+                  <li>Inform your dentist about any health conditions</li>
                 </ul>
               </div>
             </div>
@@ -246,6 +233,21 @@
                   <li>Inform us if you have any medical conditions</li>
                   <li>Arrange for someone to drive you home after the procedure</li>
                   <li>Wear comfortable clothing</li>
+                  <li>Avoid smoking for at least 12 hours before extraction</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="accordion mt-2">
+              <button class="accordion-btn w-full text-left font-medium py-2 flex justify-between items-center">
+                Dental Cleaning
+                <i class="fas fa-chevron-down text-sm"></i>
+              </button>
+              <div class="accordion-content hidden pl-4 pb-2">
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Brush and floss before your appointment</li>
+                  <li>Provide your complete dental history</li>
+                  <li>Inform the hygienist of any sensitive areas</li>
                 </ul>
               </div>
             </div>
@@ -336,24 +338,6 @@
       });
     });
   </script>
-
-  <style>
-    .active {
-      color: #2563EB;
-    }
-    .nav-btn.active span {
-      color: #2563EB;
-    }
-    .tab-btn {
-      transition: all 0.2s ease;
-    }
-    .accordion-btn {
-      transition: all 0.2s ease;
-    }
-    .accordion-btn:hover {
-      color: #2563EB;
-    }
-  </style>
 
 </body>
 </html>
