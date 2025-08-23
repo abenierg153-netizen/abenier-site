@@ -55,7 +55,38 @@
     </div>
 
     <!-- TAB CONTENTS -->
+<form id="appointmentForm">
+  <input type="text" id="name" placeholder="Name" required>
+  <input type="tel" id="phone" placeholder="Phone" required>
+  <input type="email" id="email" placeholder="Email">
+  <button type="submit">Submit</button>
+</form>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const supabaseUrl = "YOUR_SUPABASE_URL"; // replace with your Supabase URL
+  const supabaseKey = "YOUR_SUPABASE_ANON_KEY"; // replace with your anon key
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  document.getElementById("appointmentForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+
+    const { data, error } = await supabase
+      .from("appointments")
+      .insert([{ name, phone, email }]);
+
+    if(error){
+      alert("Error: " + error.message);
+    } else {
+      alert("Test appointment submitted!");
+      document.getElementById("appointmentForm").reset();
+    }
+  });
+</script>
     <!-- Book Appointment Today -->
     <div id="book" class="tab-content">
       <h2 class="text-2xl font-bold text-center text-gray-800">Book Appointment Today</h2>
