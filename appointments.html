@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointments - Yanet Speciality Dental Clinic</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="min-h-screen flex flex-col bg-white">
 
-  <!-- HEADER (updated background color to match index.html) -->
-  <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <!-- HEADER (copied from index.html) -->
+  <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
@@ -38,122 +39,299 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT (with padding to avoid overlap) -->
+  <!-- MAIN CONTENT -->
   <main class="flex-1 px-4 pt-28 pb-28">
+    <!-- Page Title -->
+    <div class="max-w-2xl mx-auto mb-8">
+      <h1 class="text-3xl font-bold text-[#2563EB] text-center mb-2">Appointments</h1>
+      <p class="text-gray-600 text-center">Book, reschedule, or view your dental appointments</p>
+    </div>
 
     <!-- Services List Section -->
     <section class="max-w-2xl mx-auto mb-8">
       <h2 class="text-2xl font-bold text-[#2563EB] mb-4">Our Dental Services</h2>
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-lg">Teeth Cleaning</h3>
+        <li class="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white">
+          <h3 class="font-semibold text-lg text-[#2563EB]">Teeth Cleaning</h3>
           <p class="text-sm text-gray-600">Professional cleaning for a brighter smile.</p>
         </li>
-        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-lg">Root Canal Treatment</h3>
+        <li class="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white">
+          <h3 class="font-semibold text-lg text-[#2563EB]">Root Canal Treatment</h3>
           <p class="text-sm text-gray-600">Advanced care to save your natural tooth.</p>
         </li>
-        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-lg">Braces & Aligners</h3>
+        <li class="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white">
+          <h3 class="font-semibold text-lg text-[#2563EB]">Braces & Aligners</h3>
           <p class="text-sm text-gray-600">Straighten your teeth with modern solutions.</p>
         </li>
-        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-lg">Tooth Extraction</h3>
+        <li class="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white">
+          <h3 class="font-semibold text-lg text-[#2563EB]">Tooth Extraction</h3>
           <p class="text-sm text-gray-600">Safe and painless extraction procedures.</p>
         </li>
       </ul>
     </section>
 
     <!-- Tabs Section -->
-    <div class="max-w-2xl mx-auto">
-      <div class="flex justify-around border-b mb-6">
-        <button class="tab-btn py-2 px-4 text-blue-600 font-semibold border-b-2 border-blue-600">Book</button>
-        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Reschedule</button>
-        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600">Pre-Treatment</button>
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+      <div class="flex border-b mb-6 overflow-x-auto">
+        <button class="tab-btn py-2 px-4 font-medium text-[#2563EB] border-b-2 border-[#2563EB] whitespace-nowrap">Book Appointment</button>
+        <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">Reschedule</button>
+        <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">My Appointments</button>
+        <button class="tab-btn py-2 px-4 font-medium text-gray-500 hover:text-[#2563EB] whitespace-nowrap">Pre-Treatment</button>
       </div>
 
       <!-- Book Tab -->
       <section class="tab-content block">
-        <h2 class="text-xl font-bold mb-4">Book an Appointment</h2>
-        <form class="space-y-4">
-          <input type="text" placeholder="Full Name" class="w-full border rounded-lg p-3">
-          <input type="email" placeholder="Email Address" class="w-full border rounded-lg p-3">
-          <input type="date" class="w-full border rounded-lg p-3">
-          <button class="w-full bg-blue-600 text-white py-3 rounded-lg">Book Now</button>
+        <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Book an Appointment</h2>
+        <form class="space-y-4" id="bookingForm">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" placeholder="Enter your full name" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <input type="tel" placeholder="Enter your phone number" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+              <input type="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+              <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+                <option value="">Select a time</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Service Required</label>
+            <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+              <option value="">Select a service</option>
+              <option value="cleaning">Teeth Cleaning</option>
+              <option value="root-canal">Root Canal Treatment</option>
+              <option value="braces">Braces & Aligners</option>
+              <option value="extraction">Tooth Extraction</option>
+              <option value="consultation">Consultation</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
+            <textarea placeholder="Any special requests or notes" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" rows="3"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#2563EB] text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Book Appointment</button>
         </form>
       </section>
 
       <!-- Reschedule Tab -->
       <section class="tab-content hidden">
-        <h2 class="text-xl font-bold mb-4">Reschedule Appointment</h2>
-        <form class="space-y-4">
-          <input type="text" placeholder="Appointment ID" class="w-full border rounded-lg p-3">
-          <input type="date" class="w-full border rounded-lg p-3">
-          <button class="w-full bg-blue-600 text-white py-3 rounded-lg">Reschedule</button>
+        <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Reschedule Appointment</h2>
+        <form class="space-y-4" id="rescheduleForm">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Appointment ID</label>
+            <input type="text" placeholder="Enter your appointment ID" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">New Date</label>
+              <input type="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">New Time</label>
+              <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+                <option value="">Select a time</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-[#2563EB] text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Reschedule Appointment</button>
         </form>
+      </section>
+
+      <!-- My Appointments Tab -->
+      <section class="tab-content hidden">
+        <h2 class="text-xl font-bold mb-4 text-[#2563EB]">My Appointments</h2>
+        <div class="space-y-4">
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-semibold">Teeth Cleaning</h3>
+                <p class="text-sm text-gray-600">October 15, 2023 at 10:00 AM</p>
+                <p class="text-sm">Appointment ID: <span class="font-mono">APT-789456</span></p>
+              </div>
+              <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Confirmed</span>
+            </div>
+            <div class="mt-3 flex space-x-2">
+              <button class="text-xs text-[#2563EB] hover:underline">Reschedule</button>
+              <button class="text-xs text-red-600 hover:underline">Cancel</button>
+            </div>
+          </div>
+          
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-semibold">Consultation</h3>
+                <p class="text-sm text-gray-600">October 22, 2023 at 2:30 PM</p>
+                <p class="text-sm">Appointment ID: <span class="font-mono">APT-123789</span></p>
+              </div>
+              <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Pending</span>
+            </div>
+            <div class="mt-3 flex space-x-2">
+              <button class="text-xs text-[#2563EB] hover:underline">Reschedule</button>
+              <button class="text-xs text-red-600 hover:underline">Cancel</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Pre-Treatment Tab -->
       <section class="tab-content hidden">
-        <h2 class="text-xl font-bold mb-4">Pre-Treatment Instructions</h2>
-        <p class="text-gray-700">Please arrive 10 minutes early and avoid eating 2 hours before your procedure.</p>
+        <h2 class="text-xl font-bold mb-4 text-[#2563EB]">Pre-Treatment Instructions</h2>
+        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+          <p class="text-blue-800">Please follow these instructions before your appointment to ensure the best experience.</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">General Instructions</h3>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+              <li>Please arrive 10-15 minutes before your scheduled appointment time</li>
+              <li>Brush your teeth before coming to the clinic</li>
+              <li>Avoid eating a heavy meal 2 hours before your procedure</li>
+              <li>Inform us of any medications you're currently taking</li>
+            </ul>
+          </div>
+          
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <h3 class="font-semibold text-lg mb-2">For Specific Procedures</h3>
+            <div class="accordion">
+              <button class="accordion-btn w-full text-left font-medium py-2 flex justify-between items-center">
+                Root Canal Treatment
+                <i class="fas fa-chevron-down text-sm"></i>
+              </button>
+              <div class="accordion-content hidden pl-4 pb-2">
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Take prescribed antibiotics if provided</li>
+                  <li>Eat a light meal before your appointment</li>
+                  <li>Avoid alcohol 24 hours before the procedure</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="accordion mt-2">
+              <button class="accordion-btn w-full text-left font-medium py-2 flex justify-between items-center">
+                Tooth Extraction
+                <i class="fas fa-chevron-down text-sm"></i>
+              </button>
+              <div class="accordion-content hidden pl-4 pb-2">
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Inform us if you have any medical conditions</li>
+                  <li>Arrange for someone to drive you home after the procedure</li>
+                  <li>Wear comfortable clothing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
 
-  <!-- STICKY BOTTOM NAVIGATION (background updated to match header) -->
-  <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- STICKY BOTTOM NAVIGATION -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-sm flex justify-around py-2 z-50">
     <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🏠</span>
-      <span class="text-xs">Home</span>
+      <span class="text-xl">🏠</span>
+      <span class="text-xs mt-1">Home</span>
     </a>
     <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>📝</span>
-      <span class="text-xs">Blogs</span>
+      <span class="text-xl">📝</span>
+      <span class="text-xs mt-1">Blogs</span>
     </a>
     <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🎁</span>
-      <span class="text-xs">Giveaway</span>
+      <span class="text-xl">🎁</span>
+      <span class="text-xs mt-1">Giveaway</span>
     </a>
-    <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🗓️</span>
-      <span class="text-xs">Appointments</span>
+    <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-[#2563EB] transition">
+      <span class="text-xl">🗓️</span>
+      <span class="text-xs mt-1">Appointments</span>
     </a>
     <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>💬</span>
-      <span class="text-xs">Let's Talk</span>
+      <span class="text-xl">💬</span>
+      <span class="text-xs mt-1">Let's Talk</span>
     </a>
   </nav>
 
-  <!-- ACTIVE PAGE SCRIPT -->
+  <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const path = window.location.pathname;
-      if (path.includes("blogs")) {
-        document.getElementById("blogsBtn").classList.add("active");
-      } else if (path.includes("giveaway")) {
-        document.getElementById("giveawayBtn").classList.add("active");
-      } else if (path.includes("appointments")) {
-        document.getElementById("appointmentsBtn").classList.add("active");
-      } else if (path.includes("chat")) {
-        document.getElementById("chatBtn").classList.add("active");
-      } else {
-        document.getElementById("homeBtn").classList.add("active");
-      }
-
+      // Set active navigation button
+      document.getElementById("appointmentsBtn").classList.add("active");
+      
       // Tab functionality
       const tabs = document.querySelectorAll(".tab-btn");
       const contents = document.querySelectorAll(".tab-content");
+      
       tabs.forEach((tab, i) => {
         tab.addEventListener("click", () => {
+          // Update tabs
           tabs.forEach(t => {
-            t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
-            t.classList.add("text-gray-600");
+            t.classList.remove("text-[#2563EB]", "border-b-2", "border-[#2563EB]");
+            t.classList.add("text-gray-500");
           });
-          tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
-          tab.classList.remove("text-gray-600");
+          tab.classList.add("text-[#2563EB]", "border-b-2", "border-[#2563EB]");
+          tab.classList.remove("text-gray-500");
+          
+          // Update contents
           contents.forEach(c => c.classList.add("hidden"));
           contents[i].classList.remove("hidden");
+        });
+      });
+      
+      // Form submission handlers
+      document.getElementById("bookingForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Your appointment has been booked successfully! We'll confirm via email shortly.");
+        this.reset();
+      });
+      
+      document.getElementById("rescheduleForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Your appointment reschedule request has been received! We'll contact you shortly.");
+        this.reset();
+      });
+      
+      // Accordion functionality for pre-treatment instructions
+      const accordionBtns = document.querySelectorAll(".accordion-btn");
+      accordionBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector("i");
+          
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            icon.classList.replace("fa-chevron-down", "fa-chevron-up");
+          } else {
+            content.classList.add("hidden");
+            icon.classList.replace("fa-chevron-up", "fa-chevron-down");
+          }
         });
       });
     });
@@ -162,9 +340,17 @@
   <style>
     .active {
       color: #2563EB;
-      font-weight: bold;
     }
     .nav-btn.active span {
+      color: #2563EB;
+    }
+    .tab-btn {
+      transition: all 0.2s ease;
+    }
+    .accordion-btn {
+      transition: all 0.2s ease;
+    }
+    .accordion-btn:hover {
       color: #2563EB;
     }
   </style>
