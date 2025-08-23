@@ -243,19 +243,6 @@
       if (!error) e.target.reset();
     });
 
-    // Recovery Journey
-    document.getElementById("recoveryForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const { data, error } = await supabase.from("recoveries").insert([{
-        name: document.getElementById("rec_name").value,
-        treatment: document.getElementById("rec_treatment").value,
-        date: document.getElementById("rec_date").value,
-        notes: document.getElementById("rec_notes").value
-      }]);
-      document.getElementById("recoveryMsg").innerText = error ? "❌ " + error.message : "✅ Recovery saved!";
-      if (!error) e.target.reset();
-    });
-
     // Before Treatment
     document.getElementById("beforeForm").addEventListener("submit", async (e) => {
       e.preventDefault();
