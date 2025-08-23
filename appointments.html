@@ -8,8 +8,8 @@
 </head>
 <body class="min-h-screen flex flex-col bg-white">
 
-  <!-- HEADER (unchanged) -->
-  <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <!-- HEADER (updated background color to match index.html) -->
+  <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
     <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
@@ -38,8 +38,32 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT (fixed with padding to avoid hiding under header/nav) -->
+  <!-- MAIN CONTENT (with padding to avoid overlap) -->
   <main class="flex-1 px-4 pt-28 pb-28">
+
+    <!-- Services List Section -->
+    <section class="max-w-2xl mx-auto mb-8">
+      <h2 class="text-2xl font-bold text-[#2563EB] mb-4">Our Dental Services</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Teeth Cleaning</h3>
+          <p class="text-sm text-gray-600">Professional cleaning for a brighter smile.</p>
+        </li>
+        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Root Canal Treatment</h3>
+          <p class="text-sm text-gray-600">Advanced care to save your natural tooth.</p>
+        </li>
+        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Braces & Aligners</h3>
+          <p class="text-sm text-gray-600">Straighten your teeth with modern solutions.</p>
+        </li>
+        <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Tooth Extraction</h3>
+          <p class="text-sm text-gray-600">Safe and painless extraction procedures.</p>
+        </li>
+      </ul>
+    </section>
+
     <!-- Tabs Section -->
     <div class="max-w-2xl mx-auto">
       <div class="flex justify-around border-b mb-6">
@@ -77,8 +101,8 @@
     </div>
   </main>
 
-  <!-- STICKY BOTTOM NAVIGATION (unchanged) -->
-  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- STICKY BOTTOM NAVIGATION (background updated to match index.html) -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
     <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
       <span>🏠</span>
       <span class="text-xs">Home</span>
