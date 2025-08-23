@@ -101,7 +101,7 @@
     </div>
   </main>
 
-  <!-- STICKY BOTTOM NAVIGATION (background updated to match index.html) -->
+  <!-- STICKY BOTTOM NAVIGATION (background updated to match header) -->
   <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
     <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
       <span>🏠</span>
@@ -121,7 +121,7 @@
     </a>
     <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
       <span>💬</span>
-      <span class="text-xs">Let’s Talk</span>
+      <span class="text-xs">Let's Talk</span>
     </a>
   </nav>
 
@@ -146,8 +146,12 @@
       const contents = document.querySelectorAll(".tab-content");
       tabs.forEach((tab, i) => {
         tab.addEventListener("click", () => {
-          tabs.forEach(t => t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold"));
+          tabs.forEach(t => {
+            t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+            t.classList.add("text-gray-600");
+          });
           tab.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+          tab.classList.remove("text-gray-600");
           contents.forEach(c => c.classList.add("hidden"));
           contents[i].classList.remove("hidden");
         });
@@ -159,6 +163,9 @@
     .active {
       color: #2563EB;
       font-weight: bold;
+    }
+    .nav-btn.active span {
+      color: #2563EB;
     }
   </style>
 
