@@ -54,17 +54,93 @@
     <button onclick="openTab(event, 'DentalSurgery')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Dental Surgery</button>
   </div>
 
-  <!-- Tab Contents -->
+<!-- Services Tabs -->
+<main class="max-w-5xl mx-auto p-6">
+
+  <!-- Tab Buttons -->
+  <div class="flex space-x-4 mb-6">
+    <button onclick="openTab('GeneralDentistry')" class="tab-btn bg-blue-600 text-white px-4 py-2 rounded-lg">General Dentistry</button>
+    <button onclick="openTab('CosmeticDentistry')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Cosmetic Dentistry</button>
+    <button onclick="openTab('Orthodontics')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Orthodontics</button>
+    <button onclick="openTab('DentalSurgery')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Dental Surgery</button>
+  </div>
+
+  <!-- General Dentistry -->
   <div id="GeneralDentistry" class="tab-content">
-    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">General Dentistry</h2>
-        <p class="text-gray-600">Preventive care and routine cleanings for a healthy smile.</p>
+    <section class="bg-white shadow-md rounded-xl p-6 space-y-6">
+
+      <!-- Header -->
+      <div class="flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-xl font-bold text-gray-800">General Dentistry at Yanet Speciality Dental Clinic</h2>
+          <p class="text-gray-600">Comprehensive preventive care and routine treatments to keep your smile strong and healthy.</p>
+        </div>
       </div>
+
+      <!-- Service List -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600">Our General Dentistry Services</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Routine Check-ups & Cleanings</li>
+          <li>Dental Fillings</li>
+          <li>Tooth Extractions</li>
+          <li>Gum Care & Periodontal Therapy</li>
+          <li>Preventive Education</li>
+        </ul>
+      </div>
+
+      <!-- Why Choose -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600">Why Choose Yanet Speciality Dental Clinic?</h3>
+        <p class="text-gray-700">We combine modern technology with a compassionate approach. Our experienced dentists ensure your visits are comfortable and your oral health goals are achieved with excellence.</p>
+      </div>
+
+      <!-- Who Needs -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600">Who Needs General Dental Services?</h3>
+        <p class="text-gray-700">From children to adults, everyone benefits from regular dental care. Whether it’s your first visit or routine maintenance, we are here for every stage of your dental journey.</p>
+      </div>
+
+      <!-- FAQs -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600">FAQs About General Dentistry</h3>
+        <div class="space-y-3">
+          <details class="border rounded-lg p-3">
+            <summary class="font-semibold cursor-pointer">How often should I visit the dentist?</summary>
+            <p class="mt-2 text-gray-600">We recommend at least twice a year for preventive check-ups and cleanings.</p>
+          </details>
+          <details class="border rounded-lg p-3">
+            <summary class="font-semibold cursor-pointer">Are dental check-ups painful?</summary>
+            <p class="mt-2 text-gray-600">Not at all! Our team ensures a comfortable and gentle experience during your visit.</p>
+          </details>
+          <details class="border rounded-lg p-3">
+            <summary class="font-semibold cursor-pointer">Do I need dental X-rays every year?</summary>
+            <p class="mt-2 text-gray-600">Not always. X-rays are recommended based on your age, risk factors, and dental history.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600">Benefits of Regular Dental Care</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Early detection of problems</li>
+          <li>Fresher breath & brighter smile</li>
+          <li>Reduced risk of gum disease</li>
+          <li>Long-lasting oral health</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-6">
+        <a href="#appointment" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Book Your Appointment Today</a>
+      </div>
+
     </section>
   </div>
 
+  <!-- Cosmetic Dentistry -->
   <div id="CosmeticDentistry" class="tab-content hidden">
     <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
       <img src="https://cdn-icons-png.flaticon.com/512/4149/4149673.png" class="w-16 h-16" alt="">
@@ -75,6 +151,7 @@
     </section>
   </div>
 
+  <!-- Orthodontics -->
   <div id="Orthodontics" class="tab-content hidden">
     <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
       <img src="https://cdn-icons-png.flaticon.com/512/4149/4149668.png" class="w-16 h-16" alt="">
@@ -85,6 +162,7 @@
     </section>
   </div>
 
+  <!-- Dental Surgery -->
   <div id="DentalSurgery" class="tab-content hidden">
     <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
       <img src="https://cdn-icons-png.flaticon.com/512/4149/4149682.png" class="w-16 h-16" alt="">
@@ -96,6 +174,17 @@
   </div>
 
 </main>
+
+<!-- Tabs Script -->
+<script>
+function openTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+  document.getElementById(tabId).classList.remove('hidden');
+
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('bg-blue-600','text-white'));
+  event.target.classList.add('bg-blue-600','text-white');
+}
+</script>
 
 <!-- Sticky Bottom Navigation (unchanged) -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50">
