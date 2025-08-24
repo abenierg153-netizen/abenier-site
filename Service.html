@@ -142,3 +142,54 @@
     });
   });
 </script>  
+  <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </a>
+
+  <!-- Services Button -->
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🦷</span>
+    <span class="text-xs">Services</span>
+  </a>
+
+  <!-- Community Button (blogs + giveaway merged) -->
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🤝</span>
+    <span class="text-xs">Community</span>
+  </a>
+
+  <!-- Book Now Button (appointments renamed) -->
+  <a href="book.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Book Now</span>
+  </a>
+</nav>
+
+<!-- ✅ ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue */
+    font-weight: bold;
+  }
+</style>
+
+<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname;
+
+    if (path.includes("services")) {
+      document.getElementById("servicesBtn").classList.add("active");
+    } else if (path.includes("community")) {
+      document.getElementById("communityBtn").classList.add("active");
+    } else if (path.includes("book")) {
+      document.getElementById("bookBtn").classList.add("active");
+    } else {
+      document.getElementById("homeBtn").classList.add("active");
+    }
+  });
+</script>
