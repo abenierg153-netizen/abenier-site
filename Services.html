@@ -54,90 +54,73 @@
     <button onclick="openTab(event, 'DentalSurgery')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Dental Surgery</button>
   </div>
 
-<!-- Services Tabs -->
-<main class="max-w-5xl mx-auto p-6">
+<main class="max-w-5xl mx-auto p-6 space-y-6">
 
   <!-- Tab Buttons -->
   <div class="flex space-x-4 mb-6">
-    <button onclick="openTab('GeneralDentistry')" class="tab-btn bg-blue-600 text-white px-4 py-2 rounded-lg">General Dentistry</button>
-    <button onclick="openTab('CosmeticDentistry')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Cosmetic Dentistry</button>
-    <button onclick="openTab('Orthodontics')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Orthodontics</button>
-    <button onclick="openTab('DentalSurgery')" class="tab-btn bg-gray-200 px-4 py-2 rounded-lg">Dental Surgery</button>
+    <button onclick="showTab('GeneralDentistry')" class="tab-btn bg-blue-600 text-white px-4 py-2 rounded-lg shadow">General Dentistry</button>
+    <button onclick="showTab('CosmeticDentistry')" class="tab-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg shadow">Cosmetic Dentistry</button>
+    <button onclick="showTab('Orthodontics')" class="tab-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg shadow">Orthodontics</button>
+    <button onclick="showTab('DentalSurgery')" class="tab-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg shadow">Dental Surgery</button>
   </div>
 
   <!-- General Dentistry -->
   <div id="GeneralDentistry" class="tab-content">
-    <section class="bg-white shadow-md rounded-xl p-6 space-y-6">
-
-      <!-- Header -->
-      <div class="flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-xl font-bold text-gray-800">General Dentistry at Yanet Speciality Dental Clinic</h2>
-          <p class="text-gray-600">Comprehensive preventive care and routine treatments to keep your smile strong and healthy.</p>
-        </div>
-      </div>
-
-      <!-- Service List -->
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
       <div>
-        <h3 class="text-lg font-semibold text-blue-600">Our General Dentistry Services</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Routine Check-ups & Cleanings</li>
-          <li>Dental Fillings</li>
-          <li>Tooth Extractions</li>
-          <li>Gum Care & Periodontal Therapy</li>
-          <li>Preventive Education</li>
-        </ul>
+        <h2 class="text-lg font-semibold text-gray-800">General Dentistry</h2>
+        <p class="text-gray-600">Preventive care and routine cleanings for a healthy smile.</p>
+        <button onclick="toggleSection('GeneralDentistryDetails')" class="mt-3 text-blue-600 font-medium hover:underline">Learn More</button>
       </div>
-
-      <!-- Why Choose -->
-      <div>
-        <h3 class="text-lg font-semibold text-blue-600">Why Choose Yanet Speciality Dental Clinic?</h3>
-        <p class="text-gray-700">We combine modern technology with a compassionate approach. Our experienced dentists ensure your visits are comfortable and your oral health goals are achieved with excellence.</p>
-      </div>
-
-      <!-- Who Needs -->
-      <div>
-        <h3 class="text-lg font-semibold text-blue-600">Who Needs General Dental Services?</h3>
-        <p class="text-gray-700">From children to adults, everyone benefits from regular dental care. Whether it’s your first visit or routine maintenance, we are here for every stage of your dental journey.</p>
-      </div>
-
-      <!-- FAQs -->
-      <div>
-        <h3 class="text-lg font-semibold text-blue-600">FAQs About General Dentistry</h3>
-        <div class="space-y-3">
-          <details class="border rounded-lg p-3">
-            <summary class="font-semibold cursor-pointer">How often should I visit the dentist?</summary>
-            <p class="mt-2 text-gray-600">We recommend at least twice a year for preventive check-ups and cleanings.</p>
-          </details>
-          <details class="border rounded-lg p-3">
-            <summary class="font-semibold cursor-pointer">Are dental check-ups painful?</summary>
-            <p class="mt-2 text-gray-600">Not at all! Our team ensures a comfortable and gentle experience during your visit.</p>
-          </details>
-          <details class="border rounded-lg p-3">
-            <summary class="font-semibold cursor-pointer">Do I need dental X-rays every year?</summary>
-            <p class="mt-2 text-gray-600">Not always. X-rays are recommended based on your age, risk factors, and dental history.</p>
-          </details>
-        </div>
-      </div>
-
-      <!-- Benefits -->
-      <div>
-        <h3 class="text-lg font-semibold text-blue-600">Benefits of Regular Dental Care</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Early detection of problems</li>
-          <li>Fresher breath & brighter smile</li>
-          <li>Reduced risk of gum disease</li>
-          <li>Long-lasting oral health</li>
-        </ul>
-      </div>
-
-      <!-- CTA -->
-      <div class="text-center mt-6">
-        <a href="#appointment" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Book Your Appointment Today</a>
-      </div>
-
     </section>
+
+    <div id="GeneralDentistryDetails" class="hidden mt-6 space-y-6 text-gray-700">
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Our General Dentistry Services</h3>
+        <p>Comprehensive dental care including check-ups, cleanings, fillings, fluoride treatments, and preventive advice for a strong, healthy smile.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Why Choose Yanet Speciality Dental Clinic?</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Experienced and caring dental team</li>
+          <li>Modern equipment and techniques</li>
+          <li>Comfortable, patient-focused environment</li>
+          <li>Personalized care for every age</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Who Needs General Dental Services?</h3>
+        <p>Everyone benefits from general dentistry — children, adults, and seniors. From routine checkups to preventive care, we cover all stages of oral health.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">FAQs About General Dentistry</h3>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">How often should I visit the dentist?</summary>
+          <p class="mt-2">Twice a year is recommended for checkups and cleanings.</p>
+        </details>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">Are fillings painful?</summary>
+          <p class="mt-2">No — modern techniques ensure comfort during treatment.</p>
+        </details>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Benefits of Regular Dental Care</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Prevents cavities and gum disease</li>
+          <li>Detects issues early</li>
+          <li>Maintains fresh breath and smile</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#appointment" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Book Your Appointment</a>
+      </div>
+    </div>
   </div>
 
   <!-- Cosmetic Dentistry -->
@@ -147,8 +130,56 @@
       <div>
         <h2 class="text-lg font-semibold text-gray-800">Cosmetic Dentistry</h2>
         <p class="text-gray-600">Enhance your smile with whitening, veneers, and other cosmetic treatments.</p>
+        <button onclick="toggleSection('CosmeticDentistryDetails')" class="mt-3 text-blue-600 font-medium hover:underline">Learn More</button>
       </div>
     </section>
+
+    <div id="CosmeticDentistryDetails" class="hidden mt-6 space-y-6 text-gray-700">
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Our Cosmetic Dentistry Services</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Teeth Whitening (In-office & Take-home)</li>
+          <li>Porcelain Veneers & Bonding</li>
+          <li>Smile Makeovers & Design</li>
+          <li>Crowns & Bridges</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Why Choose Yanet Speciality Dental Clinic?</h3>
+        <p>Personalized smile enhancements with safe, modern techniques for natural and lasting results.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Who Needs Cosmetic Dentistry?</h3>
+        <p>Anyone looking to brighten, reshape, or perfect their smile — for confidence, events, or personal satisfaction.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">FAQs</h3>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">Is whitening safe?</summary>
+          <p class="mt-2">Yes, treatments are safe and enamel-friendly.</p>
+        </details>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">Do veneers look natural?</summary>
+          <p class="mt-2">Absolutely — designed to blend perfectly with your teeth.</p>
+        </details>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Benefits</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Enhanced confidence</li>
+          <li>Long-lasting results</li>
+          <li>Natural, beautiful smile</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#appointment" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Book Your Cosmetic Consultation</a>
+      </div>
+    </div>
   </div>
 
   <!-- Orthodontics -->
@@ -158,8 +189,56 @@
       <div>
         <h2 class="text-lg font-semibold text-gray-800">Orthodontics</h2>
         <p class="text-gray-600">Straighten teeth with braces and clear aligners for all ages.</p>
+        <button onclick="toggleSection('OrthodonticsDetails')" class="mt-3 text-blue-600 font-medium hover:underline">Learn More</button>
       </div>
     </section>
+
+    <div id="OrthodonticsDetails" class="hidden mt-6 space-y-6 text-gray-700">
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Our Orthodontic Services</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Traditional Braces</li>
+          <li>Ceramic Braces</li>
+          <li>Clear Aligners</li>
+          <li>Retainers & Follow-up Care</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Why Choose Yanet Speciality Dental Clinic?</h3>
+        <p>Custom orthodontic plans for children, teens, and adults with comfort and precision in mind.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Who Needs Orthodontics?</h3>
+        <p>Anyone with crooked teeth, gaps, crowding, or bite issues seeking functional and aesthetic improvement.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">FAQs</h3>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">What’s the best age for braces?</summary>
+          <p class="mt-2">While teens are common, orthodontics works at almost any age — adults included.</p>
+        </details>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">Do clear aligners really work?</summary>
+          <p class="mt-2">Yes, for most mild to moderate cases with excellent results.</p>
+        </details>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Benefits</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Aligned teeth and improved bite</li>
+          <li>Enhanced smile appearance</li>
+          <li>Better long-term oral health</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#appointment" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Book Your Orthodontic Consultation</a>
+      </div>
+    </div>
   </div>
 
   <!-- Dental Surgery -->
@@ -169,20 +248,76 @@
       <div>
         <h2 class="text-lg font-semibold text-gray-800">Dental Surgery</h2>
         <p class="text-gray-600">Expert surgical care including extractions, implants, and oral surgery procedures.</p>
+        <button onclick="toggleSection('DentalSurgeryDetails')" class="mt-3 text-blue-600 font-medium hover:underline">Learn More</button>
       </div>
     </section>
+
+    <div id="DentalSurgeryDetails" class="hidden mt-6 space-y-6 text-gray-700">
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Our Dental Surgery Services</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Tooth Extractions (Including Wisdom Teeth)</li>
+          <li>Dental Implants & Restorations</li>
+          <li>Bone Grafting & Sinus Lifts</li>
+          <li>Minor Oral Surgical Procedures</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Why Choose Yanet Speciality Dental Clinic?</h3>
+        <p>Safe, precise surgeries with anesthesia, advanced equipment, and patient comfort as top priority.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Who Needs Dental Surgery?</h3>
+        <p>Patients with damaged, missing, or impacted teeth, or those seeking implants or reconstructive procedures.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">FAQs</h3>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">Is dental surgery painful?</<p class="mt-2">We ensure minimal discomfort with local anesthesia and modern surgical techniques. Post-operative care instructions help a smooth recovery.</p>
+        </details>
+        <details class="border rounded-lg p-3">
+          <summary class="font-semibold cursor-pointer">How long is the recovery time?</summary>
+          <p class="mt-2">Recovery depends on the procedure. Simple extractions may take a few days, while implants or grafts may take weeks for full healing.</p>
+        </details>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Benefits of Dental Surgery</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Restores function and aesthetics of teeth</li>
+          <li>Prevents further oral health complications</li>
+          <li>Improves bite and overall oral structure</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#appointment" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Book Your Dental Surgery Consultation</a>
+      </div>
+    </div>
   </div>
 
 </main>
 
-<!-- Tabs Script -->
+<!-- JavaScript for Tabs & Learn More Toggle -->
 <script>
-function openTab(tabId) {
+function showTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
   document.getElementById(tabId).classList.remove('hidden');
 
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('bg-blue-600','text-white'));
-  event.target.classList.add('bg-blue-600','text-white');
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('bg-blue-600', 'text-white');
+    btn.classList.add('bg-gray-200', 'text-gray-700');
+  });
+
+  event.target.classList.add('bg-blue-600', 'text-white');
+  event.target.classList.remove('bg-gray-200', 'text-gray-700');
+}
+
+function toggleSection(sectionId) {
+  document.getElementById(sectionId).classList.toggle('hidden');
 }
 </script>
 
