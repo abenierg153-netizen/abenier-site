@@ -94,7 +94,7 @@
   </div>
 </main>
 
-<!-- SINGLE STICKY NAVBAR -->
+<!-- STICKY BOTTOM NAVBAR -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🏠</span><span class="text-xs mt-1">Home</span>
@@ -115,7 +115,6 @@
 </style>
 
 <script>
-// Highlight active page
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
   const homeBtn = document.getElementById("homeBtn");
@@ -123,21 +122,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const communityBtn = document.getElementById("communityBtn");
   const bookBtn = document.getElementById("bookBtn");
 
+  // Active page highlight
   if (path.includes("services")) servicesBtn.classList.add("active");
   else if (path.includes("community")) communityBtn.classList.add("active");
   else if (path.includes("book")) bookBtn.classList.add("active");
   else homeBtn.classList.add("active");
 
-  // Smooth scroll to booking form
+  // Smooth scroll with header offset
   const bookingForm = document.getElementById('bookingForm');
   if (bookBtn && bookingForm) {
     bookBtn.addEventListener('click', function(e){
       e.preventDefault();
-      bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const yOffset = -80; // fixed header height
+      const y = bookingForm.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     });
   }
 
-  // Set minimum date to today
+  // Minimum date
   const dateInput = document.querySelector('input[name="date"]');
   const today = new Date().toISOString().split('T')[0];
   dateInput.setAttribute('min', today);
