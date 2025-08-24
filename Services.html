@@ -281,7 +281,32 @@
       </div>
     </div>
   </main>
+<script>
+  // Function to show the selected tab and hide others
+  function showTab(tabId, evt) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.add('hidden'));
 
+    document.getElementById(tabId).classList.remove('hidden');
+
+    // Update active button styling
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => btn.classList.replace('bg-blue-600', 'bg-gray-200') || btn.classList.replace('text-white', 'text-gray-800'));
+    
+    evt.currentTarget.classList.replace('bg-gray-200', 'bg-blue-600');
+    evt.currentTarget.classList.replace('text-gray-800', 'text-white');
+  }
+
+  // Function to toggle Learn More sections
+  function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section.classList.contains('hidden')) {
+      section.classList.remove('hidden');
+    } else {
+      section.classList.add('hidden');
+    }
+  }
+</script>
   <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
