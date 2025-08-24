@@ -767,28 +767,22 @@
     <span class="text-xs">Home</span>
   </a>
 
-  <!-- Blogs Button -->
-  <a href="blogs.html" id="blogsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>📝</span>
-    <span class="text-xs">Blogs</span>
+  <!-- Services Button -->
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🦷</span>
+    <span class="text-xs">Services</span>
   </a>
 
-  <!-- Giveaway Button -->
-  <a href="giveaway.html" id="giveawayBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>🎁</span>
-    <span class="text-xs">Giveaway</span>
+  <!-- Community Button (blogs + giveaway merged) -->
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🤝</span>
+    <span class="text-xs">Community</span>
   </a>
 
-  <!-- Appointments Button -->
-  <a href="appointments.html" id="appointmentsBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <!-- Book Now Button (appointments renamed) -->
+  <a href="book.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🗓️</span>
-    <span class="text-xs">Appointments</span>
-  </a>
-
-  <!-- Let's Talk Button -->
-  <a href="chat.html" id="chatBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-    <span>💬</span>
-    <span class="text-xs">Let’s Talk</span>
+    <span class="text-xs">Book Now</span>
   </a>
 </nav>
 
@@ -805,14 +799,12 @@
   document.addEventListener("DOMContentLoaded", () => {
     const path = window.location.pathname;
 
-    if (path.includes("blogs")) {
-      document.getElementById("blogsBtn").classList.add("active");
-    } else if (path.includes("giveaway")) {
-      document.getElementById("giveawayBtn").classList.add("active");
-    } else if (path.includes("appointments")) {
-      document.getElementById("appointmentsBtn").classList.add("active");
-    } else if (path.includes("chat")) {
-      document.getElementById("chatBtn").classList.add("active");
+    if (path.includes("services")) {
+      document.getElementById("servicesBtn").classList.add("active");
+    } else if (path.includes("community")) {
+      document.getElementById("communityBtn").classList.add("active");
+    } else if (path.includes("book")) {
+      document.getElementById("bookBtn").classList.add("active");
     } else {
       document.getElementById("homeBtn").classList.add("active");
     }
