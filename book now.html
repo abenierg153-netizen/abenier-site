@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
   dateInput.setAttribute('min', today);
 });
 </script>
-<!-- ✅ FIXED STICKY BOTTOM NAVIGATION -->
+<!-- ✅ SINGLE FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
   <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="text-xs">Community</span>
   </a>
 
-  <!-- Book Now Button (scrolls to form) -->
+  <!-- Book Now Button -->
   <a href="#bookingForm" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
     <span>🗓️</span>
     <span class="text-xs">Book Now</span>
@@ -232,12 +232,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- ✅ ACTIVE STYLE -->
 <style>
   .active {
-    color: #2563EB; /* theme blue */
+    color: #2563EB;
     font-weight: bold;
   }
 </style>
 
-<!-- ✅ ACTIVE PAGE HIGHLIGHT + BOOK NOW SCROLL SCRIPT -->
+<!-- ✅ ACTIVE PAGE + SCROLL SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
@@ -253,13 +253,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("homeBtn").classList.add("active");
   }
 
-  // Smooth scroll for Book Now button (in case already on book.html)
+  // Smooth scroll to booking form
   const bookBtn = document.getElementById('bookBtn');
   const bookingForm = document.getElementById('bookingForm');
 
   bookBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (bookingForm) {
+      bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 </script>
