@@ -3,40 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment - Yanet Speciality Dental Clinic</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Yanet Special Dental Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .active {
-      color: #2563EB;
-    }
-    .nav-btn.active span {
-      color: #2563EB;
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      ring: 2px;
-      ring-color: #2563EB;
-    }
-    .confirmation-message {
-      display: none;
-      animation: slideIn 0.3s ease-out;
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-10px); }
+    /* Fade-up animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .fade-up { opacity: 0; }
+    .fade-up.animate { animation: fadeUp 0.8s ease-out forwards; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">
+<body class="bg-gray-100 font-sans">
 
-<header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50">
+<!-- HEADER -->
+<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
   <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
+    <!-- Left side: Logo -->
     <div class="flex items-center space-x-2">
       <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
     </div>
 
+    <!-- Center: Clinic Title -->
     <div class="flex flex-col items-center leading-tight flex-grow text-center">
       <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
         YANET SPECIALITY
@@ -46,6 +36,7 @@
       </h2>
     </div>
 
+    <!-- Right side: Call Us -->
     <div class="flex items-center space-x-2">
       <a href="tel:0116662828" 
          class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
@@ -211,6 +202,56 @@ document.addEventListener('DOMContentLoaded', function() {
   dateInput.setAttribute('min', today);
 });
 </script>
+<!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
+  <!-- Home Button -->
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🏠</span>
+    <span class="text-xs">Home</span>
+  </a>
 
+  <!-- Services Button -->
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🦷</span>
+    <span class="text-xs">Services</span>
+  </a>
+
+  <!-- Community Button (blogs + giveaway merged) -->
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🤝</span>
+    <span class="text-xs">Community</span>
+  </a>
+
+  <!-- Book Now Button (appointments renamed) -->
+  <a href="book.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+    <span>🗓️</span>
+    <span class="text-xs">Book Now</span>
+  </a>
+</nav>
+
+<!-- ✅ ACTIVE STYLE -->
+<style>
+  .active {
+    color: #2563EB; /* theme blue */
+    font-weight: bold;
+  }
+</style>
+
+<!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname;
+
+    if (path.includes("services")) {
+      document.getElementById("servicesBtn").classList.add("active");
+    } else if (path.includes("community")) {
+      document.getElementById("communityBtn").classList.add("active");
+    } else if (path.includes("book")) {
+      document.getElementById("bookBtn").classList.add("active");
+    } else {
+      document.getElementById("homeBtn").classList.add("active");
+    }
+  });
+</script>
 </body>
 </html>
