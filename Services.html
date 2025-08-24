@@ -5,110 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services - Yanet Speciality Dental Clinic</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    // Simple tab switching logic
+    function openTab(evt, tabName) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabContents.forEach(tc => tc.classList.add("hidden"));
+
+      // Remove active state from all buttons
+      const tabLinks = document.querySelectorAll(".tab-link");
+      tabLinks.forEach(tl => tl.classList.remove("bg-blue-600", "text-white"));
+
+      // Show the selected tab
+      document.getElementById(tabName).classList.remove("hidden");
+
+      // Highlight the active button
+      evt.currentTarget.classList.add("bg-blue-600", "text-white");
+    }
+  </script>
 </head>
 <body class="bg-gray-50">
 
-  <!-- ✅ FIXED HEADER -->
+  <!-- Header (fixed) -->
   <header class="fixed top-0 left-0 w-full bg-[#2563EB] text-white p-4 text-center shadow-md z-50">
-    <h1 class="text-xl font-bold">Our Services</h1>
+    <h1 class="text-xl font-bold">Our Dental Services</h1>
     <p class="text-sm">Comprehensive care for your healthy smile</p>
   </header>
 
-  <!-- ✅ MAIN CONTENT (padding added so header/nav don’t overlap) -->
-  <main class="p-6 space-y-8 max-w-3xl mx-auto pt-28 pb-24">
-    <!-- Service Card -->
-    <a href="services.html" class="block bg-white shadow-md rounded-xl p-4 flex items-center space-x-4 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" alt="Teeth Cleaning" class="w-16 h-16">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">Teeth Cleaning</h2>
-        <p class="text-gray-600">Professional cleaning to remove plaque, tartar, and stains. Helps prevent gum disease and cavities.</p>
-      </div>
-    </a>
+  <!-- Main content with padding for header & footer -->
+  <main class="pt-28 pb-20 max-w-3xl mx-auto px-4">
 
-    <a href="services.html" class="block bg-white shadow-md rounded-xl p-4 flex items-center space-x-4 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149673.png" alt="Teeth Whitening" class="w-16 h-16">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">Teeth Whitening</h2>
-        <p class="text-gray-600">Safe and effective whitening treatments to brighten your teeth. Achieve a confident, radiant smile.</p>
-      </div>
-    </a>
+    <!-- Tabs Navigation -->
+    <div class="flex overflow-x-auto space-x-2 mb-6">
+      <button onclick="openTab(event, 'Cleaning')" class="tab-link bg-blue-600 text-white px-4 py-2 rounded-xl">Teeth Cleaning</button>
+      <button onclick="openTab(event, 'Whitening')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Whitening</button>
+      <button onclick="openTab(event, 'Implants')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Implants</button>
+      <button onclick="openTab(event, 'Braces')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Braces</button>
+      <button onclick="openTab(event, 'Checkups')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Checkups</button>
+    </div>
 
-    <a href="services.html" class="block bg-white shadow-md rounded-xl p-4 flex items-center space-x-4 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149682.png" alt="Dental Implants" class="w-16 h-16">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">Dental Implants</h2>
-        <p class="text-gray-600">Permanent solution for missing teeth. Our implants look and feel natural, restoring both function and aesthetics.</p>
-      </div>
-    </a>
+    <!-- Tab Contents -->
+    <div id="Cleaning" class="tab-content">
+      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">Teeth Cleaning</h2>
+          <p class="text-gray-600">Professional cleaning to remove plaque, tartar, and stains. Helps prevent gum disease and cavities.</p>
+        </div>
+      </section>
+    </div>
 
-    <a href="services.html" class="block bg-white shadow-md rounded-xl p-4 flex items-center space-x-4 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149668.png" alt="Braces" class="w-16 h-16">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">Braces & Aligners</h2>
-        <p class="text-gray-600">Orthodontic treatments for children, teens, and adults. Includes traditional braces and modern clear aligners.</p>
-      </div>
-    </a>
+    <div id="Whitening" class="tab-content hidden">
+      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149673.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">Teeth Whitening</h2>
+          <p class="text-gray-600">Safe and effective whitening treatments to brighten your teeth. Achieve a confident, radiant smile.</p>
+        </div>
+      </section>
+    </div>
 
-    <a href="services.html" class="block bg-white shadow-md rounded-xl p-4 flex items-center space-x-4 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" alt="Dental Checkup" class="w-16 h-16">
-      <div>
-        <h2 class="text-lg font-semibold text-gray-800">Regular Checkups</h2>
-        <p class="text-gray-600">Routine examinations to detect problems early and maintain long-term oral health.</p>
-      </div>
-    </a>
+    <div id="Implants" class="tab-content hidden">
+      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149682.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">Dental Implants</h2>
+          <p class="text-gray-600">Permanent solution for missing teeth. Our implants look and feel natural, restoring both function and aesthetics.</p>
+        </div>
+      </section>
+    </div>
+
+    <div id="Braces" class="tab-content hidden">
+      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149668.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">Braces & Aligners</h2>
+          <p class="text-gray-600">Orthodontic treatments for children, teens, and adults. Includes traditional braces and modern clear aligners.</p>
+        </div>
+      </section>
+    </div>
+
+    <div id="Checkups" class="tab-content hidden">
+      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" class="w-16 h-16" alt="">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">Regular Checkups</h2>
+          <p class="text-gray-600">Routine examinations to detect problems early and maintain long-term oral health.</p>
+        </div>
+      </section>
+    </div>
+
   </main>
 
-  <!-- ✅ STICKY NAVIGATION -->
-  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-    <!-- Home Button -->
-    <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🏠</span>
-      <span class="text-xs">Home</span>
+  <!-- Sticky Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50">
+    <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+      🏠 <span class="text-xs">Home</span>
     </a>
-
-    <!-- Services Button -->
-    <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🦷</span>
-      <span class="text-xs">Services</span>
+    <a href="services.html" class="flex flex-col items-center text-blue-600 font-semibold">
+      🦷 <span class="text-xs">Services</span>
     </a>
-
-    <!-- Community Button -->
-    <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🤝</span>
-      <span class="text-xs">Community</span>
+    <a href="community.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+      🎉 <span class="text-xs">Community</span>
     </a>
-
-    <!-- Book Now Button -->
-    <a href="book.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
-      <span>🗓️</span>
-      <span class="text-xs">Book Now</span>
+    <a href="book.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+      📅 <span class="text-xs">Book</span>
     </a>
   </nav>
-
-  <!-- ✅ ACTIVE STYLE -->
-  <style>
-    .active {
-      color: #2563EB;
-      font-weight: bold;
-    }
-  </style>
-
-  <!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const path = window.location.pathname;
-
-      if (path.includes("services")) {
-        document.getElementById("servicesBtn").classList.add("active");
-      } else if (path.includes("community")) {
-        document.getElementById("communityBtn").classList.add("active");
-      } else if (path.includes("book")) {
-        document.getElementById("bookBtn").classList.add("active");
-      } else {
-        document.getElementById("homeBtn").classList.add("active");
-      }
-    });
-  </script>
 
 </body>
 </html>
