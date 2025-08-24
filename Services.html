@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!-- HEADER -->
+<!-- HEADER (keep untouched) -->
 <header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
   <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
     
@@ -50,86 +50,99 @@
   </div>
 </header>
 
-  <!-- Main content with padding for header & footer -->
-  <main class="pt-28 pb-20 max-w-3xl mx-auto px-4">
+<!-- Main content (padding for header & footer) -->
+<main class="pt-28 pb-20 max-w-3xl mx-auto px-4">
 
-    <!-- Tabs Navigation -->
-    <div class="flex overflow-x-auto space-x-2 mb-6">
-      <button onclick="openTab(event, 'Cleaning')" class="tab-link bg-blue-600 text-white px-4 py-2 rounded-xl">Teeth Cleaning</button>
-      <button onclick="openTab(event, 'Whitening')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Whitening</button>
-      <button onclick="openTab(event, 'Implants')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Implants</button>
-      <button onclick="openTab(event, 'Braces')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Braces</button>
-      <button onclick="openTab(event, 'Checkups')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Checkups</button>
-    </div>
+  <!-- Tabs Navigation -->
+  <div class="flex overflow-x-auto space-x-2 mb-6">
+    <button onclick="openTab(event, 'Cleaning')" class="tab-link bg-blue-600 text-white px-4 py-2 rounded-xl">Teeth Cleaning</button>
+    <button onclick="openTab(event, 'Whitening')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Whitening</button>
+    <button onclick="openTab(event, 'Implants')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Implants</button>
+    <button onclick="openTab(event, 'Braces')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Braces</button>
+    <button onclick="openTab(event, 'Checkups')" class="tab-link bg-gray-200 px-4 py-2 rounded-xl">Checkups</button>
+  </div>
 
-    <!-- Tab Contents -->
-    <div id="Cleaning" class="tab-content">
-      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Teeth Cleaning</h2>
-          <p class="text-gray-600">Professional cleaning to remove plaque, tartar, and stains. Helps prevent gum disease and cavities.</p>
-        </div>
-      </section>
-    </div>
+  <!-- Tab Contents -->
+  <div id="Cleaning" class="tab-content">
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149679.png" class="w-16 h-16" alt="">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">Teeth Cleaning</h2>
+        <p class="text-gray-600">Professional cleaning to remove plaque, tartar, and stains. Helps prevent gum disease and cavities.</p>
+      </div>
+    </section>
+  </div>
 
-    <div id="Whitening" class="tab-content hidden">
-      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149673.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Teeth Whitening</h2>
-          <p class="text-gray-600">Safe and effective whitening treatments to brighten your teeth. Achieve a confident, radiant smile.</p>
-        </div>
-      </section>
-    </div>
+  <div id="Whitening" class="tab-content hidden">
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149673.png" class="w-16 h-16" alt="">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">Teeth Whitening</h2>
+        <p class="text-gray-600">Safe and effective whitening treatments to brighten your teeth. Achieve a confident, radiant smile.</p>
+      </div>
+    </section>
+  </div>
 
-    <div id="Implants" class="tab-content hidden">
-      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149682.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Dental Implants</h2>
-          <p class="text-gray-600">Permanent solution for missing teeth. Our implants look and feel natural, restoring both function and aesthetics.</p>
-        </div>
-      </section>
-    </div>
+  <div id="Implants" class="tab-content hidden">
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149682.png" class="w-16 h-16" alt="">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">Dental Implants</h2>
+        <p class="text-gray-600">Permanent solution for missing teeth. Our implants look and feel natural, restoring both function and aesthetics.</p>
+      </div>
+    </section>
+  </div>
 
-    <div id="Braces" class="tab-content hidden">
-      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149668.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Braces & Aligners</h2>
-          <p class="text-gray-600">Orthodontic treatments for children, teens, and adults. Includes traditional braces and modern clear aligners.</p>
-        </div>
-      </section>
-    </div>
+  <div id="Braces" class="tab-content hidden">
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149668.png" class="w-16 h-16" alt="">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">Braces & Aligners</h2>
+        <p class="text-gray-600">Orthodontic treatments for children, teens, and adults. Includes traditional braces and modern clear aligners.</p>
+      </div>
+    </section>
+  </div>
 
-    <div id="Checkups" class="tab-content hidden">
-      <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" class="w-16 h-16" alt="">
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Regular Checkups</h2>
-          <p class="text-gray-600">Routine examinations to detect problems early and maintain long-term oral health.</p>
-        </div>
-      </section>
-    </div>
+  <div id="Checkups" class="tab-content hidden">
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" class="w-16 h-16" alt="">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">Regular Checkups</h2>
+        <p class="text-gray-600">Routine examinations to detect problems early and maintain long-term oral health.</p>
+      </div>
+    </section>
+  </div>
 
-  </main>
+</main>
 
-  <!-- Sticky Bottom Navigation -->
-  <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50">
-    <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-      🏠 <span class="text-xs">Home</span>
-    </a>
-    <a href="services.html" class="flex flex-col items-center text-blue-600 font-semibold">
-      🦷 <span class="text-xs">Services</span>
-    </a>
-    <a href="community.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-      🎉 <span class="text-xs">Community</span>
-    </a>
-    <a href="book.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
-      📅 <span class="text-xs">Book</span>
-    </a>
-  </nav>
+<!-- Sticky Bottom Navigation (keep untouched) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50">
+  <a href="index.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">🏠 <span class="text-xs">Home</span></a>
+  <a href="services.html" class="flex flex-col items-center text-blue-600 font-semibold">🦷 <span class="text-xs">Services</span></a>
+  <a href="community.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">🎉 <span class="text-xs">Community</span></a>
+  <a href="book.html" class="flex flex-col items-center text-gray-600 hover:text-blue-600">📅 <span class="text-xs">Book</span></a>
+</nav>
+
+<!-- Tab Script -->
+<script>
+  function openTab(event, tabId) {
+    document.querySelectorAll(".tab-content").forEach(tc => tc.classList.add("hidden"));
+    document.querySelectorAll(".tab-link").forEach(btn => btn.classList.remove("bg-blue-600","text-white"));
+    
+    document.getElementById(tabId).classList.remove("hidden");
+    event.currentTarget.classList.add("bg-blue-600","text-white");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.substring(1);
+    if(hash && document.getElementById(hash)) {
+      const btn = document.querySelector(`.tab-link[onclick*="${hash}"]`);
+      if(btn) btn.click();
+    } else {
+      document.querySelector(".tab-link").click();
+    }
+  });
+</script>
 
 </body>
 </html>
