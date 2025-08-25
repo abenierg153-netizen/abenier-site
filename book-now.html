@@ -93,7 +93,151 @@
     </form>
   </div>
 </main>
+<script>
+// ====== Horizontal Tabs ======
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-tab');
+
+    // Hide all tab contents
+    tabContents.forEach(tc => tc.classList.add('hidden'));
+
+    // Remove active styles from all buttons
+    tabButtons.forEach(b => b.classList.remove('border-blue-600', 'text-blue-600'));
+
+    // Show the selected content & highlight button
+    document.getElementById(target).classList.remove('hidden');
+    btn.classList.add('border-blue-600', 'text-blue-600');
+  });
+});
+
+// Activate first tab by default
+tabButtons[0].click();
+
+// ====== Reschedule Form Validation & Submission ======
+const rescheduleForm = document.getElementById('rescheduleForm');
+if (rescheduleForm) {
+  // Set minimum date
+  const rescheduleDateInput = rescheduleForm.querySelector('input[name="date"]');
+  const today = new Date().toISOString().split('T')[0];
+  rescheduleDateInput.setAttribute('min', today);
+
+  // On form submit
+  rescheduleForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateRescheduleForm()) {
+      submitRescheduleForm();
+    }
+  });
+
+  // Validate fields on blur
+  const inputs = rescheduleForm.querySelectorAll('.form-input');
+  inputs.forEach(input => {
+    input.addEventListener('blur', function() {
+      validateField(this);
+    });
+  });
+}
+
+// Validate full form
+function validateRescheduleForm() {
+  let isValid = true;
+  const form = document.getElementById('rescheduleForm');
+
+  // Appointment ID
+  const appointmentId = form.querySelector('input[name="appointmentId"]');
+  if (!appointmentId.value.trim()) {
+    showError(appointmentId, 'appointmentIdError', 'Appointment ID is required');
+    isValid = false;
+  } else hideError(appointmentId, 'appointmentIdError');
+
+  // Email
+  const email = form.querySelector('input[name="email"]');
+  if (!validateEmail(email.value)) {
+    showError(email, 'emailError', 'Please enter a valid email address');
+    isValid = false;
+  } else hideError(email, 'emailError');
+
+  // Date
+  const date = form.querySelector('input[name="date"]');
+  if (!date.value) {
+    showError(date, 'dateError', 'Please select a date');
+    isValid = false;
+  } else hideError(date, 'dateError');
+
+  // Time
+  const time = form.querySelector('input[name="time"]');
+  if (!time.value) {
+    showError(time, 'timeError', 'Please select a time');
+    isValid = false;
+  } else hideError(time, 'timeError');
+
+  return isValid;
+}
+
+// Validate individual field
+function validateField(field) {
+  const errorId = field.name + 'Error';
+
+  if (field.name === 'email' && field.value && !validateEmail(field.value)) {
+    showError(field, errorId, 'Please enter a valid email address');
+    return false;
+  }
+
+  if (!field.value) {
+    showError(field, errorId, 'This field is required');
+    return false;
+  }
+
+  hideError(field, errorId);
+  return true;
+}
+
+// Show / Hide error helpers
+function showError(input, errorId, msg) {
+  input.classList.add('border-red-500');
+  const err = document.getElementById(errorId);
+  if (err) {
+    err.textContent = msg;
+    err.style.display = 'block';
+  }
+}
+function hideError(input, errorId) {
+  input.classList.remove('border-red-500');
+  const err = document.getElementById(errorId);
+  if (err) err.style.display = 'none';
+}
+
+// Simple email validation
+function validateEmail(email) {
+  return /^\S+@\S+\.\S+$/.test(email);
+}
+
+// Submit form (simulated API)
+function submitRescheduleForm() {
+  const form = document.getElementById('rescheduleForm');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const spinner = submitButton.querySelector('.spinner');
+  const submitText = submitButton.querySelector('.submit-text');
+
+  // Show loading
+  spinner.classList.remove('hidden');
+  submitText.textContent = 'Processing...';
+  submitButton.disabled = true;
+
+  setTimeout(() => {
+    spinner.classList.add('hidden');
+    submitText.textContent = 'Request Reschedule';
+    submitButton.disabled = false;
+
+    alert('✅ Reschedule request submitted! We will contact you to confirm your new appointment time.');
+    form.reset();
+  }, 1500);
+}
+</script>
 <!-- STICKY BOTTOM NAVBAR -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
