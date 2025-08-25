@@ -36,122 +36,182 @@
 
   <!-- TAB CONTENTS -->
 
-  <!-- Book Appointment Form -->
-  <div id="bookTab" class="tab-content">
-    <!-- Confirmation Message -->
-    <div id="confirmationMessage" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-      <div class="flex items-center">
-        <span class="text-green-600 mr-3">✔️</span>
-        <div>
-          <h3 class="text-green-800 font-semibold">Appointment Request Submitted!</h3>
-          <p class="text-green-700 text-sm mt-1">We will contact you within 24 hours to confirm your appointment.</p>
-        </div>
+<!-- Book Appointment Form -->
+<div id="bookTab" class="tab-content">
+  <!-- Booking Confirmation Message -->
+  <div id="confirmationMessage" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+    <div class="flex items-center">
+      <span class="text-green-600 mr-3">✔️</span>
+      <div>
+        <h3 class="text-green-800 font-semibold">Appointment Request Submitted!</h3>
+        <p class="text-green-700 text-sm mt-1">We will contact you within 24 hours to confirm your appointment.</p>
       </div>
     </div>
-
-    <!-- Booking Form -->
-    <div class="max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200">
-      <h1 class="text-2xl sm:text-3xl font-bold text-[#2563EB] mb-2 text-center">Book Your Appointment</h1>
-      <p class="text-gray-600 text-center mb-6">Schedule your visit with our dental specialists</p>
-
-      <form id="bookingForm" class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-            <input type="text" name="fullName" placeholder="Enter your full name" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-            <input type="email" name="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-          <input type="tel" name="phone" placeholder="Enter your phone number" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Service *</label>
-          <select name="service" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-            <option value="">Select a service</option>
-            <option value="general">General Dentistry</option>
-            <option value="cosmetic">Cosmetic Dentistry</option>
-            <option value="orthodontics">Orthodontics</option>
-            <option value="surgery">Dental Surgery</option>
-          </select>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date *</label>
-            <input type="date" name="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time *</label>
-            <input type="time" name="time" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Reason for Visit</label>
-          <textarea name="reason" rows="4" placeholder="Optional" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent resize-none"></textarea>
-        </div>
-
-        <button type="submit" class="w-full bg-[#2563EB] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center">
-          Submit Appointment Request
-        </button>
-      </form>
-    </div>
   </div>
 
-  <!-- Reschedule Appointment Form -->
-  <div id="rescheduleTab" class="tab-content hidden">
-    <div class="max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200">
-      <h1 class="text-2xl sm:text-3xl font-bold text-[#2563EB] mb-2 text-center">Reschedule Your Appointment</h1>
-      <p class="text-gray-600 text-center mb-6">Update your existing appointment details</p>
+  <!-- Booking Form -->
+  <div class="max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200">
+    <h1 class="text-2xl sm:text-3xl font-bold text-[#2563EB] mb-2 text-center">Book Your Appointment</h1>
+    <p class="text-gray-600 text-center mb-6">Schedule your visit with our dental specialists</p>
 
-      <form id="rescheduleForm" class="space-y-6">
+    <form id="bookingForm" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Appointment ID *</label>
-          <input type="text" name="appointmentId" placeholder="Enter your appointment ID" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
-          <div class="error-message" id="appointmentIdError" style="display:none;">Please enter a valid appointment ID</div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+          <input type="text" name="fullName" placeholder="Enter your full name" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
         </div>
-
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-          <input type="email" name="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
-          <div class="error-message" id="emailError" style="display:none;">Please enter a valid email address</div>
+          <input type="email" name="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
         </div>
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">New Date *</label>
-            <input type="date" name="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
-            <div class="error-message" id="dateError" style="display:none;">Please select a valid date</div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">New Time *</label>
-            <input type="time" name="time" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
-            <div class="error-message" id="timeError" style="display:none;">Please select a valid time</div>
-          </div>
-        </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+        <input type="tel" name="phone" placeholder="Enter your phone number" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+      </div>
 
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Service *</label>
+        <select name="service" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+          <option value="">Select a service</option>
+          <option value="general">General Dentistry</option>
+          <option value="cosmetic">Cosmetic Dentistry</option>
+          <option value="orthodontics">Orthodontics</option>
+          <option value="surgery">Dental Surgery</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Reason for Rescheduling</label>
-          <textarea name="reason" rows="3" placeholder="Optional - Let us know why you need to reschedule" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent resize-none"></textarea>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date *</label>
+          <input type="date" name="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
         </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time *</label>
+          <input type="time" name="time" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent" required>
+        </div>
+      </div>
 
-        <button type="submit" class="w-full bg-[#2563EB] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center">
-          <span class="submit-text">Request Reschedule</span>
-          <div class="spinner ml-2 hidden"></div>
-        </button>
-      </form>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Reason for Visit</label>
+        <textarea name="reason" rows="4" placeholder="Optional" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#2563EB] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center">
+        Submit Appointment Request
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Reschedule Appointment Form -->
+<div id="rescheduleTab" class="tab-content hidden">
+  <!-- Reschedule Confirmation Message -->
+  <div id="rescheduleConfirmation" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+    <div class="flex items-center">
+      <span class="text-green-600 mr-3">✔️</span>
+      <div>
+        <h3 class="text-green-800 font-semibold">Reschedule Request Submitted!</h3>
+        <p class="text-green-700 text-sm mt-1">We will contact you soon to confirm your updated appointment.</p>
+      </div>
     </div>
   </div>
 
-</main>
+  <div class="max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md border border-gray-200">
+    <h1 class="text-2xl sm:text-3xl font-bold text-[#2563EB] mb-2 text-center">Reschedule Your Appointment</h1>
+    <p class="text-gray-600 text-center mb-6">Update your existing appointment details</p>
 
+    <form id="rescheduleForm" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Appointment ID *</label>
+        <input type="text" name="appointmentId" placeholder="Enter your appointment ID" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+        <input type="email" name="email" placeholder="Enter your email address" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">New Date *</label>
+          <input type="date" name="date" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">New Time *</label>
+          <input type="time" name="time" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent form-input" required>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Reason for Rescheduling</label>
+        <textarea name="reason" rows="3" placeholder="Optional - Let us know why you need to reschedule" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#2563EB] focus:border-transparent resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#2563EB] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center">
+        <span class="submit-text">Request Reschedule</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw4cGD9UyDvvv1O1FoL6aDstitTgCGvm-xAlP08xkHNvDwvnlk6tOxF1RIJaiQFsn7z-w/exec";
+
+  function showMessage(id) {
+    const el = document.getElementById(id);
+    el.classList.remove("hidden");
+    setTimeout(() => {
+      el.classList.add("hidden");
+    }, 5000); // hide after 5 seconds
+  }
+
+  // Booking Form
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(scriptURL, { method: "POST", body: formData })
+      .then(res => res.json())
+      .then(data => {
+        if (data.result === "success") {
+          form.reset();
+          showMessage("confirmationMessage");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error connecting to server.");
+      });
+  });
+
+  // Reschedule Form
+  document.getElementById("rescheduleForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(scriptURL, { method: "POST", body: formData })
+      .then(res => res.json())
+      .then(data => {
+        if (data.result === "success") {
+          form.reset();
+          showMessage("rescheduleConfirmation");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error connecting to server.");
+      });
+  });
+</script>
 <!-- STICKY BOTTOM NAVBAR -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
