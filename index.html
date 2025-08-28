@@ -74,13 +74,13 @@
 <section class="px-4 mt-[14px]">
   <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-0 max-w-5xl mx-auto w-full">
 
-    <!-- Doctor Image (wide & responsive) -->
-    <div class="w-full">
+    <!-- Doctor Image (wide & responsive, no crop) -->
+    <div class="w-full bg-black flex justify-center items-center">
       <img src="images/dental_offer.jpg" alt="Dental Care"
-           class="w-full h-[26rem] md:h-[32rem] object-cover rounded-t-xl">
+           class="w-full max-h-[32rem] object-contain rounded-t-xl">
     </div>
 
-    <!-- Text + Button Card (same as screenshot) -->
+    <!-- Text + Button Card -->
     <div class="bg-[#F3F9FF] w-full text-center p-6 md:p-8 space-y-4">
       <p class="text-gray-700 text-base md:text-lg leading-relaxed">
         From routine cleanings to advanced cosmetic treatments, our experienced team uses the latest technology to ensure your smile is healthy and beautiful.
@@ -99,7 +99,6 @@
     </div>
   </div>
 </section>
-
 <script>
   // Fade-up animation on scroll
   document.addEventListener("DOMContentLoaded", function () {
