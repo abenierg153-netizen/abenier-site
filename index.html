@@ -5,55 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yanet Special Dental Clinic</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Alpine.js -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- htmx -->
-  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  <!-- Stimulus -->
-  <script type="module">
-    import { Application } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
-    window.Stimulus = Application.start()
-
-    // Fade-up controller
-    Stimulus.register("fadeup", class extends Stimulus.Controller {
-      connect() {
-        this.element.classList.add("fade-up")
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              this.element.classList.add("animate")
-              observer.unobserve(this.element)
-            }
-          })
-        })
-        observer.observe(this.element)
-      }
-    })
-
-    // Simple slider (future-proof if you add doctors/offers)
-    Stimulus.register("slider", class extends Stimulus.Controller {
-      static targets = ["slide"]
-      connect() {
-        this.index = 0
-        this.show()
-      }
-      next() {
-        this.index = (this.index + 1) % this.slideTargets.length
-        this.show()
-      }
-      prev() {
-        this.index = (this.index - 1 + this.slideTargets.length) % this.slideTargets.length
-        this.show()
-      }
-      show() {
-        this.slideTargets.forEach((el, i) => {
-          el.classList.toggle("hidden", i !== this.index)
-        })
-      }
-    })
-  </script>
-
   <style>
     /* Fade-up animation */
     @keyframes fadeUp {
@@ -66,11 +17,64 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
+<!-- HEADER -->
+<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+    
+    <!-- Left side: Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
+    </div>
+
+    <!-- Center: Clinic Title -->
+    <div class="flex flex-col items-center leading-tight flex-grow text-center">
+      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
+        YANET SPECIALITY
+      </h1>
+      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
+        DENTAL CLINIC
+      </h2>
+    </div>
+
+    <!-- Right side: Call Us -->
+    <div class="flex items-center space-x-2">
+      <a href="tel:0116662828" 
+         class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
+        </svg>
+        <span>Call Us</span>
+      </a>
+    </div>
+  </div>
+</header>
+  
+   
+<!-- HERO SECTION -->
+<section class="pt-20 sm:pt-24 bg-gray-50">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4">
+      Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+    </h1>
+    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+      Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
+    </p>
+  </div>
+</section>
+
+<!-- Toggle Mobile Menu -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
 <!-- ✅ Dental Clinic Section -->
-<section class="px-[14px] mt-[14px]" data-controller="fadeup">
+<section class="px-[14px] mt-[14px]"> <!-- tighter, exact gutter -->
   <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-6">
 
-    <!-- Doctor Image -->
+    <!-- Doctor Image (larger size) -->
     <div class="w-full mb-4">
       <img src="images/dental_offer.jpg" alt="Dental Care"
            class="w-full h-[26rem] object-cover rounded-xl">
@@ -82,64 +86,35 @@
         From routine cleanings to advanced cosmetic treatments, our experienced team uses the latest technology to ensure your smile is healthy and beautiful.
       </p>
 
-      <!-- Book Button with Alpine Modal -->
-      <button @click="open = true"
-              class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 text-base md:text-lg rounded-lg shadow hover:bg-blue-700 transition"
-              x-data="{ open: false }"
-              x-on:keydown.escape="open = false">
+      <!-- Button -->
+      <a href="#"
+         class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 text-base md:text-lg rounded-lg shadow hover:bg-blue-700 transition">
         Book Your Smile Today
-
-        <!-- Modal -->
-        <div x-show="open" x-transition.opacity class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6 relative">
-            <button @click="open = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">&times;</button>
-            <h2 class="text-xl font-bold mb-4 text-gray-800">Book Appointment</h2>
-            
-            <form class="space-y-4">
-              <input type="text" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200">
-              <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200">
-              <input type="tel" placeholder="Phone" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200">
-              <input type="date" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200">
-              <textarea placeholder="Message (Optional)" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200"></textarea>
-              <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Submit</button>
-            </form>
-          </div>
-        </div>
-      </button>
+      </a>
 
       <!-- ⭐ Experience Line -->
       <p class="mt-5 text-yellow-600 font-semibold text-base md:text-lg">
         ⭐ Over 10 Years of Trusted Experience ⭐
       </p>
-
-      <!-- htmx future hook (for dynamic offers/doctors) -->
-      <div id="extra-offers" 
-           hx-get="/offers.html" 
-           hx-trigger="revealed" 
-           hx-swap="innerHTML">
-        <!-- Placeholder content -->
-      </div>
     </div>
   </div>
 </section>
-
-<!-- ✅ Vanilla JS Helper: Smooth Scroll -->
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      e.preventDefault()
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
-      })
-    })
-  })
-</script>
-
-</body>
-</html>
-
   
 <script>
+  // Fade-up animation on scroll
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
   // Fade-up animation on scroll
   document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".fade-up");
