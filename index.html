@@ -72,16 +72,16 @@
 
 <!-- ✅ Dental Clinic Section -->
 <section class="px-4 mt-[14px]">
-  <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-6 max-w-6xl mx-auto w-full">
+  <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-0 max-w-5xl mx-auto w-full">
 
     <!-- Doctor Image (wide & responsive) -->
-    <div class="w-full mb-4">
+    <div class="w-full">
       <img src="images/dental_offer.jpg" alt="Dental Care"
-           class="w-full h-[24rem] md:h-[32rem] object-cover rounded-xl">
+           class="w-full h-[26rem] md:h-[32rem] object-cover rounded-t-xl">
     </div>
 
-    <!-- Text (balanced width) -->
-    <div class="p-6 flex flex-col justify-center w-full text-center space-y-3 max-w-4xl mx-auto">
+    <!-- Text + Button Card (same as screenshot) -->
+    <div class="bg-[#F3F9FF] w-full text-center p-6 md:p-8 space-y-4">
       <p class="text-gray-700 text-base md:text-lg leading-relaxed">
         From routine cleanings to advanced cosmetic treatments, our experienced team uses the latest technology to ensure your smile is healthy and beautiful.
       </p>
@@ -93,13 +93,29 @@
       </a>
 
       <!-- ⭐ Experience Line -->
-      <p class="mt-5 text-yellow-600 font-semibold text-base md:text-lg">
+      <p class="mt-4 text-yellow-600 font-semibold text-base md:text-lg">
         ⭐ Over 10 Years of Trusted Experience ⭐
       </p>
     </div>
   </div>
 </section>
 
+<script>
+  // Fade-up animation on scroll
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
+  
 <script>
   // Fade-up animation on scroll
   document.addEventListener("DOMContentLoaded", function () {
