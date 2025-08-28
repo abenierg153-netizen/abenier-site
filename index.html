@@ -99,7 +99,7 @@
     </div>
   </div>
 </section>
- <script> 
+
 <script>
   // Fade-up animation on scroll
   document.addEventListener("DOMContentLoaded", function () {
@@ -114,23 +114,7 @@
     });
     elements.forEach(el => observer.observe(el));
   });
-</script>
-  // Fade-up animation on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".fade-up");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-
-  
+</script>  
 <!-- SERVICES -->
 <section class="px-4 py-8 sm:px-6 sm:py-12 bg-gray-50">
   <div class="flex items-center justify-between mb-6 sm:mb-8">
