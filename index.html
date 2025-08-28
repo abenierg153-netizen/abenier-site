@@ -71,17 +71,17 @@
 </script>
 
 <!-- ✅ Dental Clinic Section -->
-<section class="px-[14px] mt-[14px]"> <!-- tighter, exact gutter -->
-  <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-6">
+<section class="px-4 mt-[14px]"> <!-- reduced side padding for wider look -->
+  <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center justify-center p-6 max-w-5xl mx-auto w-full">
 
-    <!-- Doctor Image (larger size) -->
+    <!-- Doctor Image (larger width) -->
     <div class="w-full mb-4">
       <img src="images/dental_offer.jpg" alt="Dental Care"
-           class="w-full h-[26rem] object-cover rounded-xl">
+           class="w-full h-[28rem] object-cover rounded-xl">
     </div>
 
-    <!-- Text -->
-    <div class="p-4 flex flex-col justify-center w-full text-center space-y-3">
+    <!-- Text (wider width) -->
+    <div class="p-6 flex flex-col justify-center w-full text-center space-y-3 max-w-3xl mx-auto">
       <p class="text-gray-700 text-base md:text-lg leading-relaxed">
         From routine cleanings to advanced cosmetic treatments, our experienced team uses the latest technology to ensure your smile is healthy and beautiful.
       </p>
@@ -99,6 +99,22 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Fade-up animation on scroll
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
 
 <script>
   // Fade-up animation on scroll
