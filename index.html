@@ -916,7 +916,7 @@
   });
 </script>
 <!-- ✅ CHAT BUBBLE + MINI CHAT POPUP -->
-<div class="fixed bottom-5 right-5 z-50">
+<div class="fixed bottom-20 right-5 z-50"> <!-- ⬅ changed bottom-5 → bottom-20 -->
   <button id="chatButton" 
           class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-pulse">
     <!-- Chat Icon (SVG) -->
@@ -927,7 +927,7 @@
   </button>
 </div>
 
-<div id="chatPopup" class="fixed bottom-20 right-5 w-80 max-w-[90vw] bg-white rounded-xl shadow-lg border border-gray-200 hidden flex-col overflow-hidden z-50 sm:bottom-24">
+<div id="chatPopup" class="fixed bottom-32 right-5 w-80 max-w-[90vw] bg-white rounded-xl shadow-lg border border-gray-200 hidden flex-col overflow-hidden z-50 sm:bottom-36">
   <!-- Header -->
   <div class="bg-blue-600 text-white p-3 flex justify-between items-center">
     <span>Chat with us</span>
@@ -961,7 +961,7 @@ closeChat.onclick = function() {
 /* Mobile adjustments */
 @media (max-width: 640px) {
   #chatPopup {
-    bottom: 15%;
+    bottom: 20%; /* ⬅ lifted popup higher */
     right: 5%;
     width: 90vw;
   }
