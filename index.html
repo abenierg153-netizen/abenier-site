@@ -243,7 +243,7 @@
 </section>
 
 <section class="px-4 mt-4">
-  <h2 class="text-lg font-semibold mb-4 text-center">BEFORE & AFTER RESULTS</h2>
+  <h2 class="text-lg font-semibold mb-4 text-center">BFORE & AFTER RESULTS</h2>
 
 <!-- Grid Container -->
 <div id="reviews-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -391,40 +391,36 @@
     <p id="c9-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Couldn't be happier with the outcome!"</p>
     <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
   </div>
-
 </div>
 
 <!-- Supabase Script -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const supabaseUrl = 'YOUR_SUPABASE_URL';
+  const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-  document.addEventListener('DOMContentLoaded', async () => {
+  async function loadReviews() {
     const { data: reviews, error } = await supabase
       .from('before_after_reviews')
       .select('*')
       .order('id', { ascending: true });
 
-    if (error) {
-      console.error(error);
-      return;
-    }
+    if (error) return console.error(error);
 
-    // Update images and testimonials dynamically
     reviews.forEach((r, index) => {
-      // Before and after images
-      const beforeImg = document.getElementById(`c${index + 1}-before`);
-      const afterImg = document.getElementById(`c${index + 1}-after`);
-      const testimonial = document.getElementById(`c${index + 1}-testimonial`);
-
+      const beforeImg = document.getElementById(`c${index+1}-before`);
+      const afterImg = document.getElementById(`c${index+1}-after`);
+      const testimonial = document.getElementById(`c${index+1}-testimonial`);
       if (beforeImg) beforeImg.src = r.before_image_url;
       if (afterImg) afterImg.src = r.after_image_url;
       if (testimonial) testimonial.textContent = r.comment;
     });
-  });
+  }
+
+  loadReviews();
 </script>
+
     
 
 <!-- Include AOS CSS in <head> -->
