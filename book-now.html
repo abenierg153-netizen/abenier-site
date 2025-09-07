@@ -28,13 +28,13 @@
 
 <main class="flex-1 px-4 pt-28 pb-28">
 
-  <!-- TAB BUTTONS -->
-  <div class="flex justify-center mb-6 space-x-4">
-    <button class="tab-btn border-b-2 border-transparent text-gray-500 font-semibold px-4 py-2" data-tab="bookTab">Book Appointment</button>
-    <button class="tab-btn border-b-2 border-transparent text-gray-500 font-semibold px-4 py-2" data-tab="rescheduleTab">Reschedule Appointment</button>
-  </div>
+<!-- TAB BUTTONS -->
+<div class="flex justify-center mb-6 space-x-4">
+  <button class="tab-btn border-b-2 border-transparent text-gray-500 font-semibold px-4 py-2" data-tab="bookTab">Book Appointment</button>
+  <button class="tab-btn border-b-2 border-transparent text-gray-500 font-semibold px-4 py-2" data-tab="rescheduleTab">Reschedule Appointment</button>
+</div>
 
-  <!-- TAB CONTENTS -->
+<!-- TAB CONTENTS -->
 
 <!-- Book Appointment Form -->
 <div id="bookTab" class="tab-content">
@@ -161,7 +161,8 @@
   // 🔑 Supabase credentials
   const SUPABASE_URL = "https://ohcuxcfqdbilfdervnxq.supabase.co";
   const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oY3V4Y2ZxZGJpbGZkZXJ2bnhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyMzM0NTcsImV4cCI6MjA3MjgwOTQ1N30.T9Kl6mbzuGTqZEvY19JgZ3UgsBV3IqTWxRWGSucsmMo";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const { createClient } = supabase;
+  const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   // ===== Helper to show messages =====
   function showMessage(id) {
@@ -185,7 +186,7 @@
       reason: form.reason.value
     };
 
-    const { error } = await supabase.from("appointments").insert([data]);
+    const { error } = await db.from("appointments").insert([data]);
 
     if (error) {
       console.error(error);
@@ -208,9 +209,10 @@
       status: "rescheduled"
     };
 
-    const { error } = await supabase.from("appointments")
+    const { error } = await db.from("appointments")
       .update(data)
-      .eq("id", form.appointmentId.value);
+      .eq("id", form.appointmentId.value)
+      .eq("email", form.email.value); // extra safety
 
     if (error) {
       console.error(error);
@@ -228,7 +230,7 @@
 
     const email = form.sub_email.value;
 
-    const { error } = await supabase.from("subscriptions").insert([{ email }]);
+    const { error } = await db.from("subscriptions").insert([{ email }]);
 
     if (error) {
       console.error(error);
