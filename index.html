@@ -867,7 +867,7 @@
       </div>
     </div>
 <!-- Newsletter -->  
-<div class="relative">  
+<div class="relative w-full px-4 mb-6">  
   <h3 class="text-lg font-semibold mb-2">Stay Updated</h3>  
 
   <!-- Success message -->  
@@ -888,9 +888,13 @@
   </div>  
 
   <!-- Form -->  
-  <form id="newsletterForm" class="flex flex-col space-y-2">  
-    <input type="email" id="emailInput" placeholder="Your Email" class="px-3 py-2 rounded text-black text-sm" required>  
-    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white py-2 rounded text-sm">Subscribe</button>  
+  <form id="newsletterForm" class="flex flex-col sm:flex-row sm:space-y-0 sm:space-x-2 space-y-2 w-full pb-6">  
+    <input type="email" id="emailInput" placeholder="Your Email"  
+      class="px-3 py-2 rounded text-black text-sm w-full sm:flex-1" required>  
+    <button type="submit"  
+      class="bg-orange-500 hover:bg-orange-600 text-white py-2 rounded text-sm w-full sm:w-auto sm:px-6">  
+      Subscribe  
+    </button>  
   </form>  
 </div>  
 
@@ -937,7 +941,8 @@
       showToast(toastSuccess);  
     }  
   });  
-</script>
+</script>  
+    
 <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
   <!-- Home Button -->
