@@ -156,60 +156,87 @@
   </div>
 </div>
 
-<!-- SCRIPT -->
+<script src="https://unpkg.com/@supabase/supabase-js"></script>
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzzsffkiGRnGwuyi1w3tyTYTI-x9xIpUfhWMPzTKzto0FhUucHktdXCFDjIpnIArQ/exec";
+  // 🔑 Supabase credentials
+  const SUPABASE_URL = "https://ohcuxcfqdbilfdervnxq.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oY3V4Y2ZxZGJpbGZkZXJ2bnhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyMzM0NTcsImV4cCI6MjA3MjgwOTQ1N30.T9Kl6mbzuGTqZEvY19JgZ3UgsBV3IqTWxRWGSucsmMo";
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+  // ===== Helper to show messages =====
   function showMessage(id) {
     const el = document.getElementById(id);
     el.classList.remove("hidden");
-    setTimeout(() => {
-      el.classList.add("hidden");
-    }, 5000); // hide after 5 seconds
+    setTimeout(() => el.classList.add("hidden"), 5000);
   }
 
-  // Booking Form
-  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  // ===== Booking Form =====
+  document.getElementById("bookingForm").addEventListener("submit", async function(e) {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
 
-    fetch(scriptURL, { method: "POST", body: formData })
-      .then(res => res.json())
-      .then(data => {
-        if (data.result === "success") {
-          form.reset();
-          showMessage("confirmationMessage");
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        alert("Error connecting to server.");
-      });
+    const data = {
+      full_name: form.fullName.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      service: form.service.value,
+      date: form.date.value,
+      time: form.time.value,
+      reason: form.reason.value
+    };
+
+    const { error } = await supabase.from("appointments").insert([data]);
+
+    if (error) {
+      console.error(error);
+      alert("❌ Error submitting appointment: " + error.message);
+    } else {
+      form.reset();
+      showMessage("confirmationMessage");
+    }
   });
 
-  // Reschedule Form
-  document.getElementById("rescheduleForm").addEventListener("submit", function(e) {
+  // ===== Reschedule Form =====
+  document.getElementById("rescheduleForm").addEventListener("submit", async function(e) {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
 
-    fetch(scriptURL, { method: "POST", body: formData })
-      .then(res => res.json())
-      .then(data => {
-        if (data.result === "success") {
-          form.reset();
-          showMessage("rescheduleConfirmation");
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        alert("Error connecting to server.");
-      });
+    const data = {
+      date: form.date.value,
+      time: form.time.value,
+      reason: form.reason.value,
+      status: "rescheduled"
+    };
+
+    const { error } = await supabase.from("appointments")
+      .update(data)
+      .eq("id", form.appointmentId.value);
+
+    if (error) {
+      console.error(error);
+      alert("❌ Error rescheduling appointment: " + error.message);
+    } else {
+      form.reset();
+      showMessage("rescheduleConfirmation");
+    }
+  });
+
+  // ===== Email Subscription Form =====
+  document.getElementById("subscriptionForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const email = form.sub_email.value;
+
+    const { error } = await supabase.from("subscriptions").insert([{ email }]);
+
+    if (error) {
+      console.error(error);
+      alert("❌ Subscription failed: " + error.message);
+    } else {
+      form.reset();
+      alert("✅ Thanks for subscribing!");
+    }
   });
 </script>
 <!-- STICKY BOTTOM NAVBAR -->
