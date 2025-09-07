@@ -902,7 +902,7 @@
 <script>  
   const SUPABASE_URL = "https://ohcuxcfqdbilfdervnxq.supabase.co";  
   const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oY3V4Y2ZxZGJpbGZkZXJ2bnhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyMzM0NTcsImV4cCI6MjA3MjgwOTQ1N30.T9Kl6mbzuGTqZEvY19JgZ3UgsBV3IqTWxRWGSucsmMo";  
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);  
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);  
 
   const form = document.getElementById("newsletterForm");  
   const emailInput = document.getElementById("emailInput");  
@@ -921,7 +921,7 @@
     }  
 
     // Insert email into Supabase  
-    const { error } = await supabase.from("subscriptions").insert([{ email }]);  
+    const { error } = await supabaseClient.from("subscriptions").insert([{ email }]);  
 
     if (error) {  
       console.error(error);  
