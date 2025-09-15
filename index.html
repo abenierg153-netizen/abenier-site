@@ -62,9 +62,15 @@
 <!-- HERO SECTION -->
 <section class="pt-8 sm:pt-12 bg-gradient-to-r from-blue-50 to-white md:py-12 md:px-8">
   <div class="container mx-auto px-4 text-center md:max-w-7xl md:mx-auto md:grid md:grid-cols-2 md:gap-8 md:items-center">
-    <!-- DESKTOP-ONLY: Doctor image side -->
-    <div class="md:order-1 md:justify-self-start">
-      <img src='./dentist.png' alt='Doctor' class='w-64 h-64 md:w-[420px] md:h-[420px] rounded-full object-cover shadow-lg mx-auto' />
+    <!-- Mobile: Heading text (order-1), Desktop: Doctor image side (md:order-1) -->
+    <div class="order-1 md:order-1 md:justify-self-start">
+      <!-- Mobile: Show heading text -->
+      <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:hidden">
+        Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+      </h1>
+      
+      <!-- Desktop: Show doctor image -->
+      <img src='./dentist.png' alt='Doctor' class='hidden md:block w-64 h-64 md:w-[420px] md:h-[420px] rounded-full object-cover shadow-lg mx-auto' />
       
       <!-- Desktop-only caption -->
       <div class="hidden md:block mt-4 text-center text-gray-700">
@@ -73,12 +79,18 @@
       </div>
     </div>
     
-    <!-- DESKTOP-ONLY: Hero text side -->
-    <div class="md:order-2 md:text-left">
-      <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:text-5xl md:leading-tight md:font-bold md:text-blue-800">
+    <!-- Mobile: Doctor image (order-2), Desktop: Hero text side (md:order-2) -->
+    <div class="order-2 md:order-2 md:text-left">
+      <!-- Mobile: Show doctor image -->
+      <img src='./dentist.png' alt='Doctor' class='w-64 h-64 rounded-full object-cover shadow-lg mx-auto md:hidden' />
+      
+      <!-- Desktop: Show heading text -->
+      <h1 class="hidden md:block text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:text-5xl md:leading-tight md:font-bold md:text-blue-800">
         Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
       </h1>
-      <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto md:mt-4 md:text-xl md:text-gray-600">
+      
+      <!-- Desktop: Show subheading -->
+      <p class="hidden md:block text-gray-600 text-base sm:text-lg max-w-2xl mx-auto md:mt-4 md:text-xl md:text-gray-600">
         Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
       </p>
       
@@ -93,6 +105,13 @@
           <span>⭐ 10+ Years Experience</span>
         </div>
       </div>
+    </div>
+    
+    <!-- Mobile: Subheading text (order-3), Desktop: Hidden -->
+    <div class="order-3 md:hidden">
+      <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+        Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
+      </p>
     </div>
   </div>
 </section>
