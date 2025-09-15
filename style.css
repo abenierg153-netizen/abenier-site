@@ -1,3 +1,10 @@
+/* Smooth scrolling for desktop only */
+@media (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* HEADER background */
 header {
   background-color: #f0f9ff !important; /* light aqua clinic blue */
