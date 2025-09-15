@@ -18,28 +18,28 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
+<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm md:sticky md:top-0 md:z-50 md:shadow md:bg-white">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3 md:max-w-7xl md:mx-auto md:px-8 md:py-4 md:flex md:items-center md:justify-between">
     
     <!-- Left side: Logo -->
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-2 md:flex md:items-center md:gap-3">
       <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
     </div>
 
     <!-- Center: Clinic Title -->
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">
+    <div class="flex flex-col items-center leading-tight flex-grow text-center md:flex md:items-center md:gap-3">
+      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB] md:text-2xl md:font-bold md:tracking-wide">
         YANET SPECIALITY
       </h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">
+      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB] md:text-2xl md:font-bold md:tracking-wide">
         DENTAL CLINIC
       </h2>
     </div>
 
     <!-- Right side: Call Us -->
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-2 hidden md:inline-flex md:items-center md:gap-3">
       <a href="tel:0116662828" 
-         class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
+         class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
@@ -47,19 +47,42 @@
         <span>Call Us</span>
       </a>
     </div>
+    
+    <!-- DESKTOP-ONLY: Add navigation menu -->
+    <nav class="hidden md:flex md:items-center md:gap-6">
+      <a href="index.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition">Home</a>
+      <a href="services.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition">Services</a>
+      <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition">Community</a>
+      <a href="blogs.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition">Blogs</a>
+      <a href="book-now.html" class="md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700">Book Now</a>
+    </nav>
   </div>
 </header>
   
    
 <!-- HERO SECTION -->
-<section class="pt-20 sm:pt-24 bg-gray-50">
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4">
-      Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
-    </h1>
-    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-      Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
-    </p>
+<section class="pt-20 sm:pt-24 bg-gray-50 md:bg-white md:py-20 md:px-8">
+  <div class="container mx-auto px-4 text-center md:max-w-7xl md:mx-auto md:grid md:grid-cols-2 md:gap-12 md:items-center">
+    <!-- DESKTOP-ONLY: Hero image side -->
+    <div class="md:order-1 md:justify-self-start">
+      <img src="images/dental_offer.jpg" alt="Dental Care" class="hidden md:block md:max-w-md md:rounded-2xl md:shadow-xl">
+    </div>
+    
+    <!-- DESKTOP-ONLY: Hero text side -->
+    <div class="md:order-2 md:text-left">
+      <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:text-5xl md:leading-tight md:font-bold md:text-blue-800">
+        Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+      </h1>
+      <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto md:mt-4 md:text-xl md:text-gray-600">
+        Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
+      </p>
+      
+      <!-- DESKTOP-ONLY: Hero buttons -->
+      <div class="hidden md:mt-8 md:flex md:gap-4">
+        <a href="book-now.html" class="md:px-6 md:py-3 md:rounded-xl md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:shadow">Book Now</a>
+        <a href="tel:0116662828" class="md:px-6 md:py-3 md:rounded-xl md:bg-green-600 md:text-white md:hover:bg-green-700 md:shadow">Call Us</a>
+      </div>
+    </div>
   </div>
 </section>
 
