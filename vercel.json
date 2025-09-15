@@ -1,25 +1,9 @@
 {
   "rewrites": [
-    {
-      "source": "/services",
-      "destination": "/services.html"
-    },
-    {
-      "source": "/community",
-      "destination": "/community.html"
-    },
-    {
-      "source": "/book-now",
-      "destination": "/book-now.html"
-    },
-    {
-      "source": "/blogs",
-      "destination": "/blogs.html"
-    },
-    {
-      "source": "/doctor.png",
-      "destination": "/doctor.png"
-    }
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/community", "destination": "/community.html" },
+    { "source": "/book-now", "destination": "/book-now.html" },
+    { "source": "/blogs", "destination": "/blogs.html" }
   ]
 }
 
