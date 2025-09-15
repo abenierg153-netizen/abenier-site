@@ -15,6 +15,10 @@
     {
       "source": "/blogs",
       "destination": "/blogs.html"
+    },
+    {
+      "source": "/doctor.png",
+      "destination": "/doctor.png"
     }
   ]
 }
