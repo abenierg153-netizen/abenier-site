@@ -47,7 +47,25 @@
     <!-- DESKTOP-ONLY: Add navigation menu -->
     <nav class="hidden md:flex md:items-center md:gap-6">
       <a href="index.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Home</a>
-      <a href="services.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Services</a>
+      
+      <!-- Services Dropdown -->
+      <div class="relative group">
+        <a href="services.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium flex items-center gap-1">
+          Services
+          <span class="text-xs">▼</span>
+        </a>
+        
+        <!-- Dropdown Menu -->
+        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="py-2">
+            <a href="services.html#GeneralDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">General Dentistry</a>
+            <a href="services.html#Orthodontics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Orthodontics</a>
+            <a href="services.html#DentalSurgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Dental Surgery</a>
+            <a href="services.html#CosmeticDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Cosmetic Dentistry</a>
+          </div>
+        </div>
+      </div>
+      
       <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Community</a>
       <a href="tel:0116662828" class="md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:font-medium">Call Us</a>
     </nav>
