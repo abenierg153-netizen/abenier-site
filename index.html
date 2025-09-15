@@ -62,12 +62,12 @@
 <!-- HERO SECTION -->
 <section class="pt-24 md:pt-0 sm:pt-12 bg-gradient-to-r from-blue-50 to-white md:py-12 md:px-8">
   <div class="container mx-auto px-4 text-center md:max-w-7xl md:mx-auto md:grid md:grid-cols-2 md:gap-8 md:items-center">
-    <!-- Mobile: Subheading text (order-1), Desktop: Doctor image side (md:order-1) -->
+    <!-- Mobile: Main heading (order-1), Desktop: Doctor image side (md:order-1) -->
     <div class="order-1 md:order-1 md:justify-self-start">
-      <!-- Mobile: Show subheading text -->
-      <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-4 md:hidden">
-        Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
-      </p>
+      <!-- Mobile: Show main heading -->
+      <h1 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:hidden">
+        Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+      </h1>
       
       <!-- Desktop: Show doctor image -->
       <img src='./dentist.png' alt='Doctor' class='hidden md:block w-64 h-64 md:w-[420px] md:h-[420px] rounded-full object-cover shadow-lg mx-auto' />
@@ -79,12 +79,10 @@
       </div>
     </div>
     
-    <!-- Mobile: Book button (order-2), Desktop: Hero text side (md:order-2) -->
+    <!-- Mobile: Doctor image (order-2), Desktop: Hero text side (md:order-2) -->
     <div class="order-2 md:order-2 md:text-left">
-      <!-- Mobile: Show book button -->
-      <div class="flex flex-col items-center gap-2 text-center px-4 md:hidden">
-        <a href="book-now.html" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow">Book Your Smile Today</a>
-      </div>
+      <!-- Mobile: Show doctor image -->
+      <img src='./dentist.png' alt='Doctor' class='w-64 h-64 rounded-full object-cover shadow-lg mx-auto md:hidden' />
       
       <!-- Desktop: Show heading text -->
       <h1 class="hidden md:block text-2xl sm:text-4xl font-bold text-gray-800 mb-4 md:text-5xl md:leading-tight md:font-bold md:text-blue-800">
@@ -109,8 +107,19 @@
       </div>
     </div>
     
-    <!-- Mobile: Trust badges (order-3), Desktop: Hidden -->
+    <!-- Mobile: Subheading, button, and trust badges (order-3), Desktop: Hidden -->
     <div class="order-3 md:hidden">
+      <!-- Subheading -->
+      <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-4">
+        Welcome to Yanet Speciality Dental Clinic - Ethiopia's leading digital dentistry hub with world-class care.
+      </p>
+      
+      <!-- Book button -->
+      <div class="flex flex-col items-center gap-2 text-center px-4 mb-4">
+        <a href="book-now.html" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow">Book Your Smile Today</a>
+      </div>
+      
+      <!-- Trust badges -->
       <div class="flex flex-col items-center justify-center gap-4 text-gray-600 text-sm">
         <span>🦷 Certified Dentists</span>
         <span>🏥 Modern Equipment</span>
