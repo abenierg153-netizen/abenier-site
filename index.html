@@ -68,7 +68,7 @@
         </div>
       </div>
       
-      <a href="/community" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Community</a>
+      <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Community</a>
       <a href="tel:0116662828" class="md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:font-medium">Call Us</a>
     </nav>
   </div>
@@ -115,7 +115,7 @@
       
       <!-- Desktop: Hero buttons -->
       <div class="hidden md:block mt-8 flex flex-col items-start gap-4 md:mt-8">
-        <a href="/book-now" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow md:px-6 md:py-3 md:rounded-xl md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:shadow">Book Your Smile Today</a>
+        <a href="book-now.html" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow md:px-6 md:py-3 md:rounded-xl md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:shadow">Book Your Smile Today</a>
         
         <!-- Trust badges (Desktop only) -->
         <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mt-6 text-gray-600 text-sm">
@@ -135,7 +135,7 @@
       
       <!-- Book button -->
       <div class="flex flex-col items-center gap-2 text-center px-4 mb-4">
-        <a href="/book-now" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow">Book Your Smile Today</a>
+        <a href="book-now.html" class="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow">Book Your Smile Today</a>
       </div>
       
       <!-- Trust badges -->
@@ -156,55 +156,7 @@
 </script>
 
 <script>
-  // Fade-up animation on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".fade-up");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-  
-<script>
-  // Fade-up animation on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".fade-up");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-  
-<script>
-  // Fade-up animation on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".fade-up");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-
-<script>
-  // Fade-up animation on scroll
+  // Optimized fade-up animation on scroll (single instance)
   document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".fade-up");
     const observer = new IntersectionObserver((entries) => {
@@ -1012,27 +964,27 @@
 </script>  
     
 <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden">
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden" style="opacity: 1 !important; transform: none !important;">
   <!-- Home Button -->
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
 
   <!-- Services Button -->
-  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🦷</span>
     <span class="text-xs">Services</span>
   </a>
 
   <!-- Community Button (blogs + giveaway merged) -->
-  <a href="/community" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🤝</span>
     <span class="text-xs">Community</span>
   </a>
 
   <!-- Book Now Button (appointments renamed) -->
-  <a href="/book-now" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🗓️</span>
     <span class="text-xs">Book Now</span>
   </a>
@@ -1048,21 +1000,73 @@
   /* Remove any transitions on navigation buttons for better mobile performance */
   .nav-btn {
     transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   
   /* Optimize for mobile performance */
   .nav-btn:hover {
     transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Ensure sticky navigation is never affected by fade-up animations */
+  nav.fixed {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  /* Override any fade-up classes on navigation */
+  nav.fixed .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 </style>
+
+<!-- ✅ IMMEDIATE NAVIGATION VISIBILITY SCRIPT -->
+<script>
+  // Force navigation to be visible immediately (runs before DOMContentLoaded)
+  (function() {
+    const nav = document.querySelector('nav.fixed');
+    if (nav) {
+      nav.style.opacity = '1';
+      nav.style.transform = 'none';
+      nav.style.animation = 'none';
+      nav.style.display = 'flex';
+    }
+    
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+      btn.style.opacity = '1';
+      btn.style.transform = 'none';
+      btn.style.animation = 'none';
+    });
+  })();
+</script>
 
 <!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
 <script>
   // Optimized active page highlighting for better mobile performance
   document.addEventListener("DOMContentLoaded", () => {
+    // Ensure navigation is visible
+    const nav = document.querySelector('nav.fixed');
+    if (nav) {
+      nav.style.opacity = '1';
+      nav.style.transform = 'none';
+      nav.style.animation = 'none';
+    }
+    
     // Remove active class from all buttons first
     const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(btn => btn.classList.remove('active'));
+    navButtons.forEach(btn => {
+      btn.classList.remove('active');
+      btn.style.opacity = '1';
+      btn.style.transform = 'none';
+      btn.style.animation = 'none';
+    });
     
     // Add active class to current page button
     const path = window.location.pathname;
