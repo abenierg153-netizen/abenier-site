@@ -1012,27 +1012,27 @@
 </script>  
     
 <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm md:hidden">
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden">
   <!-- Home Button -->
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
 
   <!-- Services Button -->
-  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
     <span>🦷</span>
     <span class="text-xs">Services</span>
   </a>
 
   <!-- Community Button (blogs + giveaway merged) -->
-  <a href="/community" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="/community" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
     <span>🤝</span>
     <span class="text-xs">Community</span>
   </a>
 
   <!-- Book Now Button (appointments renamed) -->
-  <a href="/book-now" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="/book-now" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
     <span>🗓️</span>
     <span class="text-xs">Book Now</span>
   </a>
@@ -1041,24 +1041,45 @@
 <!-- ✅ ACTIVE STYLE -->
 <style>
   .active {
-    color: #2563EB; /* theme blue */
+    color: #2563EB !important; /* theme blue */
     font-weight: bold;
+  }
+  
+  /* Remove any transitions on navigation buttons for better mobile performance */
+  .nav-btn {
+    transition: none !important;
+  }
+  
+  /* Optimize for mobile performance */
+  .nav-btn:hover {
+    transition: none !important;
   }
 </style>
 
 <!-- ✅ ACTIVE PAGE HIGHLIGHT SCRIPT -->
 <script>
+  // Optimized active page highlighting for better mobile performance
   document.addEventListener("DOMContentLoaded", () => {
+    // Remove active class from all buttons first
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to current page button
     const path = window.location.pathname;
-
+    let activeButton = null;
+    
     if (path.includes("services")) {
-      document.getElementById("servicesBtn").classList.add("active");
+      activeButton = document.getElementById("servicesBtn");
     } else if (path.includes("community")) {
-      document.getElementById("communityBtn").classList.add("active");
+      activeButton = document.getElementById("communityBtn");
     } else if (path.includes("book")) {
-      document.getElementById("bookBtn").classList.add("active");
+      activeButton = document.getElementById("bookBtn");
     } else {
-      document.getElementById("homeBtn").classList.add("active");
+      activeButton = document.getElementById("homeBtn");
+    }
+    
+    if (activeButton) {
+      activeButton.classList.add("active");
     }
   });
 </script>
