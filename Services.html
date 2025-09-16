@@ -381,5 +381,34 @@
     } else {
       document.getElementById("homeBtn").classList.add("active");
     }
+
+    // Handle anchor links to specific services
+    const hash = window.location.hash;
+    if (hash) {
+      const targetTab = hash.substring(1); // Remove the # symbol
+      const tabElement = document.getElementById(targetTab);
+      if (tabElement && tabElement.classList.contains('tab-content')) {
+        // Hide all tabs first
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => tab.classList.add('hidden'));
+        
+        // Show the target tab
+        tabElement.classList.remove('hidden');
+        
+        // Update tab button styling
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        tabButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-800');
+        });
+        
+        // Find and activate the corresponding tab button
+        const activeButton = document.querySelector(`[onclick*="${targetTab}"]`);
+        if (activeButton) {
+          activeButton.classList.remove('bg-gray-200', 'text-gray-800');
+          activeButton.classList.add('bg-blue-600', 'text-white');
+        }
+      }
+    }
   });
 </script>
