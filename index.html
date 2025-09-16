@@ -1016,27 +1016,27 @@
 </script>  
     
 <!-- ✅ FINAL FIXED STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden" style="opacity: 1 !important; transform: none !important;">
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden" style="opacity: 1 !important; transform: none !important; pointer-events: auto !important;">
   <!-- Home Button -->
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important; pointer-events: auto !important;">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
 
   <!-- Services Button -->
-  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important; pointer-events: auto !important;">
     <span>🦷</span>
     <span class="text-xs">Services</span>
   </a>
 
   <!-- Community Button (blogs + giveaway merged) -->
-  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important; pointer-events: auto !important;">
     <span>🤝</span>
     <span class="text-xs">Community</span>
   </a>
 
   <!-- Book Now Button (appointments renamed) -->
-  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
+  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important; pointer-events: auto !important;">
     <span>🗓️</span>
     <span class="text-xs">Book Now</span>
   </a>
@@ -1055,6 +1055,10 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
   }
   
   /* Optimize for mobile performance */
@@ -1063,11 +1067,19 @@
     animation: none !important;
   }
   
+  /* Ensure navigation buttons are always clickable */
+  .nav-btn:active {
+    transform: scale(0.95) !important;
+  }
+  
   /* Ensure sticky navigation is never affected by fade-up animations */
   nav.fixed {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
+    pointer-events: auto !important;
+    z-index: 9999 !important;
+    position: fixed !important;
   }
   
   /* Force hide sticky navigation on desktop */
@@ -1104,6 +1116,15 @@
       btn.style.opacity = '1';
       btn.style.transform = 'none';
       btn.style.animation = 'none';
+      btn.style.pointerEvents = 'auto';
+      btn.style.cursor = 'pointer';
+      
+      // Add click event listener for debugging
+      btn.addEventListener('click', function(e) {
+        console.log('Navigation button clicked:', this.href);
+        // Ensure the click event is not prevented
+        return true;
+      });
     });
   })();
 </script>
@@ -1127,6 +1148,8 @@
       btn.style.opacity = '1';
       btn.style.transform = 'none';
       btn.style.animation = 'none';
+      btn.style.pointerEvents = 'auto';
+      btn.style.cursor = 'pointer';
     });
     
     // Add active class to current page button
