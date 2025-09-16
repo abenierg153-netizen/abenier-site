@@ -16,113 +16,187 @@
 
     /* Active nav style */
     .active { color: #2563EB; font-weight: bold; }
+    
+    /* Remove any transitions on navigation buttons for better mobile performance */
+    .nav-btn {
+      transition: none !important;
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    /* Optimize for mobile performance */
+    .nav-btn:hover {
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    /* Ensure sticky navigation is never affected by fade-up animations */
+    nav.fixed {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+    
+    /* Force hide sticky navigation on desktop */
+    @media (min-width: 768px) {
+      nav.fixed {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+    }
+    
+    /* Override any fade-up classes on navigation */
+    nav.fixed .fade-up {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
   </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2 sm:py-3">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2">
+<header class="bg-[#E6F7F9] shadow-sm border-b border-gray-200 fixed top-0 left-0 w-full z-50 backdrop-blur-sm md:sticky md:top-0 md:z-50 md:shadow md:bg-white">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2 md:max-w-7xl md:mx-auto md:px-8 md:py-1 md:flex md:items-center md:justify-between md:bg-[#E0F7FA]">
+    
+    <!-- Left side: Logo -->
+    <div class="flex items-center space-x-2 md:flex md:items-center md:gap-0">
       <img src="images/teeth_logo_circle.png" alt="Tooth Logo" class="w-10 h-10 rounded-full object-cover">
     </div>
-    <!-- Clinic Title -->
-    <div class="flex flex-col items-center leading-tight flex-grow text-center">
-      <h1 class="font-extrabold text-lg sm:text-xl tracking-wide text-[#2563EB]">YANET SPECIALITY</h1>
-      <h2 class="font-extrabold text-base sm:text-lg tracking-wide text-[#2563EB]">DENTAL CLINIC</h2>
+
+    <!-- Center: Clinic Title -->
+    <div class="flex flex-col items-center leading-tight flex-grow text-center md:flex md:items-center md:gap-3">
+      <h1 class="font-bold text-lg sm:text-xl tracking-wide text-[#2563EB] md:text-2xl md:font-bold md:tracking-wide md:mt-2">
+        YANET SPECIALITY
+      </h1>
+      <h2 class="font-bold text-base sm:text-lg tracking-wide text-[#2563EB] md:text-2xl md:font-bold md:tracking-wide">
+        DENTAL CLINIC
+      </h2>
     </div>
-    <!-- Call Us -->
-    <div class="flex items-center space-x-2">
-      <a href="tel:0116662828" class="flex items-center space-x-1 bg-[#2563EB] text-white text-xs sm:text-sm font-semibold px-2.5 py-1 rounded-md hover:bg-blue-700 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.023l-1.3 1.3a16 16 0 006.586 6.586l1.3-1.3a1 1 0 011.023-.272l4.553 1.518A1 1 0 0121 18.72V21a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z" />
-        </svg>
-        <span>Call Us</span>
+
+    <!-- Right side: Call Us (Mobile only) -->
+    <div class="flex items-center space-x-2 block md:hidden">
+      <a href="tel:0116662828" 
+         class="bg-blue-600 text-white px-3 py-1 rounded-lg shadow hover:bg-blue-700 text-sm ml-2">
+        Call Us
       </a>
     </div>
+    
+    <!-- DESKTOP-ONLY: Add navigation menu -->
+    <nav class="hidden md:flex md:items-center md:gap-6">
+      <a href="index.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Home</a>
+      
+      <!-- Services Dropdown (Desktop only) -->
+      <div class="relative group hidden md:block">
+        <a href="services.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium flex items-center space-x-1">
+          <span>Services</span>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 text-gray-500' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7' />
+          </svg>
+        </a>
+        
+        <!-- Dropdown Menu -->
+        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="py-2">
+            <a href="services.html#GeneralDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">General Dentistry</a>
+            <a href="services.html#Orthodontics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Orthodontics</a>
+            <a href="services.html#DentalSurgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Dental Surgery</a>
+            <a href="services.html#CosmeticDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Cosmetic Dentistry</a>
+          </div>
+        </div>
+      </div>
+      
+      <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Community</a>
+      <a href="tel:0116662828" class="md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:font-medium">Call Us</a>
+    </nav>
   </div>
 </header>
 
-<main class="pt-24 max-w-5xl mx-auto px-6 space-y-12">
+<main class="pt-24 md:pt-28 max-w-5xl mx-auto px-6 md:px-8 space-y-12 md:space-y-16 bg-blue-50">
+  <div class="bg-white rounded-xl shadow-md p-6 md:p-10">
 
   <!-- COMMUNITY TABS -->
   <section class="fade-up">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">🤝 Community</h2>
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-4 md:mb-8">
+      <h2 class="text-xl font-bold text-blue-800">🤝 Community</h2>
+    </div>
 
     <!-- ✅ Fixed Tabs (spread evenly, no scrolling) -->
-    <div class="grid grid-cols-4 border-b border-gray-200 mb-6 text-center">
-      <button class="tab-btn py-2 font-medium text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="tips">Dental Tips</button>
-      <button class="tab-btn py-2 font-medium text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="news">Clinic News</button>
-      <button class="tab-btn py-2 font-medium text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="stories">Patient Stories</button>
-      <button class="tab-btn py-2 font-medium text-gray-700 border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="giveaway">Giveaway</button>
+    <div class="grid grid-cols-4 border-b border-gray-200 mb-6 md:mb-8 text-center">
+      <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="tips">Dental Tips</button>
+      <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="news">Clinic News</button>
+      <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="stories">Patient Stories</button>
+      <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="giveaway">Giveaway</button>
     </div>
 
     <!-- Tab Contents -->
-    <div id="tips" class="tab-content space-y-6">
-      <article class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold text-gray-800">How to Keep Your Teeth Healthy</h3>
-        <p class="mt-2 text-gray-600">Daily habits and pro tips from our dentists...</p>
+    <div id="tips" class="tab-content space-y-6 md:space-y-8">
+      <article class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <h3 class="font-semibold text-gray-800 md:text-xl">How to Keep Your Teeth Healthy</h3>
+        <p class="mt-2 text-gray-600 md:text-lg">Daily habits and pro tips from our dentists...</p>
       </article>
-      <article class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold text-gray-800">The Truth About Teeth Whitening</h3>
-        <p class="mt-2 text-gray-600">What works, what doesn’t, and when to see a dentist...</p>
-      </article>
-    </div>
-
-    <div id="news" class="tab-content space-y-6 hidden">
-      <article class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold text-gray-800">New Equipment Installed</h3>
-        <p class="mt-2 text-gray-600">We just upgraded our dental chairs and X-ray machines.</p>
-      </article>
-      <article class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold text-gray-800">New Opening Hours</h3>
-        <p class="mt-2 text-gray-600">Starting next month, we are open on Saturdays!</p>
+      <article class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <h3 class="font-semibold text-gray-800 md:text-xl">The Truth About Teeth Whitening</h3>
+        <p class="mt-2 text-gray-600 md:text-lg">What works, what doesn't, and when to see a dentist...</p>
       </article>
     </div>
 
-    <div id="stories" class="tab-content space-y-6 hidden">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-600">“Yanet Dental transformed my smile! The braces were comfortable and the staff so kind.”</p>
-        <h4 class="mt-3 font-semibold text-gray-800">— Sara M.</h4>
+    <div id="news" class="tab-content space-y-6 md:space-y-8 hidden">
+      <article class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <h3 class="font-semibold text-gray-800 md:text-xl">New Equipment Installed</h3>
+        <p class="mt-2 text-gray-600 md:text-lg">We just upgraded our dental chairs and X-ray machines.</p>
+      </article>
+      <article class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <h3 class="font-semibold text-gray-800 md:text-xl">New Opening Hours</h3>
+        <p class="mt-2 text-gray-600 md:text-lg">Starting next month, we are open on Saturdays!</p>
+      </article>
+    </div>
+
+    <div id="stories" class="tab-content space-y-6 md:space-y-8 hidden">
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <p class="text-gray-600 md:text-lg">"Yanet Dental transformed my smile! The braces were comfortable and the staff so kind."</p>
+        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">— Sara M.</h4>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-600">“I loved the free consultation. They explained everything clearly before my whitening.”</p>
-        <h4 class="mt-3 font-semibold text-gray-800">— Dawit K.</h4>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow">
+        <p class="text-gray-600 md:text-lg">"I loved the free consultation. They explained everything clearly before my whitening."</p>
+        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">— Dawit K.</h4>
       </div>
     </div>
 
-    <div id="giveaway" class="tab-content space-y-6 hidden">
-      <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 text-center shadow">
-        <h3 class="text-lg font-bold text-gray-800">Win a Free Teeth Cleaning!</h3>
-        <p class="mt-2 text-gray-600">Enter your details below to join this month’s giveaway.</p>
+    <div id="giveaway" class="tab-content space-y-6 md:space-y-8 hidden">
+      <div class="bg-blue-50 p-6 md:p-8 rounded-xl border border-blue-200 text-center shadow">
+        <h3 class="text-lg md:text-2xl font-bold text-gray-800">Win a Free Teeth Cleaning!</h3>
+        <p class="mt-2 text-gray-600 md:text-lg">Enter your details below to join this month's giveaway.</p>
         <form class="mt-4 grid gap-4 sm:grid-cols-2 max-w-md mx-auto">
-          <input type="text" placeholder="Your Name" class="p-3 border rounded-lg w-full" required>
-          <input type="email" placeholder="Your Email" class="p-3 border rounded-lg w-full" required>
-          <button type="submit" class="col-span-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Enter Giveaway</button>
+          <input type="text" placeholder="Your Name" class="p-3 md:p-4 border rounded-lg w-full md:text-lg" required>
+          <input type="email" placeholder="Your Email" class="p-3 md:p-4 border rounded-lg w-full md:text-lg" required>
+          <button type="submit" class="col-span-2 px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 md:text-lg font-medium">Enter Giveaway</button>
         </form>
       </div>
     </div>
 
   </section>
 
+  </div>
 </main>
 
 <!-- ✅ STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 backdrop-blur-sm">
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden" style="opacity: 1 !important; transform: none !important;">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🏠</span>
     <span class="text-xs">Home</span>
   </a>
-  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🦷</span>
     <span class="text-xs">Services</span>
   </a>
-  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🤝</span>
     <span class="text-xs">Community</span>
   </a>
-  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB] transition">
+  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
     <span>🗓️</span>
     <span class="text-xs">Book Now</span>
   </a>

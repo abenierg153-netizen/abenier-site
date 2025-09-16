@@ -50,7 +50,7 @@
       
       <!-- Services Dropdown (Desktop only) -->
       <div class="relative group hidden md:block">
-        <a href="/services" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium flex items-center space-x-1">
+        <a href="services.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium flex items-center space-x-1">
           <span>Services</span>
           <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 text-gray-500' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
             <path stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7' />
@@ -60,10 +60,10 @@
         <!-- Dropdown Menu -->
         <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
           <div class="py-2">
-            <a href="/services#general-dentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">General Dentistry</a>
-            <a href="/services#orthodontics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Orthodontics</a>
-            <a href="/services#dental-surgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Dental Surgery</a>
-            <a href="/services#cosmetic-dentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Cosmetic Dentistry</a>
+            <a href="services.html#GeneralDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">General Dentistry</a>
+            <a href="services.html#Orthodontics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Orthodontics</a>
+            <a href="services.html#DentalSurgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Dental Surgery</a>
+            <a href="services.html#CosmeticDentistry" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Cosmetic Dentistry</a>
           </div>
         </div>
       </div>
@@ -76,18 +76,23 @@
   
    
 <!-- HERO SECTION -->
-<section class="pt-24 md:pt-0 sm:pt-12 bg-gradient-to-r from-blue-50 to-white md:py-12 md:px-8">
-  <div class="container mx-auto px-4 text-center md:max-w-7xl md:mx-auto md:grid md:grid-cols-2 md:gap-8 md:items-center">
+<section class="pt-24 md:pt-0 sm:pt-12 bg-blue-50 md:py-12 md:px-8">
+  <div class="container mx-auto px-4 text-center md:max-w-7xl md:mx-auto">
+    <div class="bg-white rounded-xl shadow-md p-6 md:p-10">
+      <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center">
     <!-- Mobile: Main heading (order-1), Desktop: Doctor image side (md:order-1) -->
     <div class="order-1 md:order-1 md:justify-self-start">
       <!-- Mobile: Show main heading -->
       <h1 class="text-2xl sm:text-4xl font-bold text-gray-600 mb-4 md:hidden">
-        Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+        Smile Brighter With Expert Care in the Heart of Addis Ababa &#x1F1EA;&#x1F1F9;
       </h1>
       
       <!-- Desktop: Show doctor image -->
       <!-- Desktop: Show doctor image -->
-      <img src='./dentist.png' alt='Doctor' class='hidden md:block w-72 h-72 md:w-[480px] md:h-[480px] rounded-full object-cover shadow-lg mx-auto mt-4' />
+      <div class="relative flex justify-center items-center">
+        <div class="absolute inset-0 bg-gradient-radial from-blue-100 via-blue-200 to-transparent rounded-full blur-3xl"></div>
+        <img src='./dentist.png' alt='Doctor' class='relative w-72 h-72 md:w-[480px] md:h-[480px] rounded-full object-cover shadow-lg mx-auto mt-4 hidden md:block' />
+      </div>
       
       <!-- Desktop-only caption -->
       <div class="hidden md:block mt-4 text-center text-gray-700">
@@ -101,11 +106,14 @@
       <!-- Mobile: Show doctor image -->
       <!-- Mobile: Show doctor image -->
       <!-- Mobile: Show doctor image -->
-      <img src='./dentist.png' alt='Doctor' class='w-80 h-80 rounded-full object-cover shadow-lg mx-auto md:hidden' />
+      <div class="relative flex justify-center items-center">
+        <div class="absolute inset-0 bg-gradient-radial from-blue-100 via-blue-200 to-transparent rounded-full blur-3xl"></div>
+        <img src='./dentist.png' alt='Doctor' class='relative w-80 h-80 rounded-full object-cover shadow-lg mx-auto md:hidden' />
+      </div>
       
       <!-- Desktop: Show heading text -->
       <h1 class="hidden md:block text-2xl sm:text-4xl font-bold text-gray-800 mb-6 md:text-5xl md:leading-tight md:font-bold md:text-blue-800 md:text-left">
-        Smile Brighter With Expert Care in the Heart of Addis Ababa 🇪🇹
+        Smile Brighter With Expert Care in the Heart of Addis Ababa &#x1F1EA;&#x1F1F9;
       </h1>
       
       <!-- Desktop: Show subheading -->
@@ -145,6 +153,8 @@
         <span>⭐ 10+ Years Experience</span>
       </div>
     </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -172,9 +182,11 @@
 </script>  
 <!-- SERVICES -->
 <section class="px-4 py-8 sm:px-6 sm:py-12 bg-gray-50">
-  <div class="flex items-center justify-between mb-6 sm:mb-8">
-    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 uppercase tracking-wide">Our Services</h3>
-    <a href="services.html" class="text-sm text-blue-600 font-medium hover:underline">See All →</a>
+  <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6 sm:mb-8">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-bold text-blue-800">Our Services</h3>
+      <a href="services.html" class="text-sm text-blue-600 font-medium hover:underline">See All →</a>
+    </div>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
@@ -235,191 +247,188 @@
 </section>
   
 <!-- ✅ VIP ROOM -->
-<section class="px-4 py-6">
-  <h3 class="text-lg font-bold text-gray-900 uppercase mb-2">VIP ROOM</h3>
-  <p class="text-gray-600 mb-4">
-    Experience comfort, privacy, and luxury in our exclusive VIP spaces designed for your ultimate care.
-  </p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <!-- Image 1 -->
-    <div class="overflow-hidden rounded-2xl shadow-md">
-      <img src="images/imagevip1.jpg" alt="VIP Room 1" 
-           class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
+<section class="px-4 py-6 bg-blue-50">
+  <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <h3 class="text-xl font-bold text-blue-800">VIP ROOM</h3>
     </div>
+    <p class="text-gray-600 mb-6 md:text-lg md:text-center md:max-w-3xl md:mx-auto">
+      Experience comfort, privacy, and luxury in our exclusive VIP spaces designed for your ultimate care.
+    </p>
 
-    <!-- Image 2 -->
-    <div class="overflow-hidden rounded-2xl shadow-md">
-      <img src="images/imagevip2.jpg" alt="VIP Room 2" 
-           class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+      <!-- Image 1 -->
+      <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/imagevip1.jpg" alt="VIP Room 1" 
+             class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
 
-    <!-- Image 3 -->
-    <div class="overflow-hidden rounded-2xl shadow-md">
-      <img src="images/imagevip3.jpg" alt="VIP Room 3" 
-           class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
+      <!-- Image 2 -->
+      <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/imagevip2.jpg" alt="VIP Room 2" 
+             class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+
+      <!-- Image 3 -->
+      <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/imagevip3.jpg" alt="VIP Room 3" 
+             class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
     </div>
   </div>
 </section>
 
-<section class="px-4 mt-4">
-  <h2 class="text-lg font-semibold mb-4 text-center">BFORE & AFTER RESULTS</h2>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Before & After Reviews</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 p-4">
+<section class="px-4 mt-4 bg-blue-50">
+  <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <h2 class="text-xl font-bold text-blue-800 text-center">BEFORE & AFTER RESULTS</h2>
+    </div>
 
   <!-- Grid Container -->
-  <div id="reviews-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div id="reviews-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
 
     <!-- CUSTOMER 1 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c1-before" src="images/sp-c1-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c1-before" src="images/sp-c1-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c1-after" src="images/sp-c1-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c1-after" src="images/sp-c1-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c1-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Amazing difference!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c1-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Amazing difference!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 2 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c2-before" src="images/sp-c2-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c2-before" src="images/sp-c2-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c2-after" src="images/sp-c2-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c2-after" src="images/sp-c2-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c2-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Loved the results!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c2-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Loved the results!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 3 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c3-before" src="images/sp-c3-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c3-before" src="images/sp-c3-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c3-after" src="images/sp-c3-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c3-after" src="images/sp-c3-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c3-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Very satisfied with the treatment!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c3-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Perfect smile!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 4 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c4-before" src="images/sp-c4-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c4-before" src="images/sp-c4-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c4-after" src="images/sp-c4-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c4-after" src="images/sp-c4-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c4-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Professional and friendly team."</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c4-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Professional and friendly team."</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 5 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c5-before" src="images/sp-c5-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c5-before" src="images/sp-c5-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c5-after" src="images/sp-c5-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c5-after" src="images/sp-c5-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c5-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Life-changing results!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c5-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Life-changing results!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 6 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c6-before" src="images/sp-c6-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c6-before" src="images/sp-c6-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c6-after" src="images/sp-c6-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c6-after" src="images/sp-c6-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c6-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Highly recommend this clinic."</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c6-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Highly recommend this clinic."</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 7 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c7-before" src="images/sp-c7-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c7-before" src="images/sp-c7-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c7-after" src="images/sp-c7-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c7-after" src="images/sp-c7-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c7-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Best dental care I've received."</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c7-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Best dental care I've received."</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 8 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c8-before" src="images/sp-c8-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c8-before" src="images/sp-c8-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c8-after" src="images/sp-c8-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c8-after" src="images/sp-c8-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c8-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Truly outstanding work!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c8-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Truly outstanding work!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
     <!-- CUSTOMER 9 -->
-    <div class="bg-white rounded-3xl shadow p-4">
+    <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
       <div class="flex gap-3">
         <div class="flex-1">
-          <img id="c9-before" src="images/sp-c9-before.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="Before">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">Before</h4>
+          <img id="c9-before" src="images/sp-c9-before.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="Before">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">Before</h4>
         </div>
         <div class="flex-1">
-          <img id="c9-after" src="images/sp-c9-after.jpg" class="w-full h-40 object-cover rounded-2xl mb-2" alt="After">
-          <h4 class="text-sm font-semibold text-gray-700 text-center">After</h4>
+          <img id="c9-after" src="images/sp-c9-after.jpg" class="w-full h-40 md:h-48 object-cover rounded-2xl mb-2" alt="After">
+          <h4 class="text-sm md:text-base font-semibold text-gray-700 text-center">After</h4>
         </div>
       </div>
-      <p id="c9-testimonial" class="mt-3 text-sm text-gray-600 italic text-center">"Couldn't be happier with the outcome!"</p>
-      <p class="text-xs text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
+      <p id="c9-testimonial" class="mt-3 text-sm md:text-base text-gray-600 italic text-center">"Couldn't be happier with the outcome!"</p>
+      <p class="text-xs md:text-sm text-gray-500 text-center mt-1">— ⭐⭐⭐⭐⭐</p>
     </div>
 
   </div>
@@ -465,12 +474,8 @@
         }
       )
       .subscribe();
-  </script>
-</body>
-</html>
-
-<!-- Include AOS CSS in <head> -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </div>
+</section>
 
 <!-- Bridge Between Social Proof and Doctors -->
 <div class="text-center my-10" data-aos="fade-up" data-aos-duration="1000">
@@ -487,91 +492,98 @@
   
 
 <!-- OUR DOCTORS -->
-<section class="px-4 py-6 bg-white">
-  <div class="text-center mb-6">
-    <h3 class="text-lg font-bold text-gray-900 uppercase">Our Doctors</h3>
-    <p class="text-sm text-gray-500 mt-1">Meet our expert dental team</p>
-  </div>
-
-  <!-- CAD CAM Card First -->
-  <div class="flex justify-center mb-6">
-    <div class="bg-white rounded-2xl shadow p-4 text-center w-full md:w-1/2">
-      <img src="images/cadcam.jpg" alt="CAD CAM" class="w-full h-48 object-cover rounded-xl mb-3">
-      <p class="text-base font-semibold text-gray-900">Dr. Amelemal Mengestu</p>
-      <p class="text-sm text-gray-500">Founder of Yanet Specialty Dental Clinic and Medical Director</p>
+<section class="px-4 py-6 bg-blue-50">
+  <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <div class="text-center">
+        <h3 class="text-xl font-bold text-blue-800">Our Doctors</h3>
+        <p class="text-sm md:text-base text-blue-600 mt-1">Meet our expert dental team</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Doctors Grid (8 total) -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <!-- CAD CAM Card First -->
+    <div class="flex justify-center mb-8">
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center w-full md:w-2/3">
+        <img src="images/cadcam.jpg" alt="CAD CAM" class="w-full h-48 md:h-64 object-cover rounded-xl mb-4">
+        <p class="text-lg md:text-xl font-semibold text-gray-900">Dr. Amelemal Mengestu</p>
+        <p class="text-sm md:text-base text-gray-500">Founder of Yanet Specialty Dental Clinic and Medical Director</p>
+      </div>
+    </div>
+
+    <!-- Doctors Grid (8 total) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
     <!-- Doctor 1 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor1.jpg" alt="Dr. Johan Smit" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Johan Smit</h4>
-      <p class="text-sm text-gray-500">Orthodontist</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor1.jpg" alt="Dr. Johan Smit" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Johan Smit</h4>
+      <p class="text-sm md:text-base text-gray-500">Orthodontist</p>
     </div>
 
     <!-- Doctor 2 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor2.jpg" alt="Dr. Sarah Lee" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Sarah Lee</h4>
-      <p class="text-sm text-gray-500">Cosmetic Dentistry</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor2.jpg" alt="Dr. Sarah Lee" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Sarah Lee</h4>
+      <p class="text-sm md:text-base text-gray-500">Cosmetic Dentistry</p>
     </div>
 
     <!-- Doctor 3 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor3.jpg" alt="Dr. Mark Tan" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Mark Tan</h4>
-      <p class="text-sm text-gray-500">Oral Surgeon</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor3.jpg" alt="Dr. Mark Tan" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Mark Tan</h4>
+      <p class="text-sm md:text-base text-gray-500">Oral Surgeon</p>
     </div>
 
     <!-- Doctor 4 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor4.jpg" alt="Dr. Emily Clark" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Emily Clark</h4>
-      <p class="text-sm text-gray-500">Pediatric Dentistry</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor4.jpg" alt="Dr. Emily Clark" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Emily Clark</h4>
+      <p class="text-sm md:text-base text-gray-500">Pediatric Dentistry</p>
     </div>
 
     <!-- Doctor 5 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor5.jpg" alt="Doctor 5" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Doctor Name </h4>
-      <p class="text-sm text-gray-500">Specialization</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor5.jpg" alt="Doctor 5" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Doctor Name </h4>
+      <p class="text-sm md:text-base text-gray-500">Specialization</p>
     </div>
 
     <!-- Doctor 6 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor6.jpg" alt="Doctor 6" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Doctor Name </h4>
-      <p class="text-sm text-gray-500">Specialization</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor6.jpg" alt="Doctor 6" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Doctor Name </h4>
+      <p class="text-sm md:text-base text-gray-500">Specialization</p>
     </div>
 
     <!-- Doctor 7 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor7.jpg" alt="Doctor 7" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Doctor Name </h4>
-      <p class="text-sm text-gray-500">Specialization</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor7.jpg" alt="Doctor 7" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Doctor Name </h4>
+      <p class="text-sm md:text-base text-gray-500">Specialization</p>
     </div>
 
     <!-- Doctor 8 -->
-    <div class="bg-white rounded-2xl shadow p-4 text-center">
-      <img src="images/doctor8.jpg" alt="Doctor 8" class="w-28 h-28 object-cover rounded-full mx-auto mb-2">
-      <h4 class="text-base font-semibold text-gray-900">Dr. Doctor Name </h4>
-      <p class="text-sm text-gray-500">Specialization</p>
+    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 text-center">
+      <img src="images/doctor8.jpg" alt="Doctor 8" class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-3">
+      <h4 class="text-base md:text-lg font-semibold text-gray-900">Dr. Doctor Name </h4>
+      <p class="text-sm md:text-base text-gray-500">Specialization</p>
     </div>
+  </div>
   </div>
 </section>
 <!-- 10-YEAR ANNIVERSARY CELEBRATION PHOTOS -->
-<section class="max-w-6xl mx-auto px-6 py-16">
-  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8">
-    Celebrating 10 Years of Care
-  </h2>
-  <p class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto text-center mb-8">
-    Thank you to our patients for a decade of trust and healthy smiles. Here’s a glimpse from our anniversary celebration!
-  </p>
+<section class="max-w-6xl mx-auto px-6 py-16 bg-blue-50">
+  <div class="bg-white rounded-xl shadow-md p-6 md:p-10">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-8">
+      <h2 class="text-xl font-bold text-blue-800 text-center">
+        Celebrating 10 Years of Care
+      </h2>
+    </div>
+    <p class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto text-center mb-8">
+      Thank you to our patients for a decade of trust and healthy smiles. Here's a glimpse from our anniversary celebration!
+    </p>
 
-  <!-- Horizontal Scroll Container -->
-  <div class="flex space-x-6 overflow-x-auto pb-4">
+    <!-- Horizontal Scroll Container -->
+    <div class="flex space-x-6 overflow-x-auto pb-4">
     <!-- Photo 1 (keep as is) -->
     <div class="flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg overflow-hidden">
       <img src="images/anniversary_01.jpg" alt="Team Celebration" class="w-full h-auto object-contain">
@@ -612,39 +624,41 @@
       <img src="images/anniversary_08.jpg" alt="Final Ceremony" class="w-full h-auto object-contain">
     </div>
   </div>
+  </div>
 </section>
 
 <!-- WHY CHOOSE US ? -->
-<section id="why-choose-us" class="py-12 bg-gray-50">
+<section id="why-choose-us" class="py-12 bg-blue-50">
   <div class="container mx-auto px-4">
-    
-    <!-- Green Box -->
-    <div class="bg-emerald-600 text-white rounded-2xl shadow-lg p-8 text-center">
-      
-      <h2 class="text-3xl font-bold mb-4 tracking-wide">WHY CHOOSE US</h2>
-      <p class="text-base mb-6">
-        At Yanet Speciality Dental Clinic, we combine experience, technology, and care to give you the best smile.  
-      </p>
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
+      <!-- Green Box -->
+      <div class="bg-emerald-600 text-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
+        <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+          <h2 class="text-xl font-bold text-blue-800">WHY CHOOSE US</h2>
+        </div>
+        <p class="text-base md:text-lg mb-6">
+          At Yanet Speciality Dental Clinic, we combine experience, technology, and care to give you the best smile.  
+        </p>
 
-      <!-- Features -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div class="bg-white text-emerald-700 rounded-lg p-3 shadow-md">
-          <h3 class="font-semibold text-lg">🦷 Experienced Specialists</h3>
-          <p class="text-sm">Our doctors bring years of expertise to ensure safe and effective treatments.</p>
+        <!-- Features -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
+          <div class="bg-white text-emerald-700 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="font-semibold text-lg md:text-xl">🦷 Experienced Specialists</h3>
+            <p class="text-sm md:text-base">Our doctors bring years of expertise to ensure safe and effective treatments.</p>
+          </div>
+          <div class="bg-white text-emerald-700 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="font-semibold text-lg md:text-xl">💻 Modern Technology</h3>
+            <p class="text-sm md:text-base">Equipped with advanced digital tools including Ethiopia's first robotic preparation system.</p>
+          </div>
+          <div class="bg-white text-emerald-700 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="font-semibold text-lg md:text-xl">💰 Affordable Care</h3>
+            <p class="text-sm md:text-base">We provide top-quality dental care at fair and transparent prices.</p>
+          </div>
+          <div class="bg-white text-emerald-700 rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="font-semibold text-lg md:text-xl">⭐ Trusted for 10+ Years</h3>
+            <p class="text-sm md:text-base">Over a decade of excellence in dental care in the heart of Addis Ababa.</p>
+          </div>
         </div>
-        <div class="bg-white text-emerald-700 rounded-lg p-3 shadow-md">
-          <h3 class="font-semibold text-lg">💻 Modern Technology</h3>
-          <p class="text-sm">Equipped with advanced digital tools including Ethiopia’s first robotic preparation system.</p>
-        </div>
-        <div class="bg-white text-emerald-700 rounded-lg p-3 shadow-md">
-          <h3 class="font-semibold text-lg">💰 Affordable Care</h3>
-          <p class="text-sm">We provide top-quality dental care at fair and transparent prices.</p>
-        </div>
-        <div class="bg-white text-emerald-700 rounded-lg p-3 shadow-md">
-          <h3 class="font-semibold text-lg">⭐ Trusted for 10+ Years</h3>
-          <p class="text-sm">Over a decade of excellence in dental care in the heart of Addis Ababa.</p>
-        </div>
-      </div>
 
       <!-- Chat Instantly Button -->
       <div class="flex justify-center">
@@ -656,12 +670,40 @@
 
     </div>
   </div>
+  </div>
 </section>
   
+<!-- OUR CERTIFICATES -->
+<section class="px-4 py-6 bg-blue-50">
+  <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-10">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <h2 class="text-xl font-bold text-blue-800 text-center">Our Certificates</h2>
+    </div>
+    <p class="text-gray-600 text-center mb-6 md:text-lg md:max-w-3xl md:mx-auto">
+      Official recognitions and accreditations that highlight our commitment to quality care.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="flex flex-col items-center">
+        <img src="/certificate1.png" alt="Certificate 1" class="w-32 h-32 object-contain mb-2">
+        <p class="text-sm text-gray-700">ISO 9001 Quality Management</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/certificate2.png" alt="Certificate 2" class="w-32 h-32 object-contain mb-2">
+        <p class="text-sm text-gray-700">Ministry of Health License</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="/certificate3.png" alt="Certificate 3" class="w-32 h-32 object-contain mb-2">
+        <p class="text-sm text-gray-700">Dental Association Membership</p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- TESTIMONIALS -->
 <section class="py-12 bg-gray-50">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-2xl font-bold mb-6">Hear from Our Customers</h2>
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <h2 class="text-xl font-bold text-blue-800">Hear from Our Customers</h2>
+    </div>
 
     <!-- Scrollable container -->
     <div id="testimonial-wrapper" class="overflow-x-auto no-scrollbar scroll-smooth">
@@ -757,49 +799,59 @@
 </script>
   
 <!-- ABOUT US SECTION -->
-<section class="px-4 py-4 bg-[#fef9f5] border-b border-gray-200">
-  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-5 text-center">
-    <h2 class="text-xl font-bold mb-3">ABOUT US</h2>
+<section class="px-4 py-4 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md text-center">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200">
+      <h2 class="text-xl font-bold text-blue-800">ABOUT US</h2>
+    </div>
+    <div class="p-6 md:p-10">
     <ul class="space-y-2 text-left text-base">
       <li>✅ From the heart of Ethiopia, Yanet Specialty Dental Clinic is redefining the future of dentistry.</li>
       <li>✅ Founded by four passionate professionals, now a state-of-the-art center with the latest digital technology.</li>
-      <li>✅ Proud home to Ethiopia’s first robotic tooth-preparation machine.</li>
+      <li>✅ Proud home to Ethiopia's first robotic tooth-preparation machine.</li>
     </ul>
+    </div>
   </div>
 </section>
 
 <!-- OUR VISION SECTION -->
-<section class="px-4 py-4 bg-white border-b border-gray-200">
-  <div class="max-w-3xl mx-auto bg-[#f9fafb] rounded-xl shadow-md p-5 text-center">
-    <h2 class="text-xl font-bold mb-3">OUR VISION 🚀</h2>
+<section class="px-4 py-4 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md text-center">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200">
+      <h2 class="text-xl font-bold text-blue-800">OUR VISION 🚀</h2>
+    </div>
+    <div class="p-6 md:p-10">
     <ul class="space-y-2 text-left text-base">
       <li>📈 Rising to join the 🏅 World’s Top 10 Dental Clinics.</li>
       <li>✈️ Dental Tourism — Bringing the world to Ethiopia for top-tier smiles and rich cultural experiences.</li>
       <li>🌍 Growth Ahead — Expanding to Dubai & East Africa as Yanet International, driven by innovation, compassion, and world-class standards.</li>
     </ul>
+    </div>
   </div>
 </section>
 
 <!-- OUR FACILITIES SECTION -->
-<section class="px-4 py-4 bg-[#f7f7f7] border-b border-gray-200">
-  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-5 text-center">
-    <h2 class="text-xl font-bold mb-3">OUR FACILITIES</h2>
+<section class="px-4 py-4 bg-blue-50 border-b border-gray-200">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md text-center">
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200">
+      <h2 class="text-xl font-bold text-blue-800">OUR FACILITIES</h2>
+    </div>
+    <div class="p-6 md:p-10">
     <ul class="space-y-2 text-left text-base">
       <li>💼 Three VIP Rooms — Privacy and fast-track treatment at no extra cost, perfect for busy patients.</li>
       <li>🔬 In-House Dental Laboratory — Precision, speed, and unmatched quality in every treatment.</li>
-      <li>👨‍👩‍👧 Family & Children’s Classes — Fun, engaging education because prevention starts early.</li>
+      <li>👨‍👩‍👧 Family & Children's Classes — Fun, engaging education because prevention starts early.</li>
     </ul>
+    </div>
   </div>
 </section>
   
 <!-- OUR BRAND AMBASSADOR -->
 <section class="py-10 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 text-center">
-    
-    <!-- Title -->
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-      OUR BRAND AMBASSADOR
-    </h2>
+    <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-6">
+      <h2 class="text-xl font-bold text-blue-800">OUR BRAND AMBASSADOR</h2>
+    </div>
 
     <!-- Ambassador Image -->
     <div class="flex justify-center">
@@ -1018,6 +1070,15 @@
     animation: none !important;
   }
   
+  /* Force hide sticky navigation on desktop */
+  @media (min-width: 768px) {
+    nav.fixed {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+  }
+  
   /* Override any fade-up classes on navigation */
   nav.fixed .fade-up {
     opacity: 1 !important;
@@ -1087,3 +1148,4 @@
     }
   });
 </script>
+
