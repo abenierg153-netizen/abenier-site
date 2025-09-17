@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,43 +15,48 @@
     .fade-up.animate { animation: fadeUp 0.8s ease-out forwards; }
 
     /* Active nav style */
-    .active { color: #2563EB; font-weight: bold; }
+    .active { font-weight: bold; color: inherit; }
     
-    /* Remove any transitions on navigation buttons for better mobile performance */
-    .nav-btn {
-      transition: none !important;
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
-    }
-    
-    /* Optimize for mobile performance */
-    .nav-btn:hover {
-      transition: none !important;
-      animation: none !important;
-    }
-    
-    /* Ensure sticky navigation is never affected by fade-up animations */
+    /* Mobile navigation improvements */
     nav.fixed {
-      opacity: 1 !important;
-      transform: none !important;
-      animation: none !important;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
     }
     
     /* Force hide sticky navigation on desktop */
     @media (min-width: 768px) {
       nav.fixed {
         display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
       }
     }
     
-    /* Override any fade-up classes on navigation */
-    nav.fixed .fade-up {
-      opacity: 1 !important;
-      transform: none !important;
-      animation: none !important;
+    /* Active navigation state */
+    .active {
+      color: #2563EB !important;
+      font-weight: bold;
+    }
+    
+    /* Fix navigation button colors - ensure all buttons are gray */
+    .nav-btn {
+      color: #6B7280 !important; /* gray-500 */
+    }
+    
+    .nav-btn:hover {
+      color: #2563EB !important; /* blue-600 */
+    }
+    
+    /* Override any specific button styles that might be causing black text */
+    #servicesBtn, #communityBtn {
+      color: #6B7280 !important; /* gray-500 */
+    }
+    
+    #servicesBtn:hover, #communityBtn:hover {
+      color: #2563EB !important; /* blue-600 */
+    }
+    
+    /* Ensure text color is applied to spans inside nav buttons */
+    .nav-btn span {
+      color: inherit !important;
     }
   </style>
 </head>
@@ -108,7 +113,25 @@
         </div>
       </div>
       
-      <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium">Community</a>
+      <!-- Community Dropdown (Desktop only) -->
+      <div class="relative group hidden md:block">
+        <a href="community.html" class="md:text-gray-700 md:hover:text-blue-600 md:px-3 md:py-2 md:rounded-lg md:transition md:font-medium flex items-center space-x-1">
+          <span>Community</span>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 text-gray-500' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7' />
+          </svg>
+        </a>
+        
+        <!-- Dropdown Menu -->
+        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="py-2">
+            <a href="community.html#tips" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Dental Tips</a>
+            <a href="community.html#news" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Clinic News</a>
+            <a href="community.html#stories" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Patient Stories</a>
+            <a href="community.html#opportunity" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Opportunity</a>
+          </div>
+        </div>
+      </div>
       <a href="tel:0116662828" class="md:px-5 md:py-2.5 md:rounded-xl md:shadow md:bg-blue-600 md:text-white md:hover:bg-blue-700 md:font-medium">Call Us</a>
     </nav>
   </div>
@@ -120,14 +143,15 @@
   <!-- COMMUNITY TABS -->
   <section class="fade-up">
     <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-t-xl px-6 py-3 border-b border-blue-200 mb-4 md:mb-8">
-      <h2 class="text-xl font-bold text-blue-800">🤝 Community</h2>
+      <h2 class="text-xl font-bold text-blue-800">Community</h2>
     </div>
 
-    <!-- ✅ Fixed Tabs (spread evenly, no scrolling) -->
-    <div class="grid grid-cols-4 border-b border-gray-200 mb-6 md:mb-8 text-center">
+    <!-- Fixed Tabs (spread evenly, no scrolling) -->
+    <div class="grid grid-cols-5 border-b border-gray-200 mb-6 md:mb-8 text-center">
       <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="tips">Dental Tips</button>
       <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="news">Clinic News</button>
       <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="stories">Patient Stories</button>
+      <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="opportunity">Opportunity</button>
       <button class="tab-btn py-2 md:py-4 font-medium text-gray-700 md:text-lg border-b-2 border-transparent focus:outline-none hover:text-blue-600" data-tab="giveaway">Giveaway</button>
     </div>
 
@@ -157,11 +181,33 @@
     <div id="stories" class="tab-content space-y-6 md:space-y-8 hidden">
       <div class="bg-white p-6 md:p-8 rounded-xl shadow">
         <p class="text-gray-600 md:text-lg">"Yanet Dental transformed my smile! The braces were comfortable and the staff so kind."</p>
-        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">— Sara M.</h4>
+        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">&mdash; Sara M.</h4>
       </div>
       <div class="bg-white p-6 md:p-8 rounded-xl shadow">
         <p class="text-gray-600 md:text-lg">"I loved the free consultation. They explained everything clearly before my whitening."</p>
-        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">— Dawit K.</h4>
+        <h4 class="mt-3 font-semibold text-gray-800 md:text-lg">&mdash; Dawit K.</h4>
+      </div>
+    </div>
+
+    <div id="opportunity" class="tab-content space-y-6 md:space-y-8 hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- Smile Taxi Card -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow hover:shadow-lg transition-shadow">
+          <h3 class="font-semibold text-gray-800 md:text-xl mb-3">Join Smile Taxi</h3>
+          <p class="text-gray-600 md:text-lg mb-6">Drive, earn, and grow with Smile Taxi.</p>
+          <a href="join-smile-taxi.html" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors">
+            Apply Now
+          </a>
+        </div>
+        
+        <!-- Sub Ambassador Card -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow hover:shadow-lg transition-shadow">
+          <h3 class="font-semibold text-gray-800 md:text-xl mb-3">Sub Ambassador</h3>
+          <p class="text-gray-600 md:text-lg mb-6">Promote and earn rewards by joining our ambassador program.</p>
+          <a href="sub-ambassador.html" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors">
+            Join Today
+          </a>
+        </div>
       </div>
     </div>
 
@@ -182,22 +228,22 @@
   </div>
 </main>
 
-<!-- ✅ STICKY BOTTOM NAVIGATION -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#E6F7F9] border-t border-gray-200 shadow-sm flex justify-around py-2 z-50 md:hidden" style="opacity: 1 !important; transform: none !important;">
-  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
-    <span>🏠</span>
+<!-- STICKY BOTTOM NAVIGATION -->
+<nav class="fixed bottom-0 left-0 w-full bg-white border-t-2 border-blue-200 shadow-lg flex justify-around py-3 z-50 md:hidden" style="opacity: 1 !important; transform: none !important;">
+  <a href="index.html" id="homeBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+    <span>&#127968;&#65039;</span>
     <span class="text-xs">Home</span>
   </a>
-  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
-    <span>🦷</span>
+  <a href="services.html" id="servicesBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+    <span>&#128295;&#65039;</span>
     <span class="text-xs">Services</span>
   </a>
-  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
-    <span>🤝</span>
+  <a href="community.html" id="communityBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+    <span>&#128101;&#65039;</span>
     <span class="text-xs">Community</span>
   </a>
-  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]" style="opacity: 1 !important; transform: none !important;">
-    <span>🗓️</span>
+  <a href="book-now.html" id="bookBtn" class="nav-btn flex flex-col items-center text-gray-700 hover:text-[#2563EB]">
+    <span>&#128197;&#65039;</span>
     <span class="text-xs">Book Now</span>
   </a>
 </nav>
@@ -249,3 +295,14 @@
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
